@@ -96,18 +96,61 @@ export default function DictionaryView() {
     }
   };
 
-  const formatReadingString = (readingStr) => {
-    if (!readingStr) return '';
-    return readingStr
-      .split(' / ')
-      .map((r) => {
-        if (r.includes('.')) {
-          const [main, okuri] = r.split('.');
+  const renderCardReadings = (item) => {
+    if (item.isRadical) {
+      // Radical reading, e.g., "にち (nichi)"
+      const parts = (item.reading || '').split(' ');
+      const kana = parts[0] === 'n/a' ? 'N/A' : parts[0];
+      const romaji = parts.slice(1).join(' ') || '';
+      return (
+        <div className="card-reading-group radical">
+          <span className="badge rad">Rad</span>
+          <span className="val">
+            {kana} {romaji && <span className="romaji">{romaji}</span>}
+          </span>
+        </div>
+      );
+    }
+
+    // Kanji readings - Kunyomi and Onyomi separated
+    const kunVals = item.kunyomi || [];
+    const onVals = item.onyomi || [];
+
+    const formatVals = (vals) => {
+      return vals.map((v) => {
+        if (v.includes('.')) {
+          const [main, okuri] = v.split('.');
           return `${main}(${okuri})`;
         }
-        return r;
-      })
-      .join(' / ');
+        return v;
+      }).slice(0, 2); // Limit to top 2 to prevent clutter
+    };
+
+    const formattedKuns = formatVals(kunVals);
+    const formattedOns = formatVals(onVals);
+
+    return (
+      <div className="card-readings-container">
+        {formattedKuns.length > 0 ? (
+          <div className="card-reading-row kun">
+            <span className="label-badge kun">Kun</span>
+            <span className="reading-vals-text">{formattedKuns.join(', ')}</span>
+          </div>
+        ) : (
+          // Add spacer to keep layout height identical even if Kun is missing
+          <div className="card-reading-row empty" />
+        )}
+        {formattedOns.length > 0 ? (
+          <div className="card-reading-row on">
+            <span className="label-badge on">On</span>
+            <span className="reading-vals-text">{formattedOns.join(', ')}</span>
+          </div>
+        ) : (
+          // Add spacer to keep layout height identical even if On is missing
+          <div className="card-reading-row empty" />
+        )}
+      </div>
+    );
   };
 
   const minLimit = typeFilter === 'radical' ? 4 : 1;
@@ -208,7 +251,7 @@ export default function DictionaryView() {
                 {item.isRadical && <span className="radical-badge">*</span>}
               </div>
               <div className="kanji-card-info">
-                <div className="kanji-card-reading">{formatReadingString(item.reading)}</div>
+                {renderCardReadings(item)}
                 <div className="kanji-card-meaning">{item.meaning}</div>
               </div>
             </Link>

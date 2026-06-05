@@ -1736,3 +1736,119 @@
   color: var(--incorrect-color);
 }
 
+/* Restructured readings inside dictionary cards */
+.kanji-card-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.kanji-card-meaning {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  word-break: break-word;
+  margin-top: 4px;
+  width: 100%;
+}
+
+.card-readings-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.card-reading-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 18px; /* Fixed height for exact alignment */
+  width: 100%;
+}
+
+.card-reading-row.empty {
+  visibility: hidden;
+}
+
+.label-badge {
+  font-size: 0.6rem;
+  font-weight: 800;
+  padding: 1px 4px;
+  border-radius: 4px;
+  width: 28px;
+  text-align: center;
+  flex-shrink: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.label-badge.kun {
+  background: rgba(2, 132, 199, 0.08);
+  color: #0284c7;
+  border: 1px solid rgba(2, 132, 199, 0.15);
+}
+
+.label-badge.on {
+  background: rgba(99, 102, 241, 0.08);
+  color: var(--primary-color);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+}
+
+.reading-vals-text {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-main);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  text-align: left;
+}
+
+/* Radical readings in card */
+.card-reading-group.radical {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 8px;
+  /* Match the exact height of two rows plus their gap (18px * 2 + 6px = 42px) */
+  min-height: 42px; 
+}
+
+.card-reading-group.radical .badge.rad {
+  font-size: 0.6rem;
+  font-weight: 800;
+  padding: 1px 4px;
+  border-radius: 4px;
+  width: 28px;
+  text-align: center;
+  flex-shrink: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  background: rgba(16, 185, 129, 0.08);
+  color: var(--correct-color);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+}
+
+.card-reading-group.radical .val {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-main);
+  text-align: left;
+  flex: 1;
+}
+
+.card-reading-group.radical .romaji {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-left: 2px;
+}
+
+
