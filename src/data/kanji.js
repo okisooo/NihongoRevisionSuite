@@ -39,7 +39,7 @@ export const kanjiData = [
   {
     "id": 2,
     "kanji": "二",
-    "reading": "ふた / ふた.つ / ふたたび / ジ / ニ",
+    "reading": "ふた / ふた.つ / ジ / ニ",
     "meaning": "two, two radical (no. 7)",
     "isRadical": false,
     "onyomi": [
@@ -48,8 +48,7 @@ export const kanjiData = [
     ],
     "kunyomi": [
       "ふた",
-      "ふた.つ",
-      "ふたたび"
+      "ふた.つ"
     ],
     "examples": [
       {
@@ -77,12 +76,11 @@ export const kanjiData = [
   {
     "id": 3,
     "kanji": "三",
-    "reading": "み / み.つ / みっ.つ / サン / ゾウ",
+    "reading": "み / み.つ / みっ.つ / サン",
     "meaning": "three",
     "isRadical": false,
     "onyomi": [
-      "サン",
-      "ゾウ"
+      "サン"
     ],
     "kunyomi": [
       "み",
@@ -1295,7 +1293,7 @@ export const kanjiData = [
   {
     "id": 35,
     "kanji": "十",
-    "reading": "そ / と / とお / ジッ / ジュウ / ジュッ",
+    "reading": "と / とお / ジッ / ジュウ / ジュッ",
     "meaning": "ten",
     "isRadical": false,
     "onyomi": [
@@ -1304,7 +1302,6 @@ export const kanjiData = [
       "ジュッ"
     ],
     "kunyomi": [
-      "そ",
       "と",
       "とお"
     ],
@@ -10344,7 +10341,7 @@ export const kanjiData = [
   {
     "id": 281,
     "kanji": "顔",
-    "reading": "n/a",
+    "reading": "かお / ガン",
     "meaning": "Kanji",
     "isRadical": false,
     "onyomi": [
@@ -10379,7 +10376,7 @@ export const kanjiData = [
   {
     "id": 282,
     "kanji": "声",
-    "reading": "n/a",
+    "reading": "こえ / こわ- / ショウ / セイ",
     "meaning": "Kanji",
     "isRadical": false,
     "onyomi": [
@@ -10416,7 +10413,7 @@ export const kanjiData = [
   {
     "id": 283,
     "kanji": "題",
-    "reading": "n/a",
+    "reading": "ダイ",
     "meaning": "Kanji",
     "isRadical": false,
     "onyomi": [
@@ -10449,7 +10446,7 @@ export const kanjiData = [
   {
     "id": 284,
     "kanji": "色",
-    "reading": "n/a",
+    "reading": "いろ / シキ / ショク",
     "meaning": "Kanji",
     "isRadical": false,
     "onyomi": [
@@ -10485,7 +10482,7 @@ export const kanjiData = [
   {
     "id": 285,
     "kanji": "漢",
-    "reading": "n/a",
+    "reading": "カン",
     "meaning": "Kanji",
     "isRadical": false,
     "onyomi": [
@@ -10518,7 +10515,7 @@ export const kanjiData = [
   {
     "id": 286,
     "kanji": "字",
-    "reading": "n/a",
+    "reading": "-な / あざ / あざな / ジ",
     "meaning": "Kanji",
     "isRadical": false,
     "onyomi": [
@@ -10555,7 +10552,7 @@ export const kanjiData = [
   {
     "id": 287,
     "kanji": "写",
-    "reading": "n/a",
+    "reading": "うつ- / うつ.し / うつ.す / うつ.る / シャ / ジャ",
     "meaning": "Kanji",
     "isRadical": false,
     "onyomi": [
@@ -10594,7 +10591,7 @@ export const kanjiData = [
   {
     "id": 288,
     "kanji": "考",
-    "reading": "n/a",
+    "reading": "かんが.え / かんが.える / コウ",
     "meaning": "Kanji",
     "isRadical": false,
     "onyomi": [
@@ -10630,7 +10627,7 @@ export const kanjiData = [
   {
     "id": 289,
     "kanji": "真",
-    "reading": "n/a",
+    "reading": "ま / ま- / まこと / シン",
     "meaning": "Kanji",
     "isRadical": false,
     "onyomi": [
@@ -10704,7 +10701,7 @@ export const kanjiData = [
   {
     "id": 291,
     "kanji": "曜",
-    "reading": "n/a",
+    "reading": "ヨウ",
     "meaning": "Kanji",
     "isRadical": false,
     "onyomi": [
@@ -10737,7 +10734,7 @@ export const kanjiData = [
   {
     "id": 292,
     "kanji": "進",
-    "reading": "n/a",
+    "reading": "すす.む / すす.める / シン",
     "meaning": "Kanji",
     "isRadical": false,
     "onyomi": [
@@ -10773,7 +10770,7 @@ export const kanjiData = [
   {
     "id": 293,
     "kanji": "帰",
-    "reading": "n/a",
+    "reading": "おく.る / かえ.す / かえ.る / とつ.ぐ / キ",
     "meaning": "Kanji",
     "isRadical": false,
     "onyomi": [
@@ -10811,7 +10808,7 @@ export const kanjiData = [
   {
     "id": 294,
     "kanji": "別",
-    "reading": "n/a",
+    "reading": "わ.ける / わか.れる / ベツ",
     "meaning": "Kanji",
     "isRadical": false,
     "onyomi": [
@@ -10847,7 +10844,7 @@ export const kanjiData = [
   {
     "id": 295,
     "kanji": "以",
-    "reading": "n/a",
+    "reading": "もっ.て / イ",
     "meaning": "Kanji",
     "isRadical": false,
     "onyomi": [
@@ -10882,7 +10879,7 @@ export const kanjiData = [
   {
     "id": 296,
     "kanji": "堂",
-    "reading": "n/a",
+    "reading": "ドウ",
     "meaning": "Kanji",
     "isRadical": false,
     "onyomi": [

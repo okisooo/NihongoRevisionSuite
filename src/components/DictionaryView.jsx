@@ -96,6 +96,20 @@ export default function DictionaryView() {
     }
   };
 
+  const formatReadingString = (readingStr) => {
+    if (!readingStr) return '';
+    return readingStr
+      .split(' / ')
+      .map((r) => {
+        if (r.includes('.')) {
+          const [main, okuri] = r.split('.');
+          return `${main}(${okuri})`;
+        }
+        return r;
+      })
+      .join(' / ');
+  };
+
   const minLimit = typeFilter === 'radical' ? 4 : 1;
   const maxLimit = typeFilter === 'radical' ? 61 : 300;
 
@@ -194,7 +208,7 @@ export default function DictionaryView() {
                 {item.isRadical && <span className="radical-badge">*</span>}
               </div>
               <div className="kanji-card-info">
-                <div className="kanji-card-reading">{item.reading}</div>
+                <div className="kanji-card-reading">{formatReadingString(item.reading)}</div>
                 <div className="kanji-card-meaning">{item.meaning}</div>
               </div>
             </Link>

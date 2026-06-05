@@ -18,6 +18,24 @@ export default function KanjiDetail() {
     kanjiItem = kanjiData.find(k => k.id === numericId);
   }
   
+  const renderReadingBadge = (reading, type) => {
+    const className = type === 'onyomi' ? 'onyomi-badge' : 'kunyomi-badge';
+    if (reading.includes('.')) {
+      const [main, okuri] = reading.split('.');
+      return (
+        <span className={className} key={reading}>
+          {main}
+          <span className="okurigana">({okuri})</span>
+        </span>
+      );
+    }
+    return (
+      <span className={className} key={reading}>
+        {reading}
+      </span>
+    );
+  };
+  
   const writerRef = useRef(null);
   const canvasRef = useRef(null);
   const [writer, setWriter] = useState(null);
@@ -293,9 +311,7 @@ export default function KanjiDetail() {
                   <div className="reading-label">On'yomi (音読み - Chinese Reading)</div>
                   <div className="reading-values">
                     {kanjiItem.onyomi && kanjiItem.onyomi.length > 0 ? (
-                      kanjiItem.onyomi.map((on, idx) => (
-                        <span key={idx} className="onyomi-badge">{on}</span>
-                      ))
+                      kanjiItem.onyomi.map((on) => renderReadingBadge(on, 'onyomi'))
                     ) : (
                       <span className="reading-none">None (Refer to compound examples)</span>
                     )}
@@ -306,9 +322,7 @@ export default function KanjiDetail() {
                   <div className="reading-label">Kun'yomi (訓読み - Japanese Reading)</div>
                   <div className="reading-values">
                     {kanjiItem.kunyomi && kanjiItem.kunyomi.length > 0 ? (
-                      kanjiItem.kunyomi.map((kun, idx) => (
-                        <span key={idx} className="kunyomi-badge">{kun}</span>
-                      ))
+                      kanjiItem.kunyomi.map((kun) => renderReadingBadge(kun, 'kunyomi'))
                     ) : (
                       <span className="reading-none">None (Refer to compound examples)</span>
                     )}
