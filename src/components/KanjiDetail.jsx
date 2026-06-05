@@ -185,96 +185,173 @@ export default function KanjiDetail() {
         Back to Kanji
       </button>
 
-      <div className="glass-panel detail-panel">
-        <div className="kanji-info-header">
-          <div className="info-reading">{kanjiItem.reading}</div>
-          <div className="info-meaning">{kanjiItem.meaning}</div>
+      <div className="glass-panel detail-panel-split">
+        
+        {/* Left Column: Drawing & Animation Pad */}
+        <div className="detail-left-col">
+          <div className="workspace-card">
+            <div className={`writer-container ${showGrid ? 'show-grid' : ''}`}>
+              {/* Fallback for components without SVG */}
+              {loadError && (
+                <div className="static-kanji-fallback">
+                  {kanjiItem.kanji}
+                  <div className="fallback-note">
+                    Stroke guide not available
+                  </div>
+                </div>
+              )}
+
+              {/* HanziWriter target (Ghost/Animation layer) */}
+              <div 
+                ref={writerRef} 
+                className={`kanji-canvas ${loadError ? 'hidden' : ''}`} 
+                style={{ opacity: showGhost || mode === 'animate' ? 1 : 0 }}
+              />
+
+              {/* Interactive Drawing canvas (Free write mode only) */}
+              {mode === 'free-write' && (
+                <canvas
+                  ref={canvasRef}
+                  className="drawing-pad-overlay"
+                  onMouseDown={startDrawing}
+                  onMouseMove={draw}
+                  onMouseUp={stopDrawing}
+                  onMouseLeave={stopDrawing}
+                  onTouchStart={startDrawing}
+                  onTouchMove={draw}
+                  onTouchEnd={stopDrawing}
+                />
+              )}
+            </div>
+          </div>
+
+          <div className="controls">
+            <button 
+              className={`control-button ${mode === 'animate' ? 'active' : ''}`}
+              onClick={handleAnimate}
+            >
+              <Play size={18} />
+              Watch Strokes
+            </button>
+            
+            <button 
+              className={`control-button ${mode === 'free-write' ? 'active' : ''}`}
+              onClick={handleEnterFreeWrite}
+            >
+              <Edit3 size={18} />
+              Free Write
+            </button>
+          </div>
+
+          {/* Free write options */}
+          {mode === 'free-write' && (
+            <div className="free-write-options-panel">
+              <button 
+                className={`option-tool-btn ${showGhost ? 'active' : ''}`} 
+                onClick={handleToggleGhost}
+                title="Toggle ghost trace guide"
+                disabled={loadError}
+              >
+                {showGhost ? <Eye size={18} /> : <EyeOff size={18} />}
+                Guide
+              </button>
+              <button 
+                className={`option-tool-btn ${showGrid ? 'active' : ''}`} 
+                onClick={() => setShowGrid(!showGrid)}
+                title="Toggle grid lines"
+              >
+                <Grid size={18} />
+                Grid
+              </button>
+              <button 
+                className="option-tool-btn danger" 
+                onClick={clearCanvas}
+                title="Clear drawings"
+              >
+                <Trash2 size={18} />
+                Clear
+              </button>
+            </div>
+          )}
         </div>
 
-        <div className="workspace-card">
-          <div className={`writer-container ${showGrid ? 'show-grid' : ''}`}>
-            {/* Fallback for components without SVG */}
-            {loadError && (
-              <div className="static-kanji-fallback">
-                {kanjiItem.kanji}
-                <div className="fallback-note">
-                  Stroke guide not available
+        {/* Right Column: Detailed Readings & Example Compounds */}
+        <div className="detail-right-col">
+          <div className="kanji-info-section">
+            <span className="kanji-id-badge">
+              ID #{kanjiItem.id} {kanjiItem.isRadical ? '• Radical' : '• Kanji'}
+            </span>
+            <h1 className="detail-kanji-char">{kanjiItem.kanji}</h1>
+            <div className="detail-meaning">{kanjiItem.meaning}</div>
+          </div>
+
+          {!kanjiItem.isRadical && (
+            <>
+              {/* Readings Group */}
+              <div className="readings-box">
+                <div className="reading-group">
+                  <div className="reading-label">On'yomi (音読み - Chinese Reading)</div>
+                  <div className="reading-values">
+                    {kanjiItem.onyomi && kanjiItem.onyomi.length > 0 ? (
+                      kanjiItem.onyomi.map((on, idx) => (
+                        <span key={idx} className="onyomi-badge">{on}</span>
+                      ))
+                    ) : (
+                      <span className="reading-none">None (Refer to compound examples)</span>
+                    )}
+                  </div>
+                </div>
+
+                <div className="reading-group">
+                  <div className="reading-label">Kun'yomi (訓読み - Japanese Reading)</div>
+                  <div className="reading-values">
+                    {kanjiItem.kunyomi && kanjiItem.kunyomi.length > 0 ? (
+                      kanjiItem.kunyomi.map((kun, idx) => (
+                        <span key={idx} className="kunyomi-badge">{kun}</span>
+                      ))
+                    ) : (
+                      <span className="reading-none">None (Refer to compound examples)</span>
+                    )}
+                  </div>
                 </div>
               </div>
-            )}
 
-            {/* HanziWriter target (Ghost/Animation layer) */}
-            <div 
-              ref={writerRef} 
-              className={`kanji-canvas ${loadError ? 'hidden' : ''}`} 
-              style={{ opacity: showGhost || mode === 'animate' ? 1 : 0 }}
-            />
+              {/* Example Compounds */}
+              <div className="examples-section">
+                <h3>Common Compounds (主な言葉)</h3>
+                {kanjiItem.examples && kanjiItem.examples.length > 0 ? (
+                  <div className="examples-grid">
+                    {kanjiItem.examples.map((ex, idx) => (
+                      <div key={idx} className="example-card">
+                        <div className="example-word-header">
+                          <span className="example-word">{ex.word}</span>
+                          <span className="example-reading">【{ex.reading}】</span>
+                        </div>
+                        <div className="example-meaning">{ex.meaning}</div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="empty-examples">No common compounds recorded.</div>
+                )}
+              </div>
+            </>
+          )}
 
-            {/* Interactive Drawing canvas (Free write mode only) */}
-            {mode === 'free-write' && (
-              <canvas
-                ref={canvasRef}
-                className="drawing-pad-overlay"
-                onMouseDown={startDrawing}
-                onMouseMove={draw}
-                onMouseUp={stopDrawing}
-                onMouseLeave={stopDrawing}
-                onTouchStart={startDrawing}
-                onTouchMove={draw}
-                onTouchEnd={stopDrawing}
-              />
-            )}
-          </div>
+          {kanjiItem.isRadical && (
+            <div className="radical-info-box">
+              <h3>Radical Component (部首)</h3>
+              <p>This entry serves as a basic radical/component taught in lessons. It is practiced to help master stroke counts and structure before writing full kanjis.</p>
+              <div className="reading-group" style={{ marginTop: '16px' }}>
+                <div className="reading-label">Radical Reading / Name</div>
+                <div className="reading-values">
+                  <span className="onyomi-badge">{kanjiItem.reading}</span>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
 
-        <div className="controls">
-          <button 
-            className={`control-button ${mode === 'animate' ? 'active' : ''}`}
-            onClick={handleAnimate}
-          >
-            <Play size={18} />
-            Watch Strokes
-          </button>
-          
-          <button 
-            className={`control-button ${mode === 'free-write' ? 'active' : ''}`}
-            onClick={handleEnterFreeWrite}
-          >
-            <Edit3 size={18} />
-            Free Write
-          </button>
-        </div>
-
-        {/* Free write options */}
-        {mode === 'free-write' && (
-          <div className="free-write-options-panel">
-            <button 
-              className={`option-tool-btn ${showGhost ? 'active' : ''}`} 
-              onClick={handleToggleGhost}
-              title="Toggle ghost trace guide"
-              disabled={loadError}
-            >
-              {showGhost ? <Eye size={18} /> : <EyeOff size={18} />}
-              Guide
-            </button>
-            <button 
-              className={`option-tool-btn ${showGrid ? 'active' : ''}`} 
-              onClick={() => setShowGrid(!showGrid)}
-              title="Toggle grid lines"
-            >
-              <Grid size={18} />
-              Grid
-            </button>
-            <button 
-              className="option-tool-btn danger" 
-              onClick={clearCanvas}
-              title="Clear drawings"
-            >
-              <Trash2 size={18} />
-              Clear
-            </button>
-          </div>
-        )}
       </div>
     </div>
   );
