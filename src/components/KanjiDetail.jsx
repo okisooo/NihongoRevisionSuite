@@ -46,6 +46,7 @@ export default function KanjiDetail() {
   const [showGhost, setShowGhost] = useState(true);
   const [showGrid, setShowGrid] = useState(true);
   const [loadError, setLoadError] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
     if (!kanjiItem || !writerRef.current) return;
@@ -53,6 +54,7 @@ export default function KanjiDetail() {
     // Clean up previous writer instance HTML if any
     writerRef.current.innerHTML = '';
     setLoadError(false);
+    setIsExpanded(false); // Reset on character swap
 
     try {
       const newWriter = HanziWriter.create(writerRef.current, kanjiItem.kanji, {
@@ -334,17 +336,27 @@ export default function KanjiDetail() {
               <div className="examples-section">
                 <h3>Common Compounds (主な言葉)</h3>
                 {kanjiItem.examples && kanjiItem.examples.length > 0 ? (
-                  <div className="examples-grid">
-                    {kanjiItem.examples.map((ex, idx) => (
-                      <div key={idx} className="example-card">
-                        <div className="example-word-header">
-                          <span className="example-word">{ex.word}</span>
-                          <span className="example-reading">【{ex.reading}】</span>
+                  <>
+                    <div className="examples-grid">
+                      {(isExpanded ? kanjiItem.examples : kanjiItem.examples.slice(0, 4)).map((ex, idx) => (
+                        <div key={idx} className="example-card">
+                          <div className="example-word-header">
+                            <span className="example-word">{ex.word}</span>
+                            <span className="example-reading">【{ex.reading}】</span>
+                          </div>
+                          <div className="example-meaning">{ex.meaning}</div>
                         </div>
-                        <div className="example-meaning">{ex.meaning}</div>
-                      </div>
-                    ))}
-                  </div>
+                      ))}
+                    </div>
+                    {kanjiItem.examples.length > 4 && (
+                      <button 
+                        className="expand-compounds-btn" 
+                        onClick={() => setIsExpanded(!isExpanded)}
+                      >
+                        {isExpanded ? 'Show Less' : `Show More (+${kanjiItem.examples.length - 4})`}
+                      </button>
+                    )}
+                  </>
                 ) : (
                   <div className="empty-examples">No common compounds recorded.</div>
                 )}

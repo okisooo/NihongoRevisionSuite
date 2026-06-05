@@ -73,7 +73,7 @@ function extractExamples(words, targetChar) {
   // Sort by score desc
   processed.sort((a, b) => b.score - a.score);
 
-  // Take top 4 unique words
+  // Take top 25 unique words
   const seen = new Set();
   const examples = [];
   for (const item of processed) {
@@ -84,7 +84,7 @@ function extractExamples(words, targetChar) {
       reading: item.reading,
       meaning: item.meaning
     });
-    if (examples.length === 4) break;
+    if (examples.length === 25) break;
   }
 
   return examples;
