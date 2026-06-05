@@ -17,18 +17,20 @@ export default function QuizView() {
   const [gameState, setGameState] = useState('playing'); // playing, answered, summary
   const [selectedOption, setSelectedOption] = useState(null);
 
-  // Filter Kanjis based on stored range
-  const filteredKanjis = kanjiData.filter(
-    (item) => item.id >= rangeFrom && item.id <= rangeTo
-  );
+  // Filter Kanjis based on stored range, excluding radicals
+  const filteredKanjis = kanjiData
+    .filter((item) => item.id >= rangeFrom && item.id <= rangeTo)
+    .filter((item) => !item.isRadical);
 
   const shuffle = (array) => [...array].sort(() => Math.random() - 0.5);
 
   const generateOptions = (kanjiItem) => {
     if (!kanjiItem) return [];
 
-    // Gather potential wrong choices (prefer same range, fallback to full list if range is too small)
-    const sourceList = filteredKanjis.length >= 4 ? filteredKanjis : kanjiData;
+    // Gather potential wrong choices from actual kanji list (excluding radicals)
+    const sourceList = filteredKanjis.length >= 4 
+      ? filteredKanjis 
+      : kanjiData.filter(k => !k.isRadical);
     
     const wrongOptions = sourceList
       .filter((k) => k.id !== kanjiItem.id)
@@ -90,7 +92,7 @@ export default function QuizView() {
           <span className="score-total">/ {filteredKanjis.length}</span>
         </div>
         <p style={{ color: 'var(--text-muted)', marginBottom: '30px' }}>
-          Range: ID {rangeFrom} to {rangeTo}
+          Range: ID {rangeFrom} to {rangeTo} (Radicals Excluded)
         </p>
         <button 
           className="action-button primary"

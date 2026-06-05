@@ -2,12 +2,21 @@ import { useEffect, useRef, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import HanziWriter from 'hanzi-writer';
 import { kanjiData } from '../data/kanji';
+import { radicalsData } from '../data/radicals';
 import { ArrowLeft, Play, Edit3, Trash2, Eye, EyeOff, Grid } from 'lucide-react';
 
 export default function KanjiDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const kanjiItem = kanjiData.find(k => k.id === parseInt(id));
+  
+  let kanjiItem;
+  if (id && id.startsWith('r')) {
+    const numericId = parseInt(id.substring(1));
+    kanjiItem = radicalsData.find(k => k.id === numericId);
+  } else {
+    const numericId = parseInt(id && id.startsWith('k') ? id.substring(1) : id);
+    kanjiItem = kanjiData.find(k => k.id === numericId);
+  }
   
   const writerRef = useRef(null);
   const canvasRef = useRef(null);
