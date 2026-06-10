@@ -3,7 +3,7 @@ import { kanjiData } from '../data/kanji';
 import { sentencesData } from '../data/sentences';
 import { romajiToHiragana } from '../utils/romajiConverter';
 import { parseRangeString } from '../utils/rangeParser';
-import { SlidersHorizontal, Settings, HelpCircle, RefreshCw, CheckCircle2, Play, ArrowLeft, ArrowRight, Eye, EyeOff, Keyboard } from 'lucide-react';
+import { SlidersHorizontal, Settings, HelpCircle, RefreshCw, CheckCircle2, Play, ArrowLeft, ArrowRight, Eye, EyeOff, Keyboard, Search } from 'lucide-react';
 import FuriganaWord from './FuriganaWord';
 
 // Segment matcher function
@@ -362,115 +362,120 @@ export default function FuriganaGameView() {
             <h2>Furigana Writing Practice</h2>
           </div>
 
-          <p className="game-description-text" style={{ margin: '12px 0 24px', color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem', lineHeight: '1.5' }}>
-            Practice writing correct Kanji readings in full sentences! Type either in **Romaji** or **Hiragana**. Mistakes are flagged immediately. Complete the sentence by typing the readings of all highlighted Kanji words.
+          <p className="game-description-text" style={{ margin: '12px 0 24px', color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: '1.5' }}>
+            Practice writing correct Kanji readings in full sentences! Type either in <strong>Romaji</strong> or <strong>Hiragana</strong>. Mistakes are flagged immediately. Complete the sentence by typing the readings of all highlighted Kanji words.
           </p>
 
-          <div className="setup-sections-grid">
-            <div className="setup-left-side">
-              {/* Range Filters */}
-              <div className="setup-group">
-                <label className="section-subtitle">Select Kanji Range Filter</label>
-                <div className="range-presets-grid" style={{ marginBottom: '12px' }}>
-                  {presets.map((p, idx) => (
-                    <button 
-                      key={idx} 
-                      className={`preset-btn ${rangeFrom === p.from && rangeTo === p.to && !customRangeText ? 'active' : ''}`}
-                      onClick={() => handlePresetRange(p.from, p.to)}
-                    >
-                      {p.label}
-                    </button>
-                  ))}
-                </div>
-
-                <div className="custom-range-input-container">
-                  <SlidersHorizontal size={18} className="icon-input" />
-                  <input 
-                    type="text" 
-                    placeholder="e.g. 101-140, -111-120"
-                    value={customRangeText}
-                    onChange={(e) => setCustomRangeText(e.target.value)}
-                    className="custom-range-input"
-                  />
-                  <button className="apply-range-btn" onClick={handleApplyCustomRanges}>
-                    Apply Filter
-                  </button>
-                </div>
-              </div>
+          {/* 1. Range Selector */}
+          <div className="setup-group">
+            <h3>Filter Range</h3>
+            <div className="preset-grid" style={{ marginBottom: '16px' }}>
+              {presets.map((preset, idx) => (
+                <button
+                  key={idx}
+                  className={`preset-button ${
+                    rangeFrom === preset.from && rangeTo === preset.to && !customRangeText ? 'active' : ''
+                  }`}
+                  onClick={() => handlePresetRange(preset.from, preset.to)}
+                >
+                  {preset.label}
+                </button>
+              ))}
             </div>
 
-            <div className="setup-right-side">
-              {/* Checklist */}
-              <div className="checklist-card">
-                <div className="checklist-card-header">
-                  <div className="header-info">
-                    <span className="count-label">Selected Kanji: <strong>{selectedIds.size}</strong></span>
-                  </div>
-                  <div className="checklist-actions-row">
-                    <button className="txt-btn" onClick={handleSelectAllFiltered}>Select All Filtered</button>
-                    <span className="divider">|</span>
-                    <button className="txt-btn" onClick={handleDeselectAllFiltered}>Deselect All</button>
-                  </div>
-                </div>
-
-                <div className="checklist-filter-bar">
-                  <button 
-                    className={`filter-tab-btn ${checklistFilter === 'all' ? 'active' : ''}`}
-                    onClick={() => setChecklistFilter('all')}
-                  >
-                    All Filtered ({filteredRangeKanjis.length})
-                  </button>
-                  <button 
-                    className={`filter-tab-btn ${checklistFilter === 'selected' ? 'active' : ''}`}
-                    onClick={() => setChecklistFilter('selected')}
-                  >
-                    Selected Only ({selectedIds.size})
-                  </button>
-                  <div className="checklist-search-box">
-                    <input 
-                      type="text" 
-                      placeholder="Search..."
-                      value={searchText}
-                      onChange={(e) => setSearchText(e.target.value)}
-                    />
-                  </div>
-                </div>
-
-                <div className="checklist-scroll-grid">
-                  {displayedChecklistKanjis.length > 0 ? (
-                    displayedChecklistKanjis.map((k) => (
-                      <div 
-                        key={k.id} 
-                        className={`checklist-item-row ${selectedIds.has(k.id) ? 'selected' : ''}`}
-                        onClick={() => handleToggleId(k.id)}
-                      >
-                        <input 
-                          type="checkbox" 
-                          checked={selectedIds.has(k.id)}
-                          onChange={() => {}} // Swallowing to handle row clicks
-                        />
-                        <span className="char">{k.kanji}</span>
-                        <span className="meaning">{k.meaning}</span>
-                        <span className="id-badge">#{k.id}</span>
-                      </div>
-                    ))
-                  ) : (
-                    <div className="empty-checklist">No kanjis found in range.</div>
-                  )}
-                </div>
+            {/* Custom Multi-Range Input */}
+            <div className="custom-multi-range-container">
+              <label className="study-label">Multi-Range Input (Comma-separated ranges or IDs):</label>
+              <div className="custom-range-input-row">
+                <input 
+                  type="text" 
+                  className="selection-search-input range"
+                  placeholder="e.g. 101-140, -111-120"
+                  value={customRangeText}
+                  onChange={(e) => setCustomRangeText(e.target.value)}
+                />
+                <button className="quick-sel-btn apply-range-btn" onClick={handleApplyCustomRanges}>
+                  Apply
+                </button>
               </div>
-
-              {/* Start Button */}
-              <button 
-                className="action-button primary start-quiz-btn"
-                style={{ width: '100%', marginTop: '20px', padding: '16px', borderRadius: '14px', fontSize: '1.1rem' }}
-                disabled={selectedIds.size === 0}
-                onClick={startGame}
-              >
-                <Play size={20} style={{ marginRight: '8px' }} /> Start Furigana Practice
-              </button>
             </div>
           </div>
+
+          {/* 2. Detailed Kanji Checkbox Selection Grid */}
+          <div className="setup-group" style={{ marginTop: '16px' }}>
+            <div className="kanji-selection-header">
+              <h3>Select Kanjis to Practice ({selectedIds.size} selected)</h3>
+              <div className="select-links">
+                <span className="select-link" onClick={handleSelectAllFiltered}>Select All Filtered</span>
+                <span className="select-link" onClick={handleDeselectAllFiltered}>Clear All</span>
+              </div>
+            </div>
+
+            {/* Display Mode Toggles and Search */}
+            <div style={{ display: 'flex', gap: '10px', alignItems: 'center', marginBottom: '8px' }}>
+              {/* Checklist display filter */}
+              <div className="checklist-filter-selector">
+                <button 
+                  className={`filter-btn ${checklistFilter === 'all' ? 'active' : ''}`}
+                  onClick={() => setChecklistFilter('all')}
+                >
+                  Show All
+                </button>
+                <button 
+                  className={`filter-btn ${checklistFilter === 'selected' ? 'active' : ''}`}
+                  onClick={() => setChecklistFilter('selected')}
+                >
+                  Selected Only ({selectedIds.size})
+                </button>
+              </div>
+
+              {/* Search Box */}
+              <div className="selection-search-container" style={{ flex: 1 }}>
+                <Search className="search-icon" size={16} />
+                <input 
+                  type="text"
+                  className="selection-search-input"
+                  placeholder="Search by Kanji, reading, meaning..."
+                  value={searchText}
+                  onChange={(e) => setSearchText(e.target.value)}
+                />
+              </div>
+            </div>
+
+            {filteredRangeKanjis.length === 0 ? (
+              <div className="empty-message" style={{ padding: '20px', color: 'var(--text-muted)', textAlign: 'center' }}>
+                No Kanjis found matching search/filter.
+              </div>
+            ) : (
+              <div className="kanji-selection-list">
+                {displayedChecklistKanjis.map((k) => (
+                  <label 
+                    key={k.id} 
+                    className={`kanji-select-box ${selectedIds.has(k.id) ? 'selected' : ''}`}
+                  >
+                    <input 
+                      type="checkbox" 
+                      style={{ display: 'none' }}
+                      checked={selectedIds.has(k.id)} 
+                      onChange={() => handleToggleId(k.id)}
+                    />
+                    <span className="char">{k.kanji}</span>
+                    <span className="id">#{k.id}</span>
+                  </label>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Start Button */}
+          <button 
+            className="action-button primary start-quiz-btn"
+            style={{ width: '100%', marginTop: '20px', padding: '16px', borderRadius: '14px', fontSize: '1.1rem' }}
+            disabled={selectedIds.size === 0}
+            onClick={startGame}
+          >
+            <Play size={20} style={{ marginRight: '8px' }} /> Start Furigana Practice
+          </button>
         </div>
       </div>
     );
