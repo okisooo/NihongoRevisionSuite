@@ -2,12 +2,12 @@ export const kanjiData = [
   {
     "id": 1,
     "kanji": "一",
-    "reading": "ひと- / ひと.つ / イチ / イツ",
+    "reading": "ひと- / ひと.つ / いち / いつ",
     "meaning": "one, one radical (no.1)",
     "isRadical": false,
     "onyomi": [
-      "イチ",
-      "イツ"
+      "いち",
+      "いつ"
     ],
     "kunyomi": [
       "ひと-",
@@ -139,17 +139,42 @@ export const kanjiData = [
         "reading": "いっかい",
         "meaning": "one rank"
       }
+    ],
+    "standalone": [
+      {
+        "word": "一",
+        "reading": "いち",
+        "segments": [
+          {
+            "ruby": "一",
+            "rt": "いち"
+          }
+        ]
+      },
+      {
+        "word": "一つ",
+        "reading": "ひとつ",
+        "segments": [
+          {
+            "ruby": "一",
+            "rt": "ひと"
+          },
+          {
+            "ruby": "つ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 2,
     "kanji": "二",
-    "reading": "ふた / ふた.つ / ジ / ニ",
+    "reading": "ふた / ふた.つ / じ / に",
     "meaning": "two, two radical (no. 7)",
     "isRadical": false,
     "onyomi": [
-      "ジ",
-      "ニ"
+      "じ",
+      "に"
     ],
     "kunyomi": [
       "ふた",
@@ -282,17 +307,42 @@ export const kanjiData = [
         "reading": "にし",
         "meaning": "two out, two down (and one to go)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "二",
+        "reading": "に",
+        "segments": [
+          {
+            "ruby": "二",
+            "rt": "に"
+          }
+        ]
+      },
+      {
+        "word": "二つ",
+        "reading": "ふたつ",
+        "segments": [
+          {
+            "ruby": "二",
+            "rt": "ふた"
+          },
+          {
+            "ruby": "つ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 3,
     "kanji": "三",
-    "reading": "み / み.つ / みっ.つ / サン",
+    "reading": "み / み.つ / みっ.つ / さん",
     "meaning": "three",
     "isRadical": false,
     "onyomi": [
-      "サン",
-      "ゾウ"
+      "さん",
+      "ぞう"
     ],
     "kunyomi": [
       "み",
@@ -425,17 +475,42 @@ export const kanjiData = [
         "reading": "さんしゅ",
         "meaning": "three kinds, three varieties"
       }
+    ],
+    "standalone": [
+      {
+        "word": "三",
+        "reading": "さん",
+        "segments": [
+          {
+            "ruby": "三",
+            "rt": "さん"
+          }
+        ]
+      },
+      {
+        "word": "三つ",
+        "reading": "みっつ",
+        "segments": [
+          {
+            "ruby": "三",
+            "rt": "みっ"
+          },
+          {
+            "ruby": "つ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 4,
     "kanji": "山",
-    "reading": "やま / サン / セン",
+    "reading": "やま / さん / せん",
     "meaning": "mountain",
     "isRadical": false,
     "onyomi": [
-      "サン",
-      "セン"
+      "さん",
+      "せん"
     ],
     "kunyomi": [
       "やま"
@@ -566,16 +641,28 @@ export const kanjiData = [
         "reading": "さんかい",
         "meaning": "mountains and seas"
       }
+    ],
+    "standalone": [
+      {
+        "word": "山",
+        "reading": "やま",
+        "segments": [
+          {
+            "ruby": "山",
+            "rt": "やま"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 5,
     "kanji": "川",
-    "reading": "かわ / セン",
+    "reading": "かわ / せん",
     "meaning": "river, river or three-stroke river radical (no. 47), stream",
     "isRadical": false,
     "onyomi": [
-      "セン"
+      "せん"
     ],
     "kunyomi": [
       "かわ"
@@ -706,17 +793,29 @@ export const kanjiData = [
         "reading": "かがわ",
         "meaning": "Kagawa (prefecture)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "川",
+        "reading": "かわ",
+        "segments": [
+          {
+            "ruby": "川",
+            "rt": "かわ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 6,
     "kanji": "目",
-    "reading": "-め / ま- / め / ボク / モク",
+    "reading": "-め / ま- / め / ぼく / もく",
     "meaning": "care, class, experience, eye, favor, insight, look",
     "isRadical": false,
     "onyomi": [
-      "ボク",
-      "モク"
+      "ぼく",
+      "もく"
     ],
     "kunyomi": [
       "-め",
@@ -849,17 +948,29 @@ export const kanjiData = [
         "reading": "ひけめ",
         "meaning": "sense of inferiority, one's weak point"
       }
+    ],
+    "standalone": [
+      {
+        "word": "目",
+        "reading": "め",
+        "segments": [
+          {
+            "ruby": "目",
+            "rt": "め"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 7,
     "kanji": "口",
-    "reading": "くち / ク / コウ",
+    "reading": "くち / く / こう",
     "meaning": "mouth",
     "isRadical": false,
     "onyomi": [
-      "ク",
-      "コウ"
+      "く",
+      "こう"
     ],
     "kunyomi": [
       "くち"
@@ -990,17 +1101,29 @@ export const kanjiData = [
         "reading": "くちさき",
         "meaning": "lip service, mere words, professions"
       }
+    ],
+    "standalone": [
+      {
+        "word": "口",
+        "reading": "くち",
+        "segments": [
+          {
+            "ruby": "口",
+            "rt": "くち"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 8,
     "kanji": "人",
-    "reading": "-と / -り / ひと / ジン / ニン",
+    "reading": "-と / -り / ひと / じん / にん",
     "meaning": "person",
     "isRadical": false,
     "onyomi": [
-      "ジン",
-      "ニン"
+      "じん",
+      "にん"
     ],
     "kunyomi": [
       "-と",
@@ -1133,17 +1256,29 @@ export const kanjiData = [
         "reading": "ほんにん",
         "meaning": "the person in question, the person themselves, said person"
       }
+    ],
+    "standalone": [
+      {
+        "word": "人",
+        "reading": "ひと",
+        "segments": [
+          {
+            "ruby": "人",
+            "rt": "ひと"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 9,
     "kanji": "木",
-    "reading": "き / こ- / ボク / モク",
+    "reading": "き / こ- / ぼく / もく",
     "meaning": "tree, wood",
     "isRadical": false,
     "onyomi": [
-      "ボク",
-      "モク"
+      "ぼく",
+      "もく"
     ],
     "kunyomi": [
       "き",
@@ -1275,16 +1410,28 @@ export const kanjiData = [
         "reading": "くろき",
         "meaning": "unbarked lumber"
       }
+    ],
+    "standalone": [
+      {
+        "word": "木",
+        "reading": "き",
+        "segments": [
+          {
+            "ruby": "木",
+            "rt": "き"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 10,
     "kanji": "休",
-    "reading": "やす.まる / やす.む / やす.める / キュウ",
+    "reading": "やす.まる / やす.む / やす.める / きゅう",
     "meaning": "day off, rest, retire, sleep",
     "isRadical": false,
     "onyomi": [
-      "キュウ"
+      "きゅう"
     ],
     "kunyomi": [
       "やす.まる",
@@ -1417,16 +1564,57 @@ export const kanjiData = [
         "reading": "きゅうかい",
         "meaning": "adjournment, recess"
       }
+    ],
+    "standalone": [
+      {
+        "word": "休まる",
+        "reading": "やすまる",
+        "segments": [
+          {
+            "ruby": "休",
+            "rt": "やす"
+          },
+          {
+            "ruby": "まる"
+          }
+        ]
+      },
+      {
+        "word": "休む",
+        "reading": "やすむ",
+        "segments": [
+          {
+            "ruby": "休",
+            "rt": "やす"
+          },
+          {
+            "ruby": "む"
+          }
+        ]
+      },
+      {
+        "word": "休める",
+        "reading": "やすめる",
+        "segments": [
+          {
+            "ruby": "休",
+            "rt": "やす"
+          },
+          {
+            "ruby": "める"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 11,
     "kanji": "本",
-    "reading": "もと / ホン",
+    "reading": "もと / ほん",
     "meaning": "book, counter for long cylindrical things, main, origin, present, real, true",
     "isRadical": false,
     "onyomi": [
-      "ホン"
+      "ほん"
     ],
     "kunyomi": [
       "もと"
@@ -1557,17 +1745,29 @@ export const kanjiData = [
         "reading": "ほんぞん",
         "meaning": "the man himself, the person at the heart of the matter"
       }
+    ],
+    "standalone": [
+      {
+        "word": "本",
+        "reading": "ほん",
+        "segments": [
+          {
+            "ruby": "本",
+            "rt": "ほん"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 12,
     "kanji": "体",
-    "reading": "かたち / からだ / タイ / テイ",
+    "reading": "かたち / からだ / たい / てい",
     "meaning": "body, counter for images, object, reality, substance",
     "isRadical": false,
     "onyomi": [
-      "タイ",
-      "テイ"
+      "たい",
+      "てい"
     ],
     "kunyomi": [
       "かたち",
@@ -1699,16 +1899,38 @@ export const kanjiData = [
         "reading": "どうたい",
         "meaning": "body, trunk, torso"
       }
+    ],
+    "standalone": [
+      {
+        "word": "体",
+        "reading": "かたち",
+        "segments": [
+          {
+            "ruby": "体",
+            "rt": "かたち"
+          }
+        ]
+      },
+      {
+        "word": "体",
+        "reading": "からだ",
+        "segments": [
+          {
+            "ruby": "体",
+            "rt": "からだ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 13,
     "kanji": "田",
-    "reading": "た / デン",
+    "reading": "た / でん",
     "meaning": "rice field, rice paddy",
     "isRadical": false,
     "onyomi": [
-      "デン"
+      "でん"
     ],
     "kunyomi": [
       "た"
@@ -1839,18 +2061,30 @@ export const kanjiData = [
         "reading": "かんでん",
         "meaning": "dry paddy field"
       }
+    ],
+    "standalone": [
+      {
+        "word": "田",
+        "reading": "た",
+        "segments": [
+          {
+            "ruby": "田",
+            "rt": "た"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 14,
     "kanji": "力",
-    "reading": "ちから / リイ / リキ / リョク",
+    "reading": "ちから / りい / りき / りょく",
     "meaning": "bear up, exert, power, strain, strength, strong",
     "isRadical": false,
     "onyomi": [
-      "リイ",
-      "リキ",
-      "リョク"
+      "りい",
+      "りき",
+      "りょく"
     ],
     "kunyomi": [
       "ちから"
@@ -1981,17 +2215,29 @@ export const kanjiData = [
         "reading": "じんりょく",
         "meaning": "efforts, exertion, endeavour"
       }
+    ],
+    "standalone": [
+      {
+        "word": "力",
+        "reading": "ちから",
+        "segments": [
+          {
+            "ruby": "力",
+            "rt": "ちから"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 15,
     "kanji": "男",
-    "reading": "お / おとこ / ダン / ナン",
+    "reading": "お / おとこ / だん / なん",
     "meaning": "male",
     "isRadical": false,
     "onyomi": [
-      "ダン",
-      "ナン"
+      "だん",
+      "なん"
     ],
     "kunyomi": [
       "お",
@@ -2123,18 +2369,40 @@ export const kanjiData = [
         "reading": "おまつ",
         "meaning": "black pine"
       }
+    ],
+    "standalone": [
+      {
+        "word": "男",
+        "reading": "お",
+        "segments": [
+          {
+            "ruby": "男",
+            "rt": "お"
+          }
+        ]
+      },
+      {
+        "word": "男",
+        "reading": "おとこ",
+        "segments": [
+          {
+            "ruby": "男",
+            "rt": "おとこ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 16,
     "kanji": "女",
-    "reading": "おんな / め / ジョ / ニョ / ニョウ",
+    "reading": "おんな / め / じょ / にょ / にょう",
     "meaning": "female, woman",
     "isRadical": false,
     "onyomi": [
-      "ジョ",
-      "ニョ",
-      "ニョウ"
+      "じょ",
+      "にょ",
+      "にょう"
     ],
     "kunyomi": [
       "おんな",
@@ -2266,16 +2534,38 @@ export const kanjiData = [
         "reading": "じょりゅう",
         "meaning": "woman (writer, artist, aviator, etc.)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "女",
+        "reading": "おんな",
+        "segments": [
+          {
+            "ruby": "女",
+            "rt": "おんな"
+          }
+        ]
+      },
+      {
+        "word": "女",
+        "reading": "め",
+        "segments": [
+          {
+            "ruby": "女",
+            "rt": "め"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 17,
     "kanji": "安",
-    "reading": "やす / やす.い / やす.まる / やす.らか / アン",
+    "reading": "やす / やす.い / やす.まる / やす.らか / あん",
     "meaning": "cheap, contented, low, peaceful, quiet, relax, rested",
     "isRadical": false,
     "onyomi": [
-      "アン"
+      "あん"
     ],
     "kunyomi": [
       "やす",
@@ -2409,18 +2699,69 @@ export const kanjiData = [
         "reading": "あんち",
         "meaning": "enshrinement, installation (of an image)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "安",
+        "reading": "やす",
+        "segments": [
+          {
+            "ruby": "安",
+            "rt": "やす"
+          }
+        ]
+      },
+      {
+        "word": "安い",
+        "reading": "やすい",
+        "segments": [
+          {
+            "ruby": "安",
+            "rt": "やす"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      },
+      {
+        "word": "安まる",
+        "reading": "やすまる",
+        "segments": [
+          {
+            "ruby": "安",
+            "rt": "やす"
+          },
+          {
+            "ruby": "まる"
+          }
+        ]
+      },
+      {
+        "word": "安らか",
+        "reading": "やすらか",
+        "segments": [
+          {
+            "ruby": "安",
+            "rt": "やす"
+          },
+          {
+            "ruby": "らか"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 18,
     "kanji": "上",
-    "reading": "-あ.がり / -あ.がる / -あ.げる / -うえ / あ.がり / あ.がる / あ.げる / うえ / うわ- / かみ / たてまつ.る / のぼ.す / のぼ.せる / のぼ.り / のぼ.る / シャン / ショウ / ジョウ",
+    "reading": "-あ.がり / -あ.がる / -あ.げる / -うえ / あ.がり / あ.がる / あ.げる / うえ / うわ- / かみ / たてまつ.る / のぼ.す / のぼ.せる / のぼ.り / のぼ.る / しゃん / しょう / じょう",
     "meaning": "above, up",
     "isRadical": false,
     "onyomi": [
-      "シャン",
-      "ショウ",
-      "ジョウ"
+      "しゃん",
+      "しょう",
+      "じょう"
     ],
     "kunyomi": [
       "-あ.がり",
@@ -2565,17 +2906,143 @@ export const kanjiData = [
         "reading": "じょうきゅう",
         "meaning": "upper level, upper grade, high rank"
       }
+    ],
+    "standalone": [
+      {
+        "word": "上がり",
+        "reading": "あがり",
+        "segments": [
+          {
+            "ruby": "上",
+            "rt": "あ"
+          },
+          {
+            "ruby": "がり"
+          }
+        ]
+      },
+      {
+        "word": "上がる",
+        "reading": "あがる",
+        "segments": [
+          {
+            "ruby": "上",
+            "rt": "あ"
+          },
+          {
+            "ruby": "がる"
+          }
+        ]
+      },
+      {
+        "word": "上げる",
+        "reading": "あげる",
+        "segments": [
+          {
+            "ruby": "上",
+            "rt": "あ"
+          },
+          {
+            "ruby": "げる"
+          }
+        ]
+      },
+      {
+        "word": "上",
+        "reading": "うえ",
+        "segments": [
+          {
+            "ruby": "上",
+            "rt": "うえ"
+          }
+        ]
+      },
+      {
+        "word": "上",
+        "reading": "かみ",
+        "segments": [
+          {
+            "ruby": "上",
+            "rt": "かみ"
+          }
+        ]
+      },
+      {
+        "word": "上る",
+        "reading": "たてまつる",
+        "segments": [
+          {
+            "ruby": "上",
+            "rt": "たてまつ"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      },
+      {
+        "word": "上す",
+        "reading": "のぼす",
+        "segments": [
+          {
+            "ruby": "上",
+            "rt": "のぼ"
+          },
+          {
+            "ruby": "す"
+          }
+        ]
+      },
+      {
+        "word": "上せる",
+        "reading": "のぼせる",
+        "segments": [
+          {
+            "ruby": "上",
+            "rt": "のぼ"
+          },
+          {
+            "ruby": "せる"
+          }
+        ]
+      },
+      {
+        "word": "上り",
+        "reading": "のぼり",
+        "segments": [
+          {
+            "ruby": "上",
+            "rt": "のぼ"
+          },
+          {
+            "ruby": "り"
+          }
+        ]
+      },
+      {
+        "word": "上る",
+        "reading": "のぼる",
+        "segments": [
+          {
+            "ruby": "上",
+            "rt": "のぼ"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 19,
     "kanji": "下",
-    "reading": "-くだ.す / お.りる / お.ろす / くだ.さる / くだ.す / くだ.り / くだ.る / さ.がる / さ.げる / した / しも / もと / カ / ゲ",
+    "reading": "-くだ.す / お.りる / お.ろす / くだ.さる / くだ.す / くだ.り / くだ.る / さ.がる / さ.げる / した / しも / もと / か / げ",
     "meaning": "below, descend, down, give, inferior, low",
     "isRadical": false,
     "onyomi": [
-      "カ",
-      "ゲ"
+      "か",
+      "げ"
     ],
     "kunyomi": [
       "-くだ.す",
@@ -2717,16 +3184,152 @@ export const kanjiData = [
         "reading": "げかい",
         "meaning": "this world (as opposed to heaven)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "下りる",
+        "reading": "おりる",
+        "segments": [
+          {
+            "ruby": "下",
+            "rt": "お"
+          },
+          {
+            "ruby": "りる"
+          }
+        ]
+      },
+      {
+        "word": "下ろす",
+        "reading": "おろす",
+        "segments": [
+          {
+            "ruby": "下",
+            "rt": "お"
+          },
+          {
+            "ruby": "ろす"
+          }
+        ]
+      },
+      {
+        "word": "下さる",
+        "reading": "くださる",
+        "segments": [
+          {
+            "ruby": "下",
+            "rt": "くだ"
+          },
+          {
+            "ruby": "さる"
+          }
+        ]
+      },
+      {
+        "word": "下す",
+        "reading": "くだす",
+        "segments": [
+          {
+            "ruby": "下",
+            "rt": "くだ"
+          },
+          {
+            "ruby": "す"
+          }
+        ]
+      },
+      {
+        "word": "下り",
+        "reading": "くだり",
+        "segments": [
+          {
+            "ruby": "下",
+            "rt": "くだ"
+          },
+          {
+            "ruby": "り"
+          }
+        ]
+      },
+      {
+        "word": "下る",
+        "reading": "くだる",
+        "segments": [
+          {
+            "ruby": "下",
+            "rt": "くだ"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      },
+      {
+        "word": "下がる",
+        "reading": "さがる",
+        "segments": [
+          {
+            "ruby": "下",
+            "rt": "さ"
+          },
+          {
+            "ruby": "がる"
+          }
+        ]
+      },
+      {
+        "word": "下げる",
+        "reading": "さげる",
+        "segments": [
+          {
+            "ruby": "下",
+            "rt": "さ"
+          },
+          {
+            "ruby": "げる"
+          }
+        ]
+      },
+      {
+        "word": "下",
+        "reading": "した",
+        "segments": [
+          {
+            "ruby": "下",
+            "rt": "した"
+          }
+        ]
+      },
+      {
+        "word": "下",
+        "reading": "しも",
+        "segments": [
+          {
+            "ruby": "下",
+            "rt": "しも"
+          }
+        ]
+      },
+      {
+        "word": "下",
+        "reading": "もと",
+        "segments": [
+          {
+            "ruby": "下",
+            "rt": "もと"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 20,
     "kanji": "中",
-    "reading": "あた.る / うち / なか / チュウ",
+    "reading": "あた.る / うち / なか / ちゅう",
     "meaning": "center, in, inside, mean, middle",
     "isRadical": false,
     "onyomi": [
-      "チュウ"
+      "ちゅう"
     ],
     "kunyomi": [
       "あた.る",
@@ -2859,17 +3462,52 @@ export const kanjiData = [
         "reading": "ちゅうか",
         "meaning": "China"
       }
+    ],
+    "standalone": [
+      {
+        "word": "中る",
+        "reading": "あたる",
+        "segments": [
+          {
+            "ruby": "中",
+            "rt": "あた"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      },
+      {
+        "word": "中",
+        "reading": "うち",
+        "segments": [
+          {
+            "ruby": "中",
+            "rt": "うち"
+          }
+        ]
+      },
+      {
+        "word": "中",
+        "reading": "なか",
+        "segments": [
+          {
+            "ruby": "中",
+            "rt": "なか"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 21,
     "kanji": "大",
-    "reading": "-おお.いに / おお- / おお.きい / タイ / ダイ",
+    "reading": "-おお.いに / おお- / おお.きい / たい / だい",
     "meaning": "big, large",
     "isRadical": false,
     "onyomi": [
-      "タイ",
-      "ダイ"
+      "たい",
+      "だい"
     ],
     "kunyomi": [
       "-おお.いに",
@@ -3002,17 +3640,32 @@ export const kanjiData = [
         "reading": "おおどおり",
         "meaning": "main street, avenue, boulevard"
       }
+    ],
+    "standalone": [
+      {
+        "word": "大きい",
+        "reading": "おおきい",
+        "segments": [
+          {
+            "ruby": "大",
+            "rt": "おお"
+          },
+          {
+            "ruby": "きい"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 22,
     "kanji": "太",
-    "reading": "ふと.い / ふと.る / タ / タイ",
+    "reading": "ふと.い / ふと.る / た / たい",
     "meaning": "big around, plump, thick",
     "isRadical": false,
     "onyomi": [
-      "タ",
-      "タイ"
+      "た",
+      "たい"
     ],
     "kunyomi": [
       "ふと.い",
@@ -3144,16 +3797,44 @@ export const kanjiData = [
         "reading": "たいへいようせんそう",
         "meaning": "Pacific War (1941-1945)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "太い",
+        "reading": "ふとい",
+        "segments": [
+          {
+            "ruby": "太",
+            "rt": "ふと"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      },
+      {
+        "word": "太る",
+        "reading": "ふとる",
+        "segments": [
+          {
+            "ruby": "太",
+            "rt": "ふと"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 23,
     "kanji": "小",
-    "reading": "お- / こ- / さ- / ちい.さい / ショウ",
+    "reading": "お- / こ- / さ- / ちい.さい / しょう",
     "meaning": "little, small",
     "isRadical": false,
     "onyomi": [
-      "ショウ"
+      "しょう"
     ],
     "kunyomi": [
       "お-",
@@ -3287,16 +3968,31 @@ export const kanjiData = [
         "reading": "さいしょうげん",
         "meaning": "minimum, lowest, minimal"
       }
+    ],
+    "standalone": [
+      {
+        "word": "小さい",
+        "reading": "ちいさい",
+        "segments": [
+          {
+            "ruby": "小",
+            "rt": "ちい"
+          },
+          {
+            "ruby": "さい"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 24,
     "kanji": "少",
-    "reading": "すく.ない / すこ.し / ショウ",
+    "reading": "すく.ない / すこ.し / しょう",
     "meaning": "few, little",
     "isRadical": false,
     "onyomi": [
-      "ショウ"
+      "しょう"
     ],
     "kunyomi": [
       "すく.ない",
@@ -3428,17 +4124,45 @@ export const kanjiData = [
         "reading": "しょう",
         "meaning": "assistant vice-minister (ritsuryō system, early Meiji period)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "少ない",
+        "reading": "すくない",
+        "segments": [
+          {
+            "ruby": "少",
+            "rt": "すく"
+          },
+          {
+            "ruby": "ない"
+          }
+        ]
+      },
+      {
+        "word": "少し",
+        "reading": "すこし",
+        "segments": [
+          {
+            "ruby": "少",
+            "rt": "すこ"
+          },
+          {
+            "ruby": "し"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 25,
     "kanji": "入",
-    "reading": "-い.り / -い.る / -い.れ / い.る / い.れる / はい.る / ジュ / ニュウ",
+    "reading": "-い.り / -い.る / -い.れ / い.る / い.れる / はい.る / じゅ / にゅう",
     "meaning": "enter, insert",
     "isRadical": false,
     "onyomi": [
-      "ジュ",
-      "ニュウ"
+      "じゅ",
+      "にゅう"
     ],
     "kunyomi": [
       "-い.り",
@@ -3574,17 +4298,58 @@ export const kanjiData = [
         "reading": "かにゅう",
         "meaning": "joining (a club, organization, etc.), becoming a member, entry"
       }
+    ],
+    "standalone": [
+      {
+        "word": "入る",
+        "reading": "いる",
+        "segments": [
+          {
+            "ruby": "入",
+            "rt": "い"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      },
+      {
+        "word": "入れる",
+        "reading": "いれる",
+        "segments": [
+          {
+            "ruby": "入",
+            "rt": "い"
+          },
+          {
+            "ruby": "れる"
+          }
+        ]
+      },
+      {
+        "word": "入る",
+        "reading": "はいる",
+        "segments": [
+          {
+            "ruby": "入",
+            "rt": "はい"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 26,
     "kanji": "出",
-    "reading": "-だ.す / -で / い.だす / い.でる / だ.す / で.る / シュツ / スイ",
+    "reading": "-だ.す / -で / い.だす / い.でる / だ.す / で.る / しゅつ / すい",
     "meaning": "come out, exit, go out, leave, protrude, put out",
     "isRadical": false,
     "onyomi": [
-      "シュツ",
-      "スイ"
+      "しゅつ",
+      "すい"
     ],
     "kunyomi": [
       "-だ.す",
@@ -3720,18 +4485,72 @@ export const kanjiData = [
         "reading": "ししゅつ",
         "meaning": "expenditure, disbursement, expenses"
       }
+    ],
+    "standalone": [
+      {
+        "word": "出だす",
+        "reading": "いだす",
+        "segments": [
+          {
+            "ruby": "出",
+            "rt": "い"
+          },
+          {
+            "ruby": "だす"
+          }
+        ]
+      },
+      {
+        "word": "出でる",
+        "reading": "いでる",
+        "segments": [
+          {
+            "ruby": "出",
+            "rt": "い"
+          },
+          {
+            "ruby": "でる"
+          }
+        ]
+      },
+      {
+        "word": "出す",
+        "reading": "だす",
+        "segments": [
+          {
+            "ruby": "出",
+            "rt": "だ"
+          },
+          {
+            "ruby": "す"
+          }
+        ]
+      },
+      {
+        "word": "出る",
+        "reading": "でる",
+        "segments": [
+          {
+            "ruby": "出",
+            "rt": "で"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 27,
     "kanji": "子",
-    "reading": "-こ / こ / ね / シ / ス / ツ",
+    "reading": "-こ / こ / ね / し / す / つ",
     "meaning": "11PM-1AM, child, first sign of Chinese zodiac, sign of the rat",
     "isRadical": false,
     "onyomi": [
-      "シ",
-      "ス",
-      "ツ"
+      "し",
+      "す",
+      "つ"
     ],
     "kunyomi": [
       "-こ",
@@ -3864,16 +4683,38 @@ export const kanjiData = [
         "reading": "げんしりょく",
         "meaning": "atomic energy, nuclear power"
       }
+    ],
+    "standalone": [
+      {
+        "word": "子",
+        "reading": "こ",
+        "segments": [
+          {
+            "ruby": "子",
+            "rt": "こ"
+          }
+        ]
+      },
+      {
+        "word": "子",
+        "reading": "ね",
+        "segments": [
+          {
+            "ruby": "子",
+            "rt": "ね"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 28,
     "kanji": "学",
-    "reading": "まな.ぶ / ガク",
+    "reading": "まな.ぶ / がく",
     "meaning": "learning, science, study",
     "isRadical": false,
     "onyomi": [
-      "ガク"
+      "がく"
     ],
     "kunyomi": [
       "まな.ぶ"
@@ -4004,16 +4845,31 @@ export const kanjiData = [
         "reading": "ざいがく",
         "meaning": "attending (school, college, etc.), being enrolled, being a student"
       }
+    ],
+    "standalone": [
+      {
+        "word": "学ぶ",
+        "reading": "まなぶ",
+        "segments": [
+          {
+            "ruby": "学",
+            "rt": "まな"
+          },
+          {
+            "ruby": "ぶ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 29,
     "kanji": "四",
-    "reading": "よ / よ.つ / よっ.つ / よん / シ",
+    "reading": "よ / よ.つ / よっ.つ / よん / し",
     "meaning": "four",
     "isRadical": false,
     "onyomi": [
-      "シ"
+      "し"
     ],
     "kunyomi": [
       "よ",
@@ -4147,16 +5003,41 @@ export const kanjiData = [
         "reading": "よじ",
         "meaning": "four o'clock"
       }
+    ],
+    "standalone": [
+      {
+        "word": "四",
+        "reading": "よん",
+        "segments": [
+          {
+            "ruby": "四",
+            "rt": "よん"
+          }
+        ]
+      },
+      {
+        "word": "四つ",
+        "reading": "よっつ",
+        "segments": [
+          {
+            "ruby": "四",
+            "rt": "よっ"
+          },
+          {
+            "ruby": "つ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 30,
     "kanji": "五",
-    "reading": "いつ / いつ.つ / ゴ",
+    "reading": "いつ / いつ.つ / ご",
     "meaning": "five",
     "isRadical": false,
     "onyomi": [
-      "ゴ"
+      "ご"
     ],
     "kunyomi": [
       "いつ",
@@ -4288,17 +5169,42 @@ export const kanjiData = [
         "reading": "ごきょう",
         "meaning": "The Five Classics (of Confucianism)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "五",
+        "reading": "ご",
+        "segments": [
+          {
+            "ruby": "五",
+            "rt": "ご"
+          }
+        ]
+      },
+      {
+        "word": "五つ",
+        "reading": "いつつ",
+        "segments": [
+          {
+            "ruby": "五",
+            "rt": "いつ"
+          },
+          {
+            "ruby": "つ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 31,
     "kanji": "六",
-    "reading": "む / む.つ / むい / むっ.つ / リク / ロク",
+    "reading": "む / む.つ / むい / むっ.つ / りく / ろく",
     "meaning": "six",
     "isRadical": false,
     "onyomi": [
-      "リク",
-      "ロク"
+      "りく",
+      "ろく"
     ],
     "kunyomi": [
       "む",
@@ -4432,16 +5338,41 @@ export const kanjiData = [
         "reading": "ろっこん",
         "meaning": "six sense organs (eyes, ears, nose, tongue, body, and mind)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "六",
+        "reading": "ろく",
+        "segments": [
+          {
+            "ruby": "六",
+            "rt": "ろく"
+          }
+        ]
+      },
+      {
+        "word": "六つ",
+        "reading": "むっつ",
+        "segments": [
+          {
+            "ruby": "六",
+            "rt": "むっ"
+          },
+          {
+            "ruby": "つ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 32,
     "kanji": "七",
-    "reading": "なな / なな.つ / なの / シチ",
+    "reading": "なな / なな.つ / なの / しち",
     "meaning": "seven",
     "isRadical": false,
     "onyomi": [
-      "シチ"
+      "しち"
     ],
     "kunyomi": [
       "なな",
@@ -4574,17 +5505,42 @@ export const kanjiData = [
         "reading": "しちぶつ",
         "meaning": "the seven previous incarnations of Buddha"
       }
+    ],
+    "standalone": [
+      {
+        "word": "七",
+        "reading": "なな",
+        "segments": [
+          {
+            "ruby": "七",
+            "rt": "なな"
+          }
+        ]
+      },
+      {
+        "word": "七つ",
+        "reading": "ななつ",
+        "segments": [
+          {
+            "ruby": "七",
+            "rt": "なな"
+          },
+          {
+            "ruby": "つ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 33,
     "kanji": "八",
-    "reading": "や / や.つ / やっ.つ / よう / ハチ / ハツ",
+    "reading": "や / や.つ / やっ.つ / よう / はち / はつ",
     "meaning": "eight, eight radical (no. 12)",
     "isRadical": false,
     "onyomi": [
-      "ハチ",
-      "ハツ"
+      "はち",
+      "はつ"
     ],
     "kunyomi": [
       "や",
@@ -4718,17 +5674,42 @@ export const kanjiData = [
         "reading": "じゅうはちにち",
         "meaning": "18 days"
       }
+    ],
+    "standalone": [
+      {
+        "word": "八",
+        "reading": "はち",
+        "segments": [
+          {
+            "ruby": "八",
+            "rt": "はち"
+          }
+        ]
+      },
+      {
+        "word": "八つ",
+        "reading": "やつ",
+        "segments": [
+          {
+            "ruby": "八",
+            "rt": "や"
+          },
+          {
+            "ruby": "つ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 34,
     "kanji": "九",
-    "reading": "ここの / ここの.つ / キュウ / ク",
+    "reading": "ここの / ここの.つ / きゅう / く",
     "meaning": "nine",
     "isRadical": false,
     "onyomi": [
-      "キュウ",
-      "ク"
+      "きゅう",
+      "く"
     ],
     "kunyomi": [
       "ここの",
@@ -4860,18 +5841,43 @@ export const kanjiData = [
         "reading": "きゅうわり",
         "meaning": "ninety percent"
       }
+    ],
+    "standalone": [
+      {
+        "word": "九",
+        "reading": "きゅう",
+        "segments": [
+          {
+            "ruby": "九",
+            "rt": "きゅう"
+          }
+        ]
+      },
+      {
+        "word": "九つ",
+        "reading": "ここのつ",
+        "segments": [
+          {
+            "ruby": "九",
+            "rt": "ここの"
+          },
+          {
+            "ruby": "つ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 35,
     "kanji": "十",
-    "reading": "と / とお / ジッ / ジュウ / ジュッ",
+    "reading": "と / とお / じっ / じゅう / じゅっ",
     "meaning": "ten",
     "isRadical": false,
     "onyomi": [
-      "ジッ",
-      "ジュウ",
-      "ジュッ"
+      "じっ",
+      "じゅう",
+      "じゅっ"
     ],
     "kunyomi": [
       "そ",
@@ -5004,16 +6010,38 @@ export const kanjiData = [
         "reading": "じっぷん",
         "meaning": "10 minutes"
       }
+    ],
+    "standalone": [
+      {
+        "word": "十",
+        "reading": "じゅう",
+        "segments": [
+          {
+            "ruby": "十",
+            "rt": "じゅう"
+          }
+        ]
+      },
+      {
+        "word": "十",
+        "reading": "とお",
+        "segments": [
+          {
+            "ruby": "十",
+            "rt": "とお"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 36,
     "kanji": "古",
-    "reading": "-ふる.す / ふる- / ふる.い / コ",
+    "reading": "-ふる.す / ふる- / ふる.い / こ",
     "meaning": "old",
     "isRadical": false,
     "onyomi": [
-      "コ"
+      "こ"
     ],
     "kunyomi": [
       "-ふる.す",
@@ -5146,17 +6174,32 @@ export const kanjiData = [
         "reading": "かいこ",
         "meaning": "reminiscence, nostalgia, thinking fondly of the past"
       }
+    ],
+    "standalone": [
+      {
+        "word": "古い",
+        "reading": "ふるい",
+        "segments": [
+          {
+            "ruby": "古",
+            "rt": "ふる"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 37,
     "kanji": "百",
-    "reading": "もも / ヒャク / ビャク",
+    "reading": "もも / ひゃく / びゃく",
     "meaning": "hundred",
     "isRadical": false,
     "onyomi": [
-      "ヒャク",
-      "ビャク"
+      "ひゃく",
+      "びゃく"
     ],
     "kunyomi": [
       "もも"
@@ -5287,16 +6330,28 @@ export const kanjiData = [
         "reading": "にひゃくはつか",
         "meaning": "220th day, end of the storm period"
       }
+    ],
+    "standalone": [
+      {
+        "word": "百",
+        "reading": "ひゃく",
+        "segments": [
+          {
+            "ruby": "百",
+            "rt": "ひゃく"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 38,
     "kanji": "千",
-    "reading": "ち / セン",
+    "reading": "ち / せん",
     "meaning": "thousand",
     "isRadical": false,
     "onyomi": [
-      "セン"
+      "せん"
     ],
     "kunyomi": [
       "ち"
@@ -5427,17 +6482,29 @@ export const kanjiData = [
         "reading": "せんにち",
         "meaning": "one thousand days"
       }
+    ],
+    "standalone": [
+      {
+        "word": "千",
+        "reading": "せん",
+        "segments": [
+          {
+            "ruby": "千",
+            "rt": "せん"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 39,
     "kanji": "万",
-    "reading": "よろず / バン / マン",
+    "reading": "よろず / ばん / まん",
     "meaning": "10,000, ten thousand",
     "isRadical": false,
     "onyomi": [
-      "バン",
-      "マン"
+      "ばん",
+      "まん"
     ],
     "kunyomi": [
       "よろず"
@@ -5568,16 +6635,28 @@ export const kanjiData = [
         "reading": "まんじょう",
         "meaning": "all (present)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "万",
+        "reading": "まん",
+        "segments": [
+          {
+            "ruby": "万",
+            "rt": "まん"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 40,
     "kanji": "円",
-    "reading": "まど / まど.か / まる / まる.い / まろ.やか / エン",
+    "reading": "まど / まど.か / まる / まる.い / まろ.やか / えん",
     "meaning": "circle, round, yen",
     "isRadical": false,
     "onyomi": [
-      "エン"
+      "えん"
     ],
     "kunyomi": [
       "まど",
@@ -5712,17 +6791,29 @@ export const kanjiData = [
         "reading": "とつえん",
         "meaning": "convexity"
       }
+    ],
+    "standalone": [
+      {
+        "word": "円",
+        "reading": "えん",
+        "segments": [
+          {
+            "ruby": "円",
+            "rt": "えん"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 41,
     "kanji": "日",
-    "reading": "-か / -び / ひ / ジツ / ニチ",
+    "reading": "-か / -び / ひ / じつ / にち",
     "meaning": "Japan, counter for days, day, sun",
     "isRadical": false,
     "onyomi": [
-      "ジツ",
-      "ニチ"
+      "じつ",
+      "にち"
     ],
     "kunyomi": [
       "-か",
@@ -5855,17 +6946,29 @@ export const kanjiData = [
         "reading": "にっか",
         "meaning": "daily routine, daily work, daily lesson"
       }
+    ],
+    "standalone": [
+      {
+        "word": "日",
+        "reading": "ひ",
+        "segments": [
+          {
+            "ruby": "日",
+            "rt": "ひ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 42,
     "kanji": "月",
-    "reading": "つき / ガツ / ゲツ",
+    "reading": "つき / がつ / げつ",
     "meaning": "month, moon",
     "isRadical": false,
     "onyomi": [
-      "ガツ",
-      "ゲツ"
+      "がつ",
+      "げつ"
     ],
     "kunyomi": [
       "つき"
@@ -5996,18 +7099,30 @@ export const kanjiData = [
         "reading": "つきひ",
         "meaning": "the Moon and the Sun"
       }
+    ],
+    "standalone": [
+      {
+        "word": "月",
+        "reading": "つき",
+        "segments": [
+          {
+            "ruby": "月",
+            "rt": "つき"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 43,
     "kanji": "明",
-    "reading": "-あ.け / あ.かす / あ.かり / あ.く / あ.くる / あ.ける / あか.らむ / あか.るい / あか.るむ / あき.らか / ミョウ / ミン / メイ",
+    "reading": "-あ.け / あ.かす / あ.かり / あ.く / あ.くる / あ.ける / あか.らむ / あか.るい / あか.るむ / あき.らか / みょう / みん / めい",
     "meaning": "bright, light",
     "isRadical": false,
     "onyomi": [
-      "ミョウ",
-      "ミン",
-      "メイ"
+      "みょう",
+      "みん",
+      "めい"
     ],
     "kunyomi": [
       "-あ.け",
@@ -6147,18 +7262,137 @@ export const kanjiData = [
         "reading": "みょうじょう",
         "meaning": "morning star, Venus"
       }
+    ],
+    "standalone": [
+      {
+        "word": "明かす",
+        "reading": "あかす",
+        "segments": [
+          {
+            "ruby": "明",
+            "rt": "あ"
+          },
+          {
+            "ruby": "かす"
+          }
+        ]
+      },
+      {
+        "word": "明かり",
+        "reading": "あかり",
+        "segments": [
+          {
+            "ruby": "明",
+            "rt": "あ"
+          },
+          {
+            "ruby": "かり"
+          }
+        ]
+      },
+      {
+        "word": "明く",
+        "reading": "あく",
+        "segments": [
+          {
+            "ruby": "明",
+            "rt": "あ"
+          },
+          {
+            "ruby": "く"
+          }
+        ]
+      },
+      {
+        "word": "明くる",
+        "reading": "あくる",
+        "segments": [
+          {
+            "ruby": "明",
+            "rt": "あ"
+          },
+          {
+            "ruby": "くる"
+          }
+        ]
+      },
+      {
+        "word": "明ける",
+        "reading": "あける",
+        "segments": [
+          {
+            "ruby": "明",
+            "rt": "あ"
+          },
+          {
+            "ruby": "ける"
+          }
+        ]
+      },
+      {
+        "word": "明らむ",
+        "reading": "あからむ",
+        "segments": [
+          {
+            "ruby": "明",
+            "rt": "あか"
+          },
+          {
+            "ruby": "らむ"
+          }
+        ]
+      },
+      {
+        "word": "明るい",
+        "reading": "あかるい",
+        "segments": [
+          {
+            "ruby": "明",
+            "rt": "あか"
+          },
+          {
+            "ruby": "るい"
+          }
+        ]
+      },
+      {
+        "word": "明るむ",
+        "reading": "あかるむ",
+        "segments": [
+          {
+            "ruby": "明",
+            "rt": "あか"
+          },
+          {
+            "ruby": "るむ"
+          }
+        ]
+      },
+      {
+        "word": "明らか",
+        "reading": "あきらか",
+        "segments": [
+          {
+            "ruby": "明",
+            "rt": "あき"
+          },
+          {
+            "ruby": "らか"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 44,
     "kanji": "立",
-    "reading": "-た.つ / -た.て / -た.てる / -だ.て / -だ.てる / た.ち- / た.つ / た.て- / た.てる / たて- / リットル / リツ / リュウ",
+    "reading": "-た.つ / -た.て / -た.てる / -だ.て / -だ.てる / た.ち- / た.つ / た.て- / た.てる / たて- / りっとる / りつ / りゅう",
     "meaning": "erect, rise, set up, stand up",
     "isRadical": false,
     "onyomi": [
-      "リットル",
-      "リツ",
-      "リュウ"
+      "りっとる",
+      "りつ",
+      "りゅう"
     ],
     "kunyomi": [
       "-た.つ",
@@ -6298,18 +7532,46 @@ export const kanjiData = [
         "reading": "せいりつ",
         "meaning": "being valid (of a theory, argument, etc.), holding, applying"
       }
+    ],
+    "standalone": [
+      {
+        "word": "立つ",
+        "reading": "たつ",
+        "segments": [
+          {
+            "ruby": "立",
+            "rt": "た"
+          },
+          {
+            "ruby": "つ"
+          }
+        ]
+      },
+      {
+        "word": "立てる",
+        "reading": "たてる",
+        "segments": [
+          {
+            "ruby": "立",
+            "rt": "た"
+          },
+          {
+            "ruby": "てる"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 45,
     "kanji": "音",
-    "reading": "おと / ね / -ノン / イン / オン",
+    "reading": "おと / ね / -のん / いん / おん",
     "meaning": "noise, sound",
     "isRadical": false,
     "onyomi": [
-      "-ノン",
-      "イン",
-      "オン"
+      "-のん",
+      "いん",
+      "おん"
     ],
     "kunyomi": [
       "おと",
@@ -6441,16 +7703,38 @@ export const kanjiData = [
         "reading": "おんせつ",
         "meaning": "syllable"
       }
+    ],
+    "standalone": [
+      {
+        "word": "音",
+        "reading": "おと",
+        "segments": [
+          {
+            "ruby": "音",
+            "rt": "おと"
+          }
+        ]
+      },
+      {
+        "word": "音",
+        "reading": "ね",
+        "segments": [
+          {
+            "ruby": "音",
+            "rt": "ね"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 46,
     "kanji": "暗",
-    "reading": "くら.い / くら.む / くれ.る / アン",
+    "reading": "くら.い / くら.む / くれ.る / あん",
     "meaning": "be blinded, darkness, disappear, grow dark, informal, shade",
     "isRadical": false,
     "onyomi": [
-      "アン"
+      "あん"
     ],
     "kunyomi": [
       "くら.い",
@@ -6583,16 +7867,57 @@ export const kanjiData = [
         "reading": "あんりょく",
         "meaning": "dark green"
       }
+    ],
+    "standalone": [
+      {
+        "word": "暗い",
+        "reading": "くらい",
+        "segments": [
+          {
+            "ruby": "暗",
+            "rt": "くら"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      },
+      {
+        "word": "暗む",
+        "reading": "くらむ",
+        "segments": [
+          {
+            "ruby": "暗",
+            "rt": "くら"
+          },
+          {
+            "ruby": "む"
+          }
+        ]
+      },
+      {
+        "word": "暗る",
+        "reading": "くれる",
+        "segments": [
+          {
+            "ruby": "暗",
+            "rt": "くれ"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 47,
     "kanji": "火",
-    "reading": "-び / ひ / ほ- / カ",
+    "reading": "-び / ひ / ほ- / か",
     "meaning": "fire",
     "isRadical": false,
     "onyomi": [
-      "カ"
+      "か"
     ],
     "kunyomi": [
       "-び",
@@ -6725,16 +8050,28 @@ export const kanjiData = [
         "reading": "たいか",
         "meaning": "large fire"
       }
+    ],
+    "standalone": [
+      {
+        "word": "火",
+        "reading": "ひ",
+        "segments": [
+          {
+            "ruby": "火",
+            "rt": "ひ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 48,
     "kanji": "水",
-    "reading": "みず / みず- / スイ",
+    "reading": "みず / みず- / すい",
     "meaning": "water",
     "isRadical": false,
     "onyomi": [
-      "スイ"
+      "すい"
     ],
     "kunyomi": [
       "みず",
@@ -6866,17 +8203,29 @@ export const kanjiData = [
         "reading": "すいへい",
         "meaning": "horizontal, level, even"
       }
+    ],
+    "standalone": [
+      {
+        "word": "水",
+        "reading": "みず",
+        "segments": [
+          {
+            "ruby": "水",
+            "rt": "みず"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 49,
     "kanji": "土",
-    "reading": "つち / ト / ド",
+    "reading": "つち / と / ど",
     "meaning": "Turkey, earth, ground, soil",
     "isRadical": false,
     "onyomi": [
-      "ト",
-      "ド"
+      "と",
+      "ど"
     ],
     "kunyomi": [
       "つち"
@@ -7007,16 +8356,28 @@ export const kanjiData = [
         "reading": "どぼく",
         "meaning": "engineering works, civil engineering, public works"
       }
+    ],
+    "standalone": [
+      {
+        "word": "土",
+        "reading": "つち",
+        "segments": [
+          {
+            "ruby": "土",
+            "rt": "つち"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 50,
     "kanji": "国",
-    "reading": "くに / コク",
+    "reading": "くに / こく",
     "meaning": "country",
     "isRadical": false,
     "onyomi": [
-      "コク"
+      "こく"
     ],
     "kunyomi": [
       "くに"
@@ -7147,16 +8508,28 @@ export const kanjiData = [
         "reading": "こっか",
         "meaning": "state, country, nation"
       }
+    ],
+    "standalone": [
+      {
+        "word": "国",
+        "reading": "くに",
+        "segments": [
+          {
+            "ruby": "国",
+            "rt": "くに"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 51,
     "kanji": "全",
-    "reading": "すべ.て / まった.く / ゼン",
+    "reading": "すべ.て / まった.く / ぜん",
     "meaning": "all, complete, entire, fulfill, whole",
     "isRadical": false,
     "onyomi": [
-      "ゼン"
+      "ぜん"
     ],
     "kunyomi": [
       "すべ.て",
@@ -7288,18 +8661,46 @@ export const kanjiData = [
         "reading": "ぜんかい",
         "meaning": "whole assembly"
       }
+    ],
+    "standalone": [
+      {
+        "word": "全て",
+        "reading": "すべて",
+        "segments": [
+          {
+            "ruby": "全",
+            "rt": "すべ"
+          },
+          {
+            "ruby": "て"
+          }
+        ]
+      },
+      {
+        "word": "全く",
+        "reading": "まったく",
+        "segments": [
+          {
+            "ruby": "全",
+            "rt": "まった"
+          },
+          {
+            "ruby": "く"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 52,
     "kanji": "金",
-    "reading": "-がね / かな- / かね / キン / コン / ゴン",
+    "reading": "-がね / かな- / かね / きん / こん / ごん",
     "meaning": "gold",
     "isRadical": false,
     "onyomi": [
-      "キン",
-      "コン",
-      "ゴン"
+      "きん",
+      "こん",
+      "ごん"
     ],
     "kunyomi": [
       "-がね",
@@ -7432,18 +8833,30 @@ export const kanjiData = [
         "reading": "きんゆう",
         "meaning": "monetary, financial, credit"
       }
+    ],
+    "standalone": [
+      {
+        "word": "金",
+        "reading": "かね",
+        "segments": [
+          {
+            "ruby": "金",
+            "rt": "かね"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 53,
     "kanji": "工",
-    "reading": "ク / グ / コウ",
+    "reading": "く / ぐ / こう",
     "meaning": "construction, craft, katakana e radical (no. 48)",
     "isRadical": false,
     "onyomi": [
-      "ク",
-      "グ",
-      "コウ"
+      "く",
+      "ぐ",
+      "こう"
     ],
     "kunyomi": [],
     "examples": [
@@ -7572,17 +8985,29 @@ export const kanjiData = [
         "reading": "こうむ",
         "meaning": "engineering, engineering works"
       }
+    ],
+    "standalone": [
+      {
+        "word": "工",
+        "reading": "こう",
+        "segments": [
+          {
+            "ruby": "工",
+            "rt": "こう"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 54,
     "kanji": "左",
-    "reading": "ひだり / サ / シャ",
+    "reading": "ひだり / さ / しゃ",
     "meaning": "left",
     "isRadical": false,
     "onyomi": [
-      "サ",
-      "シャ"
+      "さ",
+      "しゃ"
     ],
     "kunyomi": [
       "ひだり"
@@ -7713,17 +9138,29 @@ export const kanjiData = [
         "reading": "さちょく",
         "meaning": "left liner"
       }
+    ],
+    "standalone": [
+      {
+        "word": "左",
+        "reading": "ひだり",
+        "segments": [
+          {
+            "ruby": "左",
+            "rt": "ひだり"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 55,
     "kanji": "右",
-    "reading": "みぎ / ウ / ユウ",
+    "reading": "みぎ / う / ゆう",
     "meaning": "right",
     "isRadical": false,
     "onyomi": [
-      "ウ",
-      "ユウ"
+      "う",
+      "ゆう"
     ],
     "kunyomi": [
       "みぎ"
@@ -7854,16 +9291,28 @@ export const kanjiData = [
         "reading": "みぎめ",
         "meaning": "right eye"
       }
+    ],
+    "standalone": [
+      {
+        "word": "右",
+        "reading": "みぎ",
+        "segments": [
+          {
+            "ruby": "右",
+            "rt": "みぎ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 56,
     "kanji": "友",
-    "reading": "とも / ユウ",
+    "reading": "とも / ゆう",
     "meaning": "friend",
     "isRadical": false,
     "onyomi": [
-      "ユウ"
+      "ゆう"
     ],
     "kunyomi": [
       "とも"
@@ -7994,16 +9443,28 @@ export const kanjiData = [
         "reading": "ゆうとう",
         "meaning": "allied political party"
       }
+    ],
+    "standalone": [
+      {
+        "word": "友",
+        "reading": "とも",
+        "segments": [
+          {
+            "ruby": "友",
+            "rt": "とも"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 57,
     "kanji": "何",
-    "reading": "なに / なに- / なん / なん- / カ",
+    "reading": "なに / なに- / なん / なん- / か",
     "meaning": "what",
     "isRadical": false,
     "onyomi": [
-      "カ"
+      "か"
     ],
     "kunyomi": [
       "なに",
@@ -8137,17 +9598,39 @@ export const kanjiData = [
         "reading": "なにやら",
         "meaning": "for some reason"
       }
+    ],
+    "standalone": [
+      {
+        "word": "何",
+        "reading": "なに",
+        "segments": [
+          {
+            "ruby": "何",
+            "rt": "なに"
+          }
+        ]
+      },
+      {
+        "word": "何",
+        "reading": "なん",
+        "segments": [
+          {
+            "ruby": "何",
+            "rt": "なん"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 58,
     "kanji": "手",
-    "reading": "-て / た- / て / て- / シュ / ズ",
+    "reading": "-て / た- / て / て- / しゅ / ず",
     "meaning": "hand",
     "isRadical": false,
     "onyomi": [
-      "シュ",
-      "ズ"
+      "しゅ",
+      "ず"
     ],
     "kunyomi": [
       "-て",
@@ -8281,17 +9764,29 @@ export const kanjiData = [
         "reading": "てはい",
         "meaning": "search (by police)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "手",
+        "reading": "て",
+        "segments": [
+          {
+            "ruby": "手",
+            "rt": "て"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 59,
     "kanji": "切",
-    "reading": "-き.り / -き.る / -き.れ / -き.れる / -ぎ.り / -ぎ.れ / き.り / き.る / き.れ / き.れる / サイ / セツ",
+    "reading": "-き.り / -き.る / -き.れ / -き.れる / -ぎ.り / -ぎ.れ / き.り / き.る / き.れ / き.れる / さい / せつ",
     "meaning": "be sharp, cut, cutoff",
     "isRadical": false,
     "onyomi": [
-      "サイ",
-      "セツ"
+      "さい",
+      "せつ"
     ],
     "kunyomi": [
       "-き.り",
@@ -8431,18 +9926,33 @@ export const kanjiData = [
         "reading": "とぎれる",
         "meaning": "to break off, to come to an end, to be interrupted"
       }
+    ],
+    "standalone": [
+      {
+        "word": "切る",
+        "reading": "きる",
+        "segments": [
+          {
+            "ruby": "切",
+            "rt": "き"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 60,
     "kanji": "分",
-    "reading": "わ.かつ / わ.かる / わ.かれる / わ.け / わ.ける / フン / ブ / ブン",
+    "reading": "わ.かつ / わ.かる / わ.かれる / わ.け / わ.ける / ふん / ぶ / ぶん",
     "meaning": "1%, chances, degree, duty, know, minute of time, one's lot, part, rate, segment, shaku/100, share, understand",
     "isRadical": false,
     "onyomi": [
-      "フン",
-      "ブ",
-      "ブン"
+      "ふん",
+      "ぶ",
+      "ぶん"
     ],
     "kunyomi": [
       "わ.かつ",
@@ -8577,17 +10087,29 @@ export const kanjiData = [
         "reading": "ぶんかつ",
         "meaning": "partition, division, separation"
       }
+    ],
+    "standalone": [
+      {
+        "word": "分",
+        "reading": "ふん",
+        "segments": [
+          {
+            "ruby": "分",
+            "rt": "ふん"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 61,
     "kanji": "今",
-    "reading": "いま / キン / コン",
+    "reading": "いま / きん / こん",
     "meaning": "now",
     "isRadical": false,
     "onyomi": [
-      "キン",
-      "コン"
+      "きん",
+      "こん"
     ],
     "kunyomi": [
       "いま"
@@ -8718,16 +10240,28 @@ export const kanjiData = [
         "reading": "こんしゅうまつ",
         "meaning": "this weekend"
       }
+    ],
+    "standalone": [
+      {
+        "word": "今",
+        "reading": "いま",
+        "segments": [
+          {
+            "ruby": "今",
+            "rt": "いま"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 62,
     "kanji": "半",
-    "reading": "なか.ば / ハン",
+    "reading": "なか.ば / はん",
     "meaning": "half, middle, odd number, part-, semi-",
     "isRadical": false,
     "onyomi": [
-      "ハン"
+      "はん"
     ],
     "kunyomi": [
       "なか.ば"
@@ -8858,16 +10392,28 @@ export const kanjiData = [
         "reading": "かはん",
         "meaning": "the greater part"
       }
+    ],
+    "standalone": [
+      {
+        "word": "半",
+        "reading": "はん",
+        "segments": [
+          {
+            "ruby": "半",
+            "rt": "はん"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 63,
     "kanji": "止",
-    "reading": "-さ.し / -さ.す / -と.める / -ど.まり / -ど.め / -や.む / と.まる / と.める / とど.まる / とど.め / とど.める / や.む / や.める / よ.す / シ",
+    "reading": "-さ.し / -さ.す / -と.める / -ど.まり / -ど.め / -や.む / と.まる / と.める / とど.まる / とど.め / とど.める / や.む / や.める / よ.す / し",
     "meaning": "halt, stop",
     "isRadical": false,
     "onyomi": [
-      "シ"
+      "し"
     ],
     "kunyomi": [
       "-さ.し",
@@ -9011,17 +10557,123 @@ export const kanjiData = [
         "reading": "いとめる",
         "meaning": "to shoot dead, to bring down (an animal)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "止まる",
+        "reading": "とまる",
+        "segments": [
+          {
+            "ruby": "止",
+            "rt": "と"
+          },
+          {
+            "ruby": "まる"
+          }
+        ]
+      },
+      {
+        "word": "止める",
+        "reading": "とめる",
+        "segments": [
+          {
+            "ruby": "止",
+            "rt": "と"
+          },
+          {
+            "ruby": "める"
+          }
+        ]
+      },
+      {
+        "word": "止まる",
+        "reading": "とどまる",
+        "segments": [
+          {
+            "ruby": "止",
+            "rt": "とど"
+          },
+          {
+            "ruby": "まる"
+          }
+        ]
+      },
+      {
+        "word": "止め",
+        "reading": "とどめ",
+        "segments": [
+          {
+            "ruby": "止",
+            "rt": "とど"
+          },
+          {
+            "ruby": "め"
+          }
+        ]
+      },
+      {
+        "word": "止める",
+        "reading": "とどめる",
+        "segments": [
+          {
+            "ruby": "止",
+            "rt": "とど"
+          },
+          {
+            "ruby": "める"
+          }
+        ]
+      },
+      {
+        "word": "止む",
+        "reading": "やむ",
+        "segments": [
+          {
+            "ruby": "止",
+            "rt": "や"
+          },
+          {
+            "ruby": "む"
+          }
+        ]
+      },
+      {
+        "word": "止める",
+        "reading": "やめる",
+        "segments": [
+          {
+            "ruby": "止",
+            "rt": "や"
+          },
+          {
+            "ruby": "める"
+          }
+        ]
+      },
+      {
+        "word": "止す",
+        "reading": "よす",
+        "segments": [
+          {
+            "ruby": "止",
+            "rt": "よ"
+          },
+          {
+            "ruby": "す"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 64,
     "kanji": "正",
-    "reading": "ただ.しい / ただ.す / まさ / まさ.に / ショウ / セイ",
+    "reading": "ただ.しい / ただ.す / まさ / まさ.に / しょう / せい",
     "meaning": "10**40, correct, justice, righteous",
     "isRadical": false,
     "onyomi": [
-      "ショウ",
-      "セイ"
+      "しょう",
+      "せい"
     ],
     "kunyomi": [
       "ただ.しい",
@@ -9155,18 +10807,69 @@ export const kanjiData = [
         "reading": "せいかい",
         "meaning": "correct answer, right solution, correct interpretation"
       }
+    ],
+    "standalone": [
+      {
+        "word": "正しい",
+        "reading": "ただしい",
+        "segments": [
+          {
+            "ruby": "正",
+            "rt": "ただ"
+          },
+          {
+            "ruby": "しい"
+          }
+        ]
+      },
+      {
+        "word": "正す",
+        "reading": "ただす",
+        "segments": [
+          {
+            "ruby": "正",
+            "rt": "ただ"
+          },
+          {
+            "ruby": "す"
+          }
+        ]
+      },
+      {
+        "word": "正",
+        "reading": "まさ",
+        "segments": [
+          {
+            "ruby": "正",
+            "rt": "まさ"
+          }
+        ]
+      },
+      {
+        "word": "正に",
+        "reading": "まさに",
+        "segments": [
+          {
+            "ruby": "正",
+            "rt": "まさ"
+          },
+          {
+            "ruby": "に"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 65,
     "kanji": "歩",
-    "reading": "あゆ.む / ある.く / フ / ブ / ホ",
+    "reading": "あゆ.む / ある.く / ふ / ぶ / ほ",
     "meaning": "counter for steps, walk",
     "isRadical": false,
     "onyomi": [
-      "フ",
-      "ブ",
-      "ホ"
+      "ふ",
+      "ぶ",
+      "ほ"
     ],
     "kunyomi": [
       "あゆ.む",
@@ -9298,16 +11001,44 @@ export const kanjiData = [
         "reading": "あゆみより",
         "meaning": "compromise, concession"
       }
+    ],
+    "standalone": [
+      {
+        "word": "歩む",
+        "reading": "あゆむ",
+        "segments": [
+          {
+            "ruby": "歩",
+            "rt": "あゆ"
+          },
+          {
+            "ruby": "む"
+          }
+        ]
+      },
+      {
+        "word": "歩く",
+        "reading": "あるく",
+        "segments": [
+          {
+            "ruby": "歩",
+            "rt": "ある"
+          },
+          {
+            "ruby": "く"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 66,
     "kanji": "足",
-    "reading": "あし / た.す / た.りる / た.る / ソク",
+    "reading": "あし / た.す / た.りる / た.る / そく",
     "meaning": "be sufficient, counter for pairs of footwear, foot, leg",
     "isRadical": false,
     "onyomi": [
-      "ソク"
+      "そく"
     ],
     "kunyomi": [
       "あし",
@@ -9441,16 +11172,67 @@ export const kanjiData = [
         "reading": "じくあし",
         "meaning": "pivot foot"
       }
+    ],
+    "standalone": [
+      {
+        "word": "足",
+        "reading": "あし",
+        "segments": [
+          {
+            "ruby": "足",
+            "rt": "あし"
+          }
+        ]
+      },
+      {
+        "word": "足す",
+        "reading": "たす",
+        "segments": [
+          {
+            "ruby": "足",
+            "rt": "た"
+          },
+          {
+            "ruby": "す"
+          }
+        ]
+      },
+      {
+        "word": "足りる",
+        "reading": "たりる",
+        "segments": [
+          {
+            "ruby": "足",
+            "rt": "た"
+          },
+          {
+            "ruby": "りる"
+          }
+        ]
+      },
+      {
+        "word": "足る",
+        "reading": "たる",
+        "segments": [
+          {
+            "ruby": "足",
+            "rt": "た"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 67,
     "kanji": "走",
-    "reading": "はし.る / ソウ",
+    "reading": "はし.る / そう",
     "meaning": "run",
     "isRadical": false,
     "onyomi": [
-      "ソウ"
+      "そう"
     ],
     "kunyomi": [
       "はし.る"
@@ -9581,16 +11363,31 @@ export const kanjiData = [
         "reading": "かっそう",
         "meaning": "taxiing, making a takeoff run"
       }
+    ],
+    "standalone": [
+      {
+        "word": "走る",
+        "reading": "はしる",
+        "segments": [
+          {
+            "ruby": "走",
+            "rt": "はし"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 68,
     "kanji": "起",
-    "reading": "お.きる / お.こす / お.こる / おこ.す / た.つ / キ",
+    "reading": "お.きる / お.こす / お.こる / おこ.す / た.つ / き",
     "meaning": "get up, rouse, wake up",
     "isRadical": false,
     "onyomi": [
-      "キ"
+      "き"
     ],
     "kunyomi": [
       "お.きる",
@@ -9725,16 +11522,83 @@ export const kanjiData = [
         "reading": "きばく",
         "meaning": "ignition, detonation, triggering"
       }
+    ],
+    "standalone": [
+      {
+        "word": "起きる",
+        "reading": "おきる",
+        "segments": [
+          {
+            "ruby": "起",
+            "rt": "お"
+          },
+          {
+            "ruby": "きる"
+          }
+        ]
+      },
+      {
+        "word": "起こす",
+        "reading": "おこす",
+        "segments": [
+          {
+            "ruby": "起",
+            "rt": "お"
+          },
+          {
+            "ruby": "こす"
+          }
+        ]
+      },
+      {
+        "word": "起こる",
+        "reading": "おこる",
+        "segments": [
+          {
+            "ruby": "起",
+            "rt": "お"
+          },
+          {
+            "ruby": "こる"
+          }
+        ]
+      },
+      {
+        "word": "起す",
+        "reading": "おこす",
+        "segments": [
+          {
+            "ruby": "起",
+            "rt": "おこ"
+          },
+          {
+            "ruby": "す"
+          }
+        ]
+      },
+      {
+        "word": "起つ",
+        "reading": "たつ",
+        "segments": [
+          {
+            "ruby": "起",
+            "rt": "た"
+          },
+          {
+            "ruby": "つ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 69,
     "kanji": "夕",
-    "reading": "ゆう / セキ",
+    "reading": "ゆう / せき",
     "meaning": "evening",
     "isRadical": false,
     "onyomi": [
-      "セキ"
+      "せき"
     ],
     "kunyomi": [
       "ゆう"
@@ -9865,17 +11729,29 @@ export const kanjiData = [
         "reading": "ゆうづき",
         "meaning": "the evening moon"
       }
+    ],
+    "standalone": [
+      {
+        "word": "夕",
+        "reading": "ゆう",
+        "segments": [
+          {
+            "ruby": "夕",
+            "rt": "ゆう"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 70,
     "kanji": "外",
-    "reading": "そと / と- / はず.す / はず.れる / ほか / ガイ / ゲ",
+    "reading": "そと / と- / はず.す / はず.れる / ほか / がい / げ",
     "meaning": "outside",
     "isRadical": false,
     "onyomi": [
-      "ガイ",
-      "ゲ"
+      "がい",
+      "げ"
     ],
     "kunyomi": [
       "そと",
@@ -10010,16 +11886,64 @@ export const kanjiData = [
         "reading": "がいこう",
         "meaning": "diplomacy"
       }
+    ],
+    "standalone": [
+      {
+        "word": "外",
+        "reading": "そと",
+        "segments": [
+          {
+            "ruby": "外",
+            "rt": "そと"
+          }
+        ]
+      },
+      {
+        "word": "外す",
+        "reading": "はずす",
+        "segments": [
+          {
+            "ruby": "外",
+            "rt": "はず"
+          },
+          {
+            "ruby": "す"
+          }
+        ]
+      },
+      {
+        "word": "外れる",
+        "reading": "はずれる",
+        "segments": [
+          {
+            "ruby": "外",
+            "rt": "はず"
+          },
+          {
+            "ruby": "れる"
+          }
+        ]
+      },
+      {
+        "word": "外",
+        "reading": "ほか",
+        "segments": [
+          {
+            "ruby": "外",
+            "rt": "ほか"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 71,
     "kanji": "多",
-    "reading": "おお.い / まさ.に / まさ.る / タ",
+    "reading": "おお.い / まさ.に / まさ.る / た",
     "meaning": "frequent, many, much",
     "isRadical": false,
     "onyomi": [
-      "タ"
+      "た"
     ],
     "kunyomi": [
       "おお.い",
@@ -10152,17 +12076,58 @@ export const kanjiData = [
         "reading": "たしょく",
         "meaning": "many colors, many colours"
       }
+    ],
+    "standalone": [
+      {
+        "word": "多い",
+        "reading": "おおい",
+        "segments": [
+          {
+            "ruby": "多",
+            "rt": "おお"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      },
+      {
+        "word": "多に",
+        "reading": "まさに",
+        "segments": [
+          {
+            "ruby": "多",
+            "rt": "まさ"
+          },
+          {
+            "ruby": "に"
+          }
+        ]
+      },
+      {
+        "word": "多る",
+        "reading": "まさる",
+        "segments": [
+          {
+            "ruby": "多",
+            "rt": "まさ"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 72,
     "kanji": "名",
-    "reading": "-な / な / ミョウ / メイ",
+    "reading": "-な / な / みょう / めい",
     "meaning": "distinguished, name, noted, reputation",
     "isRadical": false,
     "onyomi": [
-      "ミョウ",
-      "メイ"
+      "みょう",
+      "めい"
     ],
     "kunyomi": [
       "-な",
@@ -10294,16 +12259,28 @@ export const kanjiData = [
         "reading": "めいもん",
         "meaning": "prestigious school, organization, business, etc."
       }
+    ],
+    "standalone": [
+      {
+        "word": "名",
+        "reading": "な",
+        "segments": [
+          {
+            "ruby": "名",
+            "rt": "な"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 73,
     "kanji": "夜",
-    "reading": "よ / よる / ヤ",
+    "reading": "よ / よる / や",
     "meaning": "evening, night",
     "isRadical": false,
     "onyomi": [
-      "ヤ"
+      "や"
     ],
     "kunyomi": [
       "よ",
@@ -10435,17 +12412,39 @@ export const kanjiData = [
         "reading": "よみち",
         "meaning": "street at night, making a night journey"
       }
+    ],
+    "standalone": [
+      {
+        "word": "夜",
+        "reading": "よ",
+        "segments": [
+          {
+            "ruby": "夜",
+            "rt": "よ"
+          }
+        ]
+      },
+      {
+        "word": "夜",
+        "reading": "よる",
+        "segments": [
+          {
+            "ruby": "夜",
+            "rt": "よる"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 74,
     "kanji": "生",
-    "reading": "-う / い.かす / い.きる / い.ける / う.まれ / う.まれる / う.む / うま.れる / うまれ / お.う / き / な.す / な.る / なま / なま- / は.える / は.やす / む.す / ショウ / セイ",
+    "reading": "-う / い.かす / い.きる / い.ける / う.まれ / う.まれる / う.む / うま.れる / うまれ / お.う / き / な.す / な.る / なま / なま- / は.える / は.やす / む.す / しょう / せい",
     "meaning": "birth, genuine, life",
     "isRadical": false,
     "onyomi": [
-      "ショウ",
-      "セイ"
+      "しょう",
+      "せい"
     ],
     "kunyomi": [
       "-う",
@@ -10593,16 +12592,54 @@ export const kanjiData = [
         "reading": "せいぞん",
         "meaning": "existence, being, survival"
       }
+    ],
+    "standalone": [
+      {
+        "word": "生きる",
+        "reading": "いきる",
+        "segments": [
+          {
+            "ruby": "生",
+            "rt": "い"
+          },
+          {
+            "ruby": "きる"
+          }
+        ]
+      },
+      {
+        "word": "生まれる",
+        "reading": "うまれる",
+        "segments": [
+          {
+            "ruby": "生",
+            "rt": "うま"
+          },
+          {
+            "ruby": "れる"
+          }
+        ]
+      },
+      {
+        "word": "生",
+        "reading": "なま",
+        "segments": [
+          {
+            "ruby": "生",
+            "rt": "なま"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 75,
     "kanji": "見",
-    "reading": "み.える / み.せる / み.る / ケン",
+    "reading": "み.える / み.せる / み.る / けん",
     "meaning": "chances, hopes, idea, look at, opinion, see, visible",
     "isRadical": false,
     "onyomi": [
-      "ケン"
+      "けん"
     ],
     "kunyomi": [
       "み.える",
@@ -10735,17 +12772,58 @@ export const kanjiData = [
         "reading": "みまい",
         "meaning": "get-well gifts, get-well letters"
       }
+    ],
+    "standalone": [
+      {
+        "word": "見える",
+        "reading": "みえる",
+        "segments": [
+          {
+            "ruby": "見",
+            "rt": "み"
+          },
+          {
+            "ruby": "える"
+          }
+        ]
+      },
+      {
+        "word": "見せる",
+        "reading": "みせる",
+        "segments": [
+          {
+            "ruby": "見",
+            "rt": "み"
+          },
+          {
+            "ruby": "せる"
+          }
+        ]
+      },
+      {
+        "word": "見る",
+        "reading": "みる",
+        "segments": [
+          {
+            "ruby": "見",
+            "rt": "み"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 76,
     "kanji": "元",
-    "reading": "もと / ガン / ゲン",
+    "reading": "もと / がん / げん",
     "meaning": "beginning, former time, origin",
     "isRadical": false,
     "onyomi": [
-      "ガン",
-      "ゲン"
+      "がん",
+      "げん"
     ],
     "kunyomi": [
       "もと"
@@ -10876,16 +12954,28 @@ export const kanjiData = [
         "reading": "ほんもと",
         "meaning": "origin, main branch of family"
       }
+    ],
+    "standalone": [
+      {
+        "word": "元",
+        "reading": "もと",
+        "segments": [
+          {
+            "ruby": "元",
+            "rt": "もと"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 77,
     "kanji": "先",
-    "reading": "さき / ま.ず / セン",
+    "reading": "さき / ま.ず / せん",
     "meaning": "ahead, before, future, precedence, previous",
     "isRadical": false,
     "onyomi": [
-      "セン"
+      "せん"
     ],
     "kunyomi": [
       "さき",
@@ -11017,16 +13107,41 @@ export const kanjiData = [
         "reading": "さいせんたん",
         "meaning": "tip, end"
       }
+    ],
+    "standalone": [
+      {
+        "word": "先",
+        "reading": "さき",
+        "segments": [
+          {
+            "ruby": "先",
+            "rt": "さき"
+          }
+        ]
+      },
+      {
+        "word": "先ず",
+        "reading": "まず",
+        "segments": [
+          {
+            "ruby": "先",
+            "rt": "ま"
+          },
+          {
+            "ruby": "ず"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 78,
     "kanji": "天",
-    "reading": "あま- / あまつ / あめ / テン",
+    "reading": "あま- / あまつ / あめ / てん",
     "meaning": "heavens, imperial, sky",
     "isRadical": false,
     "onyomi": [
-      "テン"
+      "てん"
     ],
     "kunyomi": [
       "あま-",
@@ -11159,17 +13274,39 @@ export const kanjiData = [
         "reading": "てんびき",
         "meaning": "deduction in advance (of tax, interest, etc.)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "天",
+        "reading": "あまつ",
+        "segments": [
+          {
+            "ruby": "天",
+            "rt": "あまつ"
+          }
+        ]
+      },
+      {
+        "word": "天",
+        "reading": "あめ",
+        "segments": [
+          {
+            "ruby": "天",
+            "rt": "あめ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 79,
     "kanji": "文",
-    "reading": "あや / ふみ / ブン / モン",
+    "reading": "あや / ふみ / ぶん / もん",
     "meaning": "art, decoration, figures, literary radical (no. 67), literature, plan, sentence, style",
     "isRadical": false,
     "onyomi": [
-      "ブン",
-      "モン"
+      "ぶん",
+      "もん"
     ],
     "kunyomi": [
       "あや",
@@ -11301,16 +13438,38 @@ export const kanjiData = [
         "reading": "ぶんか",
         "meaning": "literary course, department of literature"
       }
+    ],
+    "standalone": [
+      {
+        "word": "文",
+        "reading": "あや",
+        "segments": [
+          {
+            "ruby": "文",
+            "rt": "あや"
+          }
+        ]
+      },
+      {
+        "word": "文",
+        "reading": "ふみ",
+        "segments": [
+          {
+            "ruby": "文",
+            "rt": "ふみ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 80,
     "kanji": "父",
-    "reading": "ちち / フ",
+    "reading": "ちち / ふ",
     "meaning": "father",
     "isRadical": false,
     "onyomi": [
-      "フ"
+      "ふ"
     ],
     "kunyomi": [
       "ちち"
@@ -11441,16 +13600,28 @@ export const kanjiData = [
         "reading": "ちちぎみ",
         "meaning": "father"
       }
+    ],
+    "standalone": [
+      {
+        "word": "父",
+        "reading": "ちち",
+        "segments": [
+          {
+            "ruby": "父",
+            "rt": "ちち"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 81,
     "kanji": "母",
-    "reading": "はは / も / ボ",
+    "reading": "はは / も / ぼ",
     "meaning": "mother",
     "isRadical": false,
     "onyomi": [
-      "ボ"
+      "ぼ"
     ],
     "kunyomi": [
       "はは",
@@ -11582,18 +13753,40 @@ export const kanjiData = [
         "reading": "ははのひ",
         "meaning": "Mother's Day (2nd Sunday of May)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "母",
+        "reading": "はは",
+        "segments": [
+          {
+            "ruby": "母",
+            "rt": "はは"
+          }
+        ]
+      },
+      {
+        "word": "母",
+        "reading": "も",
+        "segments": [
+          {
+            "ruby": "母",
+            "rt": "も"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 82,
     "kanji": "行",
-    "reading": "-い.き / -いき / -ゆ.き / -ゆき / い.く / おこ.なう / おこな.う / ゆ.く / アン / ギョウ / コウ",
+    "reading": "-い.き / -いき / -ゆ.き / -ゆき / い.く / おこ.なう / おこな.う / ゆ.く / あん / ぎょう / こう",
     "meaning": "act, bank, carry out, conduct, going, journey, line, row",
     "isRadical": false,
     "onyomi": [
-      "アン",
-      "ギョウ",
-      "コウ"
+      "あん",
+      "ぎょう",
+      "こう"
     ],
     "kunyomi": [
       "-い.き",
@@ -11731,16 +13924,70 @@ export const kanjiData = [
         "reading": "ぎょうれつ",
         "meaning": "matrix"
       }
+    ],
+    "standalone": [
+      {
+        "word": "行く",
+        "reading": "いく",
+        "segments": [
+          {
+            "ruby": "行",
+            "rt": "い"
+          },
+          {
+            "ruby": "く"
+          }
+        ]
+      },
+      {
+        "word": "行なう",
+        "reading": "おこなう",
+        "segments": [
+          {
+            "ruby": "行",
+            "rt": "おこ"
+          },
+          {
+            "ruby": "なう"
+          }
+        ]
+      },
+      {
+        "word": "行う",
+        "reading": "おこなう",
+        "segments": [
+          {
+            "ruby": "行",
+            "rt": "おこな"
+          },
+          {
+            "ruby": "う"
+          }
+        ]
+      },
+      {
+        "word": "行く",
+        "reading": "ゆく",
+        "segments": [
+          {
+            "ruby": "行",
+            "rt": "ゆ"
+          },
+          {
+            "ruby": "く"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 83,
     "kanji": "毎",
-    "reading": "-ごと.に / ごと / マイ",
+    "reading": "-ごと.に / ごと / まい",
     "meaning": "every",
     "isRadical": false,
     "onyomi": [
-      "マイ"
+      "まい"
     ],
     "kunyomi": [
       "-ごと.に",
@@ -11872,16 +14119,28 @@ export const kanjiData = [
         "reading": "まいしょうじ",
         "meaning": "every hour on the hour"
       }
+    ],
+    "standalone": [
+      {
+        "word": "毎",
+        "reading": "ごと",
+        "segments": [
+          {
+            "ruby": "毎",
+            "rt": "ごと"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 84,
     "kanji": "海",
-    "reading": "うみ / カイ",
+    "reading": "うみ / かい",
     "meaning": "ocean, sea",
     "isRadical": false,
     "onyomi": [
-      "カイ"
+      "かい"
     ],
     "kunyomi": [
       "うみ"
@@ -12012,16 +14271,28 @@ export const kanjiData = [
         "reading": "かいず",
         "meaning": "sea chart"
       }
+    ],
+    "standalone": [
+      {
+        "word": "海",
+        "reading": "うみ",
+        "segments": [
+          {
+            "ruby": "海",
+            "rt": "うみ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 85,
     "kanji": "東",
-    "reading": "ひがし / トウ",
+    "reading": "ひがし / とう",
     "meaning": "east",
     "isRadical": false,
     "onyomi": [
-      "トウ"
+      "とう"
     ],
     "kunyomi": [
       "ひがし"
@@ -12152,18 +14423,30 @@ export const kanjiData = [
         "reading": "とうどく",
         "meaning": "East Germany (1949-1990)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "東",
+        "reading": "ひがし",
+        "segments": [
+          {
+            "ruby": "東",
+            "rt": "ひがし"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 86,
     "kanji": "西",
-    "reading": "にし / サイ / ス / セイ",
+    "reading": "にし / さい / す / せい",
     "meaning": "Spain, west",
     "isRadical": false,
     "onyomi": [
-      "サイ",
-      "ス",
-      "セイ"
+      "さい",
+      "す",
+      "せい"
     ],
     "kunyomi": [
       "にし"
@@ -12294,17 +14577,29 @@ export const kanjiData = [
         "reading": "メキシコ",
         "meaning": "Mexico"
       }
+    ],
+    "standalone": [
+      {
+        "word": "西",
+        "reading": "にし",
+        "segments": [
+          {
+            "ruby": "西",
+            "rt": "にし"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 87,
     "kanji": "南",
-    "reading": "みなみ / ナ / ナン",
+    "reading": "みなみ / な / なん",
     "meaning": "south",
     "isRadical": false,
     "onyomi": [
-      "ナ",
-      "ナン"
+      "な",
+      "なん"
     ],
     "kunyomi": [
       "みなみ"
@@ -12435,16 +14730,28 @@ export const kanjiData = [
         "reading": "なんぼくせんそう",
         "meaning": "American Civil War (1861-1865)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "南",
+        "reading": "みなみ",
+        "segments": [
+          {
+            "ruby": "南",
+            "rt": "みなみ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 88,
     "kanji": "北",
-    "reading": "きた / ホク",
+    "reading": "きた / ほく",
     "meaning": "north",
     "isRadical": false,
     "onyomi": [
-      "ホク"
+      "ほく"
     ],
     "kunyomi": [
       "きた"
@@ -12575,16 +14882,28 @@ export const kanjiData = [
         "reading": "せいほくせい",
         "meaning": "west-northwest"
       }
+    ],
+    "standalone": [
+      {
+        "word": "北",
+        "reading": "きた",
+        "segments": [
+          {
+            "ruby": "北",
+            "rt": "きた"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 89,
     "kanji": "耳",
-    "reading": "みみ / ジ",
+    "reading": "みみ / じ",
     "meaning": "ear",
     "isRadical": false,
     "onyomi": [
-      "ジ"
+      "じ"
     ],
     "kunyomi": [
       "みみ"
@@ -12715,16 +15034,28 @@ export const kanjiData = [
         "reading": "じだ",
         "meaning": "earlobe"
       }
+    ],
+    "standalone": [
+      {
+        "word": "耳",
+        "reading": "みみ",
+        "segments": [
+          {
+            "ruby": "耳",
+            "rt": "みみ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 90,
     "kanji": "門",
-    "reading": "かど / と / モン",
+    "reading": "かど / と / もん",
     "meaning": "counter for cannons, gate",
     "isRadical": false,
     "onyomi": [
-      "モン"
+      "もん"
     ],
     "kunyomi": [
       "かど",
@@ -12856,17 +15187,29 @@ export const kanjiData = [
         "reading": "すいもん",
         "meaning": "sluice gate, water gate, flood gate"
       }
+    ],
+    "standalone": [
+      {
+        "word": "門",
+        "reading": "もん",
+        "segments": [
+          {
+            "ruby": "門",
+            "rt": "もん"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 91,
     "kanji": "聞",
-    "reading": "き.く / き.こえる / ブン / モン",
+    "reading": "き.く / き.こえる / ぶん / もん",
     "meaning": "ask, hear, listen",
     "isRadical": false,
     "onyomi": [
-      "ブン",
-      "モン"
+      "ぶん",
+      "もん"
     ],
     "kunyomi": [
       "き.く",
@@ -12998,17 +15341,45 @@ export const kanjiData = [
         "reading": "ききだす",
         "meaning": "to begin listening (to)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "聞く",
+        "reading": "きく",
+        "segments": [
+          {
+            "ruby": "聞",
+            "rt": "き"
+          },
+          {
+            "ruby": "く"
+          }
+        ]
+      },
+      {
+        "word": "聞こえる",
+        "reading": "きこえる",
+        "segments": [
+          {
+            "ruby": "聞",
+            "rt": "き"
+          },
+          {
+            "ruby": "こえる"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 92,
     "kanji": "間",
-    "reading": "あい / あいだ / ま / カン / ケン",
+    "reading": "あい / あいだ / ま / かん / けん",
     "meaning": "interval, space",
     "isRadical": false,
     "onyomi": [
-      "カン",
-      "ケン"
+      "かん",
+      "けん"
     ],
     "kunyomi": [
       "あい",
@@ -13141,16 +15512,48 @@ export const kanjiData = [
         "reading": "とこのま",
         "meaning": "tokonoma (alcove where art or flowers are displayed)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "間",
+        "reading": "あい",
+        "segments": [
+          {
+            "ruby": "間",
+            "rt": "あい"
+          }
+        ]
+      },
+      {
+        "word": "間",
+        "reading": "あいだ",
+        "segments": [
+          {
+            "ruby": "間",
+            "rt": "あいだ"
+          }
+        ]
+      },
+      {
+        "word": "間",
+        "reading": "ま",
+        "segments": [
+          {
+            "ruby": "間",
+            "rt": "ま"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 93,
     "kanji": "牛",
-    "reading": "うし / ギュウ",
+    "reading": "うし / ぎゅう",
     "meaning": "cow",
     "isRadical": false,
     "onyomi": [
-      "ギュウ"
+      "ぎゅう"
     ],
     "kunyomi": [
       "うし"
@@ -13281,16 +15684,28 @@ export const kanjiData = [
         "reading": "ぎゅうらく",
         "meaning": "butter"
       }
+    ],
+    "standalone": [
+      {
+        "word": "牛",
+        "reading": "うし",
+        "segments": [
+          {
+            "ruby": "牛",
+            "rt": "うし"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 94,
     "kanji": "午",
-    "reading": "うま / ゴ",
+    "reading": "うま / ご",
     "meaning": "11AM-1PM, noon, seventh sign of Chinese zodiac, sign of the horse",
     "isRadical": false,
     "onyomi": [
-      "ゴ"
+      "ご"
     ],
     "kunyomi": [
       "うま"
@@ -13421,16 +15836,28 @@ export const kanjiData = [
         "reading": "ごごじゅう",
         "meaning": "throughout the afternoon"
       }
+    ],
+    "standalone": [
+      {
+        "word": "午",
+        "reading": "うま",
+        "segments": [
+          {
+            "ruby": "午",
+            "rt": "うま"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 95,
     "kanji": "年",
-    "reading": "とし / ネン",
+    "reading": "とし / ねん",
     "meaning": "counter for years, year",
     "isRadical": false,
     "onyomi": [
-      "ネン"
+      "ねん"
     ],
     "kunyomi": [
       "とし"
@@ -13561,16 +15988,28 @@ export const kanjiData = [
         "reading": "ねんだい",
         "meaning": "age, era, period"
       }
+    ],
+    "standalone": [
+      {
+        "word": "年",
+        "reading": "とし",
+        "segments": [
+          {
+            "ruby": "年",
+            "rt": "とし"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 96,
     "kanji": "前",
-    "reading": "-まえ / まえ / ゼン",
+    "reading": "-まえ / まえ / ぜん",
     "meaning": "before, in front",
     "isRadical": false,
     "onyomi": [
-      "ゼン"
+      "ぜん"
     ],
     "kunyomi": [
       "-まえ",
@@ -13702,17 +16141,29 @@ export const kanjiData = [
         "reading": "とうぜん",
         "meaning": "naturally, as a matter of course, rightly"
       }
+    ],
+    "standalone": [
+      {
+        "word": "前",
+        "reading": "まえ",
+        "segments": [
+          {
+            "ruby": "前",
+            "rt": "まえ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 97,
     "kanji": "後",
-    "reading": "あと / うし.ろ / うしろ / おく.れる / のち / コウ / ゴ",
+    "reading": "あと / うし.ろ / うしろ / おく.れる / のち / こう / ご",
     "meaning": "back, behind, later",
     "isRadical": false,
     "onyomi": [
-      "コウ",
-      "ゴ"
+      "こう",
+      "ご"
     ],
     "kunyomi": [
       "あと",
@@ -13847,16 +16298,74 @@ export const kanjiData = [
         "reading": "えちご",
         "meaning": "Echigo (former province located in present-day Niigata Prefecture)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "後",
+        "reading": "あと",
+        "segments": [
+          {
+            "ruby": "後",
+            "rt": "あと"
+          }
+        ]
+      },
+      {
+        "word": "後ろ",
+        "reading": "うしろ",
+        "segments": [
+          {
+            "ruby": "後",
+            "rt": "うし"
+          },
+          {
+            "ruby": "ろ"
+          }
+        ]
+      },
+      {
+        "word": "後",
+        "reading": "うしろ",
+        "segments": [
+          {
+            "ruby": "後",
+            "rt": "うしろ"
+          }
+        ]
+      },
+      {
+        "word": "後れる",
+        "reading": "おくれる",
+        "segments": [
+          {
+            "ruby": "後",
+            "rt": "おく"
+          },
+          {
+            "ruby": "れる"
+          }
+        ]
+      },
+      {
+        "word": "後",
+        "reading": "のち",
+        "segments": [
+          {
+            "ruby": "後",
+            "rt": "のち"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 98,
     "kanji": "高",
-    "reading": "-だか / たか / たか.い / たか.まる / たか.める / コウ",
+    "reading": "-だか / たか / たか.い / たか.まる / たか.める / こう",
     "meaning": "expensive, high, tall",
     "isRadical": false,
     "onyomi": [
-      "コウ"
+      "こう"
     ],
     "kunyomi": [
       "-だか",
@@ -13991,16 +16500,67 @@ export const kanjiData = [
         "reading": "たかまる",
         "meaning": "to rise, to swell, to be promoted"
       }
+    ],
+    "standalone": [
+      {
+        "word": "高",
+        "reading": "たか",
+        "segments": [
+          {
+            "ruby": "高",
+            "rt": "たか"
+          }
+        ]
+      },
+      {
+        "word": "高い",
+        "reading": "たかい",
+        "segments": [
+          {
+            "ruby": "高",
+            "rt": "たか"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      },
+      {
+        "word": "高まる",
+        "reading": "たかまる",
+        "segments": [
+          {
+            "ruby": "高",
+            "rt": "たか"
+          },
+          {
+            "ruby": "まる"
+          }
+        ]
+      },
+      {
+        "word": "高める",
+        "reading": "たかめる",
+        "segments": [
+          {
+            "ruby": "高",
+            "rt": "たか"
+          },
+          {
+            "ruby": "める"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 99,
     "kanji": "銀",
-    "reading": "しろがね / ギン",
+    "reading": "しろがね / ぎん",
     "meaning": "silver",
     "isRadical": false,
     "onyomi": [
-      "ギン"
+      "ぎん"
     ],
     "kunyomi": [
       "しろがね"
@@ -14131,17 +16691,29 @@ export const kanjiData = [
         "reading": "ぎんぶな",
         "meaning": "Carassius langsdorfii"
       }
+    ],
+    "standalone": [
+      {
+        "word": "銀",
+        "reading": "しろがね",
+        "segments": [
+          {
+            "ruby": "銀",
+            "rt": "しろがね"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 100,
     "kanji": "食",
-    "reading": "く.う / く.らう / た.べる / は.む / ショク / ジキ",
+    "reading": "く.う / く.らう / た.べる / は.む / しょく / じき",
     "meaning": "eat, food",
     "isRadical": false,
     "onyomi": [
-      "ショク",
-      "ジキ"
+      "しょく",
+      "じき"
     ],
     "kunyomi": [
       "く.う",
@@ -14275,16 +16847,70 @@ export const kanjiData = [
         "reading": "しょくパン",
         "meaning": "(loaf of) bread, bread in a rectangular shape"
       }
+    ],
+    "standalone": [
+      {
+        "word": "食う",
+        "reading": "くう",
+        "segments": [
+          {
+            "ruby": "食",
+            "rt": "く"
+          },
+          {
+            "ruby": "う"
+          }
+        ]
+      },
+      {
+        "word": "食らう",
+        "reading": "くらう",
+        "segments": [
+          {
+            "ruby": "食",
+            "rt": "く"
+          },
+          {
+            "ruby": "らう"
+          }
+        ]
+      },
+      {
+        "word": "食べる",
+        "reading": "たべる",
+        "segments": [
+          {
+            "ruby": "食",
+            "rt": "た"
+          },
+          {
+            "ruby": "べる"
+          }
+        ]
+      },
+      {
+        "word": "食む",
+        "reading": "はむ",
+        "segments": [
+          {
+            "ruby": "食",
+            "rt": "は"
+          },
+          {
+            "ruby": "む"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 101,
     "kanji": "飯",
-    "reading": "めし / ハン",
+    "reading": "めし / はん",
     "meaning": "boiled rice, meal",
     "isRadical": false,
     "onyomi": [
-      "ハン"
+      "はん"
     ],
     "kunyomi": [
       "めし"
@@ -14415,17 +17041,29 @@ export const kanjiData = [
         "reading": "ほしいい",
         "meaning": "dried boiled rice"
       }
+    ],
+    "standalone": [
+      {
+        "word": "飯",
+        "reading": "めし",
+        "segments": [
+          {
+            "ruby": "飯",
+            "rt": "めし"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 102,
     "kanji": "飲",
-    "reading": "-の.み / の.む / イン / オン",
+    "reading": "-の.み / の.む / いん / おん",
     "meaning": "drink, smoke, take",
     "isRadical": false,
     "onyomi": [
-      "イン",
-      "オン"
+      "いん",
+      "おん"
     ],
     "kunyomi": [
       "-の.み",
@@ -14557,17 +17195,32 @@ export const kanjiData = [
         "reading": "つういん",
         "meaning": "heavy drinking"
       }
+    ],
+    "standalone": [
+      {
+        "word": "飲む",
+        "reading": "のむ",
+        "segments": [
+          {
+            "ruby": "飲",
+            "rt": "の"
+          },
+          {
+            "ruby": "む"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 103,
     "kanji": "白",
-    "reading": "しら- / しろ / しろ.い / ハク / ビャク",
+    "reading": "しら- / しろ / しろ.い / はく / びゃく",
     "meaning": "white",
     "isRadical": false,
     "onyomi": [
-      "ハク",
-      "ビャク"
+      "はく",
+      "びゃく"
     ],
     "kunyomi": [
       "しら-",
@@ -14700,17 +17353,42 @@ export const kanjiData = [
         "reading": "しらは",
         "meaning": "white feather"
       }
+    ],
+    "standalone": [
+      {
+        "word": "白",
+        "reading": "しろ",
+        "segments": [
+          {
+            "ruby": "白",
+            "rt": "しろ"
+          }
+        ]
+      },
+      {
+        "word": "白い",
+        "reading": "しろい",
+        "segments": [
+          {
+            "ruby": "白",
+            "rt": "しろ"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 104,
     "kanji": "赤",
-    "reading": "あか / あか- / あか.い / あか.らむ / あか.らめる / シャク / セキ",
+    "reading": "あか / あか- / あか.い / あか.らむ / あか.らめる / しゃく / せき",
     "meaning": "red",
     "isRadical": false,
     "onyomi": [
-      "シャク",
-      "セキ"
+      "しゃく",
+      "せき"
     ],
     "kunyomi": [
       "あか",
@@ -14845,17 +17523,68 @@ export const kanjiData = [
         "reading": "あこう",
         "meaning": "Matsubara's red rockfish (Sebastes matsubarae)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "赤",
+        "reading": "あか",
+        "segments": [
+          {
+            "ruby": "赤",
+            "rt": "あか"
+          }
+        ]
+      },
+      {
+        "word": "赤い",
+        "reading": "あかい",
+        "segments": [
+          {
+            "ruby": "赤",
+            "rt": "あか"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      },
+      {
+        "word": "赤らむ",
+        "reading": "あからむ",
+        "segments": [
+          {
+            "ruby": "赤",
+            "rt": "あか"
+          },
+          {
+            "ruby": "らむ"
+          }
+        ]
+      },
+      {
+        "word": "赤らめる",
+        "reading": "あからめる",
+        "segments": [
+          {
+            "ruby": "赤",
+            "rt": "あか"
+          },
+          {
+            "ruby": "らめる"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 105,
     "kanji": "青",
-    "reading": "あお / あお- / あお.い / ショウ / セイ",
+    "reading": "あお / あお- / あお.い / しょう / せい",
     "meaning": "blue, green",
     "isRadical": false,
     "onyomi": [
-      "ショウ",
-      "セイ"
+      "しょう",
+      "せい"
     ],
     "kunyomi": [
       "あお",
@@ -14988,17 +17717,42 @@ export const kanjiData = [
         "reading": "あおたがい",
         "meaning": "recruiting of university students before the agreed date"
       }
+    ],
+    "standalone": [
+      {
+        "word": "青",
+        "reading": "あお",
+        "segments": [
+          {
+            "ruby": "青",
+            "rt": "あお"
+          }
+        ]
+      },
+      {
+        "word": "青い",
+        "reading": "あおい",
+        "segments": [
+          {
+            "ruby": "青",
+            "rt": "あお"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 106,
     "kanji": "言",
-    "reading": "い.う / こと / ゲン / ゴン",
+    "reading": "い.う / こと / げん / ごん",
     "meaning": "say, word",
     "isRadical": false,
     "onyomi": [
-      "ゲン",
-      "ゴン"
+      "げん",
+      "ごん"
     ],
     "kunyomi": [
       "い.う",
@@ -15130,16 +17884,41 @@ export const kanjiData = [
         "reading": "げんじ",
         "meaning": "language, speech"
       }
+    ],
+    "standalone": [
+      {
+        "word": "言う",
+        "reading": "いう",
+        "segments": [
+          {
+            "ruby": "言",
+            "rt": "い"
+          },
+          {
+            "ruby": "う"
+          }
+        ]
+      },
+      {
+        "word": "言",
+        "reading": "こと",
+        "segments": [
+          {
+            "ruby": "言",
+            "rt": "こと"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 107,
     "kanji": "話",
-    "reading": "はな.す / はなし / ワ",
+    "reading": "はな.す / はなし / わ",
     "meaning": "tale, talk",
     "isRadical": false,
     "onyomi": [
-      "ワ"
+      "わ"
     ],
     "kunyomi": [
       "はな.す",
@@ -15271,16 +18050,41 @@ export const kanjiData = [
         "reading": "しゅわ",
         "meaning": "sign language"
       }
+    ],
+    "standalone": [
+      {
+        "word": "話す",
+        "reading": "はなす",
+        "segments": [
+          {
+            "ruby": "話",
+            "rt": "はな"
+          },
+          {
+            "ruby": "す"
+          }
+        ]
+      },
+      {
+        "word": "話",
+        "reading": "はなし",
+        "segments": [
+          {
+            "ruby": "話",
+            "rt": "はなし"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 108,
     "kanji": "語",
-    "reading": "かた.らう / かた.る / ゴ",
+    "reading": "かた.らう / かた.る / ご",
     "meaning": "language, speech, word",
     "isRadical": false,
     "onyomi": [
-      "ゴ"
+      "ご"
     ],
     "kunyomi": [
       "かた.らう",
@@ -15412,16 +18216,44 @@ export const kanjiData = [
         "reading": "がいこくご",
         "meaning": "foreign language"
       }
+    ],
+    "standalone": [
+      {
+        "word": "語らう",
+        "reading": "かたらう",
+        "segments": [
+          {
+            "ruby": "語",
+            "rt": "かた"
+          },
+          {
+            "ruby": "らう"
+          }
+        ]
+      },
+      {
+        "word": "語る",
+        "reading": "かたる",
+        "segments": [
+          {
+            "ruby": "語",
+            "rt": "かた"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 109,
     "kanji": "売",
-    "reading": "う.る / う.れる / バイ",
+    "reading": "う.る / う.れる / ばい",
     "meaning": "sell",
     "isRadical": false,
     "onyomi": [
-      "バイ"
+      "ばい"
     ],
     "kunyomi": [
       "う.る",
@@ -15553,18 +18385,33 @@ export const kanjiData = [
         "reading": "そくばい",
         "meaning": "sale on the spot"
       }
+    ],
+    "standalone": [
+      {
+        "word": "売る",
+        "reading": "うる",
+        "segments": [
+          {
+            "ruby": "売",
+            "rt": "う"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 110,
     "kanji": "読",
-    "reading": "-よ.み / よ.む / トウ / トク / ドク",
+    "reading": "-よ.み / よ.む / とう / とく / どく",
     "meaning": "read",
     "isRadical": false,
     "onyomi": [
-      "トウ",
-      "トク",
-      "ドク"
+      "とう",
+      "とく",
+      "どく"
     ],
     "kunyomi": [
       "-よ.み",
@@ -15696,16 +18543,31 @@ export const kanjiData = [
         "reading": "つんどく",
         "meaning": "books bought but not read"
       }
+    ],
+    "standalone": [
+      {
+        "word": "読む",
+        "reading": "よむ",
+        "segments": [
+          {
+            "ruby": "読",
+            "rt": "よ"
+          },
+          {
+            "ruby": "む"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 111,
     "kanji": "書",
-    "reading": "-が.き / -がき / か.く / ショ",
+    "reading": "-が.き / -がき / か.く / しょ",
     "meaning": "write",
     "isRadical": false,
     "onyomi": [
-      "ショ"
+      "しょ"
     ],
     "kunyomi": [
       "-が.き",
@@ -15838,16 +18700,31 @@ export const kanjiData = [
         "reading": "がんしょ",
         "meaning": "written prayer for a shrine or Buddhist temple"
       }
+    ],
+    "standalone": [
+      {
+        "word": "書く",
+        "reading": "かく",
+        "segments": [
+          {
+            "ruby": "書",
+            "rt": "か"
+          },
+          {
+            "ruby": "く"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 112,
     "kanji": "新",
-    "reading": "あたら.しい / あら- / あら.た / にい- / シン",
+    "reading": "あたら.しい / あら- / あら.た / にい- / しん",
     "meaning": "new",
     "isRadical": false,
     "onyomi": [
-      "シン"
+      "しん"
     ],
     "kunyomi": [
       "あたら.しい",
@@ -15981,16 +18858,44 @@ export const kanjiData = [
         "reading": "しんぷ",
         "meaning": "bride"
       }
+    ],
+    "standalone": [
+      {
+        "word": "新しい",
+        "reading": "あたらしい",
+        "segments": [
+          {
+            "ruby": "新",
+            "rt": "あたら"
+          },
+          {
+            "ruby": "しい"
+          }
+        ]
+      },
+      {
+        "word": "新た",
+        "reading": "あらた",
+        "segments": [
+          {
+            "ruby": "新",
+            "rt": "あら"
+          },
+          {
+            "ruby": "た"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 113,
     "kanji": "馬",
-    "reading": "うま / うま- / ま / バ",
+    "reading": "うま / うま- / ま / ば",
     "meaning": "horse",
     "isRadical": false,
     "onyomi": [
-      "バ"
+      "ば"
     ],
     "kunyomi": [
       "うま",
@@ -16123,16 +19028,38 @@ export const kanjiData = [
         "reading": "さんかんば",
         "meaning": "winner of Japan's three main horse races"
       }
+    ],
+    "standalone": [
+      {
+        "word": "馬",
+        "reading": "うま",
+        "segments": [
+          {
+            "ruby": "馬",
+            "rt": "うま"
+          }
+        ]
+      },
+      {
+        "word": "馬",
+        "reading": "ま",
+        "segments": [
+          {
+            "ruby": "馬",
+            "rt": "ま"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 114,
     "kanji": "駅",
-    "reading": "エキ",
+    "reading": "えき",
     "meaning": "station",
     "isRadical": false,
     "onyomi": [
-      "エキ"
+      "えき"
     ],
     "kunyomi": [],
     "examples": [
@@ -16261,16 +19188,28 @@ export const kanjiData = [
         "reading": "えきば",
         "meaning": "post horse, horses used in the post-station system of old Japan"
       }
+    ],
+    "standalone": [
+      {
+        "word": "駅",
+        "reading": "えき",
+        "segments": [
+          {
+            "ruby": "駅",
+            "rt": "えき"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 115,
     "kanji": "魚",
-    "reading": "-ざかな / うお / さかな / ギョ",
+    "reading": "-ざかな / うお / さかな / ぎょ",
     "meaning": "fish",
     "isRadical": false,
     "onyomi": [
-      "ギョ"
+      "ぎょ"
     ],
     "kunyomi": [
       "-ざかな",
@@ -16403,18 +19342,40 @@ export const kanjiData = [
         "reading": "あおうお",
         "meaning": "black carp (Mylopharyngodon piceus)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "魚",
+        "reading": "うお",
+        "segments": [
+          {
+            "ruby": "魚",
+            "rt": "うお"
+          }
+        ]
+      },
+      {
+        "word": "魚",
+        "reading": "さかな",
+        "segments": [
+          {
+            "ruby": "魚",
+            "rt": "さかな"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 116,
     "kanji": "米",
-    "reading": "こめ / よね / ベイ / マイ / メエトル",
+    "reading": "こめ / よね / べい / まい / めえとる",
     "meaning": "USA, metre, rice",
     "isRadical": false,
     "onyomi": [
-      "ベイ",
-      "マイ",
-      "メエトル"
+      "べい",
+      "まい",
+      "めえとる"
     ],
     "kunyomi": [
       "こめ",
@@ -16546,17 +19507,39 @@ export const kanjiData = [
         "reading": "げんまい",
         "meaning": "unpolished rice, unmilled rice, brown rice"
       }
+    ],
+    "standalone": [
+      {
+        "word": "米",
+        "reading": "こめ",
+        "segments": [
+          {
+            "ruby": "米",
+            "rt": "こめ"
+          }
+        ]
+      },
+      {
+        "word": "米",
+        "reading": "よね",
+        "segments": [
+          {
+            "ruby": "米",
+            "rt": "よね"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 117,
     "kanji": "来",
-    "reading": "き / き.たす / き.たる / きた.す / きた.る / く.る / こ / タイ / ライ",
+    "reading": "き / き.たす / き.たる / きた.す / きた.る / く.る / こ / たい / らい",
     "meaning": "become, cause, come, due, next",
     "isRadical": false,
     "onyomi": [
-      "タイ",
-      "ライ"
+      "たい",
+      "らい"
     ],
     "kunyomi": [
       "き",
@@ -16693,16 +19676,103 @@ export const kanjiData = [
         "reading": "らいえん",
         "meaning": "assistance, support"
       }
+    ],
+    "standalone": [
+      {
+        "word": "来",
+        "reading": "き",
+        "segments": [
+          {
+            "ruby": "来",
+            "rt": "き"
+          }
+        ]
+      },
+      {
+        "word": "来たす",
+        "reading": "きたす",
+        "segments": [
+          {
+            "ruby": "来",
+            "rt": "き"
+          },
+          {
+            "ruby": "たす"
+          }
+        ]
+      },
+      {
+        "word": "来たる",
+        "reading": "きたる",
+        "segments": [
+          {
+            "ruby": "来",
+            "rt": "き"
+          },
+          {
+            "ruby": "たる"
+          }
+        ]
+      },
+      {
+        "word": "来す",
+        "reading": "きたす",
+        "segments": [
+          {
+            "ruby": "来",
+            "rt": "きた"
+          },
+          {
+            "ruby": "す"
+          }
+        ]
+      },
+      {
+        "word": "来る",
+        "reading": "きたる",
+        "segments": [
+          {
+            "ruby": "来",
+            "rt": "きた"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      },
+      {
+        "word": "来る",
+        "reading": "くる",
+        "segments": [
+          {
+            "ruby": "来",
+            "rt": "く"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      },
+      {
+        "word": "来",
+        "reading": "こ",
+        "segments": [
+          {
+            "ruby": "来",
+            "rt": "こ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 118,
     "kanji": "雨",
-    "reading": "-さめ / あま- / あめ / ウ",
+    "reading": "-さめ / あま- / あめ / う",
     "meaning": "rain",
     "isRadical": false,
     "onyomi": [
-      "ウ"
+      "う"
     ],
     "kunyomi": [
       "-さめ",
@@ -16835,16 +19905,28 @@ export const kanjiData = [
         "reading": "あまやどり",
         "meaning": "taking shelter from rain"
       }
+    ],
+    "standalone": [
+      {
+        "word": "雨",
+        "reading": "あめ",
+        "segments": [
+          {
+            "ruby": "雨",
+            "rt": "あめ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 119,
     "kanji": "電",
-    "reading": "デン",
+    "reading": "でん",
     "meaning": "electricity",
     "isRadical": false,
     "onyomi": [
-      "デン"
+      "でん"
     ],
     "kunyomi": [],
     "examples": [
@@ -16973,17 +20055,18 @@ export const kanjiData = [
         "reading": "はつでんしょ",
         "meaning": "power plant, power station"
       }
-    ]
+    ],
+    "standalone": []
   },
   {
     "id": 120,
     "kanji": "気",
-    "reading": "き / キ / ケ",
+    "reading": "き / き / け",
     "meaning": "air, atmosphere, mind, mood, spirit",
     "isRadical": false,
     "onyomi": [
-      "キ",
-      "ケ"
+      "き",
+      "け"
     ],
     "kunyomi": [
       "き"
@@ -17114,16 +20197,28 @@ export const kanjiData = [
         "reading": "ゆうき",
         "meaning": "courage, bravery, valour"
       }
+    ],
+    "standalone": [
+      {
+        "word": "気",
+        "reading": "き",
+        "segments": [
+          {
+            "ruby": "気",
+            "rt": "き"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 121,
     "kanji": "車",
-    "reading": "くるま / シャ",
+    "reading": "くるま / しゃ",
     "meaning": "car",
     "isRadical": false,
     "onyomi": [
-      "シャ"
+      "しゃ"
     ],
     "kunyomi": [
       "くるま"
@@ -17254,16 +20349,28 @@ export const kanjiData = [
         "reading": "じんりきしゃ",
         "meaning": "rickshaw, jinrikisha"
       }
+    ],
+    "standalone": [
+      {
+        "word": "車",
+        "reading": "くるま",
+        "segments": [
+          {
+            "ruby": "車",
+            "rt": "くるま"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 122,
     "kanji": "空",
-    "reading": "あ.き / あ.く / あ.ける / から / す.かす / す.く / そら / むな.しい / クウ",
+    "reading": "あ.き / あ.く / あ.ける / から / す.かす / す.く / そら / むな.しい / くう",
     "meaning": "empty, sky, vacant, vacuum, void",
     "isRadical": false,
     "onyomi": [
-      "クウ"
+      "くう"
     ],
     "kunyomi": [
       "あ.き",
@@ -17401,16 +20508,116 @@ export const kanjiData = [
         "reading": "くうしゅう",
         "meaning": "air-raid"
       }
+    ],
+    "standalone": [
+      {
+        "word": "空き",
+        "reading": "あき",
+        "segments": [
+          {
+            "ruby": "空",
+            "rt": "あ"
+          },
+          {
+            "ruby": "き"
+          }
+        ]
+      },
+      {
+        "word": "空く",
+        "reading": "あく",
+        "segments": [
+          {
+            "ruby": "空",
+            "rt": "あ"
+          },
+          {
+            "ruby": "く"
+          }
+        ]
+      },
+      {
+        "word": "空ける",
+        "reading": "あける",
+        "segments": [
+          {
+            "ruby": "空",
+            "rt": "あ"
+          },
+          {
+            "ruby": "ける"
+          }
+        ]
+      },
+      {
+        "word": "空",
+        "reading": "から",
+        "segments": [
+          {
+            "ruby": "空",
+            "rt": "から"
+          }
+        ]
+      },
+      {
+        "word": "空かす",
+        "reading": "すかす",
+        "segments": [
+          {
+            "ruby": "空",
+            "rt": "す"
+          },
+          {
+            "ruby": "かす"
+          }
+        ]
+      },
+      {
+        "word": "空く",
+        "reading": "すく",
+        "segments": [
+          {
+            "ruby": "空",
+            "rt": "す"
+          },
+          {
+            "ruby": "く"
+          }
+        ]
+      },
+      {
+        "word": "空",
+        "reading": "そら",
+        "segments": [
+          {
+            "ruby": "空",
+            "rt": "そら"
+          }
+        ]
+      },
+      {
+        "word": "空しい",
+        "reading": "むなしい",
+        "segments": [
+          {
+            "ruby": "空",
+            "rt": "むな"
+          },
+          {
+            "ruby": "しい"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 123,
     "kanji": "社",
-    "reading": "やしろ / シャ",
+    "reading": "やしろ / しゃ",
     "meaning": "association, company, firm, office, shrine",
     "isRadical": false,
     "onyomi": [
-      "シャ"
+      "しゃ"
     ],
     "kunyomi": [
       "やしろ"
@@ -17541,17 +20748,29 @@ export const kanjiData = [
         "reading": "しゃがい",
         "meaning": "outside the company"
       }
+    ],
+    "standalone": [
+      {
+        "word": "社",
+        "reading": "やしろ",
+        "segments": [
+          {
+            "ruby": "社",
+            "rt": "やしろ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 124,
     "kanji": "内",
-    "reading": "うち / ダイ / ナイ",
+    "reading": "うち / だい / ない",
     "meaning": "among, between, home, house, inside, within",
     "isRadical": false,
     "onyomi": [
-      "ダイ",
-      "ナイ"
+      "だい",
+      "ない"
     ],
     "kunyomi": [
       "うち"
@@ -17682,16 +20901,28 @@ export const kanjiData = [
         "reading": "きない",
         "meaning": "Kinai (the five provinces in the immediate vicinity of Kyoto)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "内",
+        "reading": "うち",
+        "segments": [
+          {
+            "ruby": "内",
+            "rt": "うち"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 125,
     "kanji": "長",
-    "reading": "おさ / なが.い / チョウ",
+    "reading": "おさ / なが.い / ちょう",
     "meaning": "leader, long, senior, superior",
     "isRadical": false,
     "onyomi": [
-      "チョウ"
+      "ちょう"
     ],
     "kunyomi": [
       "おさ",
@@ -17823,17 +21054,42 @@ export const kanjiData = [
         "reading": "ぎちょう",
         "meaning": "chair, chairman, chairperson"
       }
+    ],
+    "standalone": [
+      {
+        "word": "長",
+        "reading": "おさ",
+        "segments": [
+          {
+            "ruby": "長",
+            "rt": "おさ"
+          }
+        ]
+      },
+      {
+        "word": "長い",
+        "reading": "ながい",
+        "segments": [
+          {
+            "ruby": "長",
+            "rt": "なが"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 126,
     "kanji": "校",
-    "reading": "キョウ / コウ",
+    "reading": "きょう / こう",
     "meaning": "correction, exam, printing, proof, school",
     "isRadical": false,
     "onyomi": [
-      "キョウ",
-      "コウ"
+      "きょう",
+      "こう"
     ],
     "kunyomi": [],
     "examples": [
@@ -17962,17 +21218,18 @@ export const kanjiData = [
         "reading": "こうもん",
         "meaning": "school gate"
       }
-    ]
+    ],
+    "standalone": []
   },
   {
     "id": 127,
     "kanji": "会",
-    "reading": "あ.う / あ.わせる / あつ.まる / エ / カイ",
+    "reading": "あ.う / あ.わせる / あつ.まる / え / かい",
     "meaning": "association, interview, join, meet, meeting, party",
     "isRadical": false,
     "onyomi": [
-      "エ",
-      "カイ"
+      "え",
+      "かい"
     ],
     "kunyomi": [
       "あ.う",
@@ -18105,16 +21362,57 @@ export const kanjiData = [
         "reading": "かいぎ",
         "meaning": "meeting, conference, session"
       }
+    ],
+    "standalone": [
+      {
+        "word": "会う",
+        "reading": "あう",
+        "segments": [
+          {
+            "ruby": "会",
+            "rt": "あ"
+          },
+          {
+            "ruby": "う"
+          }
+        ]
+      },
+      {
+        "word": "会わせる",
+        "reading": "あわせる",
+        "segments": [
+          {
+            "ruby": "会",
+            "rt": "あ"
+          },
+          {
+            "ruby": "わせる"
+          }
+        ]
+      },
+      {
+        "word": "会まる",
+        "reading": "あつまる",
+        "segments": [
+          {
+            "ruby": "会",
+            "rt": "あつ"
+          },
+          {
+            "ruby": "まる"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 128,
     "kanji": "寺",
-    "reading": "てら / ジ",
+    "reading": "てら / じ",
     "meaning": "Buddhist temple",
     "isRadical": false,
     "onyomi": [
-      "ジ"
+      "じ"
     ],
     "kunyomi": [
       "てら"
@@ -18245,16 +21543,28 @@ export const kanjiData = [
         "reading": "とうじ",
         "meaning": "this temple"
       }
+    ],
+    "standalone": [
+      {
+        "word": "寺",
+        "reading": "てら",
+        "segments": [
+          {
+            "ruby": "寺",
+            "rt": "てら"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 129,
     "kanji": "待",
-    "reading": "-ま.ち / ま.つ / タイ",
+    "reading": "-ま.ち / ま.つ / たい",
     "meaning": "depend on, wait",
     "isRadical": false,
     "onyomi": [
-      "タイ"
+      "たい"
     ],
     "kunyomi": [
       "-ま.ち",
@@ -18386,16 +21696,31 @@ export const kanjiData = [
         "reading": "しょうだい",
         "meaning": "invitation"
       }
+    ],
+    "standalone": [
+      {
+        "word": "待つ",
+        "reading": "まつ",
+        "segments": [
+          {
+            "ruby": "待",
+            "rt": "ま"
+          },
+          {
+            "ruby": "つ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 130,
     "kanji": "時",
-    "reading": "-どき / とき / ジ",
+    "reading": "-どき / とき / じ",
     "meaning": "hour, time",
     "isRadical": false,
     "onyomi": [
-      "ジ"
+      "じ"
     ],
     "kunyomi": [
       "-どき",
@@ -18527,16 +21852,28 @@ export const kanjiData = [
         "reading": "じこくひょう",
         "meaning": "timetable, schedule"
       }
+    ],
+    "standalone": [
+      {
+        "word": "時",
+        "reading": "とき",
+        "segments": [
+          {
+            "ruby": "時",
+            "rt": "とき"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 131,
     "kanji": "持",
-    "reading": "-も.ち / も.つ / も.てる / ジ",
+    "reading": "-も.ち / も.つ / も.てる / じ",
     "meaning": "have, hold",
     "isRadical": false,
     "onyomi": [
-      "ジ"
+      "じ"
     ],
     "kunyomi": [
       "-も.ち",
@@ -18669,16 +22006,44 @@ export const kanjiData = [
         "reading": "もちかぶ",
         "meaning": "stock holdings, one's shares"
       }
+    ],
+    "standalone": [
+      {
+        "word": "持つ",
+        "reading": "もつ",
+        "segments": [
+          {
+            "ruby": "持",
+            "rt": "も"
+          },
+          {
+            "ruby": "つ"
+          }
+        ]
+      },
+      {
+        "word": "持てる",
+        "reading": "もてる",
+        "segments": [
+          {
+            "ruby": "持",
+            "rt": "も"
+          },
+          {
+            "ruby": "てる"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 132,
     "kanji": "特",
-    "reading": "トク",
+    "reading": "とく",
     "meaning": "special",
     "isRadical": false,
     "onyomi": [
-      "トク"
+      "とく"
     ],
     "kunyomi": [],
     "examples": [
@@ -18807,16 +22172,17 @@ export const kanjiData = [
         "reading": "とっき",
         "meaning": "special mention"
       }
-    ]
+    ],
+    "standalone": []
   },
   {
     "id": 133,
     "kanji": "買",
-    "reading": "か.う / バイ",
+    "reading": "か.う / ばい",
     "meaning": "buy",
     "isRadical": false,
     "onyomi": [
-      "バイ"
+      "ばい"
     ],
     "kunyomi": [
       "か.う"
@@ -18947,16 +22313,31 @@ export const kanjiData = [
         "reading": "かいこむ",
         "meaning": "to buy in quantity, to buy a lot (of), to stock up (on)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "買う",
+        "reading": "かう",
+        "segments": [
+          {
+            "ruby": "買",
+            "rt": "か"
+          },
+          {
+            "ruby": "う"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 134,
     "kanji": "員",
-    "reading": "イン",
+    "reading": "いん",
     "meaning": "employee, member, number, the one in charge",
     "isRadical": false,
     "onyomi": [
-      "イン"
+      "いん"
     ],
     "kunyomi": [],
     "examples": [
@@ -19085,18 +22466,19 @@ export const kanjiData = [
         "reading": "げんいん",
         "meaning": "reduction of staff"
       }
-    ]
+    ],
+    "standalone": []
   },
   {
     "id": 135,
     "kanji": "質",
-    "reading": "シツ, シチ / たち",
+    "reading": "しつ, しち / たち",
     "meaning": "quality, substance, matter, temperament, pawn",
     "isRadical": false,
     "onyomi": [
-      "シチ",
-      "シツ",
-      "チ"
+      "しち",
+      "しつ",
+      "ち"
     ],
     "kunyomi": [
       "ただ.す",
@@ -19230,16 +22612,61 @@ export const kanjiData = [
         "reading": "いしつ",
         "meaning": "different (quality, nature), heterogeneous"
       }
+    ],
+    "standalone": [
+      {
+        "word": "質す",
+        "reading": "ただす",
+        "segments": [
+          {
+            "ruby": "質",
+            "rt": "ただ"
+          },
+          {
+            "ruby": "す"
+          }
+        ]
+      },
+      {
+        "word": "質",
+        "reading": "たち",
+        "segments": [
+          {
+            "ruby": "質",
+            "rt": "たち"
+          }
+        ]
+      },
+      {
+        "word": "質",
+        "reading": "もと",
+        "segments": [
+          {
+            "ruby": "質",
+            "rt": "もと"
+          }
+        ]
+      },
+      {
+        "word": "質",
+        "reading": "わりふ",
+        "segments": [
+          {
+            "ruby": "質",
+            "rt": "わりふ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 136,
     "kanji": "店",
-    "reading": "たな / みせ / テン",
+    "reading": "たな / みせ / てん",
     "meaning": "shop, store",
     "isRadical": false,
     "onyomi": [
-      "テン"
+      "てん"
     ],
     "kunyomi": [
       "たな",
@@ -19371,16 +22798,38 @@ export const kanjiData = [
         "reading": "みせばん",
         "meaning": "tending a store"
       }
+    ],
+    "standalone": [
+      {
+        "word": "店",
+        "reading": "たな",
+        "segments": [
+          {
+            "ruby": "店",
+            "rt": "たな"
+          }
+        ]
+      },
+      {
+        "word": "店",
+        "reading": "みせ",
+        "segments": [
+          {
+            "ruby": "店",
+            "rt": "みせ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 137,
     "kanji": "開",
-    "reading": "-びら.き / あ.く / あ.ける / ひら.き / ひら.く / ひら.ける / カイ",
+    "reading": "-びら.き / あ.く / あ.ける / ひら.き / ひら.く / ひら.ける / かい",
     "meaning": "open, unfold, unseal",
     "isRadical": false,
     "onyomi": [
-      "カイ"
+      "かい"
     ],
     "kunyomi": [
       "-びら.き",
@@ -19516,16 +22965,83 @@ export const kanjiData = [
         "reading": "かいこう",
         "meaning": "opening a school"
       }
+    ],
+    "standalone": [
+      {
+        "word": "開く",
+        "reading": "あく",
+        "segments": [
+          {
+            "ruby": "開",
+            "rt": "あ"
+          },
+          {
+            "ruby": "く"
+          }
+        ]
+      },
+      {
+        "word": "開ける",
+        "reading": "あける",
+        "segments": [
+          {
+            "ruby": "開",
+            "rt": "あ"
+          },
+          {
+            "ruby": "ける"
+          }
+        ]
+      },
+      {
+        "word": "開き",
+        "reading": "ひらき",
+        "segments": [
+          {
+            "ruby": "開",
+            "rt": "ひら"
+          },
+          {
+            "ruby": "き"
+          }
+        ]
+      },
+      {
+        "word": "開く",
+        "reading": "ひらく",
+        "segments": [
+          {
+            "ruby": "開",
+            "rt": "ひら"
+          },
+          {
+            "ruby": "く"
+          }
+        ]
+      },
+      {
+        "word": "開ける",
+        "reading": "ひらける",
+        "segments": [
+          {
+            "ruby": "開",
+            "rt": "ひら"
+          },
+          {
+            "ruby": "ける"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 138,
     "kanji": "閉",
-    "reading": "し.まる / し.める / た.てる / と.ざす / と.じる / ヘイ",
+    "reading": "し.まる / し.める / た.てる / と.ざす / と.じる / へい",
     "meaning": "closed, shut",
     "isRadical": false,
     "onyomi": [
-      "ヘイ"
+      "へい"
     ],
     "kunyomi": [
       "し.まる",
@@ -19660,16 +23176,83 @@ export const kanjiData = [
         "reading": "へいえん",
         "meaning": "closing of a park (e.g. theme park, botanical garden, etc.)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "閉まる",
+        "reading": "しまる",
+        "segments": [
+          {
+            "ruby": "閉",
+            "rt": "し"
+          },
+          {
+            "ruby": "まる"
+          }
+        ]
+      },
+      {
+        "word": "閉める",
+        "reading": "しめる",
+        "segments": [
+          {
+            "ruby": "閉",
+            "rt": "し"
+          },
+          {
+            "ruby": "める"
+          }
+        ]
+      },
+      {
+        "word": "閉てる",
+        "reading": "たてる",
+        "segments": [
+          {
+            "ruby": "閉",
+            "rt": "た"
+          },
+          {
+            "ruby": "てる"
+          }
+        ]
+      },
+      {
+        "word": "閉ざす",
+        "reading": "とざす",
+        "segments": [
+          {
+            "ruby": "閉",
+            "rt": "と"
+          },
+          {
+            "ruby": "ざす"
+          }
+        ]
+      },
+      {
+        "word": "閉じる",
+        "reading": "とじる",
+        "segments": [
+          {
+            "ruby": "閉",
+            "rt": "と"
+          },
+          {
+            "ruby": "じる"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 139,
     "kanji": "問",
-    "reading": "と.い / と.う / とん / モン",
+    "reading": "と.い / と.う / とん / もん",
     "meaning": "ask, problem, question",
     "isRadical": false,
     "onyomi": [
-      "モン"
+      "もん"
     ],
     "kunyomi": [
       "と.い",
@@ -19802,17 +23385,55 @@ export const kanjiData = [
         "reading": "しもん",
         "meaning": "consultation, question, enquiry"
       }
+    ],
+    "standalone": [
+      {
+        "word": "問い",
+        "reading": "とい",
+        "segments": [
+          {
+            "ruby": "問",
+            "rt": "と"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      },
+      {
+        "word": "問う",
+        "reading": "とう",
+        "segments": [
+          {
+            "ruby": "問",
+            "rt": "と"
+          },
+          {
+            "ruby": "う"
+          }
+        ]
+      },
+      {
+        "word": "問",
+        "reading": "とん",
+        "segments": [
+          {
+            "ruby": "問",
+            "rt": "とん"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 140,
     "kanji": "自",
-    "reading": "おの.ずから / おの.ずと / みずか.ら / シ / ジ",
+    "reading": "おの.ずから / おの.ずと / みずか.ら / し / じ",
     "meaning": "oneself",
     "isRadical": false,
     "onyomi": [
-      "シ",
-      "ジ"
+      "し",
+      "じ"
     ],
     "kunyomi": [
       "おの.ずから",
@@ -19945,16 +23566,57 @@ export const kanjiData = [
         "reading": "じち",
         "meaning": "local (governmental) autonomy"
       }
+    ],
+    "standalone": [
+      {
+        "word": "自ずから",
+        "reading": "おのずから",
+        "segments": [
+          {
+            "ruby": "自",
+            "rt": "おの"
+          },
+          {
+            "ruby": "ずから"
+          }
+        ]
+      },
+      {
+        "word": "自ずと",
+        "reading": "おのずと",
+        "segments": [
+          {
+            "ruby": "自",
+            "rt": "おの"
+          },
+          {
+            "ruby": "ずと"
+          }
+        ]
+      },
+      {
+        "word": "自ら",
+        "reading": "みずから",
+        "segments": [
+          {
+            "ruby": "自",
+            "rt": "みずか"
+          },
+          {
+            "ruby": "ら"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 141,
     "kanji": "首",
-    "reading": "くび / シュ",
+    "reading": "くび / しゅ",
     "meaning": "counter for songs and poems, neck",
     "isRadical": false,
     "onyomi": [
-      "シュ"
+      "しゅ"
     ],
     "kunyomi": [
       "くび"
@@ -20085,17 +23747,29 @@ export const kanjiData = [
         "reading": "いくび",
         "meaning": "bull neck"
       }
+    ],
+    "standalone": [
+      {
+        "word": "首",
+        "reading": "くび",
+        "segments": [
+          {
+            "ruby": "首",
+            "rt": "くび"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 142,
     "kanji": "道",
-    "reading": "いう / みち / トウ / ドウ",
+    "reading": "いう / みち / とう / どう",
     "meaning": "course, district, journey, moral, road-way, street, teachings",
     "isRadical": false,
     "onyomi": [
-      "トウ",
-      "ドウ"
+      "とう",
+      "どう"
     ],
     "kunyomi": [
       "いう",
@@ -20227,16 +23901,38 @@ export const kanjiData = [
         "reading": "かいどう",
         "meaning": "subdistrict (in China)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "道",
+        "reading": "いう",
+        "segments": [
+          {
+            "ruby": "道",
+            "rt": "いう"
+          }
+        ]
+      },
+      {
+        "word": "道",
+        "reading": "みち",
+        "segments": [
+          {
+            "ruby": "道",
+            "rt": "みち"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 143,
     "kanji": "週",
-    "reading": "シュウ",
+    "reading": "しゅう",
     "meaning": "week",
     "isRadical": false,
     "onyomi": [
-      "シュウ"
+      "しゅう"
     ],
     "kunyomi": [],
     "examples": [
@@ -20365,17 +24061,18 @@ export const kanjiData = [
         "reading": "しゅうじつ",
         "meaning": "weekday"
       }
-    ]
+    ],
+    "standalone": []
   },
   {
     "id": 144,
     "kanji": "重",
-    "reading": "え / おも / おも.い / おも.なう / おも.り / かさ.なる / かさ.ねる / ジュウ / チョウ",
+    "reading": "え / おも / おも.い / おも.なう / おも.り / かさ.なる / かさ.ねる / じゅう / ちょう",
     "meaning": "-fold, esteem, heap up, heavy, important, nest of boxes, pile up, respect",
     "isRadical": false,
     "onyomi": [
-      "ジュウ",
-      "チョウ"
+      "じゅう",
+      "ちょう"
     ],
     "kunyomi": [
       "え",
@@ -20512,16 +24209,103 @@ export const kanjiData = [
         "reading": "きちょうひん",
         "meaning": "valuable article, valuables"
       }
+    ],
+    "standalone": [
+      {
+        "word": "重",
+        "reading": "え",
+        "segments": [
+          {
+            "ruby": "重",
+            "rt": "え"
+          }
+        ]
+      },
+      {
+        "word": "重",
+        "reading": "おも",
+        "segments": [
+          {
+            "ruby": "重",
+            "rt": "おも"
+          }
+        ]
+      },
+      {
+        "word": "重い",
+        "reading": "おもい",
+        "segments": [
+          {
+            "ruby": "重",
+            "rt": "おも"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      },
+      {
+        "word": "重なう",
+        "reading": "おもなう",
+        "segments": [
+          {
+            "ruby": "重",
+            "rt": "おも"
+          },
+          {
+            "ruby": "なう"
+          }
+        ]
+      },
+      {
+        "word": "重り",
+        "reading": "おもり",
+        "segments": [
+          {
+            "ruby": "重",
+            "rt": "おも"
+          },
+          {
+            "ruby": "り"
+          }
+        ]
+      },
+      {
+        "word": "重なる",
+        "reading": "かさなる",
+        "segments": [
+          {
+            "ruby": "重",
+            "rt": "かさ"
+          },
+          {
+            "ruby": "なる"
+          }
+        ]
+      },
+      {
+        "word": "重ねる",
+        "reading": "かさねる",
+        "segments": [
+          {
+            "ruby": "重",
+            "rt": "かさ"
+          },
+          {
+            "ruby": "ねる"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 145,
     "kanji": "動",
-    "reading": "うご.かす / うご.く / ドウ",
+    "reading": "うご.かす / うご.く / どう",
     "meaning": "change, confusion, motion, move, shake, shift",
     "isRadical": false,
     "onyomi": [
-      "ドウ"
+      "どう"
     ],
     "kunyomi": [
       "うご.かす",
@@ -20653,16 +24437,44 @@ export const kanjiData = [
         "reading": "かつどう",
         "meaning": "movie (esp. during the silent movie period)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "動かす",
+        "reading": "うごかす",
+        "segments": [
+          {
+            "ruby": "動",
+            "rt": "うご"
+          },
+          {
+            "ruby": "かす"
+          }
+        ]
+      },
+      {
+        "word": "動く",
+        "reading": "うごく",
+        "segments": [
+          {
+            "ruby": "動",
+            "rt": "うご"
+          },
+          {
+            "ruby": "く"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 146,
     "kanji": "働",
-    "reading": "はたら.く / ドウ",
+    "reading": "はたら.く / どう",
     "meaning": "(kokuji), work",
     "isRadical": false,
     "onyomi": [
-      "ドウ"
+      "どう"
     ],
     "kunyomi": [
       "はたら.く"
@@ -20793,17 +24605,32 @@ export const kanjiData = [
         "reading": "はたらかせる",
         "meaning": "to put someone to work, to make someone work"
       }
+    ],
+    "standalone": [
+      {
+        "word": "働く",
+        "reading": "はたらく",
+        "segments": [
+          {
+            "ruby": "働",
+            "rt": "はたら"
+          },
+          {
+            "ruby": "く"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 147,
     "kanji": "早",
-    "reading": "さ- / はや / はや- / はや.い / はや.まる / はや.める / サッ / ソウ",
+    "reading": "さ- / はや / はや- / はや.い / はや.まる / はや.める / さっ / そう",
     "meaning": "early, fast",
     "isRadical": false,
     "onyomi": [
-      "サッ",
-      "ソウ"
+      "さっ",
+      "そう"
     ],
     "kunyomi": [
       "さ-",
@@ -20939,17 +24766,68 @@ export const kanjiData = [
         "reading": "はやわざ",
         "meaning": "quick work, (clever) feat"
       }
+    ],
+    "standalone": [
+      {
+        "word": "早",
+        "reading": "はや",
+        "segments": [
+          {
+            "ruby": "早",
+            "rt": "はや"
+          }
+        ]
+      },
+      {
+        "word": "早い",
+        "reading": "はやい",
+        "segments": [
+          {
+            "ruby": "早",
+            "rt": "はや"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      },
+      {
+        "word": "早まる",
+        "reading": "はやまる",
+        "segments": [
+          {
+            "ruby": "早",
+            "rt": "はや"
+          },
+          {
+            "ruby": "まる"
+          }
+        ]
+      },
+      {
+        "word": "早める",
+        "reading": "はやめる",
+        "segments": [
+          {
+            "ruby": "早",
+            "rt": "はや"
+          },
+          {
+            "ruby": "める"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 148,
     "kanji": "花",
-    "reading": "はな / カ / ケ",
+    "reading": "はな / か / け",
     "meaning": "flower",
     "isRadical": false,
     "onyomi": [
-      "カ",
-      "ケ"
+      "か",
+      "け"
     ],
     "kunyomi": [
       "はな"
@@ -21080,16 +24958,28 @@ export const kanjiData = [
         "reading": "けんか",
         "meaning": "flower offering, floral tribute, laying flowers"
       }
+    ],
+    "standalone": [
+      {
+        "word": "花",
+        "reading": "はな",
+        "segments": [
+          {
+            "ruby": "花",
+            "rt": "はな"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 149,
     "kanji": "草",
-    "reading": "-ぐさ / くさ / くさ- / ソウ",
+    "reading": "-ぐさ / くさ / くさ- / そう",
     "meaning": "draft, grass, herbs, pasture, weeds, write",
     "isRadical": false,
     "onyomi": [
-      "ソウ"
+      "そう"
     ],
     "kunyomi": [
       "-ぐさ",
@@ -21222,17 +25112,29 @@ export const kanjiData = [
         "reading": "みちくさ",
         "meaning": "loitering on the way"
       }
+    ],
+    "standalone": [
+      {
+        "word": "草",
+        "reading": "くさ",
+        "segments": [
+          {
+            "ruby": "草",
+            "rt": "くさ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 150,
     "kanji": "茶",
-    "reading": "サ / チャ",
+    "reading": "さ / ちゃ",
     "meaning": "tea",
     "isRadical": false,
     "onyomi": [
-      "サ",
-      "チャ"
+      "さ",
+      "ちゃ"
     ],
     "kunyomi": [],
     "examples": [
@@ -21361,16 +25263,28 @@ export const kanjiData = [
         "reading": "ちゃしゃく",
         "meaning": "bamboo tea spoon for making Japanese tea"
       }
+    ],
+    "standalone": [
+      {
+        "word": "茶",
+        "reading": "ちゃ",
+        "segments": [
+          {
+            "ruby": "茶",
+            "rt": "ちゃ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 151,
     "kanji": "転",
-    "reading": "うたた / うつ.る / くる.めく / ころ.がす / ころ.がる / ころ.げる / ころ.ぶ / まろ.ぶ / テン",
+    "reading": "うたた / うつ.る / くる.めく / ころ.がす / ころ.がる / ころ.げる / ころ.ぶ / まろ.ぶ / てん",
     "meaning": "change, revolve, turn around",
     "isRadical": false,
     "onyomi": [
-      "テン"
+      "てん"
     ],
     "kunyomi": [
       "うたた",
@@ -21508,16 +25422,119 @@ export const kanjiData = [
         "reading": "てんせん",
         "meaning": "moving from one battlefield to another, fighting on successive fronts, fighting in various battles"
       }
+    ],
+    "standalone": [
+      {
+        "word": "転",
+        "reading": "うたた",
+        "segments": [
+          {
+            "ruby": "転",
+            "rt": "うたた"
+          }
+        ]
+      },
+      {
+        "word": "転る",
+        "reading": "うつる",
+        "segments": [
+          {
+            "ruby": "転",
+            "rt": "うつ"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      },
+      {
+        "word": "転めく",
+        "reading": "くるめく",
+        "segments": [
+          {
+            "ruby": "転",
+            "rt": "くる"
+          },
+          {
+            "ruby": "めく"
+          }
+        ]
+      },
+      {
+        "word": "転がす",
+        "reading": "ころがす",
+        "segments": [
+          {
+            "ruby": "転",
+            "rt": "ころ"
+          },
+          {
+            "ruby": "がす"
+          }
+        ]
+      },
+      {
+        "word": "転がる",
+        "reading": "ころがる",
+        "segments": [
+          {
+            "ruby": "転",
+            "rt": "ころ"
+          },
+          {
+            "ruby": "がる"
+          }
+        ]
+      },
+      {
+        "word": "転げる",
+        "reading": "ころげる",
+        "segments": [
+          {
+            "ruby": "転",
+            "rt": "ころ"
+          },
+          {
+            "ruby": "げる"
+          }
+        ]
+      },
+      {
+        "word": "転ぶ",
+        "reading": "ころぶ",
+        "segments": [
+          {
+            "ruby": "転",
+            "rt": "ころ"
+          },
+          {
+            "ruby": "ぶ"
+          }
+        ]
+      },
+      {
+        "word": "転ぶ",
+        "reading": "まろぶ",
+        "segments": [
+          {
+            "ruby": "転",
+            "rt": "まろ"
+          },
+          {
+            "ruby": "ぶ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 152,
     "kanji": "運",
-    "reading": "はこ.ぶ / ウン",
+    "reading": "はこ.ぶ / うん",
     "meaning": "advance, carry, destiny, fate, lot, luck, progress, transport",
     "isRadical": false,
     "onyomi": [
-      "ウン"
+      "うん"
     ],
     "kunyomi": [
       "はこ.ぶ"
@@ -21648,18 +25665,33 @@ export const kanjiData = [
         "reading": "ひうん",
         "meaning": "sad fate, tragic doom, ill fate"
       }
+    ],
+    "standalone": [
+      {
+        "word": "運ぶ",
+        "reading": "はこぶ",
+        "segments": [
+          {
+            "ruby": "運",
+            "rt": "はこ"
+          },
+          {
+            "ruby": "ぶ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 153,
     "kanji": "軽",
-    "reading": "かる.い / かろ.やか / かろ.んじる / キョウ / キン / ケイ",
+    "reading": "かる.い / かろ.やか / かろ.んじる / きょう / きん / けい",
     "meaning": "lightly, trifling, unimportant",
     "isRadical": false,
     "onyomi": [
-      "キョウ",
-      "キン",
-      "ケイ"
+      "きょう",
+      "きん",
+      "けい"
     ],
     "kunyomi": [
       "かる.い",
@@ -21792,16 +25824,57 @@ export const kanjiData = [
         "reading": "けいきかんじゅう",
         "meaning": "light machine gun"
       }
+    ],
+    "standalone": [
+      {
+        "word": "軽い",
+        "reading": "かるい",
+        "segments": [
+          {
+            "ruby": "軽",
+            "rt": "かる"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      },
+      {
+        "word": "軽やか",
+        "reading": "かろやか",
+        "segments": [
+          {
+            "ruby": "軽",
+            "rt": "かろ"
+          },
+          {
+            "ruby": "やか"
+          }
+        ]
+      },
+      {
+        "word": "軽んじる",
+        "reading": "かろんじる",
+        "segments": [
+          {
+            "ruby": "軽",
+            "rt": "かろ"
+          },
+          {
+            "ruby": "んじる"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 154,
     "kanji": "朝",
-    "reading": "あさ / チョウ",
+    "reading": "あさ / ちょう",
     "meaning": "(North) Korea, dynasty, epoch, morning, period, regime",
     "isRadical": false,
     "onyomi": [
-      "チョウ"
+      "ちょう"
     ],
     "kunyomi": [
       "あさ"
@@ -21932,16 +26005,28 @@ export const kanjiData = [
         "reading": "よくあさ",
         "meaning": "next morning"
       }
+    ],
+    "standalone": [
+      {
+        "word": "朝",
+        "reading": "あさ",
+        "segments": [
+          {
+            "ruby": "朝",
+            "rt": "あさ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 155,
     "kanji": "昼",
-    "reading": "ひる / チュウ",
+    "reading": "ひる / ちゅう",
     "meaning": "daytime, noon",
     "isRadical": false,
     "onyomi": [
-      "チュウ"
+      "ちゅう"
     ],
     "kunyomi": [
       "ひる"
@@ -22072,17 +26157,29 @@ export const kanjiData = [
         "reading": "ちゅうかん",
         "meaning": "daytime, during the day, time from sunrise until sunset"
       }
+    ],
+    "standalone": [
+      {
+        "word": "昼",
+        "reading": "ひる",
+        "segments": [
+          {
+            "ruby": "昼",
+            "rt": "ひる"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 156,
     "kanji": "風",
-    "reading": "かざ- / かぜ / フ / フウ",
+    "reading": "かざ- / かぜ / ふ / ふう",
     "meaning": "air, manner, style, wind",
     "isRadical": false,
     "onyomi": [
-      "フ",
-      "フウ"
+      "ふ",
+      "ふう"
     ],
     "kunyomi": [
       "かざ-",
@@ -22214,16 +26311,28 @@ export const kanjiData = [
         "reading": "びょうぶ",
         "meaning": "folding screen"
       }
+    ],
+    "standalone": [
+      {
+        "word": "風",
+        "reading": "かぜ",
+        "segments": [
+          {
+            "ruby": "風",
+            "rt": "かぜ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 157,
     "kanji": "押",
-    "reading": "お.さえる / お.し- / お.す / お.っ- / おさ.える / オウ",
+    "reading": "お.さえる / お.し- / お.す / お.っ- / おさ.える / おう",
     "meaning": "attach, check, do in spite of, press, push, seal, seize, shove, stop, subdue, weight",
     "isRadical": false,
     "onyomi": [
-      "オウ"
+      "おう"
     ],
     "kunyomi": [
       "お.さえる",
@@ -22358,16 +26467,57 @@ export const kanjiData = [
         "reading": "おしかけにょうぼう",
         "meaning": "woman who forced her husband into marriage"
       }
+    ],
+    "standalone": [
+      {
+        "word": "押さえる",
+        "reading": "おさえる",
+        "segments": [
+          {
+            "ruby": "押",
+            "rt": "お"
+          },
+          {
+            "ruby": "さえる"
+          }
+        ]
+      },
+      {
+        "word": "押す",
+        "reading": "おす",
+        "segments": [
+          {
+            "ruby": "押",
+            "rt": "お"
+          },
+          {
+            "ruby": "す"
+          }
+        ]
+      },
+      {
+        "word": "押える",
+        "reading": "おさえる",
+        "segments": [
+          {
+            "ruby": "押",
+            "rt": "おさ"
+          },
+          {
+            "ruby": "える"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 158,
     "kanji": "引",
-    "reading": "ひ.く / ひ.ける / イン",
+    "reading": "ひ.く / ひ.ける / いん",
     "meaning": "admit, install, jerk, pull, quote, refer to, tug",
     "isRadical": false,
     "onyomi": [
-      "イン"
+      "いん"
     ],
     "kunyomi": [
       "ひ.く",
@@ -22499,17 +26649,45 @@ export const kanjiData = [
         "reading": "ひきとる",
         "meaning": "to take into one's care (e.g. person, pet), to take custody of, to adopt"
       }
+    ],
+    "standalone": [
+      {
+        "word": "引く",
+        "reading": "ひく",
+        "segments": [
+          {
+            "ruby": "引",
+            "rt": "ひ"
+          },
+          {
+            "ruby": "く"
+          }
+        ]
+      },
+      {
+        "word": "引ける",
+        "reading": "ひける",
+        "segments": [
+          {
+            "ruby": "引",
+            "rt": "ひ"
+          },
+          {
+            "ruby": "ける"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 159,
     "kanji": "強",
-    "reading": "こわ.い / し.いる / つよ.い / つよ.まる / つよ.める / キョウ / ゴウ",
+    "reading": "こわ.い / し.いる / つよ.い / つよ.まる / つよ.める / きょう / ごう",
     "meaning": "strong",
     "isRadical": false,
     "onyomi": [
-      "キョウ",
-      "ゴウ"
+      "きょう",
+      "ごう"
     ],
     "kunyomi": [
       "こわ.い",
@@ -22644,16 +26822,83 @@ export const kanjiData = [
         "reading": "つよまる",
         "meaning": "to get strong, to gain strength"
       }
+    ],
+    "standalone": [
+      {
+        "word": "強い",
+        "reading": "こわい",
+        "segments": [
+          {
+            "ruby": "強",
+            "rt": "こわ"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      },
+      {
+        "word": "強いる",
+        "reading": "しいる",
+        "segments": [
+          {
+            "ruby": "強",
+            "rt": "し"
+          },
+          {
+            "ruby": "いる"
+          }
+        ]
+      },
+      {
+        "word": "強い",
+        "reading": "つよい",
+        "segments": [
+          {
+            "ruby": "強",
+            "rt": "つよ"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      },
+      {
+        "word": "強まる",
+        "reading": "つよまる",
+        "segments": [
+          {
+            "ruby": "強",
+            "rt": "つよ"
+          },
+          {
+            "ruby": "まる"
+          }
+        ]
+      },
+      {
+        "word": "強める",
+        "reading": "つよめる",
+        "segments": [
+          {
+            "ruby": "強",
+            "rt": "つよ"
+          },
+          {
+            "ruby": "める"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 160,
     "kanji": "弱",
-    "reading": "よわ.い / よわ.まる / よわ.める / よわ.る / ジャク",
+    "reading": "よわ.い / よわ.まる / よわ.める / よわ.る / じゃく",
     "meaning": "frail, weak",
     "isRadical": false,
     "onyomi": [
-      "ジャク"
+      "じゃく"
     ],
     "kunyomi": [
       "よわ.い",
@@ -22787,17 +27032,71 @@ export const kanjiData = [
         "reading": "きよわ",
         "meaning": "timid, fainthearted"
       }
+    ],
+    "standalone": [
+      {
+        "word": "弱い",
+        "reading": "よわい",
+        "segments": [
+          {
+            "ruby": "弱",
+            "rt": "よわ"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      },
+      {
+        "word": "弱まる",
+        "reading": "よわまる",
+        "segments": [
+          {
+            "ruby": "弱",
+            "rt": "よわ"
+          },
+          {
+            "ruby": "まる"
+          }
+        ]
+      },
+      {
+        "word": "弱める",
+        "reading": "よわめる",
+        "segments": [
+          {
+            "ruby": "弱",
+            "rt": "よわ"
+          },
+          {
+            "ruby": "める"
+          }
+        ]
+      },
+      {
+        "word": "弱る",
+        "reading": "よわる",
+        "segments": [
+          {
+            "ruby": "弱",
+            "rt": "よわ"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 161,
     "kanji": "習",
-    "reading": "なら.い / なら.う / シュウ / ジュ",
+    "reading": "なら.い / なら.う / しゅう / じゅ",
     "meaning": "learn",
     "isRadical": false,
     "onyomi": [
-      "シュウ",
-      "ジュ"
+      "しゅう",
+      "じゅ"
     ],
     "kunyomi": [
       "なら.い",
@@ -22929,16 +27228,44 @@ export const kanjiData = [
         "reading": "ならいごと",
         "meaning": "accomplishment, lessons (in an art, skill, etc.), practice"
       }
+    ],
+    "standalone": [
+      {
+        "word": "習い",
+        "reading": "ならい",
+        "segments": [
+          {
+            "ruby": "習",
+            "rt": "なら"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      },
+      {
+        "word": "習う",
+        "reading": "ならう",
+        "segments": [
+          {
+            "ruby": "習",
+            "rt": "なら"
+          },
+          {
+            "ruby": "う"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 162,
     "kanji": "勉",
-    "reading": "つと.める / ベン",
+    "reading": "つと.める / べん",
     "meaning": "diligent, encourage, endeavour, exertion, make effort, strive",
     "isRadical": false,
     "onyomi": [
-      "ベン"
+      "べん"
     ],
     "kunyomi": [
       "つと.める"
@@ -23069,17 +27396,32 @@ export const kanjiData = [
         "reading": "じゅけんべんきょう",
         "meaning": "studying for a test (esp. school or university entrance examinations)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "勉める",
+        "reading": "つとめる",
+        "segments": [
+          {
+            "ruby": "勉",
+            "rt": "つと"
+          },
+          {
+            "ruby": "める"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 163,
     "kanji": "台",
-    "reading": "うてな / つかさ / われ / タイ / ダイ",
+    "reading": "うてな / つかさ / われ / たい / だい",
     "meaning": "a stand, counter for machines and vehicles, pedestal",
     "isRadical": false,
     "onyomi": [
-      "タイ",
-      "ダイ"
+      "たい",
+      "だい"
     ],
     "kunyomi": [
       "うてな",
@@ -23212,16 +27554,48 @@ export const kanjiData = [
         "reading": "やたい",
         "meaning": "house (esp. a small and miserable one)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "台",
+        "reading": "うてな",
+        "segments": [
+          {
+            "ruby": "台",
+            "rt": "うてな"
+          }
+        ]
+      },
+      {
+        "word": "台",
+        "reading": "つかさ",
+        "segments": [
+          {
+            "ruby": "台",
+            "rt": "つかさ"
+          }
+        ]
+      },
+      {
+        "word": "台",
+        "reading": "われ",
+        "segments": [
+          {
+            "ruby": "台",
+            "rt": "われ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 164,
     "kanji": "始",
-    "reading": "-はじ.める / はじ.まる / はじ.める / シ",
+    "reading": "-はじ.める / はじ.まる / はじ.める / し",
     "meaning": "begin, commence",
     "isRadical": false,
     "onyomi": [
-      "シ"
+      "し"
     ],
     "kunyomi": [
       "-はじ.める",
@@ -23354,16 +27728,44 @@ export const kanjiData = [
         "reading": "げんし",
         "meaning": "origin"
       }
+    ],
+    "standalone": [
+      {
+        "word": "始まる",
+        "reading": "はじまる",
+        "segments": [
+          {
+            "ruby": "始",
+            "rt": "はじ"
+          },
+          {
+            "ruby": "まる"
+          }
+        ]
+      },
+      {
+        "word": "始める",
+        "reading": "はじめる",
+        "segments": [
+          {
+            "ruby": "始",
+            "rt": "はじ"
+          },
+          {
+            "ruby": "める"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 165,
     "kanji": "市",
-    "reading": "いち / シ",
+    "reading": "いち / し",
     "meaning": "city, market, town",
     "isRadical": false,
     "onyomi": [
-      "シ"
+      "し"
     ],
     "kunyomi": [
       "いち"
@@ -23494,16 +27896,28 @@ export const kanjiData = [
         "reading": "ぜんし",
         "meaning": "the whole city"
       }
+    ],
+    "standalone": [
+      {
+        "word": "市",
+        "reading": "し",
+        "segments": [
+          {
+            "ruby": "市",
+            "rt": "し"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 166,
     "kanji": "姉",
-    "reading": "あね / はは / シ",
+    "reading": "あね / はは / し",
     "meaning": "elder sister",
     "isRadical": false,
     "onyomi": [
-      "シ"
+      "し"
     ],
     "kunyomi": [
       "あね",
@@ -23635,16 +28049,38 @@ export const kanjiData = [
         "reading": "じゅうしまい",
         "meaning": "cousin (female)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "姉",
+        "reading": "あね",
+        "segments": [
+          {
+            "ruby": "姉",
+            "rt": "あね"
+          }
+        ]
+      },
+      {
+        "word": "姉",
+        "reading": "はは",
+        "segments": [
+          {
+            "ruby": "姉",
+            "rt": "はは"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 167,
     "kanji": "妹",
-    "reading": "いもうと / マイ",
+    "reading": "いもうと / まい",
     "meaning": "younger sister",
     "isRadical": false,
     "onyomi": [
-      "マイ"
+      "まい"
     ],
     "kunyomi": [
       "いもうと"
@@ -23775,16 +28211,28 @@ export const kanjiData = [
         "reading": "しまいかん",
         "meaning": "sister ship"
       }
+    ],
+    "standalone": [
+      {
+        "word": "妹",
+        "reading": "いもうと",
+        "segments": [
+          {
+            "ruby": "妹",
+            "rt": "いもうと"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 168,
     "kanji": "味",
-    "reading": "あじ / あじ.わう / ミ",
+    "reading": "あじ / あじ.わう / み",
     "meaning": "flavor, taste",
     "isRadical": false,
     "onyomi": [
-      "ミ"
+      "み"
     ],
     "kunyomi": [
       "あじ",
@@ -23916,16 +28364,41 @@ export const kanjiData = [
         "reading": "しんみ",
         "meaning": "fresh taste, novelty, originality"
       }
+    ],
+    "standalone": [
+      {
+        "word": "味",
+        "reading": "あじ",
+        "segments": [
+          {
+            "ruby": "味",
+            "rt": "あじ"
+          }
+        ]
+      },
+      {
+        "word": "味わう",
+        "reading": "あじわう",
+        "segments": [
+          {
+            "ruby": "味",
+            "rt": "あじ"
+          },
+          {
+            "ruby": "わう"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 169,
     "kanji": "好",
-    "reading": "い.い / この.む / す.く / よ.い / コウ",
+    "reading": "い.い / この.む / す.く / よ.い / こう",
     "meaning": "fond, like something, pleasing",
     "isRadical": false,
     "onyomi": [
-      "コウ"
+      "こう"
     ],
     "kunyomi": [
       "い.い",
@@ -24059,16 +28532,70 @@ export const kanjiData = [
         "reading": "こうえん",
         "meaning": "good performance"
       }
+    ],
+    "standalone": [
+      {
+        "word": "好い",
+        "reading": "いい",
+        "segments": [
+          {
+            "ruby": "好",
+            "rt": "い"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      },
+      {
+        "word": "好む",
+        "reading": "このむ",
+        "segments": [
+          {
+            "ruby": "好",
+            "rt": "この"
+          },
+          {
+            "ruby": "む"
+          }
+        ]
+      },
+      {
+        "word": "好く",
+        "reading": "すく",
+        "segments": [
+          {
+            "ruby": "好",
+            "rt": "す"
+          },
+          {
+            "ruby": "く"
+          }
+        ]
+      },
+      {
+        "word": "好い",
+        "reading": "よい",
+        "segments": [
+          {
+            "ruby": "好",
+            "rt": "よ"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 170,
     "kanji": "心",
-    "reading": "-ごころ / こころ / シン",
+    "reading": "-ごころ / こころ / しん",
     "meaning": "heart, heart radical (no. 61), mind, spirit",
     "isRadical": false,
     "onyomi": [
-      "シン"
+      "しん"
     ],
     "kunyomi": [
       "-ごころ",
@@ -24200,16 +28727,28 @@ export const kanjiData = [
         "reading": "ここち",
         "meaning": "sensation of doing"
       }
+    ],
+    "standalone": [
+      {
+        "word": "心",
+        "reading": "こころ",
+        "segments": [
+          {
+            "ruby": "心",
+            "rt": "こころ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 171,
     "kanji": "思",
-    "reading": "おぼ.す / おも.う / おもえら.く / シ",
+    "reading": "おぼ.す / おも.う / おもえら.く / し",
     "meaning": "think",
     "isRadical": false,
     "onyomi": [
-      "シ"
+      "し"
     ],
     "kunyomi": [
       "おぼ.す",
@@ -24342,16 +28881,57 @@ export const kanjiData = [
         "reading": "おもうぞんぶん",
         "meaning": "to one's heart's content, to one's complete satisfaction, as much as one likes"
       }
+    ],
+    "standalone": [
+      {
+        "word": "思す",
+        "reading": "おぼす",
+        "segments": [
+          {
+            "ruby": "思",
+            "rt": "おぼ"
+          },
+          {
+            "ruby": "す"
+          }
+        ]
+      },
+      {
+        "word": "思う",
+        "reading": "おもう",
+        "segments": [
+          {
+            "ruby": "思",
+            "rt": "おも"
+          },
+          {
+            "ruby": "う"
+          }
+        ]
+      },
+      {
+        "word": "思く",
+        "reading": "おもえらく",
+        "segments": [
+          {
+            "ruby": "思",
+            "rt": "おもえら"
+          },
+          {
+            "ruby": "く"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 172,
     "kanji": "意",
-    "reading": "イ",
+    "reading": "い",
     "meaning": "care, desire, heart, idea, liking, mind, taste, thought",
     "isRadical": false,
     "onyomi": [
-      "イ"
+      "い"
     ],
     "kunyomi": [],
     "examples": [
@@ -24480,16 +29060,17 @@ export const kanjiData = [
         "reading": "いしき",
         "meaning": "consciousness"
       }
-    ]
+    ],
+    "standalone": []
   },
   {
     "id": 173,
     "kanji": "急",
-    "reading": "いそ.ぎ / いそ.ぐ / せ.く / キュウ",
+    "reading": "いそ.ぎ / いそ.ぐ / せ.く / きゅう",
     "meaning": "emergency, hurry, steep, sudden",
     "isRadical": false,
     "onyomi": [
-      "キュウ"
+      "きゅう"
     ],
     "kunyomi": [
       "いそ.ぎ",
@@ -24622,17 +29203,58 @@ export const kanjiData = [
         "reading": "きゅうしん",
         "meaning": "rapid progress, radical progress"
       }
+    ],
+    "standalone": [
+      {
+        "word": "急ぎ",
+        "reading": "いそぎ",
+        "segments": [
+          {
+            "ruby": "急",
+            "rt": "いそ"
+          },
+          {
+            "ruby": "ぎ"
+          }
+        ]
+      },
+      {
+        "word": "急ぐ",
+        "reading": "いそぐ",
+        "segments": [
+          {
+            "ruby": "急",
+            "rt": "いそ"
+          },
+          {
+            "ruby": "ぐ"
+          }
+        ]
+      },
+      {
+        "word": "急く",
+        "reading": "せく",
+        "segments": [
+          {
+            "ruby": "急",
+            "rt": "せ"
+          },
+          {
+            "ruby": "く"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 174,
     "kanji": "悪",
-    "reading": "-にく.い / あ.し / ああ / いずくに / いずくんぞ / にく.い / にく.む / わる- / わる.い / アク / オ",
+    "reading": "-にく.い / あ.し / ああ / いずくに / いずくんぞ / にく.い / にく.む / わる- / わる.い / あく / お",
     "meaning": "bad, evil, false, rascal, vice, wrong",
     "isRadical": false,
     "onyomi": [
-      "アク",
-      "オ"
+      "あく",
+      "お"
     ],
     "kunyomi": [
       "-にく.い",
@@ -24771,17 +29393,101 @@ export const kanjiData = [
         "reading": "ごくあく",
         "meaning": "heinous"
       }
+    ],
+    "standalone": [
+      {
+        "word": "悪し",
+        "reading": "あし",
+        "segments": [
+          {
+            "ruby": "悪",
+            "rt": "あ"
+          },
+          {
+            "ruby": "し"
+          }
+        ]
+      },
+      {
+        "word": "悪",
+        "reading": "ああ",
+        "segments": [
+          {
+            "ruby": "悪",
+            "rt": "ああ"
+          }
+        ]
+      },
+      {
+        "word": "悪",
+        "reading": "いずくに",
+        "segments": [
+          {
+            "ruby": "悪",
+            "rt": "いずくに"
+          }
+        ]
+      },
+      {
+        "word": "悪",
+        "reading": "いずくんぞ",
+        "segments": [
+          {
+            "ruby": "悪",
+            "rt": "いずくんぞ"
+          }
+        ]
+      },
+      {
+        "word": "悪い",
+        "reading": "にくい",
+        "segments": [
+          {
+            "ruby": "悪",
+            "rt": "にく"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      },
+      {
+        "word": "悪む",
+        "reading": "にくむ",
+        "segments": [
+          {
+            "ruby": "悪",
+            "rt": "にく"
+          },
+          {
+            "ruby": "む"
+          }
+        ]
+      },
+      {
+        "word": "悪い",
+        "reading": "わるい",
+        "segments": [
+          {
+            "ruby": "悪",
+            "rt": "わる"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 175,
     "kanji": "兄",
-    "reading": "あに / キョウ / ケイ",
+    "reading": "あに / きょう / けい",
     "meaning": "big brother, elder brother",
     "isRadical": false,
     "onyomi": [
-      "キョウ",
-      "ケイ"
+      "きょう",
+      "けい"
     ],
     "kunyomi": [
       "あに"
@@ -24912,18 +29618,30 @@ export const kanjiData = [
         "reading": "がけい",
         "meaning": "you"
       }
+    ],
+    "standalone": [
+      {
+        "word": "兄",
+        "reading": "あに",
+        "segments": [
+          {
+            "ruby": "兄",
+            "rt": "あに"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 176,
     "kanji": "弟",
-    "reading": "おとうと / ダイ / テイ / デ",
+    "reading": "おとうと / だい / てい / で",
     "meaning": "faithful service to elders, younger brother",
     "isRadical": false,
     "onyomi": [
-      "ダイ",
-      "テイ",
-      "デ"
+      "だい",
+      "てい",
+      "で"
     ],
     "kunyomi": [
       "おとうと"
@@ -25054,16 +29772,28 @@ export const kanjiData = [
         "reading": "おとうとぶん",
         "meaning": "sworn younger brother, junior male peer (in a club, group, etc.)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "弟",
+        "reading": "おとうと",
+        "segments": [
+          {
+            "ruby": "弟",
+            "rt": "おとうと"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 177,
     "kanji": "親",
-    "reading": "おや / おや- / した.しい / した.しむ / シン",
+    "reading": "おや / おや- / した.しい / した.しむ / しん",
     "meaning": "dealer (cards), familiarity, intimacy, parent, relative",
     "isRadical": false,
     "onyomi": [
-      "シン"
+      "しん"
     ],
     "kunyomi": [
       "おや",
@@ -25197,18 +29927,56 @@ export const kanjiData = [
         "reading": "しんこう",
         "meaning": "intimacy, friendship, friendly relations"
       }
+    ],
+    "standalone": [
+      {
+        "word": "親",
+        "reading": "おや",
+        "segments": [
+          {
+            "ruby": "親",
+            "rt": "おや"
+          }
+        ]
+      },
+      {
+        "word": "親しい",
+        "reading": "したしい",
+        "segments": [
+          {
+            "ruby": "親",
+            "rt": "した"
+          },
+          {
+            "ruby": "しい"
+          }
+        ]
+      },
+      {
+        "word": "親しむ",
+        "reading": "したしむ",
+        "segments": [
+          {
+            "ruby": "親",
+            "rt": "した"
+          },
+          {
+            "ruby": "しむ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 178,
     "kanji": "主",
-    "reading": "あるじ / おも / ぬし / シュ / シュウ / ス",
+    "reading": "あるじ / おも / ぬし / しゅ / しゅう / す",
     "meaning": "chief, lord, main thing, master, principal",
     "isRadical": false,
     "onyomi": [
-      "シュ",
-      "シュウ",
-      "ス"
+      "しゅ",
+      "しゅう",
+      "す"
     ],
     "kunyomi": [
       "あるじ",
@@ -25341,16 +30109,48 @@ export const kanjiData = [
         "reading": "しゅし",
         "meaning": "meaning, point (e.g. of a statement), gist"
       }
+    ],
+    "standalone": [
+      {
+        "word": "主",
+        "reading": "あるじ",
+        "segments": [
+          {
+            "ruby": "主",
+            "rt": "あるじ"
+          }
+        ]
+      },
+      {
+        "word": "主",
+        "reading": "おも",
+        "segments": [
+          {
+            "ruby": "主",
+            "rt": "おも"
+          }
+        ]
+      },
+      {
+        "word": "主",
+        "reading": "ぬし",
+        "segments": [
+          {
+            "ruby": "主",
+            "rt": "ぬし"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 179,
     "kanji": "注",
-    "reading": "さ.す / そそ.ぐ / つ.ぐ / チュウ",
+    "reading": "さ.す / そそ.ぐ / つ.ぐ / ちゅう",
     "meaning": "annotate, comment, concentrate on, flow into, irrigate, notes, pour, shed (tears)",
     "isRadical": false,
     "onyomi": [
-      "チュウ"
+      "ちゅう"
     ],
     "kunyomi": [
       "さ.す",
@@ -25483,18 +30283,59 @@ export const kanjiData = [
         "reading": "きゃくちゅう",
         "meaning": "footnote"
       }
+    ],
+    "standalone": [
+      {
+        "word": "注す",
+        "reading": "さす",
+        "segments": [
+          {
+            "ruby": "注",
+            "rt": "さ"
+          },
+          {
+            "ruby": "す"
+          }
+        ]
+      },
+      {
+        "word": "注ぐ",
+        "reading": "そそぐ",
+        "segments": [
+          {
+            "ruby": "注",
+            "rt": "そそ"
+          },
+          {
+            "ruby": "ぐ"
+          }
+        ]
+      },
+      {
+        "word": "注ぐ",
+        "reading": "つぐ",
+        "segments": [
+          {
+            "ruby": "注",
+            "rt": "つ"
+          },
+          {
+            "ruby": "ぐ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 180,
     "kanji": "住",
-    "reading": "-ず.まい / す.まう / す.む / ジュウ / チュウ / ヂュウ",
+    "reading": "-ず.まい / す.まう / す.む / じゅう / ちゅう / ぢゅう",
     "meaning": "dwell, inhabit, live, reside",
     "isRadical": false,
     "onyomi": [
-      "ジュウ",
-      "チュウ",
-      "ヂュウ"
+      "じゅう",
+      "ちゅう",
+      "ぢゅう"
     ],
     "kunyomi": [
       "-ず.まい",
@@ -25627,16 +30468,44 @@ export const kanjiData = [
         "reading": "すみこみ",
         "meaning": "live-in (e.g. job)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "住まう",
+        "reading": "すまう",
+        "segments": [
+          {
+            "ruby": "住",
+            "rt": "す"
+          },
+          {
+            "ruby": "まう"
+          }
+        ]
+      },
+      {
+        "word": "住む",
+        "reading": "すむ",
+        "segments": [
+          {
+            "ruby": "住",
+            "rt": "す"
+          },
+          {
+            "ruby": "む"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 181,
     "kanji": "春",
-    "reading": "はる / シュン",
+    "reading": "はる / しゅん",
     "meaning": "spring (season), springtime",
     "isRadical": false,
     "onyomi": [
-      "シュン"
+      "しゅん"
     ],
     "kunyomi": [
       "はる"
@@ -25767,18 +30636,30 @@ export const kanjiData = [
         "reading": "チュン・リー",
         "meaning": "Chun-Li (in the Street Fighter series)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "春",
+        "reading": "はる",
+        "segments": [
+          {
+            "ruby": "春",
+            "rt": "はる"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 182,
     "kanji": "夏",
-    "reading": "なつ / カ / ガ / ゲ",
+    "reading": "なつ / か / が / げ",
     "meaning": "summer",
     "isRadical": false,
     "onyomi": [
-      "カ",
-      "ガ",
-      "ゲ"
+      "か",
+      "が",
+      "げ"
     ],
     "kunyomi": [
       "なつ"
@@ -25909,16 +30790,28 @@ export const kanjiData = [
         "reading": "なつはぎ",
         "meaning": "bush clover blossoming in the summer (esp. Lespedeza thunbergii)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "夏",
+        "reading": "なつ",
+        "segments": [
+          {
+            "ruby": "夏",
+            "rt": "なつ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 183,
     "kanji": "秋",
-    "reading": "あき / とき / シュウ",
+    "reading": "あき / とき / しゅう",
     "meaning": "autumn",
     "isRadical": false,
     "onyomi": [
-      "シュウ"
+      "しゅう"
     ],
     "kunyomi": [
       "あき",
@@ -26050,16 +30943,38 @@ export const kanjiData = [
         "reading": "しんしゅう",
         "meaning": "deep autumn (when the autumn has reached its climax)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "秋",
+        "reading": "あき",
+        "segments": [
+          {
+            "ruby": "秋",
+            "rt": "あき"
+          }
+        ]
+      },
+      {
+        "word": "秋",
+        "reading": "とき",
+        "segments": [
+          {
+            "ruby": "秋",
+            "rt": "とき"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 184,
     "kanji": "冬",
-    "reading": "ふゆ / トウ",
+    "reading": "ふゆ / とう",
     "meaning": "winter",
     "isRadical": false,
     "onyomi": [
-      "トウ"
+      "とう"
     ],
     "kunyomi": [
       "ふゆ"
@@ -26190,16 +31105,28 @@ export const kanjiData = [
         "reading": "りっとう",
         "meaning": "first day of winter (approx. November 8)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "冬",
+        "reading": "ふゆ",
+        "segments": [
+          {
+            "ruby": "冬",
+            "rt": "ふゆ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 185,
     "kanji": "寒",
-    "reading": "さむ.い / カン",
+    "reading": "さむ.い / かん",
     "meaning": "cold",
     "isRadical": false,
     "onyomi": [
-      "カン"
+      "かん"
     ],
     "kunyomi": [
       "さむ.い"
@@ -26330,16 +31257,31 @@ export const kanjiData = [
         "reading": "かんせん",
         "meaning": "cicadas which sing in late autumn"
       }
+    ],
+    "standalone": [
+      {
+        "word": "寒い",
+        "reading": "さむい",
+        "segments": [
+          {
+            "ruby": "寒",
+            "rt": "さむ"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 186,
     "kanji": "暑",
-    "reading": "あつ.い / ショ",
+    "reading": "あつ.い / しょ",
     "meaning": "hot, sultry, summer heat",
     "isRadical": false,
     "onyomi": [
-      "ショ"
+      "しょ"
     ],
     "kunyomi": [
       "あつ.い"
@@ -26470,16 +31412,31 @@ export const kanjiData = [
         "reading": "たいしょ",
         "meaning": "\"major heat\" solar term (approx. July 23)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "暑い",
+        "reading": "あつい",
+        "segments": [
+          {
+            "ruby": "暑",
+            "rt": "あつ"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 187,
     "kanji": "晴",
-    "reading": "-ば.れ / は.らす / は.れ / は.れ- / は.れる / セイ",
+    "reading": "-ば.れ / は.らす / は.れ / は.れ- / は.れる / せい",
     "meaning": "clear up",
     "isRadical": false,
     "onyomi": [
-      "セイ"
+      "せい"
     ],
     "kunyomi": [
       "-ば.れ",
@@ -26614,16 +31571,57 @@ export const kanjiData = [
         "reading": "せいがんしゃ",
         "meaning": "sighted person"
       }
+    ],
+    "standalone": [
+      {
+        "word": "晴らす",
+        "reading": "はらす",
+        "segments": [
+          {
+            "ruby": "晴",
+            "rt": "は"
+          },
+          {
+            "ruby": "らす"
+          }
+        ]
+      },
+      {
+        "word": "晴れ",
+        "reading": "はれ",
+        "segments": [
+          {
+            "ruby": "晴",
+            "rt": "は"
+          },
+          {
+            "ruby": "れ"
+          }
+        ]
+      },
+      {
+        "word": "晴れる",
+        "reading": "はれる",
+        "segments": [
+          {
+            "ruby": "晴",
+            "rt": "は"
+          },
+          {
+            "ruby": "れる"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 188,
     "kanji": "終",
-    "reading": "-お.わる / お.える / お.わる / おわ.る / つい / つい.に / シュウ",
+    "reading": "-お.わる / お.える / お.わる / おわ.る / つい / つい.に / しゅう",
     "meaning": "end, finish",
     "isRadical": false,
     "onyomi": [
-      "シュウ"
+      "しゅう"
     ],
     "kunyomi": [
       "-お.わる",
@@ -26759,16 +31757,80 @@ export const kanjiData = [
         "reading": "しゅうでんしゃ",
         "meaning": "last train (of the day)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "終える",
+        "reading": "おえる",
+        "segments": [
+          {
+            "ruby": "終",
+            "rt": "お"
+          },
+          {
+            "ruby": "える"
+          }
+        ]
+      },
+      {
+        "word": "終わる",
+        "reading": "おわる",
+        "segments": [
+          {
+            "ruby": "終",
+            "rt": "お"
+          },
+          {
+            "ruby": "わる"
+          }
+        ]
+      },
+      {
+        "word": "終る",
+        "reading": "おわる",
+        "segments": [
+          {
+            "ruby": "終",
+            "rt": "おわ"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      },
+      {
+        "word": "終",
+        "reading": "つい",
+        "segments": [
+          {
+            "ruby": "終",
+            "rt": "つい"
+          }
+        ]
+      },
+      {
+        "word": "終に",
+        "reading": "ついに",
+        "segments": [
+          {
+            "ruby": "終",
+            "rt": "つい"
+          },
+          {
+            "ruby": "に"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 189,
     "kanji": "紙",
-    "reading": "かみ / シ",
+    "reading": "かみ / し",
     "meaning": "paper",
     "isRadical": false,
     "onyomi": [
-      "シ"
+      "し"
     ],
     "kunyomi": [
       "かみ"
@@ -26899,16 +31961,28 @@ export const kanjiData = [
         "reading": "かたがみ",
         "meaning": "pattern paper (for dressmaking)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "紙",
+        "reading": "かみ",
+        "segments": [
+          {
+            "ruby": "紙",
+            "rt": "かみ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 190,
     "kanji": "低",
-    "reading": "ひく.い / ひく.まる / ひく.める / テイ",
+    "reading": "ひく.い / ひく.まる / ひく.める / てい",
     "meaning": "humble, lower, short",
     "isRadical": false,
     "onyomi": [
-      "テイ"
+      "てい"
     ],
     "kunyomi": [
       "ひく.い",
@@ -27041,16 +32115,57 @@ export const kanjiData = [
         "reading": "ていしゅうは",
         "meaning": "low frequency"
       }
+    ],
+    "standalone": [
+      {
+        "word": "低い",
+        "reading": "ひくい",
+        "segments": [
+          {
+            "ruby": "低",
+            "rt": "ひく"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      },
+      {
+        "word": "低まる",
+        "reading": "ひくまる",
+        "segments": [
+          {
+            "ruby": "低",
+            "rt": "ひく"
+          },
+          {
+            "ruby": "まる"
+          }
+        ]
+      },
+      {
+        "word": "低める",
+        "reading": "ひくめる",
+        "segments": [
+          {
+            "ruby": "低",
+            "rt": "ひく"
+          },
+          {
+            "ruby": "める"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 191,
     "kanji": "肉",
-    "reading": "しし / ニク",
+    "reading": "しし / にく",
     "meaning": "meat",
     "isRadical": false,
     "onyomi": [
-      "ニク"
+      "にく"
     ],
     "kunyomi": [
       "しし"
@@ -27181,16 +32296,28 @@ export const kanjiData = [
         "reading": "ひにくる",
         "meaning": "to make a cynical remark (about), to make a sarcastic remark (about), to satirize"
       }
+    ],
+    "standalone": [
+      {
+        "word": "肉",
+        "reading": "にく",
+        "segments": [
+          {
+            "ruby": "肉",
+            "rt": "にく"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 192,
     "kanji": "鳥",
-    "reading": "とり / チョウ",
+    "reading": "とり / ちょう",
     "meaning": "bird, chicken",
     "isRadical": false,
     "onyomi": [
-      "チョウ"
+      "ちょう"
     ],
     "kunyomi": [
       "とり"
@@ -27321,16 +32448,28 @@ export const kanjiData = [
         "reading": "とっとり",
         "meaning": "Tottori (city, prefecture)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "鳥",
+        "reading": "とり",
+        "segments": [
+          {
+            "ruby": "鳥",
+            "rt": "とり"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 193,
     "kanji": "犬",
-    "reading": "いぬ / いぬ- / ケン",
+    "reading": "いぬ / いぬ- / けん",
     "meaning": "dog",
     "isRadical": false,
     "onyomi": [
-      "ケン"
+      "けん"
     ],
     "kunyomi": [
       "いぬ",
@@ -27462,16 +32601,28 @@ export const kanjiData = [
         "reading": "いぬは",
         "meaning": "dog person"
       }
+    ],
+    "standalone": [
+      {
+        "word": "犬",
+        "reading": "いぬ",
+        "segments": [
+          {
+            "ruby": "犬",
+            "rt": "いぬ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 194,
     "kanji": "洋",
-    "reading": "ヨウ",
+    "reading": "よう",
     "meaning": "Western style, foreign, ocean, sea",
     "isRadical": false,
     "onyomi": [
-      "ヨウ"
+      "よう"
     ],
     "kunyomi": [],
     "examples": [
@@ -27600,18 +32751,19 @@ export const kanjiData = [
         "reading": "ようひん",
         "meaning": "Western-style apparel and accessories, haberdashery"
       }
-    ]
+    ],
+    "standalone": []
   },
   {
     "id": 195,
     "kanji": "和",
-    "reading": "あ.える / なご.む / なご.やか / やわ.らぐ / やわ.らげる / オ / カ / ワ",
+    "reading": "あ.える / なご.む / なご.やか / やわ.らぐ / やわ.らげる / お / か / わ",
     "meaning": "Japan, Japanese style, harmony, peace, soften",
     "isRadical": false,
     "onyomi": [
-      "オ",
-      "カ",
-      "ワ"
+      "お",
+      "か",
+      "わ"
     ],
     "kunyomi": [
       "あ.える",
@@ -27746,16 +32898,83 @@ export const kanjiData = [
         "reading": "わよう",
         "meaning": "Japan and Europe"
       }
+    ],
+    "standalone": [
+      {
+        "word": "和える",
+        "reading": "あえる",
+        "segments": [
+          {
+            "ruby": "和",
+            "rt": "あ"
+          },
+          {
+            "ruby": "える"
+          }
+        ]
+      },
+      {
+        "word": "和む",
+        "reading": "なごむ",
+        "segments": [
+          {
+            "ruby": "和",
+            "rt": "なご"
+          },
+          {
+            "ruby": "む"
+          }
+        ]
+      },
+      {
+        "word": "和やか",
+        "reading": "なごやか",
+        "segments": [
+          {
+            "ruby": "和",
+            "rt": "なご"
+          },
+          {
+            "ruby": "やか"
+          }
+        ]
+      },
+      {
+        "word": "和らぐ",
+        "reading": "やわらぐ",
+        "segments": [
+          {
+            "ruby": "和",
+            "rt": "やわ"
+          },
+          {
+            "ruby": "らぐ"
+          }
+        ]
+      },
+      {
+        "word": "和らげる",
+        "reading": "やわらげる",
+        "segments": [
+          {
+            "ruby": "和",
+            "rt": "やわ"
+          },
+          {
+            "ruby": "らげる"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 196,
     "kanji": "服",
-    "reading": "フク",
+    "reading": "ふく",
     "meaning": "admit, clothing, discharge, obey",
     "isRadical": false,
     "onyomi": [
-      "フク"
+      "ふく"
     ],
     "kunyomi": [],
     "examples": [
@@ -27884,16 +33103,28 @@ export const kanjiData = [
         "reading": "いっぷく",
         "meaning": "(a) dose, (a) puff, (a) smoke"
       }
+    ],
+    "standalone": [
+      {
+        "word": "服",
+        "reading": "ふく",
+        "segments": [
+          {
+            "ruby": "服",
+            "rt": "ふく"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 197,
     "kanji": "式",
-    "reading": "シキ",
+    "reading": "しき",
     "meaning": "ceremony, expression, form, function, method, rite, style, system",
     "isRadical": false,
     "onyomi": [
-      "シキ"
+      "しき"
     ],
     "kunyomi": [],
     "examples": [
@@ -28022,16 +33253,17 @@ export const kanjiData = [
         "reading": "いっしき",
         "meaning": "complete set, all, everything"
       }
-    ]
+    ],
+    "standalone": []
   },
   {
     "id": 198,
     "kanji": "試",
-    "reading": "こころ.みる / ため.す / シ",
+    "reading": "こころ.みる / ため.す / し",
     "meaning": "attempt, experiment, ordeal, test, try",
     "isRadical": false,
     "onyomi": [
-      "シ"
+      "し"
     ],
     "kunyomi": [
       "こころ.みる",
@@ -28163,17 +33395,45 @@ export const kanjiData = [
         "reading": "しけんてき",
         "meaning": "experimental, provisional"
       }
+    ],
+    "standalone": [
+      {
+        "word": "試みる",
+        "reading": "こころみる",
+        "segments": [
+          {
+            "ruby": "試",
+            "rt": "こころ"
+          },
+          {
+            "ruby": "みる"
+          }
+        ]
+      },
+      {
+        "word": "試す",
+        "reading": "ためす",
+        "segments": [
+          {
+            "ruby": "試",
+            "rt": "ため"
+          },
+          {
+            "ruby": "す"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 199,
     "kanji": "験",
-    "reading": "あかし / しるし / ため.す / ためし / ケン / ゲン",
+    "reading": "あかし / しるし / ため.す / ためし / けん / げん",
     "meaning": "effect, testing, verification",
     "isRadical": false,
     "onyomi": [
-      "ケン",
-      "ゲン"
+      "けん",
+      "げん"
     ],
     "kunyomi": [
       "あかし",
@@ -28307,17 +33567,62 @@ export const kanjiData = [
         "reading": "こうけん",
         "meaning": "efficacy, effect"
       }
+    ],
+    "standalone": [
+      {
+        "word": "験",
+        "reading": "あかし",
+        "segments": [
+          {
+            "ruby": "験",
+            "rt": "あかし"
+          }
+        ]
+      },
+      {
+        "word": "験",
+        "reading": "しるし",
+        "segments": [
+          {
+            "ruby": "験",
+            "rt": "しるし"
+          }
+        ]
+      },
+      {
+        "word": "験す",
+        "reading": "ためす",
+        "segments": [
+          {
+            "ruby": "験",
+            "rt": "ため"
+          },
+          {
+            "ruby": "す"
+          }
+        ]
+      },
+      {
+        "word": "験",
+        "reading": "ためし",
+        "segments": [
+          {
+            "ruby": "験",
+            "rt": "ためし"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 200,
     "kanji": "近",
-    "reading": "ちか.い / キン / コン",
+    "reading": "ちか.い / きん / こん",
     "meaning": "akin, early, near, tantamount",
     "isRadical": false,
     "onyomi": [
-      "キン",
-      "コン"
+      "きん",
+      "こん"
     ],
     "kunyomi": [
       "ちか.い"
@@ -28448,17 +33753,32 @@ export const kanjiData = [
         "reading": "きんけん",
         "meaning": "neighboring prefectures, nearby prefectures"
       }
+    ],
+    "standalone": [
+      {
+        "word": "近い",
+        "reading": "ちかい",
+        "segments": [
+          {
+            "ruby": "近",
+            "rt": "ちか"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 201,
     "kanji": "遠",
-    "reading": "とお.い / エン / オン",
+    "reading": "とお.い / えん / おん",
     "meaning": "distant, far",
     "isRadical": false,
     "onyomi": [
-      "エン",
-      "オン"
+      "えん",
+      "おん"
     ],
     "kunyomi": [
       "とお.い"
@@ -28589,16 +33909,31 @@ export const kanjiData = [
         "reading": "とおで",
         "meaning": "trip, excursion, outing"
       }
+    ],
+    "standalone": [
+      {
+        "word": "遠い",
+        "reading": "とおい",
+        "segments": [
+          {
+            "ruby": "遠",
+            "rt": "とお"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 202,
     "kanji": "送",
-    "reading": "おく.る / ソウ",
+    "reading": "おく.る / そう",
     "meaning": "escort, send",
     "isRadical": false,
     "onyomi": [
-      "ソウ"
+      "そう"
     ],
     "kunyomi": [
       "おく.る"
@@ -28729,17 +34064,32 @@ export const kanjiData = [
         "reading": "そうげい",
         "meaning": "seeing off and meeting on return"
       }
+    ],
+    "standalone": [
+      {
+        "word": "送る",
+        "reading": "おくる",
+        "segments": [
+          {
+            "ruby": "送",
+            "rt": "おく"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 203,
     "kanji": "回",
-    "reading": "-まわ.し / -まわ.す / -まわ.り / -まわ.る / か.える / まわ.し- / まわ.す / まわ.る / もとお.る / エ / カイ",
+    "reading": "-まわ.し / -まわ.す / -まわ.り / -まわ.る / か.える / まわ.し- / まわ.す / まわ.る / もとお.る / え / かい",
     "meaning": "-times, counter for occurrences, game, revolve, round",
     "isRadical": false,
     "onyomi": [
-      "エ",
-      "カイ"
+      "え",
+      "かい"
     ],
     "kunyomi": [
       "-まわ.し",
@@ -28878,16 +34228,70 @@ export const kanjiData = [
         "reading": "さがしまわる",
         "meaning": "to search about for, to hunt around for, to look high and low for"
       }
+    ],
+    "standalone": [
+      {
+        "word": "回える",
+        "reading": "かえる",
+        "segments": [
+          {
+            "ruby": "回",
+            "rt": "か"
+          },
+          {
+            "ruby": "える"
+          }
+        ]
+      },
+      {
+        "word": "回す",
+        "reading": "まわす",
+        "segments": [
+          {
+            "ruby": "回",
+            "rt": "まわ"
+          },
+          {
+            "ruby": "す"
+          }
+        ]
+      },
+      {
+        "word": "回る",
+        "reading": "まわる",
+        "segments": [
+          {
+            "ruby": "回",
+            "rt": "まわ"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      },
+      {
+        "word": "回る",
+        "reading": "もとおる",
+        "segments": [
+          {
+            "ruby": "回",
+            "rt": "もとお"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 204,
     "kanji": "用",
-    "reading": "もち.いる / ヨウ",
+    "reading": "もち.いる / よう",
     "meaning": "business, employ, service, use, utilize",
     "isRadical": false,
     "onyomi": [
-      "ヨウ"
+      "よう"
     ],
     "kunyomi": [
       "もち.いる"
@@ -29018,17 +34422,32 @@ export const kanjiData = [
         "reading": "たよう",
         "meaning": "busyness, a lot of things to do"
       }
+    ],
+    "standalone": [
+      {
+        "word": "用いる",
+        "reading": "もちいる",
+        "segments": [
+          {
+            "ruby": "用",
+            "rt": "もち"
+          },
+          {
+            "ruby": "いる"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 205,
     "kanji": "通",
-    "reading": "-とお.り / -どお.し / -どお.り / かよ.う / とお.し / とお.す / とお.り / とお.る / ツ / ツウ",
+    "reading": "-とお.り / -どお.し / -どお.り / かよ.う / とお.し / とお.す / とお.り / とお.る / つ / つう",
     "meaning": "avenue, commute, counter for letters, notes, documents, etc., pass through, traffic",
     "isRadical": false,
     "onyomi": [
-      "ツ",
-      "ツウ"
+      "つ",
+      "つう"
     ],
     "kunyomi": [
       "-とお.り",
@@ -29166,17 +34585,84 @@ export const kanjiData = [
         "reading": "つうか",
         "meaning": "passage (of a bill, e.g. through parliament), carriage"
       }
+    ],
+    "standalone": [
+      {
+        "word": "通う",
+        "reading": "かよう",
+        "segments": [
+          {
+            "ruby": "通",
+            "rt": "かよ"
+          },
+          {
+            "ruby": "う"
+          }
+        ]
+      },
+      {
+        "word": "通し",
+        "reading": "とおし",
+        "segments": [
+          {
+            "ruby": "通",
+            "rt": "とお"
+          },
+          {
+            "ruby": "し"
+          }
+        ]
+      },
+      {
+        "word": "通す",
+        "reading": "とおす",
+        "segments": [
+          {
+            "ruby": "通",
+            "rt": "とお"
+          },
+          {
+            "ruby": "す"
+          }
+        ]
+      },
+      {
+        "word": "通り",
+        "reading": "とおり",
+        "segments": [
+          {
+            "ruby": "通",
+            "rt": "とお"
+          },
+          {
+            "ruby": "り"
+          }
+        ]
+      },
+      {
+        "word": "通る",
+        "reading": "とおる",
+        "segments": [
+          {
+            "ruby": "通",
+            "rt": "とお"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 206,
     "kanji": "不",
-    "reading": "フ / ブ",
+    "reading": "ふ / ぶ",
     "meaning": "bad, clumsy, negative, non-, ugly",
     "isRadical": false,
     "onyomi": [
-      "フ",
-      "ブ"
+      "ふ",
+      "ぶ"
     ],
     "kunyomi": [],
     "examples": [
@@ -29305,17 +34791,18 @@ export const kanjiData = [
         "reading": "ふあん",
         "meaning": "anxiety, uneasiness, worry"
       }
-    ]
+    ],
+    "standalone": []
   },
   {
     "id": 207,
     "kanji": "事",
-    "reading": "こと / つか.う / つか.える / ジ / ズ",
+    "reading": "こと / つか.う / つか.える / じ / ず",
     "meaning": "business, fact, matter, possibly, reason, thing",
     "isRadical": false,
     "onyomi": [
-      "ジ",
-      "ズ"
+      "じ",
+      "ず"
     ],
     "kunyomi": [
       "こと",
@@ -29448,17 +34935,55 @@ export const kanjiData = [
         "reading": "しょくじ",
         "meaning": "diet"
       }
+    ],
+    "standalone": [
+      {
+        "word": "事",
+        "reading": "こと",
+        "segments": [
+          {
+            "ruby": "事",
+            "rt": "こと"
+          }
+        ]
+      },
+      {
+        "word": "事う",
+        "reading": "つかう",
+        "segments": [
+          {
+            "ruby": "事",
+            "rt": "つか"
+          },
+          {
+            "ruby": "う"
+          }
+        ]
+      },
+      {
+        "word": "事える",
+        "reading": "つかえる",
+        "segments": [
+          {
+            "ruby": "事",
+            "rt": "つか"
+          },
+          {
+            "ruby": "える"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 208,
     "kanji": "仕",
-    "reading": "つか.える / シ / ジ",
+    "reading": "つか.える / し / じ",
     "meaning": "attend, doing, official, serve",
     "isRadical": false,
     "onyomi": [
-      "シ",
-      "ジ"
+      "し",
+      "じ"
     ],
     "kunyomi": [
       "つか.える"
@@ -29589,16 +35114,31 @@ export const kanjiData = [
         "reading": "しようしょ",
         "meaning": "specification document"
       }
+    ],
+    "standalone": [
+      {
+        "word": "仕える",
+        "reading": "つかえる",
+        "segments": [
+          {
+            "ruby": "仕",
+            "rt": "つか"
+          },
+          {
+            "ruby": "える"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 209,
     "kanji": "料",
-    "reading": "リョウ",
+    "reading": "りょう",
     "meaning": "fee, materials",
     "isRadical": false,
     "onyomi": [
-      "リョウ"
+      "りょう"
     ],
     "kunyomi": [],
     "examples": [
@@ -29727,16 +35267,17 @@ export const kanjiData = [
         "reading": "しりょう",
         "meaning": "sample, specimen, test piece"
       }
-    ]
+    ],
+    "standalone": []
   },
   {
     "id": 210,
     "kanji": "理",
-    "reading": "ことわり / リ",
+    "reading": "ことわり / り",
     "meaning": "arrangement, justice, logic, reason, truth",
     "isRadical": false,
     "onyomi": [
-      "リ"
+      "り"
     ],
     "kunyomi": [
       "ことわり"
@@ -29867,17 +35408,29 @@ export const kanjiData = [
         "reading": "すいり",
         "meaning": "mystery genre, detective genre"
       }
+    ],
+    "standalone": [
+      {
+        "word": "理",
+        "reading": "ことわり",
+        "segments": [
+          {
+            "ruby": "理",
+            "rt": "ことわり"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 211,
     "kanji": "有",
-    "reading": "あ.る / ウ / ユウ",
+    "reading": "あ.る / う / ゆう",
     "meaning": "approx, exist, happen, have, occur, possess",
     "isRadical": false,
     "onyomi": [
-      "ウ",
-      "ユウ"
+      "う",
+      "ゆう"
     ],
     "kunyomi": [
       "あ.る"
@@ -30008,17 +35561,32 @@ export const kanjiData = [
         "reading": "ゆうき",
         "meaning": "organic"
       }
+    ],
+    "standalone": [
+      {
+        "word": "有る",
+        "reading": "ある",
+        "segments": [
+          {
+            "ruby": "有",
+            "rt": "あ"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 212,
     "kanji": "無",
-    "reading": "な.い / ブ / ム",
+    "reading": "な.い / ぶ / む",
     "meaning": "ain't, nil, none, not, nothing, nothingness",
     "isRadical": false,
     "onyomi": [
-      "ブ",
-      "ム"
+      "ぶ",
+      "む"
     ],
     "kunyomi": [
       "な.い"
@@ -30149,17 +35717,32 @@ export const kanjiData = [
         "reading": "むのう",
         "meaning": "incompetent person"
       }
+    ],
+    "standalone": [
+      {
+        "word": "無い",
+        "reading": "ない",
+        "segments": [
+          {
+            "ruby": "無",
+            "rt": "な"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 213,
     "kanji": "野",
-    "reading": "の / の- / ショ / ヤ",
+    "reading": "の / の- / しょ / や",
     "meaning": "civilian life, field, plains, rustic",
     "isRadical": false,
     "onyomi": [
-      "ショ",
-      "ヤ"
+      "しょ",
+      "や"
     ],
     "kunyomi": [
       "の",
@@ -30291,16 +35874,28 @@ export const kanjiData = [
         "reading": "さんや",
         "meaning": "hills and fields, countryside"
       }
+    ],
+    "standalone": [
+      {
+        "word": "野",
+        "reading": "の",
+        "segments": [
+          {
+            "ruby": "野",
+            "rt": "の"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 214,
     "kanji": "黒",
-    "reading": "くろ / くろ.い / くろ.ずむ / コク",
+    "reading": "くろ / くろ.い / くろ.ずむ / こく",
     "meaning": "black",
     "isRadical": false,
     "onyomi": [
-      "コク"
+      "こく"
     ],
     "kunyomi": [
       "くろ",
@@ -30433,16 +36028,54 @@ export const kanjiData = [
         "reading": "くろびかり",
         "meaning": "black lustre, black luster"
       }
+    ],
+    "standalone": [
+      {
+        "word": "黒",
+        "reading": "くろ",
+        "segments": [
+          {
+            "ruby": "黒",
+            "rt": "くろ"
+          }
+        ]
+      },
+      {
+        "word": "黒い",
+        "reading": "くろい",
+        "segments": [
+          {
+            "ruby": "黒",
+            "rt": "くろ"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      },
+      {
+        "word": "黒ずむ",
+        "reading": "くろずむ",
+        "segments": [
+          {
+            "ruby": "黒",
+            "rt": "くろ"
+          },
+          {
+            "ruby": "ずむ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 215,
     "kanji": "町",
-    "reading": "まち / チョウ",
+    "reading": "まち / ちょう",
     "meaning": "block, street, town, village",
     "isRadical": false,
     "onyomi": [
-      "チョウ"
+      "ちょう"
     ],
     "kunyomi": [
       "まち"
@@ -30573,16 +36206,28 @@ export const kanjiData = [
         "reading": "ちょうぶ",
         "meaning": "hectare (2.471 acres)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "町",
+        "reading": "まち",
+        "segments": [
+          {
+            "ruby": "町",
+            "rt": "まち"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 216,
     "kanji": "村",
-    "reading": "むら / ソン",
+    "reading": "むら / そん",
     "meaning": "town, village",
     "isRadical": false,
     "onyomi": [
-      "ソン"
+      "そん"
     ],
     "kunyomi": [
       "むら"
@@ -30713,16 +36358,28 @@ export const kanjiData = [
         "reading": "ひんそん",
         "meaning": "poor village"
       }
+    ],
+    "standalone": [
+      {
+        "word": "村",
+        "reading": "むら",
+        "segments": [
+          {
+            "ruby": "村",
+            "rt": "むら"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 217,
     "kanji": "菜",
-    "reading": "な / サイ",
+    "reading": "な / さい",
     "meaning": "greens, side dish, vegetable",
     "isRadical": false,
     "onyomi": [
-      "サイ"
+      "さい"
     ],
     "kunyomi": [
       "な"
@@ -30853,18 +36510,30 @@ export const kanjiData = [
         "reading": "なめし",
         "meaning": "rice boiled with greens"
       }
+    ],
+    "standalone": [
+      {
+        "word": "菜",
+        "reading": "な",
+        "segments": [
+          {
+            "ruby": "菜",
+            "rt": "な"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 218,
     "kanji": "区",
-    "reading": "オウ / ク / コウ",
+    "reading": "おう / く / こう",
     "meaning": "district, ward",
     "isRadical": false,
     "onyomi": [
-      "オウ",
-      "ク",
-      "コウ"
+      "おう",
+      "く",
+      "こう"
     ],
     "kunyomi": [],
     "examples": [
@@ -30993,16 +36662,28 @@ export const kanjiData = [
         "reading": "まちまち",
         "meaning": "various, diverse, different"
       }
+    ],
+    "standalone": [
+      {
+        "word": "区",
+        "reading": "く",
+        "segments": [
+          {
+            "ruby": "区",
+            "rt": "く"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 219,
     "kanji": "方",
-    "reading": "-かた / -がた / かた / ホウ",
+    "reading": "-かた / -がた / かた / ほう",
     "meaning": "alternative, direction, person",
     "isRadical": false,
     "onyomi": [
-      "ホウ"
+      "ほう"
     ],
     "kunyomi": [
       "-かた",
@@ -31135,16 +36816,28 @@ export const kanjiData = [
         "reading": "おおかた",
         "meaning": "large part, greater part, majority"
       }
+    ],
+    "standalone": [
+      {
+        "word": "方",
+        "reading": "かた",
+        "segments": [
+          {
+            "ruby": "方",
+            "rt": "かた"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 220,
     "kanji": "旅",
-    "reading": "たび / リョ",
+    "reading": "たび / りょ",
     "meaning": "travel, trip",
     "isRadical": false,
     "onyomi": [
-      "リョ"
+      "りょ"
     ],
     "kunyomi": [
       "たび"
@@ -31275,16 +36968,28 @@ export const kanjiData = [
         "reading": "りょしゅう",
         "meaning": "loneliness on a journey"
       }
+    ],
+    "standalone": [
+      {
+        "word": "旅",
+        "reading": "たび",
+        "segments": [
+          {
+            "ruby": "旅",
+            "rt": "たび"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 221,
     "kanji": "族",
-    "reading": "ゾク",
+    "reading": "ぞく",
     "meaning": "family, tribe",
     "isRadical": false,
     "onyomi": [
-      "ゾク"
+      "ぞく"
     ],
     "kunyomi": [],
     "examples": [
@@ -31413,16 +37118,17 @@ export const kanjiData = [
         "reading": "いぞく",
         "meaning": "Yi people (of China)"
       }
-    ]
+    ],
+    "standalone": []
   },
   {
     "id": 222,
     "kanji": "短",
-    "reading": "みじか.い / タン",
+    "reading": "みじか.い / たん",
     "meaning": "brevity, defect, fault, short, weak point",
     "isRadical": false,
     "onyomi": [
-      "タン"
+      "たん"
     ],
     "kunyomi": [
       "みじか.い"
@@ -31553,16 +37259,31 @@ export const kanjiData = [
         "reading": "たんぐつ",
         "meaning": "(low) shoes"
       }
+    ],
+    "standalone": [
+      {
+        "word": "短い",
+        "reading": "みじかい",
+        "segments": [
+          {
+            "ruby": "短",
+            "rt": "みじか"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 223,
     "kanji": "知",
-    "reading": "し.らせる / し.る / チ",
+    "reading": "し.らせる / し.る / ち",
     "meaning": "know, wisdom",
     "isRadical": false,
     "onyomi": [
-      "チ"
+      "ち"
     ],
     "kunyomi": [
       "し.らせる",
@@ -31694,16 +37415,44 @@ export const kanjiData = [
         "reading": "かんち",
         "meaning": "perception, sensing, noticing"
       }
+    ],
+    "standalone": [
+      {
+        "word": "知らせる",
+        "reading": "しらせる",
+        "segments": [
+          {
+            "ruby": "知",
+            "rt": "し"
+          },
+          {
+            "ruby": "らせる"
+          }
+        ]
+      },
+      {
+        "word": "知る",
+        "reading": "しる",
+        "segments": [
+          {
+            "ruby": "知",
+            "rt": "し"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 224,
     "kanji": "死",
-    "reading": "し.に- / し.ぬ / シ",
+    "reading": "し.に- / し.ぬ / し",
     "meaning": "death, die",
     "isRadical": false,
     "onyomi": [
-      "シ"
+      "し"
     ],
     "kunyomi": [
       "し.に-",
@@ -31835,16 +37584,31 @@ export const kanjiData = [
         "reading": "むし",
         "meaning": "no outs"
       }
+    ],
+    "standalone": [
+      {
+        "word": "死ぬ",
+        "reading": "しぬ",
+        "segments": [
+          {
+            "ruby": "死",
+            "rt": "し"
+          },
+          {
+            "ruby": "ぬ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 225,
     "kanji": "医",
-    "reading": "い.する / い.やす / くすし / イ",
+    "reading": "い.する / い.やす / くすし / い",
     "meaning": "doctor, medicine",
     "isRadical": false,
     "onyomi": [
-      "イ"
+      "い"
     ],
     "kunyomi": [
       "い.する",
@@ -31977,16 +37741,54 @@ export const kanjiData = [
         "reading": "しかい",
         "meaning": "dentist"
       }
+    ],
+    "standalone": [
+      {
+        "word": "医する",
+        "reading": "いする",
+        "segments": [
+          {
+            "ruby": "医",
+            "rt": "い"
+          },
+          {
+            "ruby": "する"
+          }
+        ]
+      },
+      {
+        "word": "医やす",
+        "reading": "いやす",
+        "segments": [
+          {
+            "ruby": "医",
+            "rt": "い"
+          },
+          {
+            "ruby": "やす"
+          }
+        ]
+      },
+      {
+        "word": "医",
+        "reading": "くすし",
+        "segments": [
+          {
+            "ruby": "医",
+            "rt": "くすし"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 226,
     "kanji": "者",
-    "reading": "もの / シャ",
+    "reading": "もの / しゃ",
     "meaning": "person, someone",
     "isRadical": false,
     "onyomi": [
-      "シャ"
+      "しゃ"
     ],
     "kunyomi": [
       "もの"
@@ -32117,17 +37919,29 @@ export const kanjiData = [
         "reading": "とうじしゃ",
         "meaning": "person concerned, interested party, related party"
       }
+    ],
+    "standalone": [
+      {
+        "word": "者",
+        "reading": "もの",
+        "segments": [
+          {
+            "ruby": "者",
+            "rt": "もの"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 227,
     "kanji": "都",
-    "reading": "みやこ / ツ / ト",
+    "reading": "みやこ / つ / と",
     "meaning": "all, capital, everything, metropolis",
     "isRadical": false,
     "onyomi": [
-      "ツ",
-      "ト"
+      "つ",
+      "と"
     ],
     "kunyomi": [
       "みやこ"
@@ -32258,18 +38072,30 @@ export const kanjiData = [
         "reading": "でんえんとし",
         "meaning": "garden city"
       }
+    ],
+    "standalone": [
+      {
+        "word": "都",
+        "reading": "みやこ",
+        "segments": [
+          {
+            "ruby": "都",
+            "rt": "みやこ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 228,
     "kanji": "京",
-    "reading": "みやこ / キョウ / キン / ケイ",
+    "reading": "みやこ / きょう / きん / けい",
     "meaning": "10**16, capital",
     "isRadical": false,
     "onyomi": [
-      "キョウ",
-      "キン",
-      "ケイ"
+      "きょう",
+      "きん",
+      "けい"
     ],
     "kunyomi": [
       "みやこ"
@@ -32400,16 +38226,28 @@ export const kanjiData = [
         "reading": "きょうち",
         "meaning": "former capital region (i.e. Kyoto and its environs)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "京",
+        "reading": "みやこ",
+        "segments": [
+          {
+            "ruby": "京",
+            "rt": "みやこ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 229,
     "kanji": "県",
-    "reading": "か.ける / ケン",
+    "reading": "か.ける / けん",
     "meaning": "prefecture",
     "isRadical": false,
     "onyomi": [
-      "ケン"
+      "けん"
     ],
     "kunyomi": [
       "か.ける"
@@ -32540,16 +38378,31 @@ export const kanjiData = [
         "reading": "けんし",
         "meaning": "history of a prefecture"
       }
+    ],
+    "standalone": [
+      {
+        "word": "県ける",
+        "reading": "かける",
+        "segments": [
+          {
+            "ruby": "県",
+            "rt": "か"
+          },
+          {
+            "ruby": "ける"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 230,
     "kanji": "民",
-    "reading": "たみ / ミン",
+    "reading": "たみ / みん",
     "meaning": "nation, people, subjects",
     "isRadical": false,
     "onyomi": [
-      "ミン"
+      "みん"
     ],
     "kunyomi": [
       "たみ"
@@ -32680,16 +38533,28 @@ export const kanjiData = [
         "reading": "みんぐ",
         "meaning": "everyday articles which have come to be regarded as folk art"
       }
+    ],
+    "standalone": [
+      {
+        "word": "民",
+        "reading": "たみ",
+        "segments": [
+          {
+            "ruby": "民",
+            "rt": "たみ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 231,
     "kanji": "同",
-    "reading": "おな.じ / ドウ",
+    "reading": "おな.じ / どう",
     "meaning": "agree, equal, same",
     "isRadical": false,
     "onyomi": [
-      "ドウ"
+      "どう"
     ],
     "kunyomi": [
       "おな.じ"
@@ -32820,18 +38685,33 @@ export const kanjiData = [
         "reading": "どうきゅうせい",
         "meaning": "classmate"
       }
+    ],
+    "standalone": [
+      {
+        "word": "同じ",
+        "reading": "おなじ",
+        "segments": [
+          {
+            "ruby": "同",
+            "rt": "おな"
+          },
+          {
+            "ruby": "じ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 232,
     "kanji": "合",
-    "reading": "-あ.い / -あ.う / -あ.わせる / -あい / あ.い / あ.う / あ.わす / あ.わせる / あい- / カッ / ガッ / ゴウ",
+    "reading": "-あ.い / -あ.う / -あ.わせる / -あい / あ.い / あ.う / あ.わす / あ.わせる / あい- / かっ / がっ / ごう",
     "meaning": "0.1, fit, join, suit",
     "isRadical": false,
     "onyomi": [
-      "カッ",
-      "ガッ",
-      "ゴウ"
+      "かっ",
+      "がっ",
+      "ごう"
     ],
     "kunyomi": [
       "-あ.い",
@@ -32970,16 +38850,70 @@ export const kanjiData = [
         "reading": "ごうりゅう",
         "meaning": "union (e.g. of forces), linking up, merging"
       }
+    ],
+    "standalone": [
+      {
+        "word": "合い",
+        "reading": "あい",
+        "segments": [
+          {
+            "ruby": "合",
+            "rt": "あ"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      },
+      {
+        "word": "合う",
+        "reading": "あう",
+        "segments": [
+          {
+            "ruby": "合",
+            "rt": "あ"
+          },
+          {
+            "ruby": "う"
+          }
+        ]
+      },
+      {
+        "word": "合わす",
+        "reading": "あわす",
+        "segments": [
+          {
+            "ruby": "合",
+            "rt": "あ"
+          },
+          {
+            "ruby": "わす"
+          }
+        ]
+      },
+      {
+        "word": "合わせる",
+        "reading": "あわせる",
+        "segments": [
+          {
+            "ruby": "合",
+            "rt": "あ"
+          },
+          {
+            "ruby": "わせる"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 233,
     "kanji": "答",
-    "reading": "こた.え / こた.える / トウ",
+    "reading": "こた.え / こた.える / とう",
     "meaning": "answer, solution",
     "isRadical": false,
     "onyomi": [
-      "トウ"
+      "とう"
     ],
     "kunyomi": [
       "こた.え",
@@ -33111,17 +39045,45 @@ export const kanjiData = [
         "reading": "ごとう",
         "meaning": "mistaken answer or response"
       }
+    ],
+    "standalone": [
+      {
+        "word": "答え",
+        "reading": "こたえ",
+        "segments": [
+          {
+            "ruby": "答",
+            "rt": "こた"
+          },
+          {
+            "ruby": "え"
+          }
+        ]
+      },
+      {
+        "word": "答える",
+        "reading": "こたえる",
+        "segments": [
+          {
+            "ruby": "答",
+            "rt": "こた"
+          },
+          {
+            "ruby": "える"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 234,
     "kanji": "家",
-    "reading": "いえ / うち / や / カ / ケ",
+    "reading": "いえ / うち / や / か / け",
     "meaning": "expert, family, home, house, performer, professional",
     "isRadical": false,
     "onyomi": [
-      "カ",
-      "ケ"
+      "か",
+      "け"
     ],
     "kunyomi": [
       "いえ",
@@ -33254,17 +39216,49 @@ export const kanjiData = [
         "reading": "とくしか",
         "meaning": "charitable person, philanthropist, volunteer"
       }
+    ],
+    "standalone": [
+      {
+        "word": "家",
+        "reading": "いえ",
+        "segments": [
+          {
+            "ruby": "家",
+            "rt": "いえ"
+          }
+        ]
+      },
+      {
+        "word": "家",
+        "reading": "うち",
+        "segments": [
+          {
+            "ruby": "家",
+            "rt": "うち"
+          }
+        ]
+      },
+      {
+        "word": "家",
+        "reading": "や",
+        "segments": [
+          {
+            "ruby": "家",
+            "rt": "や"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 235,
     "kanji": "場",
-    "reading": "ば / ジョウ / チョウ",
+    "reading": "ば / じょう / ちょう",
     "meaning": "location, place",
     "isRadical": false,
     "onyomi": [
-      "ジョウ",
-      "チョウ"
+      "じょう",
+      "ちょう"
     ],
     "kunyomi": [
       "ば"
@@ -33395,16 +39389,28 @@ export const kanjiData = [
         "reading": "うりば",
         "meaning": "favorable time to sell, good time to sell"
       }
+    ],
+    "standalone": [
+      {
+        "word": "場",
+        "reading": "ば",
+        "segments": [
+          {
+            "ruby": "場",
+            "rt": "ば"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 236,
     "kanji": "所",
-    "reading": "-ところ / とこ / ところ / どころ / ショ",
+    "reading": "-ところ / とこ / ところ / どころ / しょ",
     "meaning": "extent, place",
     "isRadical": false,
     "onyomi": [
-      "ショ"
+      "しょ"
     ],
     "kunyomi": [
       "-ところ",
@@ -33538,18 +39544,50 @@ export const kanjiData = [
         "reading": "けいむしょ",
         "meaning": "prison, jail, gaol"
       }
+    ],
+    "standalone": [
+      {
+        "word": "所",
+        "reading": "とこ",
+        "segments": [
+          {
+            "ruby": "所",
+            "rt": "とこ"
+          }
+        ]
+      },
+      {
+        "word": "所",
+        "reading": "ところ",
+        "segments": [
+          {
+            "ruby": "所",
+            "rt": "ところ"
+          }
+        ]
+      },
+      {
+        "word": "所",
+        "reading": "どころ",
+        "segments": [
+          {
+            "ruby": "所",
+            "rt": "どころ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 237,
     "kanji": "世",
-    "reading": "よ / セ / セイ / ソウ",
+    "reading": "よ / せ / せい / そう",
     "meaning": "generation, public, society, world",
     "isRadical": false,
     "onyomi": [
-      "セ",
-      "セイ",
-      "ソウ"
+      "せ",
+      "せい",
+      "そう"
     ],
     "kunyomi": [
       "よ"
@@ -33680,17 +39718,29 @@ export const kanjiData = [
         "reading": "しゅうせい",
         "meaning": "all one's life, throughout one's life, as long as one lives"
       }
+    ],
+    "standalone": [
+      {
+        "word": "世",
+        "reading": "よ",
+        "segments": [
+          {
+            "ruby": "世",
+            "rt": "よ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 238,
     "kanji": "代",
-    "reading": "-が.わり / -がわ.り / か.える / か.わり / か.わる / かわ.り / かわ.る / しろ / よ / タイ / ダイ",
+    "reading": "-が.わり / -がわ.り / か.える / か.わり / か.わる / かわ.り / かわ.る / しろ / よ / たい / だい",
     "meaning": "age, change, charge, convert, counter for decades of ages, eras, etc., fee, generation, period, rate, replace, substitute",
     "isRadical": false,
     "onyomi": [
-      "タイ",
-      "ダイ"
+      "たい",
+      "だい"
     ],
     "kunyomi": [
       "-が.わり",
@@ -33829,16 +39879,103 @@ export const kanjiData = [
         "reading": "そうだい",
         "meaning": "representative"
       }
+    ],
+    "standalone": [
+      {
+        "word": "代える",
+        "reading": "かえる",
+        "segments": [
+          {
+            "ruby": "代",
+            "rt": "か"
+          },
+          {
+            "ruby": "える"
+          }
+        ]
+      },
+      {
+        "word": "代わり",
+        "reading": "かわり",
+        "segments": [
+          {
+            "ruby": "代",
+            "rt": "か"
+          },
+          {
+            "ruby": "わり"
+          }
+        ]
+      },
+      {
+        "word": "代わる",
+        "reading": "かわる",
+        "segments": [
+          {
+            "ruby": "代",
+            "rt": "か"
+          },
+          {
+            "ruby": "わる"
+          }
+        ]
+      },
+      {
+        "word": "代り",
+        "reading": "かわり",
+        "segments": [
+          {
+            "ruby": "代",
+            "rt": "かわ"
+          },
+          {
+            "ruby": "り"
+          }
+        ]
+      },
+      {
+        "word": "代る",
+        "reading": "かわる",
+        "segments": [
+          {
+            "ruby": "代",
+            "rt": "かわ"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      },
+      {
+        "word": "代",
+        "reading": "しろ",
+        "segments": [
+          {
+            "ruby": "代",
+            "rt": "しろ"
+          }
+        ]
+      },
+      {
+        "word": "代",
+        "reading": "よ",
+        "segments": [
+          {
+            "ruby": "代",
+            "rt": "よ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 239,
     "kanji": "貸",
-    "reading": "か.し- / か.す / かし- / タイ",
+    "reading": "か.し- / か.す / かし- / たい",
     "meaning": "lend",
     "isRadical": false,
     "onyomi": [
-      "タイ"
+      "たい"
     ],
     "kunyomi": [
       "か.し-",
@@ -33971,17 +40108,32 @@ export const kanjiData = [
         "reading": "からがし",
         "meaning": "demanding payment for a non-existent loan"
       }
+    ],
+    "standalone": [
+      {
+        "word": "貸す",
+        "reading": "かす",
+        "segments": [
+          {
+            "ruby": "貸",
+            "rt": "か"
+          },
+          {
+            "ruby": "す"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 240,
     "kanji": "地",
-    "reading": "ジ / チ",
+    "reading": "じ / ち",
     "meaning": "earth, ground",
     "isRadical": false,
     "onyomi": [
-      "ジ",
-      "チ"
+      "じ",
+      "ち"
     ],
     "kunyomi": [],
     "examples": [
@@ -34110,16 +40262,17 @@ export const kanjiData = [
         "reading": "むじ",
         "meaning": "plain, unfigured, patternless"
       }
-    ]
+    ],
+    "standalone": []
   },
   {
     "id": 241,
     "kanji": "池",
-    "reading": "いけ / チ",
+    "reading": "いけ / ち",
     "meaning": "cistern, pond, pool, reservoir",
     "isRadical": false,
     "onyomi": [
-      "チ"
+      "ち"
     ],
     "kunyomi": [
       "いけ"
@@ -34250,16 +40403,28 @@ export const kanjiData = [
         "reading": "じんこういけ",
         "meaning": "artificial pool"
       }
+    ],
+    "standalone": [
+      {
+        "word": "池",
+        "reading": "いけ",
+        "segments": [
+          {
+            "ruby": "池",
+            "rt": "いけ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 242,
     "kanji": "洗",
-    "reading": "あら.う / セン",
+    "reading": "あら.う / せん",
     "meaning": "inquire into, probe, wash",
     "isRadical": false,
     "onyomi": [
-      "セン"
+      "せん"
     ],
     "kunyomi": [
       "あら.う"
@@ -34390,16 +40555,31 @@ export const kanjiData = [
         "reading": "あらいあげる",
         "meaning": "to finish washing, to wash well, to investigate thoroughly"
       }
+    ],
+    "standalone": [
+      {
+        "word": "洗う",
+        "reading": "あらう",
+        "segments": [
+          {
+            "ruby": "洗",
+            "rt": "あら"
+          },
+          {
+            "ruby": "う"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 243,
     "kanji": "光",
-    "reading": "ひか.る / ひかり / コウ",
+    "reading": "ひか.る / ひかり / こう",
     "meaning": "light, ray",
     "isRadical": false,
     "onyomi": [
-      "コウ"
+      "こう"
     ],
     "kunyomi": [
       "ひか.る",
@@ -34531,16 +40711,41 @@ export const kanjiData = [
         "reading": "かんこう",
         "meaning": "exposure, sensitization, sensitisation"
       }
+    ],
+    "standalone": [
+      {
+        "word": "光る",
+        "reading": "ひかる",
+        "segments": [
+          {
+            "ruby": "光",
+            "rt": "ひか"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      },
+      {
+        "word": "光",
+        "reading": "ひかり",
+        "segments": [
+          {
+            "ruby": "光",
+            "rt": "ひかり"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 244,
     "kanji": "英",
-    "reading": "はなぶさ / エイ",
+    "reading": "はなぶさ / えい",
     "meaning": "England, English, calyx, hero, outstanding",
     "isRadical": false,
     "onyomi": [
-      "エイ"
+      "えい"
     ],
     "kunyomi": [
       "はなぶさ"
@@ -34671,16 +40876,28 @@ export const kanjiData = [
         "reading": "えいかいわ",
         "meaning": "English conversation"
       }
+    ],
+    "standalone": [
+      {
+        "word": "英",
+        "reading": "はなぶさ",
+        "segments": [
+          {
+            "ruby": "英",
+            "rt": "はなぶさ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 245,
     "kanji": "映",
-    "reading": "-ば.え / うつ.す / うつ.る / は.える / エイ",
+    "reading": "-ば.え / うつ.す / うつ.る / は.える / えい",
     "meaning": "projection, reflect, reflection",
     "isRadical": false,
     "onyomi": [
-      "エイ"
+      "えい"
     ],
     "kunyomi": [
       "-ば.え",
@@ -34814,16 +41031,57 @@ export const kanjiData = [
         "reading": "えいけん",
         "meaning": "film studies, cinema studies"
       }
+    ],
+    "standalone": [
+      {
+        "word": "映す",
+        "reading": "うつす",
+        "segments": [
+          {
+            "ruby": "映",
+            "rt": "うつ"
+          },
+          {
+            "ruby": "す"
+          }
+        ]
+      },
+      {
+        "word": "映る",
+        "reading": "うつる",
+        "segments": [
+          {
+            "ruby": "映",
+            "rt": "うつ"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      },
+      {
+        "word": "映える",
+        "reading": "はえる",
+        "segments": [
+          {
+            "ruby": "映",
+            "rt": "は"
+          },
+          {
+            "ruby": "える"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 246,
     "kanji": "歌",
-    "reading": "うた / うた.う / カ",
+    "reading": "うた / うた.う / か",
     "meaning": "sing, song",
     "isRadical": false,
     "onyomi": [
-      "カ"
+      "か"
     ],
     "kunyomi": [
       "うた",
@@ -34955,18 +41213,43 @@ export const kanjiData = [
         "reading": "れんが",
         "meaning": "renga (early Japanese poetry form), linked verse, poetic dialogue"
       }
+    ],
+    "standalone": [
+      {
+        "word": "歌",
+        "reading": "うた",
+        "segments": [
+          {
+            "ruby": "歌",
+            "rt": "うた"
+          }
+        ]
+      },
+      {
+        "word": "歌う",
+        "reading": "うたう",
+        "segments": [
+          {
+            "ruby": "歌",
+            "rt": "うた"
+          },
+          {
+            "ruby": "う"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 247,
     "kanji": "楽",
-    "reading": "この.む / たの.しい / たの.しむ / ガク / ゴウ / ラク",
+    "reading": "この.む / たの.しい / たの.しむ / がく / ごう / らく",
     "meaning": "comfort, ease, music",
     "isRadical": false,
     "onyomi": [
-      "ガク",
-      "ゴウ",
-      "ラク"
+      "がく",
+      "ごう",
+      "らく"
     ],
     "kunyomi": [
       "この.む",
@@ -35099,16 +41382,57 @@ export const kanjiData = [
         "reading": "がくだん",
         "meaning": "musical world"
       }
+    ],
+    "standalone": [
+      {
+        "word": "楽む",
+        "reading": "このむ",
+        "segments": [
+          {
+            "ruby": "楽",
+            "rt": "この"
+          },
+          {
+            "ruby": "む"
+          }
+        ]
+      },
+      {
+        "word": "楽しい",
+        "reading": "たのしい",
+        "segments": [
+          {
+            "ruby": "楽",
+            "rt": "たの"
+          },
+          {
+            "ruby": "しい"
+          }
+        ]
+      },
+      {
+        "word": "楽しむ",
+        "reading": "たのしむ",
+        "segments": [
+          {
+            "ruby": "楽",
+            "rt": "たの"
+          },
+          {
+            "ruby": "しむ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 248,
     "kanji": "薬",
-    "reading": "くすり / ヤク",
+    "reading": "くすり / やく",
     "meaning": "benefit, chemical, enamel, gunpowder, medicine",
     "isRadical": false,
     "onyomi": [
-      "ヤク"
+      "やく"
     ],
     "kunyomi": [
       "くすり"
@@ -35239,16 +41563,28 @@ export const kanjiData = [
         "reading": "とうやく",
         "meaning": "administration, medication, dosage"
       }
+    ],
+    "standalone": [
+      {
+        "word": "薬",
+        "reading": "くすり",
+        "segments": [
+          {
+            "ruby": "薬",
+            "rt": "くすり"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 249,
     "kanji": "界",
-    "reading": "カイ",
+    "reading": "かい",
     "meaning": "boundary, world",
     "isRadical": false,
     "onyomi": [
-      "カイ"
+      "かい"
     ],
     "kunyomi": [],
     "examples": [
@@ -35377,16 +41713,17 @@ export const kanjiData = [
         "reading": "ぎんせかい",
         "meaning": "snowscape"
       }
-    ]
+    ],
+    "standalone": []
   },
   {
     "id": 250,
     "kanji": "産",
-    "reading": "う.まれる / う.む / うぶ- / む.す / サン",
+    "reading": "う.まれる / う.む / うぶ- / む.す / さん",
     "meaning": "bear, childbirth, give birth, native, products, property, yield",
     "isRadical": false,
     "onyomi": [
-      "サン"
+      "さん"
     ],
     "kunyomi": [
       "う.まれる",
@@ -35520,17 +41857,58 @@ export const kanjiData = [
         "reading": "たんさん",
         "meaning": "(single-industry) industrial union"
       }
+    ],
+    "standalone": [
+      {
+        "word": "産まれる",
+        "reading": "うまれる",
+        "segments": [
+          {
+            "ruby": "産",
+            "rt": "う"
+          },
+          {
+            "ruby": "まれる"
+          }
+        ]
+      },
+      {
+        "word": "産む",
+        "reading": "うむ",
+        "segments": [
+          {
+            "ruby": "産",
+            "rt": "う"
+          },
+          {
+            "ruby": "む"
+          }
+        ]
+      },
+      {
+        "word": "産す",
+        "reading": "むす",
+        "segments": [
+          {
+            "ruby": "産",
+            "rt": "む"
+          },
+          {
+            "ruby": "す"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 251,
     "kanji": "業",
-    "reading": "わざ / ギョウ / ゴウ",
+    "reading": "わざ / ぎょう / ごう",
     "meaning": "arts, business, performance, vocation",
     "isRadical": false,
     "onyomi": [
-      "ギョウ",
-      "ゴウ"
+      "ぎょう",
+      "ごう"
     ],
     "kunyomi": [
       "わざ"
@@ -35661,16 +42039,28 @@ export const kanjiData = [
         "reading": "そつぎょう",
         "meaning": "graduation, completion (of a course)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "業",
+        "reading": "わざ",
+        "segments": [
+          {
+            "ruby": "業",
+            "rt": "わざ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 252,
     "kanji": "林",
-    "reading": "はやし / リン",
+    "reading": "はやし / りん",
     "meaning": "forest, grove",
     "isRadical": false,
     "onyomi": [
-      "リン"
+      "りん"
     ],
     "kunyomi": [
       "はやし"
@@ -35801,16 +42191,28 @@ export const kanjiData = [
         "reading": "しょうようじゅりん",
         "meaning": "evergreen (glossy-leaved) forest"
       }
+    ],
+    "standalone": [
+      {
+        "word": "林",
+        "reading": "はやし",
+        "segments": [
+          {
+            "ruby": "林",
+            "rt": "はやし"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 253,
     "kanji": "森",
-    "reading": "もり / シン",
+    "reading": "もり / しん",
     "meaning": "forest, woods",
     "isRadical": false,
     "onyomi": [
-      "シン"
+      "しん"
     ],
     "kunyomi": [
       "もり"
@@ -35941,17 +42343,29 @@ export const kanjiData = [
         "reading": "しんりんち",
         "meaning": "woodland, forested area"
       }
+    ],
+    "standalone": [
+      {
+        "word": "森",
+        "reading": "もり",
+        "segments": [
+          {
+            "ruby": "森",
+            "rt": "もり"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 254,
     "kanji": "物",
-    "reading": "もの / もの- / ブツ / モツ",
+    "reading": "もの / もの- / ぶつ / もつ",
     "meaning": "matter, object, thing",
     "isRadical": false,
     "onyomi": [
-      "ブツ",
-      "モツ"
+      "ぶつ",
+      "もつ"
     ],
     "kunyomi": [
       "もの",
@@ -36083,17 +42497,29 @@ export const kanjiData = [
         "reading": "ものごし",
         "meaning": "manner, demeanour, demeanor"
       }
+    ],
+    "standalone": [
+      {
+        "word": "物",
+        "reading": "もの",
+        "segments": [
+          {
+            "ruby": "物",
+            "rt": "もの"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 255,
     "kanji": "品",
-    "reading": "しな / ヒン / ホン",
+    "reading": "しな / ひん / ほん",
     "meaning": "article, counter for meal courses, dignity, goods, refinement",
     "isRadical": false,
     "onyomi": [
-      "ヒン",
-      "ホン"
+      "ひん",
+      "ほん"
     ],
     "kunyomi": [
       "しな"
@@ -36224,17 +42650,29 @@ export const kanjiData = [
         "reading": "いやくひん",
         "meaning": "medical and pharmaceutical products, medicinal supplies, drugs"
       }
+    ],
+    "standalone": [
+      {
+        "word": "品",
+        "reading": "しな",
+        "segments": [
+          {
+            "ruby": "品",
+            "rt": "しな"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 256,
     "kanji": "建",
-    "reading": "-だ.て / た.つ / た.て / た.てる / ケン / コン",
+    "reading": "-だ.て / た.つ / た.て / た.てる / けん / こん",
     "meaning": "build",
     "isRadical": false,
     "onyomi": [
-      "ケン",
-      "コン"
+      "けん",
+      "こん"
     ],
     "kunyomi": [
       "-だ.て",
@@ -36368,16 +42806,57 @@ export const kanjiData = [
         "reading": "いっこだて",
         "meaning": "detached house, stand-alone house, single-family home"
       }
+    ],
+    "standalone": [
+      {
+        "word": "建つ",
+        "reading": "たつ",
+        "segments": [
+          {
+            "ruby": "建",
+            "rt": "た"
+          },
+          {
+            "ruby": "つ"
+          }
+        ]
+      },
+      {
+        "word": "建て",
+        "reading": "たて",
+        "segments": [
+          {
+            "ruby": "建",
+            "rt": "た"
+          },
+          {
+            "ruby": "て"
+          }
+        ]
+      },
+      {
+        "word": "建てる",
+        "reading": "たてる",
+        "segments": [
+          {
+            "ruby": "建",
+            "rt": "た"
+          },
+          {
+            "ruby": "てる"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 257,
     "kanji": "館",
-    "reading": "たて / やかた / カン",
+    "reading": "たて / やかた / かん",
     "meaning": "building, large building, mansion, palace",
     "isRadical": false,
     "onyomi": [
-      "カン"
+      "かん"
     ],
     "kunyomi": [
       "たて",
@@ -36509,17 +42988,39 @@ export const kanjiData = [
         "reading": "しょうかん",
         "meaning": "brothel"
       }
+    ],
+    "standalone": [
+      {
+        "word": "館",
+        "reading": "たて",
+        "segments": [
+          {
+            "ruby": "館",
+            "rt": "たて"
+          }
+        ]
+      },
+      {
+        "word": "館",
+        "reading": "やかた",
+        "segments": [
+          {
+            "ruby": "館",
+            "rt": "やかた"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 258,
     "kanji": "図",
-    "reading": "え / はか.る / ズ / ト",
+    "reading": "え / はか.る / ず / と",
     "meaning": "audacious, drawing, extraordinary, map, plan",
     "isRadical": false,
     "onyomi": [
-      "ズ",
-      "ト"
+      "ず",
+      "と"
     ],
     "kunyomi": [
       "え",
@@ -36651,16 +43152,28 @@ export const kanjiData = [
         "reading": "てんきず",
         "meaning": "weather map"
       }
+    ],
+    "standalone": [
+      {
+        "word": "図",
+        "reading": "ず",
+        "segments": [
+          {
+            "ruby": "図",
+            "rt": "ず"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 259,
     "kanji": "使",
-    "reading": "-つか.い / -づか.い / つか.い / つか.う / シ",
+    "reading": "-つか.い / -づか.い / つか.い / つか.う / し",
     "meaning": "ambassador, cause, envoy, messenger, order, send on a mission, use",
     "isRadical": false,
     "onyomi": [
-      "シ"
+      "し"
     ],
     "kunyomi": [
       "-つか.い",
@@ -36794,17 +43307,45 @@ export const kanjiData = [
         "reading": "しようしゃ",
         "meaning": "employer"
       }
+    ],
+    "standalone": [
+      {
+        "word": "使い",
+        "reading": "つかい",
+        "segments": [
+          {
+            "ruby": "使",
+            "rt": "つか"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      },
+      {
+        "word": "使う",
+        "reading": "つかう",
+        "segments": [
+          {
+            "ruby": "使",
+            "rt": "つか"
+          },
+          {
+            "ruby": "う"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 260,
     "kanji": "便",
-    "reading": "たよ.り / ビン / ベン",
+    "reading": "たよ.り / びん / べん",
     "meaning": "chance, convenience, excrement, facility, feces, letter",
     "isRadical": false,
     "onyomi": [
-      "ビン",
-      "ベン"
+      "びん",
+      "べん"
     ],
     "kunyomi": [
       "たよ.り"
@@ -36935,16 +43476,31 @@ export const kanjiData = [
         "reading": "たくはいびん",
         "meaning": "express home delivery parcel (box, etc.)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "便り",
+        "reading": "たより",
+        "segments": [
+          {
+            "ruby": "便",
+            "rt": "たよ"
+          },
+          {
+            "ruby": "り"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 261,
     "kanji": "借",
-    "reading": "か.りる / シャク",
+    "reading": "か.りる / しゃく",
     "meaning": "borrow, rent",
     "isRadical": false,
     "onyomi": [
-      "シャク"
+      "しゃく"
     ],
     "kunyomi": [
       "か.りる"
@@ -37075,17 +43631,32 @@ export const kanjiData = [
         "reading": "ままかり",
         "meaning": "Japanese sardinella (Sardinella zunasi)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "借りる",
+        "reading": "かりる",
+        "segments": [
+          {
+            "ruby": "借",
+            "rt": "か"
+          },
+          {
+            "ruby": "りる"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 262,
     "kanji": "作",
-    "reading": "-づく.り / つく.り / つく.る / サ / サク",
+    "reading": "-づく.り / つく.り / つく.る / さ / さく",
     "meaning": "build, make, prepare, production",
     "isRadical": false,
     "onyomi": [
-      "サ",
-      "サク"
+      "さ",
+      "さく"
     ],
     "kunyomi": [
       "-づく.り",
@@ -37218,16 +43789,44 @@ export const kanjiData = [
         "reading": "どうさ",
         "meaning": "movement (of the body), action, motion"
       }
+    ],
+    "standalone": [
+      {
+        "word": "作り",
+        "reading": "つくり",
+        "segments": [
+          {
+            "ruby": "作",
+            "rt": "つく"
+          },
+          {
+            "ruby": "り"
+          }
+        ]
+      },
+      {
+        "word": "作る",
+        "reading": "つくる",
+        "segments": [
+          {
+            "ruby": "作",
+            "rt": "つく"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 263,
     "kanji": "広",
-    "reading": "ひろ.い / ひろ.がる / ひろ.げる / ひろ.まる / ひろ.める / コウ",
+    "reading": "ひろ.い / ひろ.がる / ひろ.げる / ひろ.まる / ひろ.める / こう",
     "meaning": "broad, spacious, wide",
     "isRadical": false,
     "onyomi": [
-      "コウ"
+      "こう"
     ],
     "kunyomi": [
       "ひろ.い",
@@ -37362,16 +43961,83 @@ export const kanjiData = [
         "reading": "ひろびろ",
         "meaning": "extensive, spacious"
       }
+    ],
+    "standalone": [
+      {
+        "word": "広い",
+        "reading": "ひろい",
+        "segments": [
+          {
+            "ruby": "広",
+            "rt": "ひろ"
+          },
+          {
+            "ruby": "い"
+          }
+        ]
+      },
+      {
+        "word": "広がる",
+        "reading": "ひろがる",
+        "segments": [
+          {
+            "ruby": "広",
+            "rt": "ひろ"
+          },
+          {
+            "ruby": "がる"
+          }
+        ]
+      },
+      {
+        "word": "広げる",
+        "reading": "ひろげる",
+        "segments": [
+          {
+            "ruby": "広",
+            "rt": "ひろ"
+          },
+          {
+            "ruby": "げる"
+          }
+        ]
+      },
+      {
+        "word": "広まる",
+        "reading": "ひろまる",
+        "segments": [
+          {
+            "ruby": "広",
+            "rt": "ひろ"
+          },
+          {
+            "ruby": "まる"
+          }
+        ]
+      },
+      {
+        "word": "広める",
+        "reading": "ひろめる",
+        "segments": [
+          {
+            "ruby": "広",
+            "rt": "ひろ"
+          },
+          {
+            "ruby": "める"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 264,
     "kanji": "私",
-    "reading": "わたくし / わたし / シ",
+    "reading": "わたくし / わたし / し",
     "meaning": "I, me, private",
     "isRadical": false,
     "onyomi": [
-      "シ"
+      "し"
     ],
     "kunyomi": [
       "わたくし",
@@ -37503,17 +44169,39 @@ export const kanjiData = [
         "reading": "こうし",
         "meaning": "public and private, official and personal, government and people"
       }
+    ],
+    "standalone": [
+      {
+        "word": "私",
+        "reading": "わたくし",
+        "segments": [
+          {
+            "ruby": "私",
+            "rt": "わたくし"
+          }
+        ]
+      },
+      {
+        "word": "私",
+        "reading": "わたし",
+        "segments": [
+          {
+            "ruby": "私",
+            "rt": "わたし"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 265,
     "kanji": "去",
-    "reading": "-さ.る / さ.る / キョ / コ",
+    "reading": "-さ.る / さ.る / きょ / こ",
     "meaning": "divorce, elapse, eliminate, gone, leave, past, quit",
     "isRadical": false,
     "onyomi": [
-      "キョ",
-      "コ"
+      "きょ",
+      "こ"
     ],
     "kunyomi": [
       "-さ.る",
@@ -37645,16 +44333,31 @@ export const kanjiData = [
         "reading": "きょたん",
         "meaning": "expectoration"
       }
+    ],
+    "standalone": [
+      {
+        "word": "去る",
+        "reading": "さる",
+        "segments": [
+          {
+            "ruby": "去",
+            "rt": "さ"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 266,
     "kanji": "室",
-    "reading": "むろ / シツ",
+    "reading": "むろ / しつ",
     "meaning": "apartment, cellar, chamber, greenhouse, room",
     "isRadical": false,
     "onyomi": [
-      "シツ"
+      "しつ"
     ],
     "kunyomi": [
       "むろ"
@@ -37785,16 +44488,28 @@ export const kanjiData = [
         "reading": "おうしつ",
         "meaning": "royal family"
       }
+    ],
+    "standalone": [
+      {
+        "word": "室",
+        "reading": "むろ",
+        "segments": [
+          {
+            "ruby": "室",
+            "rt": "むろ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 267,
     "kanji": "屋",
-    "reading": "や / オク",
+    "reading": "や / おく",
     "meaning": "dealer, house, roof, seller, shop",
     "isRadical": false,
     "onyomi": [
-      "オク"
+      "おく"
     ],
     "kunyomi": [
       "や"
@@ -37925,16 +44640,28 @@ export const kanjiData = [
         "reading": "がくや",
         "meaning": "behind the scenes, the inside, inside affairs"
       }
+    ],
+    "standalone": [
+      {
+        "word": "屋",
+        "reading": "や",
+        "segments": [
+          {
+            "ruby": "屋",
+            "rt": "や"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 268,
     "kanji": "教",
-    "reading": "おし.える / おそ.わる / キョウ",
+    "reading": "おし.える / おそ.わる / きょう",
     "meaning": "doctrine, faith, teach",
     "isRadical": false,
     "onyomi": [
-      "キョウ"
+      "きょう"
     ],
     "kunyomi": [
       "おし.える",
@@ -38066,16 +44793,44 @@ export const kanjiData = [
         "reading": "きょうしゅ",
         "meaning": "founder of a religious sect"
       }
+    ],
+    "standalone": [
+      {
+        "word": "教える",
+        "reading": "おしえる",
+        "segments": [
+          {
+            "ruby": "教",
+            "rt": "おし"
+          },
+          {
+            "ruby": "える"
+          }
+        ]
+      },
+      {
+        "word": "教わる",
+        "reading": "おそわる",
+        "segments": [
+          {
+            "ruby": "教",
+            "rt": "おそ"
+          },
+          {
+            "ruby": "わる"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 269,
     "kanji": "研",
-    "reading": "と.ぐ / ケン",
+    "reading": "と.ぐ / けん",
     "meaning": "polish, sharpen, study of",
     "isRadical": false,
     "onyomi": [
-      "ケン"
+      "けん"
     ],
     "kunyomi": [
       "と.ぐ"
@@ -38206,17 +44961,32 @@ export const kanjiData = [
         "reading": "やげん",
         "meaning": "druggist's mortar"
       }
+    ],
+    "standalone": [
+      {
+        "word": "研ぐ",
+        "reading": "とぐ",
+        "segments": [
+          {
+            "ruby": "研",
+            "rt": "と"
+          },
+          {
+            "ruby": "ぐ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 270,
     "kanji": "発",
-    "reading": "あば.く / おこ.る / た.つ / つか.わす / はな.つ / ハツ / ホツ",
+    "reading": "あば.く / おこ.る / た.つ / つか.わす / はな.つ / はつ / ほつ",
     "meaning": "counter for gunshots, departure, discharge, disclose, emit, publish, start from",
     "isRadical": false,
     "onyomi": [
-      "ハツ",
-      "ホツ"
+      "はつ",
+      "ほつ"
     ],
     "kunyomi": [
       "あば.く",
@@ -38351,17 +45121,84 @@ export const kanjiData = [
         "reading": "しはつ",
         "meaning": "departing one's home station (of a train, bus, etc.)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "発く",
+        "reading": "あばく",
+        "segments": [
+          {
+            "ruby": "発",
+            "rt": "あば"
+          },
+          {
+            "ruby": "く"
+          }
+        ]
+      },
+      {
+        "word": "発る",
+        "reading": "おこる",
+        "segments": [
+          {
+            "ruby": "発",
+            "rt": "おこ"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      },
+      {
+        "word": "発つ",
+        "reading": "たつ",
+        "segments": [
+          {
+            "ruby": "発",
+            "rt": "た"
+          },
+          {
+            "ruby": "つ"
+          }
+        ]
+      },
+      {
+        "word": "発わす",
+        "reading": "つかわす",
+        "segments": [
+          {
+            "ruby": "発",
+            "rt": "つか"
+          },
+          {
+            "ruby": "わす"
+          }
+        ]
+      },
+      {
+        "word": "発つ",
+        "reading": "はなつ",
+        "segments": [
+          {
+            "ruby": "発",
+            "rt": "はな"
+          },
+          {
+            "ruby": "つ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 271,
     "kanji": "究",
-    "reading": "きわ.める / キュウ / ク",
+    "reading": "きわ.める / きゅう / く",
     "meaning": "research, study",
     "isRadical": false,
     "onyomi": [
-      "キュウ",
-      "ク"
+      "きゅう",
+      "く"
     ],
     "kunyomi": [
       "きわ.める"
@@ -38492,17 +45329,32 @@ export const kanjiData = [
         "reading": "きゅうきょくてき",
         "meaning": "ultimate"
       }
+    ],
+    "standalone": [
+      {
+        "word": "究める",
+        "reading": "きわめる",
+        "segments": [
+          {
+            "ruby": "究",
+            "rt": "きわ"
+          },
+          {
+            "ruby": "める"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 272,
     "kanji": "着",
-    "reading": "き.せる / き.る / つ.く / つ.ける / ジャク / チャク",
+    "reading": "き.せる / き.る / つ.く / つ.ける / じゃく / ちゃく",
     "meaning": "arrive, counter for suits of clothing, don, wear",
     "isRadical": false,
     "onyomi": [
-      "ジャク",
-      "チャク"
+      "じゃく",
+      "ちゃく"
     ],
     "kunyomi": [
       "き.せる",
@@ -38636,17 +45488,71 @@ export const kanjiData = [
         "reading": "きがえ",
         "meaning": "changing clothes, change of clothes"
       }
+    ],
+    "standalone": [
+      {
+        "word": "着せる",
+        "reading": "きせる",
+        "segments": [
+          {
+            "ruby": "着",
+            "rt": "き"
+          },
+          {
+            "ruby": "せる"
+          }
+        ]
+      },
+      {
+        "word": "着る",
+        "reading": "きる",
+        "segments": [
+          {
+            "ruby": "着",
+            "rt": "き"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      },
+      {
+        "word": "着く",
+        "reading": "つく",
+        "segments": [
+          {
+            "ruby": "着",
+            "rt": "つ"
+          },
+          {
+            "ruby": "く"
+          }
+        ]
+      },
+      {
+        "word": "着ける",
+        "reading": "つける",
+        "segments": [
+          {
+            "ruby": "着",
+            "rt": "つ"
+          },
+          {
+            "ruby": "ける"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 273,
     "kanji": "乗",
-    "reading": "-の.り / の.せる / の.る / ショウ / ジョウ",
+    "reading": "-の.り / の.せる / の.る / しょう / じょう",
     "meaning": "board, counter for vehicles, join, mount, multiplication, power, record, ride",
     "isRadical": false,
     "onyomi": [
-      "ショウ",
-      "ジョウ"
+      "しょう",
+      "じょう"
     ],
     "kunyomi": [
       "-の.り",
@@ -38779,16 +45685,44 @@ export const kanjiData = [
         "reading": "しじょう",
         "meaning": "test drive, test ride, trial ride"
       }
+    ],
+    "standalone": [
+      {
+        "word": "乗せる",
+        "reading": "のせる",
+        "segments": [
+          {
+            "ruby": "乗",
+            "rt": "の"
+          },
+          {
+            "ruby": "せる"
+          }
+        ]
+      },
+      {
+        "word": "乗る",
+        "reading": "のる",
+        "segments": [
+          {
+            "ruby": "乗",
+            "rt": "の"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 274,
     "kanji": "計",
-    "reading": "はか.らう / はか.る / ケイ",
+    "reading": "はか.らう / はか.る / けい",
     "meaning": "measure, plan, plot, scheme",
     "isRadical": false,
     "onyomi": [
-      "ケイ"
+      "けい"
     ],
     "kunyomi": [
       "はか.らう",
@@ -38920,19 +45854,47 @@ export const kanjiData = [
         "reading": "めざましどけい",
         "meaning": "alarm clock"
       }
+    ],
+    "standalone": [
+      {
+        "word": "計らう",
+        "reading": "はからう",
+        "segments": [
+          {
+            "ruby": "計",
+            "rt": "はか"
+          },
+          {
+            "ruby": "らう"
+          }
+        ]
+      },
+      {
+        "word": "計る",
+        "reading": "はかる",
+        "segments": [
+          {
+            "ruby": "計",
+            "rt": "はか"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 275,
     "kanji": "画",
-    "reading": "えが.く / かぎ.る / かく.する / はか.る / はかりごと / エ / カイ / カク / ガ",
+    "reading": "えが.く / かぎ.る / かく.する / はか.る / はかりごと / え / かい / かく / が",
     "meaning": "brush-stroke, picture",
     "isRadical": false,
     "onyomi": [
-      "エ",
-      "カイ",
-      "カク",
-      "ガ"
+      "え",
+      "かい",
+      "かく",
+      "が"
     ],
     "kunyomi": [
       "えが.く",
@@ -39067,17 +46029,81 @@ export const kanjiData = [
         "reading": "がろう",
         "meaning": "art gallery (esp. artworks for sale), picture gallery"
       }
+    ],
+    "standalone": [
+      {
+        "word": "画く",
+        "reading": "えがく",
+        "segments": [
+          {
+            "ruby": "画",
+            "rt": "えが"
+          },
+          {
+            "ruby": "く"
+          }
+        ]
+      },
+      {
+        "word": "画る",
+        "reading": "かぎる",
+        "segments": [
+          {
+            "ruby": "画",
+            "rt": "かぎ"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      },
+      {
+        "word": "画する",
+        "reading": "かくする",
+        "segments": [
+          {
+            "ruby": "画",
+            "rt": "かく"
+          },
+          {
+            "ruby": "する"
+          }
+        ]
+      },
+      {
+        "word": "画る",
+        "reading": "はかる",
+        "segments": [
+          {
+            "ruby": "画",
+            "rt": "はか"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      },
+      {
+        "word": "画",
+        "reading": "はかりごと",
+        "segments": [
+          {
+            "ruby": "画",
+            "rt": "はかりごと"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 276,
     "kanji": "説",
-    "reading": "と.く / セツ / ゼイ",
+    "reading": "と.く / せつ / ぜい",
     "meaning": "explanation, opinion, rumor, theory",
     "isRadical": false,
     "onyomi": [
-      "セツ",
-      "ゼイ"
+      "せつ",
+      "ぜい"
     ],
     "kunyomi": [
       "と.く"
@@ -39208,16 +46234,31 @@ export const kanjiData = [
         "reading": "ろんせつ",
         "meaning": "editorial, leading article, leader"
       }
+    ],
+    "standalone": [
+      {
+        "word": "説く",
+        "reading": "とく",
+        "segments": [
+          {
+            "ruby": "説",
+            "rt": "と"
+          },
+          {
+            "ruby": "く"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 277,
     "kanji": "院",
-    "reading": "イン",
+    "reading": "いん",
     "meaning": "Inst., institution, mansion, school, temple",
     "isRadical": false,
     "onyomi": [
-      "イン"
+      "いん"
     ],
     "kunyomi": [],
     "examples": [
@@ -39346,17 +46387,18 @@ export const kanjiData = [
         "reading": "きいん",
         "meaning": "go institution, go club, go hall"
       }
-    ]
+    ],
+    "standalone": []
   },
   {
     "id": 278,
     "kanji": "病",
-    "reading": "-や.み / や.む / やまい / ビョウ / ヘイ",
+    "reading": "-や.み / や.む / やまい / びょう / へい",
     "meaning": "ill, sick",
     "isRadical": false,
     "onyomi": [
-      "ビョウ",
-      "ヘイ"
+      "びょう",
+      "へい"
     ],
     "kunyomi": [
       "-や.み",
@@ -39489,16 +46531,41 @@ export const kanjiData = [
         "reading": "びょうめい",
         "meaning": "name of a disease"
       }
+    ],
+    "standalone": [
+      {
+        "word": "病む",
+        "reading": "やむ",
+        "segments": [
+          {
+            "ruby": "病",
+            "rt": "や"
+          },
+          {
+            "ruby": "む"
+          }
+        ]
+      },
+      {
+        "word": "病",
+        "reading": "やまい",
+        "segments": [
+          {
+            "ruby": "病",
+            "rt": "やまい"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 279,
     "kanji": "科",
-    "reading": "カ",
+    "reading": "か",
     "meaning": "course, department, section",
     "isRadical": false,
     "onyomi": [
-      "カ"
+      "か"
     ],
     "kunyomi": [],
     "examples": [
@@ -39627,18 +46694,19 @@ export const kanjiData = [
         "reading": "よか",
         "meaning": "preparatory course, preparatory department"
       }
-    ]
+    ],
+    "standalone": []
   },
   {
     "id": 280,
     "kanji": "度",
-    "reading": "-た.い / たび / タク / ト / ド",
+    "reading": "-た.い / たび / たく / と / ど",
     "meaning": "attitude, consider, counter for occurrences, degrees, occurrence, time",
     "isRadical": false,
     "onyomi": [
-      "タク",
-      "ト",
-      "ド"
+      "たく",
+      "と",
+      "ど"
     ],
     "kunyomi": [
       "-た.い",
@@ -39770,18 +46838,30 @@ export const kanjiData = [
         "reading": "ねんど",
         "meaning": "product year"
       }
+    ],
+    "standalone": [
+      {
+        "word": "度",
+        "reading": "ど",
+        "segments": [
+          {
+            "ruby": "度",
+            "rt": "ど"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 281,
     "kanji": "頭",
-    "reading": "-がしら / あたま / かしら / かぶり / ズ / ト / トウ",
+    "reading": "-がしら / あたま / かしら / かぶり / ず / と / とう",
     "meaning": "counter for large animals, head",
     "isRadical": false,
     "onyomi": [
-      "ズ",
-      "ト",
-      "トウ"
+      "ず",
+      "と",
+      "とう"
     ],
     "kunyomi": [
       "-がしら",
@@ -39915,16 +46995,48 @@ export const kanjiData = [
         "reading": "もうとう",
         "meaning": "(not) in the least, (not) at all, (not) a bit"
       }
+    ],
+    "standalone": [
+      {
+        "word": "頭",
+        "reading": "あたま",
+        "segments": [
+          {
+            "ruby": "頭",
+            "rt": "あたま"
+          }
+        ]
+      },
+      {
+        "word": "頭",
+        "reading": "かしら",
+        "segments": [
+          {
+            "ruby": "頭",
+            "rt": "かしら"
+          }
+        ]
+      },
+      {
+        "word": "頭",
+        "reading": "かぶり",
+        "segments": [
+          {
+            "ruby": "頭",
+            "rt": "かぶり"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 282,
     "kanji": "顔",
-    "reading": "かお / ガン",
+    "reading": "かお / がん",
     "meaning": "Kanji",
     "isRadical": false,
     "onyomi": [
-      "ガン"
+      "がん"
     ],
     "kunyomi": [
       "かお"
@@ -40055,17 +47167,29 @@ export const kanjiData = [
         "reading": "なきがお",
         "meaning": "crying face, face of a person who is crying"
       }
+    ],
+    "standalone": [
+      {
+        "word": "顔",
+        "reading": "かお",
+        "segments": [
+          {
+            "ruby": "顔",
+            "rt": "かお"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 283,
     "kanji": "声",
-    "reading": "こえ / こわ- / ショウ / セイ",
+    "reading": "こえ / こわ- / しょう / せい",
     "meaning": "Kanji",
     "isRadical": false,
     "onyomi": [
-      "ショウ",
-      "セイ"
+      "しょう",
+      "せい"
     ],
     "kunyomi": [
       "こえ",
@@ -40197,16 +47321,28 @@ export const kanjiData = [
         "reading": "ほうせい",
         "meaning": "sound of a gun, roar of cannon"
       }
+    ],
+    "standalone": [
+      {
+        "word": "声",
+        "reading": "こえ",
+        "segments": [
+          {
+            "ruby": "声",
+            "rt": "こえ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 284,
     "kanji": "題",
-    "reading": "ダイ",
+    "reading": "だい",
     "meaning": "Kanji",
     "isRadical": false,
     "onyomi": [
-      "ダイ"
+      "だい"
     ],
     "kunyomi": [],
     "examples": [
@@ -40335,17 +47471,18 @@ export const kanjiData = [
         "reading": "だいもく",
         "meaning": "Nichiren chant"
       }
-    ]
+    ],
+    "standalone": []
   },
   {
     "id": 285,
     "kanji": "色",
-    "reading": "いろ / シキ / ショク",
+    "reading": "いろ / しき / しょく",
     "meaning": "Kanji",
     "isRadical": false,
     "onyomi": [
-      "シキ",
-      "ショク"
+      "しき",
+      "しょく"
     ],
     "kunyomi": [
       "いろ"
@@ -40476,16 +47613,28 @@ export const kanjiData = [
         "reading": "しきかく",
         "meaning": "sense of color, sense of colour"
       }
+    ],
+    "standalone": [
+      {
+        "word": "色",
+        "reading": "いろ",
+        "segments": [
+          {
+            "ruby": "色",
+            "rt": "いろ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 286,
     "kanji": "漢",
-    "reading": "カン",
+    "reading": "かん",
     "meaning": "Kanji",
     "isRadical": false,
     "onyomi": [
-      "カン"
+      "かん"
     ],
     "kunyomi": [],
     "examples": [
@@ -40614,16 +47763,17 @@ export const kanjiData = [
         "reading": "ぎんかん",
         "meaning": "Milky Way"
       }
-    ]
+    ],
+    "standalone": []
   },
   {
     "id": 287,
     "kanji": "字",
-    "reading": "-な / あざ / あざな / ジ",
+    "reading": "-な / あざ / あざな / じ",
     "meaning": "Kanji",
     "isRadical": false,
     "onyomi": [
-      "ジ"
+      "じ"
     ],
     "kunyomi": [
       "-な",
@@ -40756,17 +47906,29 @@ export const kanjiData = [
         "reading": "じく",
         "meaning": "wording, words and phrases, way of expression"
       }
+    ],
+    "standalone": [
+      {
+        "word": "字",
+        "reading": "じ",
+        "segments": [
+          {
+            "ruby": "字",
+            "rt": "じ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 288,
     "kanji": "写",
-    "reading": "うつ- / うつ.し / うつ.す / うつ.る / シャ / ジャ",
+    "reading": "うつ- / うつ.し / うつ.す / うつ.る / しゃ / じゃ",
     "meaning": "Kanji",
     "isRadical": false,
     "onyomi": [
-      "シャ",
-      "ジャ"
+      "しゃ",
+      "じゃ"
     ],
     "kunyomi": [
       "うつ-",
@@ -40900,16 +48062,57 @@ export const kanjiData = [
         "reading": "しゃしんや",
         "meaning": "camera shop, photography supplies shop"
       }
+    ],
+    "standalone": [
+      {
+        "word": "写し",
+        "reading": "うつし",
+        "segments": [
+          {
+            "ruby": "写",
+            "rt": "うつ"
+          },
+          {
+            "ruby": "し"
+          }
+        ]
+      },
+      {
+        "word": "写す",
+        "reading": "うつす",
+        "segments": [
+          {
+            "ruby": "写",
+            "rt": "うつ"
+          },
+          {
+            "ruby": "す"
+          }
+        ]
+      },
+      {
+        "word": "写る",
+        "reading": "うつる",
+        "segments": [
+          {
+            "ruby": "写",
+            "rt": "うつ"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 289,
     "kanji": "考",
-    "reading": "かんが.え / かんが.える / コウ",
+    "reading": "かんが.え / かんが.える / こう",
     "meaning": "Kanji",
     "isRadical": false,
     "onyomi": [
-      "コウ"
+      "こう"
     ],
     "kunyomi": [
       "かんが.え",
@@ -41041,16 +48244,44 @@ export const kanjiData = [
         "reading": "もっこう",
         "meaning": "contemplation, meditation"
       }
+    ],
+    "standalone": [
+      {
+        "word": "考え",
+        "reading": "かんがえ",
+        "segments": [
+          {
+            "ruby": "考",
+            "rt": "かんが"
+          },
+          {
+            "ruby": "え"
+          }
+        ]
+      },
+      {
+        "word": "考える",
+        "reading": "かんがえる",
+        "segments": [
+          {
+            "ruby": "考",
+            "rt": "かんが"
+          },
+          {
+            "ruby": "える"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 290,
     "kanji": "真",
-    "reading": "ま / ま- / まこと / シン",
+    "reading": "ま / ま- / まこと / しん",
     "meaning": "Kanji",
     "isRadical": false,
     "onyomi": [
-      "シン"
+      "しん"
     ],
     "kunyomi": [
       "ま",
@@ -41183,16 +48414,38 @@ export const kanjiData = [
         "reading": "しんせい",
         "meaning": "genuine, authentic, true"
       }
+    ],
+    "standalone": [
+      {
+        "word": "真",
+        "reading": "ま",
+        "segments": [
+          {
+            "ruby": "真",
+            "rt": "ま"
+          }
+        ]
+      },
+      {
+        "word": "真",
+        "reading": "まこと",
+        "segments": [
+          {
+            "ruby": "真",
+            "rt": "まこと"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 291,
     "kanji": "集",
-    "reading": "あつ.まる / あつ.める / つど.う / シュウ",
+    "reading": "あつ.まる / あつ.める / つど.う / しゅう",
     "meaning": "congregate, flock, gather, meet, swarm",
     "isRadical": false,
     "onyomi": [
-      "シュウ"
+      "しゅう"
     ],
     "kunyomi": [
       "あつ.まる",
@@ -41325,16 +48578,57 @@ export const kanjiData = [
         "reading": "つどい",
         "meaning": "meeting, get-together (e.g. among friends)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "集まる",
+        "reading": "あつまる",
+        "segments": [
+          {
+            "ruby": "集",
+            "rt": "あつ"
+          },
+          {
+            "ruby": "まる"
+          }
+        ]
+      },
+      {
+        "word": "集める",
+        "reading": "あつめる",
+        "segments": [
+          {
+            "ruby": "集",
+            "rt": "あつ"
+          },
+          {
+            "ruby": "める"
+          }
+        ]
+      },
+      {
+        "word": "集う",
+        "reading": "つどう",
+        "segments": [
+          {
+            "ruby": "集",
+            "rt": "つど"
+          },
+          {
+            "ruby": "う"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 292,
     "kanji": "曜",
-    "reading": "ヨウ",
+    "reading": "よう",
     "meaning": "Kanji",
     "isRadical": false,
     "onyomi": [
-      "ヨウ"
+      "よう"
     ],
     "kunyomi": [],
     "examples": [
@@ -41463,16 +48757,28 @@ export const kanjiData = [
         "reading": "すくようどう",
         "meaning": "form of astrology based on the Xiuyaojing (brought to Japan in the Heian period)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "曜",
+        "reading": "よう",
+        "segments": [
+          {
+            "ruby": "曜",
+            "rt": "よう"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 293,
     "kanji": "進",
-    "reading": "すす.む / すす.める / シン",
+    "reading": "すす.む / すす.める / しん",
     "meaning": "Kanji",
     "isRadical": false,
     "onyomi": [
-      "シン"
+      "しん"
     ],
     "kunyomi": [
       "すす.む",
@@ -41604,16 +48910,44 @@ export const kanjiData = [
         "reading": "とくしん",
         "meaning": "special promotion (in rank or grade)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "進む",
+        "reading": "すすむ",
+        "segments": [
+          {
+            "ruby": "進",
+            "rt": "すす"
+          },
+          {
+            "ruby": "む"
+          }
+        ]
+      },
+      {
+        "word": "進める",
+        "reading": "すすめる",
+        "segments": [
+          {
+            "ruby": "進",
+            "rt": "すす"
+          },
+          {
+            "ruby": "める"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 294,
     "kanji": "帰",
-    "reading": "おく.る / かえ.す / かえ.る / とつ.ぐ / キ",
+    "reading": "おく.る / かえ.す / かえ.る / とつ.ぐ / き",
     "meaning": "Kanji",
     "isRadical": false,
     "onyomi": [
-      "キ"
+      "き"
     ],
     "kunyomi": [
       "おく.る",
@@ -41747,16 +49081,70 @@ export const kanjiData = [
         "reading": "あさがえり",
         "meaning": "coming home in the morning (after staying out all night)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "帰る",
+        "reading": "おくる",
+        "segments": [
+          {
+            "ruby": "帰",
+            "rt": "おく"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      },
+      {
+        "word": "帰す",
+        "reading": "かえす",
+        "segments": [
+          {
+            "ruby": "帰",
+            "rt": "かえ"
+          },
+          {
+            "ruby": "す"
+          }
+        ]
+      },
+      {
+        "word": "帰る",
+        "reading": "かえる",
+        "segments": [
+          {
+            "ruby": "帰",
+            "rt": "かえ"
+          },
+          {
+            "ruby": "る"
+          }
+        ]
+      },
+      {
+        "word": "帰ぐ",
+        "reading": "とつぐ",
+        "segments": [
+          {
+            "ruby": "帰",
+            "rt": "とつ"
+          },
+          {
+            "ruby": "ぐ"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 295,
     "kanji": "別",
-    "reading": "わ.ける / わか.れる / ベツ",
+    "reading": "わ.ける / わか.れる / べつ",
     "meaning": "Kanji",
     "isRadical": false,
     "onyomi": [
-      "ベツ"
+      "べつ"
     ],
     "kunyomi": [
       "わ.ける",
@@ -41888,16 +49276,44 @@ export const kanjiData = [
         "reading": "べっかん",
         "meaning": "separate volume, extra issue"
       }
+    ],
+    "standalone": [
+      {
+        "word": "別ける",
+        "reading": "わける",
+        "segments": [
+          {
+            "ruby": "別",
+            "rt": "わ"
+          },
+          {
+            "ruby": "ける"
+          }
+        ]
+      },
+      {
+        "word": "別れる",
+        "reading": "わかれる",
+        "segments": [
+          {
+            "ruby": "別",
+            "rt": "わか"
+          },
+          {
+            "ruby": "れる"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 296,
     "kanji": "以",
-    "reading": "もっ.て / イ",
+    "reading": "もっ.て / い",
     "meaning": "Kanji",
     "isRadical": false,
     "onyomi": [
-      "イ"
+      "い"
     ],
     "kunyomi": [
       "もっ.て"
@@ -42028,16 +49444,31 @@ export const kanjiData = [
         "reading": "いかりゃく",
         "meaning": "rest omitted, and so on"
       }
+    ],
+    "standalone": [
+      {
+        "word": "以て",
+        "reading": "もって",
+        "segments": [
+          {
+            "ruby": "以",
+            "rt": "もっ"
+          },
+          {
+            "ruby": "て"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 297,
     "kanji": "堂",
-    "reading": "ドウ",
+    "reading": "どう",
     "meaning": "Kanji",
     "isRadical": false,
     "onyomi": [
-      "ドウ"
+      "どう"
     ],
     "kunyomi": [],
     "examples": [
@@ -42166,16 +49597,28 @@ export const kanjiData = [
         "reading": "べつどう",
         "meaning": "separate building"
       }
+    ],
+    "standalone": [
+      {
+        "word": "堂",
+        "reading": "どう",
+        "segments": [
+          {
+            "ruby": "堂",
+            "rt": "どう"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 298,
     "kanji": "税",
-    "reading": "ゼイ",
+    "reading": "ぜい",
     "meaning": "duty, tax",
     "isRadical": false,
     "onyomi": [
-      "ゼイ"
+      "ぜい"
     ],
     "kunyomi": [],
     "examples": [
@@ -42303,6 +49746,18 @@ export const kanjiData = [
         "word": "租税",
         "reading": "そぜい",
         "meaning": "taxes, taxation"
+      }
+    ],
+    "standalone": [
+      {
+        "word": "税",
+        "reading": "ぜい",
+        "segments": [
+          {
+            "ruby": "税",
+            "rt": "ぜい"
+          }
+        ]
       }
     ]
   },
@@ -42446,16 +49901,31 @@ export const kanjiData = [
         "reading": "すみこみ",
         "meaning": "live-in (e.g. job)"
       }
+    ],
+    "standalone": [
+      {
+        "word": "込む",
+        "reading": "こむ",
+        "segments": [
+          {
+            "ruby": "込",
+            "rt": "こ"
+          },
+          {
+            "ruby": "む"
+          }
+        ]
+      }
     ]
   },
   {
     "id": 300,
     "kanji": "申",
-    "reading": "さる / もう.し- / もう.す / シン",
+    "reading": "さる / もう.し- / もう.す / しん",
     "meaning": "3-5PM, have the honor to, ninth sign of Chinese zodiac, sign of the monkey",
     "isRadical": false,
     "onyomi": [
-      "シン"
+      "しん"
     ],
     "kunyomi": [
       "さる",
@@ -42587,6 +50057,21 @@ export const kanjiData = [
         "word": "申し合わせる",
         "reading": "もうしあわせる",
         "meaning": "to arrange, to make an appointment, to agree upon"
+      }
+    ],
+    "standalone": [
+      {
+        "word": "申す",
+        "reading": "もうす",
+        "segments": [
+          {
+            "ruby": "申",
+            "rt": "もう"
+          },
+          {
+            "ruby": "す"
+          }
+        ]
       }
     ]
   }

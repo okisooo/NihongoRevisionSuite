@@ -9,6 +9,13 @@ const kanjiList = JSON.parse(jsonStr);
 
 console.log(`Loaded ${kanjiList.length} kanjis to enrich.`);
 
+function toHiragana(str) {
+  if (!str) return '';
+  return str.replace(/[\u30a1-\u30f6]/g, (match) => {
+    return String.fromCharCode(match.charCodeAt(0) - 0x60);
+  });
+}
+
 async function fetchKanjiInfo(char) {
   try {
     const res = await fetch(`https://kanjiapi.dev/v1/kanji/${encodeURIComponent(char)}`);
@@ -107,15 +114,20 @@ async function enrich() {
       // Wait for both in parallel
       const [info, words] = await Promise.all([infoPromise, wordsPromise]);
 
-      const onyomi = info ? info.on_readings : [];
+      const onyomi = (info ? info.on_readings : []).map(toHiragana);
       const kunyomi = info ? info.kun_readings : [];
       const examples = extractExamples(words, item.kanji);
 
+      // Rebuild combined reading string in Hiragana
+      const reading = [...kunyomi, ...onyomi].join(' / ');
+
       enrichedList[myIndex] = {
         ...item,
+        reading,
         onyomi,
         kunyomi,
-        examples
+        examples,
+        standalone: item.standalone || []
       };
 
       // small delay to be polite to the server

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { kanjiData } from '../data/kanji';
 import { radicalsData } from '../data/radicals';
 import { BookOpen, SlidersHorizontal } from 'lucide-react';
+import { parseRangeString } from '../utils/rangeParser';
+import { toHiragana } from '../utils/kanaConverter';
 
 export default function DictionaryView() {
   const [typeFilter, setTypeFilter] = useState(() => {
@@ -20,16 +22,22 @@ export default function DictionaryView() {
     return typeFilter === 'radical' ? 61 : 150;
   });
 
+  const [rangeQuery, setRangeQuery] = useState(() => {
+    return localStorage.getItem('kanji_range_query') || '';
+  });
+
   const [showFilter, setShowFilter] = useState(false);
 
   useEffect(() => {
     localStorage.setItem('kanji_range_from', rangeFrom);
     localStorage.setItem('kanji_range_to', rangeTo);
     localStorage.setItem('kanji_type_filter', typeFilter);
-  }, [rangeFrom, rangeTo, typeFilter]);
+    localStorage.setItem('kanji_range_query', rangeQuery);
+  }, [rangeFrom, rangeTo, typeFilter, rangeQuery]);
 
   const handleTypeFilterChange = (newType) => {
     setTypeFilter(newType);
+    setRangeQuery(''); // Clear query on tab change
     const minVal = newType === 'radical' ? 4 : 1;
     const maxVal = newType === 'radical' ? 61 : 300;
 
@@ -52,6 +60,7 @@ export default function DictionaryView() {
   const handlePresetClick = (from, to) => {
     setRangeFrom(from);
     setRangeTo(to);
+    setRangeQuery(''); // Clear query when preset is clicked
   };
 
   const getSourceData = () => {
@@ -71,9 +80,16 @@ export default function DictionaryView() {
     });
   };
 
-  const filteredKanjis = getSourceData().filter(
-    (item) => item.id >= rangeFrom && item.id <= rangeTo
-  );
+  const minLimit = typeFilter === 'radical' ? 4 : 1;
+  const maxLimit = typeFilter === 'radical' ? 61 : 300;
+
+  const filteredKanjis = getSourceData().filter((item) => {
+    if (rangeQuery.trim()) {
+      const activeIds = parseRangeString(rangeQuery, minLimit, maxLimit);
+      return activeIds.has(item.id);
+    }
+    return item.id >= rangeFrom && item.id <= rangeTo;
+  });
 
   const getPresets = () => {
     if (typeFilter === 'radical') {
@@ -127,7 +143,7 @@ export default function DictionaryView() {
     };
 
     const formattedKuns = formatVals(kunVals);
-    const formattedOns = formatVals(onVals);
+    const formattedOns = formatVals(onVals).map(v => toHiragana(v));
 
     return (
       <div className="card-readings-container">
@@ -153,8 +169,6 @@ export default function DictionaryView() {
     );
   };
 
-  const minLimit = typeFilter === 'radical' ? 4 : 1;
-  const maxLimit = typeFilter === 'radical' ? 61 : 300;
 
   return (
     <div className="dictionary-container">
@@ -219,12 +233,22 @@ export default function DictionaryView() {
               </div>
             </div>
 
+            <div className="custom-multi-range-container">
+              <label>Modular Selection / Exclusions (e.g. 101-140, -111-120):</label>
+              <input 
+                type="text" 
+                placeholder={typeFilter === 'radical' ? "e.g. 4-20, -10, -15" : "e.g. 101-140, -111-120"}
+                value={rangeQuery}
+                onChange={(e) => setRangeQuery(e.target.value)}
+              />
+            </div>
+
             <div className="preset-grid">
               {getPresets().map((preset, idx) => (
                 <button
                   key={idx}
                   className={`preset-button ${
-                    rangeFrom === preset.from && rangeTo === preset.to ? 'active' : ''
+                    !rangeQuery && rangeFrom === preset.from && rangeTo === preset.to ? 'active' : ''
                   }`}
                   onClick={() => handlePresetClick(preset.from, preset.to)}
                 >
@@ -236,7 +260,10 @@ export default function DictionaryView() {
         )}
 
         <div className="range-summary-text">
-          Showing ID {rangeFrom} to {rangeTo} ({filteredKanjis.length} items found)
+          {rangeQuery.trim() 
+            ? `Showing custom query "${rangeQuery}" (${filteredKanjis.length} items found)`
+            : `Showing ID ${rangeFrom} to ${rangeTo} (${filteredKanjis.length} items found)`
+          }
         </div>
         
         <div className="kanji-grid">

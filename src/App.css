@@ -245,6 +245,37 @@
   border-color: var(--primary-color);
 }
 
+.custom-multi-range-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.custom-multi-range-container label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.custom-multi-range-container input {
+  background: #ffffff;
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.custom-multi-range-container input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
 .preset-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
@@ -1603,6 +1634,58 @@
   }
 }
 
+.standalone-reading-box {
+  margin: 16px 0;
+  background: rgba(99, 102, 241, 0.04);
+  border: 1px dashed rgba(99, 102, 241, 0.25);
+  border-radius: 12px;
+  padding: 16px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.standalone-title {
+  font-size: 0.8rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+}
+
+.standalone-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.standalone-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.standalone-word {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+  font-family: "Klee One", "Noto Sans JP", sans-serif;
+}
+
+.standalone-arrow {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.standalone-val {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  background: #ffffff;
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--glass-border);
+}
+
 .study-compound-card {
   background: #ffffff;
   border: 1px solid var(--glass-border);
@@ -2304,6 +2387,209 @@
 .study-decomp-part-meaning {
   display: inline-block;
   white-space: nowrap;
+}
+
+/* ==========================================================================
+   Furigana Game Styles
+   ========================================================================== */
+
+.furigana-word {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  align-items: baseline;
+}
+
+.furigana-word ruby {
+  ruby-position: over;
+}
+
+.furigana-rt {
+  font-size: 0.55em;
+  color: var(--primary-color);
+  opacity: 0.85;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding-bottom: 2px;
+}
+
+.okurigana-part {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+/* Game Playing Panel */
+.furigana-game-panel {
+  box-shadow: var(--glass-shadow);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  border-radius: 20px;
+}
+
+.active-target-hint-banner {
+  background: rgba(99, 102, 241, 0.06);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 8px 20px;
+  border-radius: 99px;
+  width: fit-content;
+  margin: 0 auto 24px;
+}
+
+.active-target-hint-banner .highlight-word {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  font-weight: 800;
+  font-family: "Klee One", "Noto Sans JP", sans-serif;
+  margin-left: 6px;
+}
+
+.game-sentence-display {
+  font-size: 2.2rem;
+  line-height: 2.2;
+  font-family: "Klee One", "Noto Sans JP", sans-serif;
+  color: var(--text-main);
+  margin: 20px 0;
+  word-break: break-all;
+}
+
+.sentence-plain-text {
+  color: var(--text-main);
+}
+
+.game-target-word {
+  display: inline-flex;
+  align-items: baseline;
+  margin: 0 4px;
+  padding: 0 8px;
+  border-bottom: 3px solid rgba(148, 163, 184, 0.2);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  font-weight: 800;
+}
+
+.game-target-word.active {
+  border-bottom-color: var(--primary-color);
+  background: rgba(99, 102, 241, 0.05);
+  animation: targetPulse 1.5s infinite;
+}
+
+@keyframes targetPulse {
+  0% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.2); }
+  70% { box-shadow: 0 0 0 6px rgba(99, 102, 241, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
+}
+
+.game-target-word.correct {
+  border-bottom-color: var(--correct-color);
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.game-target-word.error {
+  border-bottom-color: var(--incorrect-color);
+  background: rgba(239, 68, 68, 0.05);
+  animation: targetShake 0.3s ease;
+}
+
+@keyframes targetShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+.game-ruby {
+  ruby-position: over;
+}
+
+.game-rt {
+  font-size: 0.5em;
+  color: rgba(148, 163, 184, 0.4);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  min-height: 1.2em;
+}
+
+.game-rt.typed {
+  color: var(--primary-color);
+}
+
+.game-rt.error {
+  color: var(--incorrect-color);
+  text-decoration: underline wavy;
+}
+
+.placeholder-dot {
+  opacity: 0.2;
+}
+
+.game-okurigana-part {
+  color: inherit;
+}
+
+/* Keystroke listener inputs */
+.game-keystroke-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+}
+
+.typed-preview-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  padding: 10px 20px;
+  border-radius: 12px;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.typed-preview-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.typed-preview-val {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  font-family: "Klee One", "Noto Sans JP", sans-serif;
+  min-width: 80px;
+}
+
+.blink-cursor {
+  animation: cursorBlink 0.8s infinite;
+  color: var(--primary-color);
+  font-weight: 400;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.game-translation-card {
+  margin: 16px auto 0;
+  max-width: 600px;
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.game-description-text {
+  text-align: center;
 }
 
 

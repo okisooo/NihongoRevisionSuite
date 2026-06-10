@@ -4,43 +4,43 @@ export const componentsDb = {
   "一": {
     "id": 1,
     "meaning": "one, one radical (no.1)",
-    "reading": "ひと- / ひと.つ / イチ / イツ",
+    "reading": "ひと- / ひと.つ / いち / いつ",
     "type": "kanji"
   },
   "二": {
     "id": 2,
     "meaning": "two, two radical (no. 7)",
-    "reading": "ふた / ふた.つ / ジ / ニ",
+    "reading": "ふた / ふた.つ / じ / に",
     "type": "kanji"
   },
   "三": {
     "id": 3,
     "meaning": "three",
-    "reading": "み / み.つ / みっ.つ / サン",
+    "reading": "み / み.つ / みっ.つ / さん",
     "type": "kanji"
   },
   "山": {
     "id": 4,
     "meaning": "mountain",
-    "reading": "やま / サン / セン",
+    "reading": "やま / さん / せん",
     "type": "kanji"
   },
   "川": {
     "id": 5,
     "meaning": "river, river or three-stroke river radical (no. 47), stream",
-    "reading": "かわ / セン",
+    "reading": "かわ / せん",
     "type": "kanji"
   },
   "目": {
     "id": 6,
     "meaning": "care, class, experience, eye, favor, insight, look",
-    "reading": "-め / ま- / め / ボク / モク",
+    "reading": "-め / ま- / め / ぼく / もく",
     "type": "kanji"
   },
   "口": {
     "id": 7,
     "meaning": "mouth",
-    "reading": "くち / ク / コウ",
+    "reading": "くち / く / こう",
     "type": "kanji"
   },
   "人": {
@@ -58,187 +58,187 @@ export const componentsDb = {
   "休": {
     "id": 10,
     "meaning": "day off, rest, retire, sleep",
-    "reading": "やす.まる / やす.む / やす.める / キュウ",
+    "reading": "やす.まる / やす.む / やす.める / きゅう",
     "type": "kanji"
   },
   "本": {
     "id": 11,
     "meaning": "book, counter for long cylindrical things, main, origin, present, real, true",
-    "reading": "もと / ホン",
+    "reading": "もと / ほん",
     "type": "kanji"
   },
   "体": {
     "id": 12,
     "meaning": "body, counter for images, object, reality, substance",
-    "reading": "かたち / からだ / タイ / テイ",
+    "reading": "かたち / からだ / たい / てい",
     "type": "kanji"
   },
   "田": {
     "id": 13,
     "meaning": "rice field, rice paddy",
-    "reading": "た / デン",
+    "reading": "た / でん",
     "type": "kanji"
   },
   "力": {
     "id": 14,
     "meaning": "bear up, exert, power, strain, strength, strong",
-    "reading": "ちから / リイ / リキ / リョク",
+    "reading": "ちから / りい / りき / りょく",
     "type": "kanji"
   },
   "男": {
     "id": 15,
     "meaning": "male",
-    "reading": "お / おとこ / ダン / ナン",
+    "reading": "お / おとこ / だん / なん",
     "type": "kanji"
   },
   "女": {
     "id": 16,
     "meaning": "female, woman",
-    "reading": "おんな / め / ジョ / ニョ / ニョウ",
+    "reading": "おんな / め / じょ / にょ / にょう",
     "type": "kanji"
   },
   "安": {
     "id": 17,
     "meaning": "cheap, contented, low, peaceful, quiet, relax, rested",
-    "reading": "やす / やす.い / やす.まる / やす.らか / アン",
+    "reading": "やす / やす.い / やす.まる / やす.らか / あん",
     "type": "kanji"
   },
   "上": {
     "id": 18,
     "meaning": "above, up",
-    "reading": "-あ.がり / -あ.がる / -あ.げる / -うえ / あ.がり / あ.がる / あ.げる / うえ / うわ- / かみ / たてまつ.る / のぼ.す / のぼ.せる / のぼ.り / のぼ.る / シャン / ショウ / ジョウ",
+    "reading": "-あ.がり / -あ.がる / -あ.げる / -うえ / あ.がり / あ.がる / あ.げる / うえ / うわ- / かみ / たてまつ.る / のぼ.す / のぼ.せる / のぼ.り / のぼ.る / しゃん / しょう / じょう",
     "type": "kanji"
   },
   "下": {
     "id": 19,
     "meaning": "below, descend, down, give, inferior, low",
-    "reading": "-くだ.す / お.りる / お.ろす / くだ.さる / くだ.す / くだ.り / くだ.る / さ.がる / さ.げる / した / しも / もと / カ / ゲ",
+    "reading": "-くだ.す / お.りる / お.ろす / くだ.さる / くだ.す / くだ.り / くだ.る / さ.がる / さ.げる / した / しも / もと / か / げ",
     "type": "kanji"
   },
   "中": {
     "id": 20,
     "meaning": "center, in, inside, mean, middle",
-    "reading": "あた.る / うち / なか / チュウ",
+    "reading": "あた.る / うち / なか / ちゅう",
     "type": "kanji"
   },
   "大": {
     "id": 21,
     "meaning": "big, large",
-    "reading": "-おお.いに / おお- / おお.きい / タイ / ダイ",
+    "reading": "-おお.いに / おお- / おお.きい / たい / だい",
     "type": "kanji"
   },
   "太": {
     "id": 22,
     "meaning": "big around, plump, thick",
-    "reading": "ふと.い / ふと.る / タ / タイ",
+    "reading": "ふと.い / ふと.る / た / たい",
     "type": "kanji"
   },
   "小": {
     "id": 23,
     "meaning": "little, small",
-    "reading": "お- / こ- / さ- / ちい.さい / ショウ",
+    "reading": "お- / こ- / さ- / ちい.さい / しょう",
     "type": "kanji"
   },
   "少": {
     "id": 24,
     "meaning": "few, little",
-    "reading": "すく.ない / すこ.し / ショウ",
+    "reading": "すく.ない / すこ.し / しょう",
     "type": "kanji"
   },
   "入": {
     "id": 25,
     "meaning": "enter, insert",
-    "reading": "-い.り / -い.る / -い.れ / い.る / い.れる / はい.る / ジュ / ニュウ",
+    "reading": "-い.り / -い.る / -い.れ / い.る / い.れる / はい.る / じゅ / にゅう",
     "type": "kanji"
   },
   "出": {
     "id": 26,
     "meaning": "come out, exit, go out, leave, protrude, put out",
-    "reading": "-だ.す / -で / い.だす / い.でる / だ.す / で.る / シュツ / スイ",
+    "reading": "-だ.す / -で / い.だす / い.でる / だ.す / で.る / しゅつ / すい",
     "type": "kanji"
   },
   "子": {
     "id": 27,
     "meaning": "11PM-1AM, child, first sign of Chinese zodiac, sign of the rat",
-    "reading": "-こ / こ / ね / シ / ス / ツ",
+    "reading": "-こ / こ / ね / し / す / つ",
     "type": "kanji"
   },
   "学": {
     "id": 28,
     "meaning": "learning, science, study",
-    "reading": "まな.ぶ / ガク",
+    "reading": "まな.ぶ / がく",
     "type": "kanji"
   },
   "四": {
     "id": 29,
     "meaning": "four",
-    "reading": "よ / よ.つ / よっ.つ / よん / シ",
+    "reading": "よ / よ.つ / よっ.つ / よん / し",
     "type": "kanji"
   },
   "五": {
     "id": 30,
     "meaning": "five",
-    "reading": "いつ / いつ.つ / ゴ",
+    "reading": "いつ / いつ.つ / ご",
     "type": "kanji"
   },
   "六": {
     "id": 31,
     "meaning": "six",
-    "reading": "む / む.つ / むい / むっ.つ / リク / ロク",
+    "reading": "む / む.つ / むい / むっ.つ / りく / ろく",
     "type": "kanji"
   },
   "七": {
     "id": 32,
     "meaning": "seven",
-    "reading": "なな / なな.つ / なの / シチ",
+    "reading": "なな / なな.つ / なの / しち",
     "type": "kanji"
   },
   "八": {
     "id": 33,
     "meaning": "eight, eight radical (no. 12)",
-    "reading": "や / や.つ / やっ.つ / よう / ハチ / ハツ",
+    "reading": "や / や.つ / やっ.つ / よう / はち / はつ",
     "type": "kanji"
   },
   "九": {
     "id": 34,
     "meaning": "nine",
-    "reading": "ここの / ここの.つ / キュウ / ク",
+    "reading": "ここの / ここの.つ / きゅう / く",
     "type": "kanji"
   },
   "十": {
     "id": 35,
     "meaning": "ten",
-    "reading": "と / とお / ジッ / ジュウ / ジュッ",
+    "reading": "と / とお / じっ / じゅう / じゅっ",
     "type": "kanji"
   },
   "古": {
     "id": 36,
     "meaning": "old",
-    "reading": "-ふる.す / ふる- / ふる.い / コ",
+    "reading": "-ふる.す / ふる- / ふる.い / こ",
     "type": "kanji"
   },
   "百": {
     "id": 37,
     "meaning": "hundred",
-    "reading": "もも / ヒャク / ビャク",
+    "reading": "もも / ひゃく / びゃく",
     "type": "kanji"
   },
   "千": {
     "id": 38,
     "meaning": "thousand",
-    "reading": "ち / セン",
+    "reading": "ち / せん",
     "type": "kanji"
   },
   "万": {
     "id": 39,
     "meaning": "10,000, ten thousand",
-    "reading": "よろず / バン / マン",
+    "reading": "よろず / ばん / まん",
     "type": "kanji"
   },
   "円": {
     "id": 40,
     "meaning": "circle, round, yen",
-    "reading": "まど / まど.か / まる / まる.い / まろ.やか / エン",
+    "reading": "まど / まど.か / まる / まる.い / まろ.やか / えん",
     "type": "kanji"
   },
   "日": {
@@ -250,61 +250,61 @@ export const componentsDb = {
   "月": {
     "id": 42,
     "meaning": "month, moon",
-    "reading": "つき / ガツ / ゲツ",
+    "reading": "つき / がつ / げつ",
     "type": "kanji"
   },
   "明": {
     "id": 43,
     "meaning": "bright, light",
-    "reading": "-あ.け / あ.かす / あ.かり / あ.く / あ.くる / あ.ける / あか.らむ / あか.るい / あか.るむ / あき.らか / ミョウ / ミン / メイ",
+    "reading": "-あ.け / あ.かす / あ.かり / あ.く / あ.くる / あ.ける / あか.らむ / あか.るい / あか.るむ / あき.らか / みょう / みん / めい",
     "type": "kanji"
   },
   "立": {
     "id": 44,
     "meaning": "erect, rise, set up, stand up",
-    "reading": "-た.つ / -た.て / -た.てる / -だ.て / -だ.てる / た.ち- / た.つ / た.て- / た.てる / たて- / リットル / リツ / リュウ",
+    "reading": "-た.つ / -た.て / -た.てる / -だ.て / -だ.てる / た.ち- / た.つ / た.て- / た.てる / たて- / りっとる / りつ / りゅう",
     "type": "kanji"
   },
   "音": {
     "id": 45,
     "meaning": "noise, sound",
-    "reading": "おと / ね / -ノン / イン / オン",
+    "reading": "おと / ね / -のん / いん / おん",
     "type": "kanji"
   },
   "暗": {
     "id": 46,
     "meaning": "be blinded, darkness, disappear, grow dark, informal, shade",
-    "reading": "くら.い / くら.む / くれ.る / アン",
+    "reading": "くら.い / くら.む / くれ.る / あん",
     "type": "kanji"
   },
   "火": {
     "id": 47,
     "meaning": "fire",
-    "reading": "-び / ひ / ほ- / カ",
+    "reading": "-び / ひ / ほ- / か",
     "type": "kanji"
   },
   "水": {
     "id": 48,
     "meaning": "water",
-    "reading": "みず / みず- / スイ",
+    "reading": "みず / みず- / すい",
     "type": "kanji"
   },
   "土": {
     "id": 49,
     "meaning": "Turkey, earth, ground, soil",
-    "reading": "つち / ト / ド",
+    "reading": "つち / と / ど",
     "type": "kanji"
   },
   "国": {
     "id": 50,
     "meaning": "country",
-    "reading": "くに / コク",
+    "reading": "くに / こく",
     "type": "kanji"
   },
   "全": {
     "id": 51,
     "meaning": "all, complete, entire, fulfill, whole",
-    "reading": "すべ.て / まった.く / ゼン",
+    "reading": "すべ.て / まった.く / ぜん",
     "type": "kanji"
   },
   "金": {
@@ -316,241 +316,241 @@ export const componentsDb = {
   "工": {
     "id": 53,
     "meaning": "construction, craft, katakana e radical (no. 48)",
-    "reading": "ク / グ / コウ",
+    "reading": "く / ぐ / こう",
     "type": "kanji"
   },
   "左": {
     "id": 54,
     "meaning": "left",
-    "reading": "ひだり / サ / シャ",
+    "reading": "ひだり / さ / しゃ",
     "type": "kanji"
   },
   "右": {
     "id": 55,
     "meaning": "right",
-    "reading": "みぎ / ウ / ユウ",
+    "reading": "みぎ / う / ゆう",
     "type": "kanji"
   },
   "友": {
     "id": 56,
     "meaning": "friend",
-    "reading": "とも / ユウ",
+    "reading": "とも / ゆう",
     "type": "kanji"
   },
   "何": {
     "id": 57,
     "meaning": "what",
-    "reading": "なに / なに- / なん / なん- / カ",
+    "reading": "なに / なに- / なん / なん- / か",
     "type": "kanji"
   },
   "手": {
     "id": 58,
     "meaning": "hand",
-    "reading": "-て / た- / て / て- / シュ / ズ",
+    "reading": "-て / た- / て / て- / しゅ / ず",
     "type": "kanji"
   },
   "切": {
     "id": 59,
     "meaning": "be sharp, cut, cutoff",
-    "reading": "-き.り / -き.る / -き.れ / -き.れる / -ぎ.り / -ぎ.れ / き.り / き.る / き.れ / き.れる / サイ / セツ",
+    "reading": "-き.り / -き.る / -き.れ / -き.れる / -ぎ.り / -ぎ.れ / き.り / き.る / き.れ / き.れる / さい / せつ",
     "type": "kanji"
   },
   "分": {
     "id": 60,
     "meaning": "1%, chances, degree, duty, know, minute of time, one's lot, part, rate, segment, shaku/100, share, understand",
-    "reading": "わ.かつ / わ.かる / わ.かれる / わ.け / わ.ける / フン / ブ / ブン",
+    "reading": "わ.かつ / わ.かる / わ.かれる / わ.け / わ.ける / ふん / ぶ / ぶん",
     "type": "kanji"
   },
   "今": {
     "id": 61,
     "meaning": "now",
-    "reading": "いま / キン / コン",
+    "reading": "いま / きん / こん",
     "type": "kanji"
   },
   "半": {
     "id": 62,
     "meaning": "half, middle, odd number, part-, semi-",
-    "reading": "なか.ば / ハン",
+    "reading": "なか.ば / はん",
     "type": "kanji"
   },
   "止": {
     "id": 63,
     "meaning": "halt, stop",
-    "reading": "-さ.し / -さ.す / -と.める / -ど.まり / -ど.め / -や.む / と.まる / と.める / とど.まる / とど.め / とど.める / や.む / や.める / よ.す / シ",
+    "reading": "-さ.し / -さ.す / -と.める / -ど.まり / -ど.め / -や.む / と.まる / と.める / とど.まる / とど.め / とど.める / や.む / や.める / よ.す / し",
     "type": "kanji"
   },
   "正": {
     "id": 64,
     "meaning": "10**40, correct, justice, righteous",
-    "reading": "ただ.しい / ただ.す / まさ / まさ.に / ショウ / セイ",
+    "reading": "ただ.しい / ただ.す / まさ / まさ.に / しょう / せい",
     "type": "kanji"
   },
   "歩": {
     "id": 65,
     "meaning": "counter for steps, walk",
-    "reading": "あゆ.む / ある.く / フ / ブ / ホ",
+    "reading": "あゆ.む / ある.く / ふ / ぶ / ほ",
     "type": "kanji"
   },
   "足": {
     "id": 66,
     "meaning": "be sufficient, counter for pairs of footwear, foot, leg",
-    "reading": "あし / た.す / た.りる / た.る / ソク",
+    "reading": "あし / た.す / た.りる / た.る / そく",
     "type": "kanji"
   },
   "走": {
     "id": 67,
     "meaning": "run",
-    "reading": "はし.る / ソウ",
+    "reading": "はし.る / そう",
     "type": "kanji"
   },
   "起": {
     "id": 68,
     "meaning": "get up, rouse, wake up",
-    "reading": "お.きる / お.こす / お.こる / おこ.す / た.つ / キ",
+    "reading": "お.きる / お.こす / お.こる / おこ.す / た.つ / き",
     "type": "kanji"
   },
   "夕": {
     "id": 69,
     "meaning": "evening",
-    "reading": "ゆう / セキ",
+    "reading": "ゆう / せき",
     "type": "kanji"
   },
   "外": {
     "id": 70,
     "meaning": "outside",
-    "reading": "そと / と- / はず.す / はず.れる / ほか / ガイ / ゲ",
+    "reading": "そと / と- / はず.す / はず.れる / ほか / がい / げ",
     "type": "kanji"
   },
   "多": {
     "id": 71,
     "meaning": "frequent, many, much",
-    "reading": "おお.い / まさ.に / まさ.る / タ",
+    "reading": "おお.い / まさ.に / まさ.る / た",
     "type": "kanji"
   },
   "名": {
     "id": 72,
     "meaning": "distinguished, name, noted, reputation",
-    "reading": "-な / な / ミョウ / メイ",
+    "reading": "-な / な / みょう / めい",
     "type": "kanji"
   },
   "夜": {
     "id": 73,
     "meaning": "evening, night",
-    "reading": "よ / よる / ヤ",
+    "reading": "よ / よる / や",
     "type": "kanji"
   },
   "生": {
     "id": 74,
     "meaning": "birth, genuine, life",
-    "reading": "-う / い.かす / い.きる / い.ける / う.まれ / う.まれる / う.む / うま.れる / うまれ / お.う / き / な.す / な.る / なま / なま- / は.える / は.やす / む.す / ショウ / セイ",
+    "reading": "-う / い.かす / い.きる / い.ける / う.まれ / う.まれる / う.む / うま.れる / うまれ / お.う / き / な.す / な.る / なま / なま- / は.える / は.やす / む.す / しょう / せい",
     "type": "kanji"
   },
   "見": {
     "id": 75,
     "meaning": "chances, hopes, idea, look at, opinion, see, visible",
-    "reading": "み.える / み.せる / み.る / ケン",
+    "reading": "み.える / み.せる / み.る / けん",
     "type": "kanji"
   },
   "元": {
     "id": 76,
     "meaning": "beginning, former time, origin",
-    "reading": "もと / ガン / ゲン",
+    "reading": "もと / がん / げん",
     "type": "kanji"
   },
   "先": {
     "id": 77,
     "meaning": "ahead, before, future, precedence, previous",
-    "reading": "さき / ま.ず / セン",
+    "reading": "さき / ま.ず / せん",
     "type": "kanji"
   },
   "天": {
     "id": 78,
     "meaning": "heavens, imperial, sky",
-    "reading": "あま- / あまつ / あめ / テン",
+    "reading": "あま- / あまつ / あめ / てん",
     "type": "kanji"
   },
   "文": {
     "id": 79,
     "meaning": "art, decoration, figures, literary radical (no. 67), literature, plan, sentence, style",
-    "reading": "あや / ふみ / ブン / モン",
+    "reading": "あや / ふみ / ぶん / もん",
     "type": "kanji"
   },
   "父": {
     "id": 80,
     "meaning": "father",
-    "reading": "ちち / フ",
+    "reading": "ちち / ふ",
     "type": "kanji"
   },
   "母": {
     "id": 81,
     "meaning": "mother",
-    "reading": "はは / も / ボ",
+    "reading": "はは / も / ぼ",
     "type": "kanji"
   },
   "行": {
     "id": 82,
     "meaning": "act, bank, carry out, conduct, going, journey, line, row",
-    "reading": "-い.き / -いき / -ゆ.き / -ゆき / い.く / おこ.なう / おこな.う / ゆ.く / アン / ギョウ / コウ",
+    "reading": "-い.き / -いき / -ゆ.き / -ゆき / い.く / おこ.なう / おこな.う / ゆ.く / あん / ぎょう / こう",
     "type": "kanji"
   },
   "毎": {
     "id": 83,
     "meaning": "every",
-    "reading": "-ごと.に / ごと / マイ",
+    "reading": "-ごと.に / ごと / まい",
     "type": "kanji"
   },
   "海": {
     "id": 84,
     "meaning": "ocean, sea",
-    "reading": "うみ / カイ",
+    "reading": "うみ / かい",
     "type": "kanji"
   },
   "東": {
     "id": 85,
     "meaning": "east",
-    "reading": "ひがし / トウ",
+    "reading": "ひがし / とう",
     "type": "kanji"
   },
   "西": {
     "id": 86,
     "meaning": "Spain, west",
-    "reading": "にし / サイ / ス / セイ",
+    "reading": "にし / さい / す / せい",
     "type": "kanji"
   },
   "南": {
     "id": 87,
     "meaning": "south",
-    "reading": "みなみ / ナ / ナン",
+    "reading": "みなみ / な / なん",
     "type": "kanji"
   },
   "北": {
     "id": 88,
     "meaning": "north",
-    "reading": "きた / ホク",
+    "reading": "きた / ほく",
     "type": "kanji"
   },
   "耳": {
     "id": 89,
     "meaning": "ear",
-    "reading": "みみ / ジ",
+    "reading": "みみ / じ",
     "type": "kanji"
   },
   "門": {
     "id": 90,
     "meaning": "counter for cannons, gate",
-    "reading": "かど / と / モン",
+    "reading": "かど / と / もん",
     "type": "kanji"
   },
   "聞": {
     "id": 91,
     "meaning": "ask, hear, listen",
-    "reading": "き.く / き.こえる / ブン / モン",
+    "reading": "き.く / き.こえる / ぶん / もん",
     "type": "kanji"
   },
   "間": {
     "id": 92,
     "meaning": "interval, space",
-    "reading": "あい / あいだ / ま / カン / ケン",
+    "reading": "あい / あいだ / ま / かん / けん",
     "type": "kanji"
   },
   "牛": {
@@ -562,73 +562,73 @@ export const componentsDb = {
   "午": {
     "id": 94,
     "meaning": "11AM-1PM, noon, seventh sign of Chinese zodiac, sign of the horse",
-    "reading": "うま / ゴ",
+    "reading": "うま / ご",
     "type": "kanji"
   },
   "年": {
     "id": 95,
     "meaning": "counter for years, year",
-    "reading": "とし / ネン",
+    "reading": "とし / ねん",
     "type": "kanji"
   },
   "前": {
     "id": 96,
     "meaning": "before, in front",
-    "reading": "-まえ / まえ / ゼン",
+    "reading": "-まえ / まえ / ぜん",
     "type": "kanji"
   },
   "後": {
     "id": 97,
     "meaning": "back, behind, later",
-    "reading": "あと / うし.ろ / うしろ / おく.れる / のち / コウ / ゴ",
+    "reading": "あと / うし.ろ / うしろ / おく.れる / のち / こう / ご",
     "type": "kanji"
   },
   "高": {
     "id": 98,
     "meaning": "expensive, high, tall",
-    "reading": "-だか / たか / たか.い / たか.まる / たか.める / コウ",
+    "reading": "-だか / たか / たか.い / たか.まる / たか.める / こう",
     "type": "kanji"
   },
   "銀": {
     "id": 99,
     "meaning": "silver",
-    "reading": "しろがね / ギン",
+    "reading": "しろがね / ぎん",
     "type": "kanji"
   },
   "食": {
     "id": 100,
     "meaning": "eat, food",
-    "reading": "く.う / く.らう / た.べる / は.む / ショク / ジキ",
+    "reading": "く.う / く.らう / た.べる / は.む / しょく / じき",
     "type": "kanji"
   },
   "飯": {
     "id": 101,
     "meaning": "boiled rice, meal",
-    "reading": "めし / ハン",
+    "reading": "めし / はん",
     "type": "kanji"
   },
   "飲": {
     "id": 102,
     "meaning": "drink, smoke, take",
-    "reading": "-の.み / の.む / イン / オン",
+    "reading": "-の.み / の.む / いん / おん",
     "type": "kanji"
   },
   "白": {
     "id": 103,
     "meaning": "white",
-    "reading": "しら- / しろ / しろ.い / ハク / ビャク",
+    "reading": "しら- / しろ / しろ.い / はく / びゃく",
     "type": "kanji"
   },
   "赤": {
     "id": 104,
     "meaning": "red",
-    "reading": "あか / あか- / あか.い / あか.らむ / あか.らめる / シャク / セキ",
+    "reading": "あか / あか- / あか.い / あか.らむ / あか.らめる / しゃく / せき",
     "type": "kanji"
   },
   "青": {
     "id": 105,
     "meaning": "blue, green",
-    "reading": "あお / あお- / あお.い / ショウ / セイ",
+    "reading": "あお / あお- / あお.い / しょう / せい",
     "type": "kanji"
   },
   "言": {
@@ -640,85 +640,85 @@ export const componentsDb = {
   "話": {
     "id": 107,
     "meaning": "tale, talk",
-    "reading": "はな.す / はなし / ワ",
+    "reading": "はな.す / はなし / わ",
     "type": "kanji"
   },
   "語": {
     "id": 108,
     "meaning": "language, speech, word",
-    "reading": "かた.らう / かた.る / ゴ",
+    "reading": "かた.らう / かた.る / ご",
     "type": "kanji"
   },
   "売": {
     "id": 109,
     "meaning": "sell",
-    "reading": "う.る / う.れる / バイ",
+    "reading": "う.る / う.れる / ばい",
     "type": "kanji"
   },
   "読": {
     "id": 110,
     "meaning": "read",
-    "reading": "-よ.み / よ.む / トウ / トク / ドク",
+    "reading": "-よ.み / よ.む / とう / とく / どく",
     "type": "kanji"
   },
   "書": {
     "id": 111,
     "meaning": "write",
-    "reading": "-が.き / -がき / か.く / ショ",
+    "reading": "-が.き / -がき / か.く / しょ",
     "type": "kanji"
   },
   "新": {
     "id": 112,
     "meaning": "new",
-    "reading": "あたら.しい / あら- / あら.た / にい- / シン",
+    "reading": "あたら.しい / あら- / あら.た / にい- / しん",
     "type": "kanji"
   },
   "馬": {
     "id": 113,
     "meaning": "horse",
-    "reading": "うま / うま- / ま / バ",
+    "reading": "うま / うま- / ま / ば",
     "type": "kanji"
   },
   "駅": {
     "id": 114,
     "meaning": "station",
-    "reading": "エキ",
+    "reading": "えき",
     "type": "kanji"
   },
   "魚": {
     "id": 115,
     "meaning": "fish",
-    "reading": "-ざかな / うお / さかな / ギョ",
+    "reading": "-ざかな / うお / さかな / ぎょ",
     "type": "kanji"
   },
   "米": {
     "id": 116,
     "meaning": "USA, metre, rice",
-    "reading": "こめ / よね / ベイ / マイ / メエトル",
+    "reading": "こめ / よね / べい / まい / めえとる",
     "type": "kanji"
   },
   "来": {
     "id": 117,
     "meaning": "become, cause, come, due, next",
-    "reading": "き / き.たす / き.たる / きた.す / きた.る / く.る / こ / タイ / ライ",
+    "reading": "き / き.たす / き.たる / きた.す / きた.る / く.る / こ / たい / らい",
     "type": "kanji"
   },
   "雨": {
     "id": 118,
     "meaning": "rain",
-    "reading": "-さめ / あま- / あめ / ウ",
+    "reading": "-さめ / あま- / あめ / う",
     "type": "kanji"
   },
   "電": {
     "id": 119,
     "meaning": "electricity",
-    "reading": "デン",
+    "reading": "でん",
     "type": "kanji"
   },
   "気": {
     "id": 120,
     "meaning": "air, atmosphere, mind, mood, spirit",
-    "reading": "き / キ / ケ",
+    "reading": "き / き / け",
     "type": "kanji"
   },
   "車": {
@@ -730,583 +730,583 @@ export const componentsDb = {
   "空": {
     "id": 122,
     "meaning": "empty, sky, vacant, vacuum, void",
-    "reading": "あ.き / あ.く / あ.ける / から / す.かす / す.く / そら / むな.しい / クウ",
+    "reading": "あ.き / あ.く / あ.ける / から / す.かす / す.く / そら / むな.しい / くう",
     "type": "kanji"
   },
   "社": {
     "id": 123,
     "meaning": "association, company, firm, office, shrine",
-    "reading": "やしろ / シャ",
+    "reading": "やしろ / しゃ",
     "type": "kanji"
   },
   "内": {
     "id": 124,
     "meaning": "among, between, home, house, inside, within",
-    "reading": "うち / ダイ / ナイ",
+    "reading": "うち / だい / ない",
     "type": "kanji"
   },
   "長": {
     "id": 125,
     "meaning": "leader, long, senior, superior",
-    "reading": "おさ / なが.い / チョウ",
+    "reading": "おさ / なが.い / ちょう",
     "type": "kanji"
   },
   "校": {
     "id": 126,
     "meaning": "correction, exam, printing, proof, school",
-    "reading": "キョウ / コウ",
+    "reading": "きょう / こう",
     "type": "kanji"
   },
   "会": {
     "id": 127,
     "meaning": "association, interview, join, meet, meeting, party",
-    "reading": "あ.う / あ.わせる / あつ.まる / エ / カイ",
+    "reading": "あ.う / あ.わせる / あつ.まる / え / かい",
     "type": "kanji"
   },
   "寺": {
     "id": 128,
     "meaning": "Buddhist temple",
-    "reading": "てら / ジ",
+    "reading": "てら / じ",
     "type": "kanji"
   },
   "待": {
     "id": 129,
     "meaning": "depend on, wait",
-    "reading": "-ま.ち / ま.つ / タイ",
+    "reading": "-ま.ち / ま.つ / たい",
     "type": "kanji"
   },
   "時": {
     "id": 130,
     "meaning": "hour, time",
-    "reading": "-どき / とき / ジ",
+    "reading": "-どき / とき / じ",
     "type": "kanji"
   },
   "持": {
     "id": 131,
     "meaning": "have, hold",
-    "reading": "-も.ち / も.つ / も.てる / ジ",
+    "reading": "-も.ち / も.つ / も.てる / じ",
     "type": "kanji"
   },
   "特": {
     "id": 132,
     "meaning": "special",
-    "reading": "トク",
+    "reading": "とく",
     "type": "kanji"
   },
   "買": {
     "id": 133,
     "meaning": "buy",
-    "reading": "か.う / バイ",
+    "reading": "か.う / ばい",
     "type": "kanji"
   },
   "員": {
     "id": 134,
     "meaning": "employee, member, number, the one in charge",
-    "reading": "イン",
+    "reading": "いん",
     "type": "kanji"
   },
   "質": {
     "id": 135,
     "meaning": "quality, substance, matter, temperament, pawn",
-    "reading": "シツ, シチ / たち",
+    "reading": "しつ, しち / たち",
     "type": "kanji"
   },
   "店": {
     "id": 136,
     "meaning": "shop, store",
-    "reading": "たな / みせ / テン",
+    "reading": "たな / みせ / てん",
     "type": "kanji"
   },
   "開": {
     "id": 137,
     "meaning": "open, unfold, unseal",
-    "reading": "-びら.き / あ.く / あ.ける / ひら.き / ひら.く / ひら.ける / カイ",
+    "reading": "-びら.き / あ.く / あ.ける / ひら.き / ひら.く / ひら.ける / かい",
     "type": "kanji"
   },
   "閉": {
     "id": 138,
     "meaning": "closed, shut",
-    "reading": "し.まる / し.める / た.てる / と.ざす / と.じる / ヘイ",
+    "reading": "し.まる / し.める / た.てる / と.ざす / と.じる / へい",
     "type": "kanji"
   },
   "問": {
     "id": 139,
     "meaning": "ask, problem, question",
-    "reading": "と.い / と.う / とん / モン",
+    "reading": "と.い / と.う / とん / もん",
     "type": "kanji"
   },
   "自": {
     "id": 140,
     "meaning": "oneself",
-    "reading": "おの.ずから / おの.ずと / みずか.ら / シ / ジ",
+    "reading": "おの.ずから / おの.ずと / みずか.ら / し / じ",
     "type": "kanji"
   },
   "首": {
     "id": 141,
     "meaning": "counter for songs and poems, neck",
-    "reading": "くび / シュ",
+    "reading": "くび / しゅ",
     "type": "kanji"
   },
   "道": {
     "id": 142,
     "meaning": "course, district, journey, moral, road-way, street, teachings",
-    "reading": "いう / みち / トウ / ドウ",
+    "reading": "いう / みち / とう / どう",
     "type": "kanji"
   },
   "週": {
     "id": 143,
     "meaning": "week",
-    "reading": "シュウ",
+    "reading": "しゅう",
     "type": "kanji"
   },
   "重": {
     "id": 144,
     "meaning": "-fold, esteem, heap up, heavy, important, nest of boxes, pile up, respect",
-    "reading": "え / おも / おも.い / おも.なう / おも.り / かさ.なる / かさ.ねる / ジュウ / チョウ",
+    "reading": "え / おも / おも.い / おも.なう / おも.り / かさ.なる / かさ.ねる / じゅう / ちょう",
     "type": "kanji"
   },
   "動": {
     "id": 145,
     "meaning": "change, confusion, motion, move, shake, shift",
-    "reading": "うご.かす / うご.く / ドウ",
+    "reading": "うご.かす / うご.く / どう",
     "type": "kanji"
   },
   "働": {
     "id": 146,
     "meaning": "(kokuji), work",
-    "reading": "はたら.く / ドウ",
+    "reading": "はたら.く / どう",
     "type": "kanji"
   },
   "早": {
     "id": 147,
     "meaning": "early, fast",
-    "reading": "さ- / はや / はや- / はや.い / はや.まる / はや.める / サッ / ソウ",
+    "reading": "さ- / はや / はや- / はや.い / はや.まる / はや.める / さっ / そう",
     "type": "kanji"
   },
   "花": {
     "id": 148,
     "meaning": "flower",
-    "reading": "はな / カ / ケ",
+    "reading": "はな / か / け",
     "type": "kanji"
   },
   "草": {
     "id": 149,
     "meaning": "draft, grass, herbs, pasture, weeds, write",
-    "reading": "-ぐさ / くさ / くさ- / ソウ",
+    "reading": "-ぐさ / くさ / くさ- / そう",
     "type": "kanji"
   },
   "茶": {
     "id": 150,
     "meaning": "tea",
-    "reading": "サ / チャ",
+    "reading": "さ / ちゃ",
     "type": "kanji"
   },
   "転": {
     "id": 151,
     "meaning": "change, revolve, turn around",
-    "reading": "うたた / うつ.る / くる.めく / ころ.がす / ころ.がる / ころ.げる / ころ.ぶ / まろ.ぶ / テン",
+    "reading": "うたた / うつ.る / くる.めく / ころ.がす / ころ.がる / ころ.げる / ころ.ぶ / まろ.ぶ / てん",
     "type": "kanji"
   },
   "運": {
     "id": 152,
     "meaning": "advance, carry, destiny, fate, lot, luck, progress, transport",
-    "reading": "はこ.ぶ / ウン",
+    "reading": "はこ.ぶ / うん",
     "type": "kanji"
   },
   "軽": {
     "id": 153,
     "meaning": "lightly, trifling, unimportant",
-    "reading": "かる.い / かろ.やか / かろ.んじる / キョウ / キン / ケイ",
+    "reading": "かる.い / かろ.やか / かろ.んじる / きょう / きん / けい",
     "type": "kanji"
   },
   "朝": {
     "id": 154,
     "meaning": "(North) Korea, dynasty, epoch, morning, period, regime",
-    "reading": "あさ / チョウ",
+    "reading": "あさ / ちょう",
     "type": "kanji"
   },
   "昼": {
     "id": 155,
     "meaning": "daytime, noon",
-    "reading": "ひる / チュウ",
+    "reading": "ひる / ちゅう",
     "type": "kanji"
   },
   "風": {
     "id": 156,
     "meaning": "air, manner, style, wind",
-    "reading": "かざ- / かぜ / フ / フウ",
+    "reading": "かざ- / かぜ / ふ / ふう",
     "type": "kanji"
   },
   "押": {
     "id": 157,
     "meaning": "attach, check, do in spite of, press, push, seal, seize, shove, stop, subdue, weight",
-    "reading": "お.さえる / お.し- / お.す / お.っ- / おさ.える / オウ",
+    "reading": "お.さえる / お.し- / お.す / お.っ- / おさ.える / おう",
     "type": "kanji"
   },
   "引": {
     "id": 158,
     "meaning": "admit, install, jerk, pull, quote, refer to, tug",
-    "reading": "ひ.く / ひ.ける / イン",
+    "reading": "ひ.く / ひ.ける / いん",
     "type": "kanji"
   },
   "強": {
     "id": 159,
     "meaning": "strong",
-    "reading": "こわ.い / し.いる / つよ.い / つよ.まる / つよ.める / キョウ / ゴウ",
+    "reading": "こわ.い / し.いる / つよ.い / つよ.まる / つよ.める / きょう / ごう",
     "type": "kanji"
   },
   "弱": {
     "id": 160,
     "meaning": "frail, weak",
-    "reading": "よわ.い / よわ.まる / よわ.める / よわ.る / ジャク",
+    "reading": "よわ.い / よわ.まる / よわ.める / よわ.る / じゃく",
     "type": "kanji"
   },
   "習": {
     "id": 161,
     "meaning": "learn",
-    "reading": "なら.い / なら.う / シュウ / ジュ",
+    "reading": "なら.い / なら.う / しゅう / じゅ",
     "type": "kanji"
   },
   "勉": {
     "id": 162,
     "meaning": "diligent, encourage, endeavour, exertion, make effort, strive",
-    "reading": "つと.める / ベン",
+    "reading": "つと.める / べん",
     "type": "kanji"
   },
   "台": {
     "id": 163,
     "meaning": "a stand, counter for machines and vehicles, pedestal",
-    "reading": "うてな / つかさ / われ / タイ / ダイ",
+    "reading": "うてな / つかさ / われ / たい / だい",
     "type": "kanji"
   },
   "始": {
     "id": 164,
     "meaning": "begin, commence",
-    "reading": "-はじ.める / はじ.まる / はじ.める / シ",
+    "reading": "-はじ.める / はじ.まる / はじ.める / し",
     "type": "kanji"
   },
   "市": {
     "id": 165,
     "meaning": "city, market, town",
-    "reading": "いち / シ",
+    "reading": "いち / し",
     "type": "kanji"
   },
   "姉": {
     "id": 166,
     "meaning": "elder sister",
-    "reading": "あね / はは / シ",
+    "reading": "あね / はは / し",
     "type": "kanji"
   },
   "妹": {
     "id": 167,
     "meaning": "younger sister",
-    "reading": "いもうと / マイ",
+    "reading": "いもうと / まい",
     "type": "kanji"
   },
   "味": {
     "id": 168,
     "meaning": "flavor, taste",
-    "reading": "あじ / あじ.わう / ミ",
+    "reading": "あじ / あじ.わう / み",
     "type": "kanji"
   },
   "好": {
     "id": 169,
     "meaning": "fond, like something, pleasing",
-    "reading": "い.い / この.む / す.く / よ.い / コウ",
+    "reading": "い.い / この.む / す.く / よ.い / こう",
     "type": "kanji"
   },
   "心": {
     "id": 170,
     "meaning": "heart, heart radical (no. 61), mind, spirit",
-    "reading": "-ごころ / こころ / シン",
+    "reading": "-ごころ / こころ / しん",
     "type": "kanji"
   },
   "思": {
     "id": 171,
     "meaning": "think",
-    "reading": "おぼ.す / おも.う / おもえら.く / シ",
+    "reading": "おぼ.す / おも.う / おもえら.く / し",
     "type": "kanji"
   },
   "意": {
     "id": 172,
     "meaning": "care, desire, heart, idea, liking, mind, taste, thought",
-    "reading": "イ",
+    "reading": "い",
     "type": "kanji"
   },
   "急": {
     "id": 173,
     "meaning": "emergency, hurry, steep, sudden",
-    "reading": "いそ.ぎ / いそ.ぐ / せ.く / キュウ",
+    "reading": "いそ.ぎ / いそ.ぐ / せ.く / きゅう",
     "type": "kanji"
   },
   "悪": {
     "id": 174,
     "meaning": "bad, evil, false, rascal, vice, wrong",
-    "reading": "-にく.い / あ.し / ああ / いずくに / いずくんぞ / にく.い / にく.む / わる- / わる.い / アク / オ",
+    "reading": "-にく.い / あ.し / ああ / いずくに / いずくんぞ / にく.い / にく.む / わる- / わる.い / あく / お",
     "type": "kanji"
   },
   "兄": {
     "id": 175,
     "meaning": "big brother, elder brother",
-    "reading": "あに / キョウ / ケイ",
+    "reading": "あに / きょう / けい",
     "type": "kanji"
   },
   "弟": {
     "id": 176,
     "meaning": "faithful service to elders, younger brother",
-    "reading": "おとうと / ダイ / テイ / デ",
+    "reading": "おとうと / だい / てい / で",
     "type": "kanji"
   },
   "親": {
     "id": 177,
     "meaning": "dealer (cards), familiarity, intimacy, parent, relative",
-    "reading": "おや / おや- / した.しい / した.しむ / シン",
+    "reading": "おや / おや- / した.しい / した.しむ / しん",
     "type": "kanji"
   },
   "主": {
     "id": 178,
     "meaning": "chief, lord, main thing, master, principal",
-    "reading": "あるじ / おも / ぬし / シュ / シュウ / ス",
+    "reading": "あるじ / おも / ぬし / しゅ / しゅう / す",
     "type": "kanji"
   },
   "注": {
     "id": 179,
     "meaning": "annotate, comment, concentrate on, flow into, irrigate, notes, pour, shed (tears)",
-    "reading": "さ.す / そそ.ぐ / つ.ぐ / チュウ",
+    "reading": "さ.す / そそ.ぐ / つ.ぐ / ちゅう",
     "type": "kanji"
   },
   "住": {
     "id": 180,
     "meaning": "dwell, inhabit, live, reside",
-    "reading": "-ず.まい / す.まう / す.む / ジュウ / チュウ / ヂュウ",
+    "reading": "-ず.まい / す.まう / す.む / じゅう / ちゅう / ぢゅう",
     "type": "kanji"
   },
   "春": {
     "id": 181,
     "meaning": "spring (season), springtime",
-    "reading": "はる / シュン",
+    "reading": "はる / しゅん",
     "type": "kanji"
   },
   "夏": {
     "id": 182,
     "meaning": "summer",
-    "reading": "なつ / カ / ガ / ゲ",
+    "reading": "なつ / か / が / げ",
     "type": "kanji"
   },
   "秋": {
     "id": 183,
     "meaning": "autumn",
-    "reading": "あき / とき / シュウ",
+    "reading": "あき / とき / しゅう",
     "type": "kanji"
   },
   "冬": {
     "id": 184,
     "meaning": "winter",
-    "reading": "ふゆ / トウ",
+    "reading": "ふゆ / とう",
     "type": "kanji"
   },
   "寒": {
     "id": 185,
     "meaning": "cold",
-    "reading": "さむ.い / カン",
+    "reading": "さむ.い / かん",
     "type": "kanji"
   },
   "暑": {
     "id": 186,
     "meaning": "hot, sultry, summer heat",
-    "reading": "あつ.い / ショ",
+    "reading": "あつ.い / しょ",
     "type": "kanji"
   },
   "晴": {
     "id": 187,
     "meaning": "clear up",
-    "reading": "-ば.れ / は.らす / は.れ / は.れ- / は.れる / セイ",
+    "reading": "-ば.れ / は.らす / は.れ / は.れ- / は.れる / せい",
     "type": "kanji"
   },
   "終": {
     "id": 188,
     "meaning": "end, finish",
-    "reading": "-お.わる / お.える / お.わる / おわ.る / つい / つい.に / シュウ",
+    "reading": "-お.わる / お.える / お.わる / おわ.る / つい / つい.に / しゅう",
     "type": "kanji"
   },
   "紙": {
     "id": 189,
     "meaning": "paper",
-    "reading": "かみ / シ",
+    "reading": "かみ / し",
     "type": "kanji"
   },
   "低": {
     "id": 190,
     "meaning": "humble, lower, short",
-    "reading": "ひく.い / ひく.まる / ひく.める / テイ",
+    "reading": "ひく.い / ひく.まる / ひく.める / てい",
     "type": "kanji"
   },
   "肉": {
     "id": 191,
     "meaning": "meat",
-    "reading": "しし / ニク",
+    "reading": "しし / にく",
     "type": "kanji"
   },
   "鳥": {
     "id": 192,
     "meaning": "bird, chicken",
-    "reading": "とり / チョウ",
+    "reading": "とり / ちょう",
     "type": "kanji"
   },
   "犬": {
     "id": 193,
     "meaning": "dog",
-    "reading": "いぬ / いぬ- / ケン",
+    "reading": "いぬ / いぬ- / けん",
     "type": "kanji"
   },
   "洋": {
     "id": 194,
     "meaning": "Western style, foreign, ocean, sea",
-    "reading": "ヨウ",
+    "reading": "よう",
     "type": "kanji"
   },
   "和": {
     "id": 195,
     "meaning": "Japan, Japanese style, harmony, peace, soften",
-    "reading": "あ.える / なご.む / なご.やか / やわ.らぐ / やわ.らげる / オ / カ / ワ",
+    "reading": "あ.える / なご.む / なご.やか / やわ.らぐ / やわ.らげる / お / か / わ",
     "type": "kanji"
   },
   "服": {
     "id": 196,
     "meaning": "admit, clothing, discharge, obey",
-    "reading": "フク",
+    "reading": "ふく",
     "type": "kanji"
   },
   "式": {
     "id": 197,
     "meaning": "ceremony, expression, form, function, method, rite, style, system",
-    "reading": "シキ",
+    "reading": "しき",
     "type": "kanji"
   },
   "試": {
     "id": 198,
     "meaning": "attempt, experiment, ordeal, test, try",
-    "reading": "こころ.みる / ため.す / シ",
+    "reading": "こころ.みる / ため.す / し",
     "type": "kanji"
   },
   "験": {
     "id": 199,
     "meaning": "effect, testing, verification",
-    "reading": "あかし / しるし / ため.す / ためし / ケン / ゲン",
+    "reading": "あかし / しるし / ため.す / ためし / けん / げん",
     "type": "kanji"
   },
   "近": {
     "id": 200,
     "meaning": "akin, early, near, tantamount",
-    "reading": "ちか.い / キン / コン",
+    "reading": "ちか.い / きん / こん",
     "type": "kanji"
   },
   "遠": {
     "id": 201,
     "meaning": "distant, far",
-    "reading": "とお.い / エン / オン",
+    "reading": "とお.い / えん / おん",
     "type": "kanji"
   },
   "送": {
     "id": 202,
     "meaning": "escort, send",
-    "reading": "おく.る / ソウ",
+    "reading": "おく.る / そう",
     "type": "kanji"
   },
   "回": {
     "id": 203,
     "meaning": "-times, counter for occurrences, game, revolve, round",
-    "reading": "-まわ.し / -まわ.す / -まわ.り / -まわ.る / か.える / まわ.し- / まわ.す / まわ.る / もとお.る / エ / カイ",
+    "reading": "-まわ.し / -まわ.す / -まわ.り / -まわ.る / か.える / まわ.し- / まわ.す / まわ.る / もとお.る / え / かい",
     "type": "kanji"
   },
   "用": {
     "id": 204,
     "meaning": "business, employ, service, use, utilize",
-    "reading": "もち.いる / ヨウ",
+    "reading": "もち.いる / よう",
     "type": "kanji"
   },
   "通": {
     "id": 205,
     "meaning": "avenue, commute, counter for letters, notes, documents, etc., pass through, traffic",
-    "reading": "-とお.り / -どお.し / -どお.り / かよ.う / とお.し / とお.す / とお.り / とお.る / ツ / ツウ",
+    "reading": "-とお.り / -どお.し / -どお.り / かよ.う / とお.し / とお.す / とお.り / とお.る / つ / つう",
     "type": "kanji"
   },
   "不": {
     "id": 206,
     "meaning": "bad, clumsy, negative, non-, ugly",
-    "reading": "フ / ブ",
+    "reading": "ふ / ぶ",
     "type": "kanji"
   },
   "事": {
     "id": 207,
     "meaning": "business, fact, matter, possibly, reason, thing",
-    "reading": "こと / つか.う / つか.える / ジ / ズ",
+    "reading": "こと / つか.う / つか.える / じ / ず",
     "type": "kanji"
   },
   "仕": {
     "id": 208,
     "meaning": "attend, doing, official, serve",
-    "reading": "つか.える / シ / ジ",
+    "reading": "つか.える / し / じ",
     "type": "kanji"
   },
   "料": {
     "id": 209,
     "meaning": "fee, materials",
-    "reading": "リョウ",
+    "reading": "りょう",
     "type": "kanji"
   },
   "理": {
     "id": 210,
     "meaning": "arrangement, justice, logic, reason, truth",
-    "reading": "ことわり / リ",
+    "reading": "ことわり / り",
     "type": "kanji"
   },
   "有": {
     "id": 211,
     "meaning": "approx, exist, happen, have, occur, possess",
-    "reading": "あ.る / ウ / ユウ",
+    "reading": "あ.る / う / ゆう",
     "type": "kanji"
   },
   "無": {
     "id": 212,
     "meaning": "ain't, nil, none, not, nothing, nothingness",
-    "reading": "な.い / ブ / ム",
+    "reading": "な.い / ぶ / む",
     "type": "kanji"
   },
   "野": {
     "id": 213,
     "meaning": "civilian life, field, plains, rustic",
-    "reading": "の / の- / ショ / ヤ",
+    "reading": "の / の- / しょ / や",
     "type": "kanji"
   },
   "黒": {
     "id": 214,
     "meaning": "black",
-    "reading": "くろ / くろ.い / くろ.ずむ / コク",
+    "reading": "くろ / くろ.い / くろ.ずむ / こく",
     "type": "kanji"
   },
   "町": {
     "id": 215,
     "meaning": "block, street, town, village",
-    "reading": "まち / チョウ",
+    "reading": "まち / ちょう",
     "type": "kanji"
   },
   "村": {
     "id": 216,
     "meaning": "town, village",
-    "reading": "むら / ソン",
+    "reading": "むら / そん",
     "type": "kanji"
   },
   "菜": {
     "id": 217,
     "meaning": "greens, side dish, vegetable",
-    "reading": "な / サイ",
+    "reading": "な / さい",
     "type": "kanji"
   },
   "区": {
     "id": 218,
     "meaning": "district, ward",
-    "reading": "オウ / ク / コウ",
+    "reading": "おう / く / こう",
     "type": "kanji"
   },
   "方": {
@@ -1318,475 +1318,475 @@ export const componentsDb = {
   "旅": {
     "id": 220,
     "meaning": "travel, trip",
-    "reading": "たび / リョ",
+    "reading": "たび / りょ",
     "type": "kanji"
   },
   "族": {
     "id": 221,
     "meaning": "family, tribe",
-    "reading": "ゾク",
+    "reading": "ぞく",
     "type": "kanji"
   },
   "短": {
     "id": 222,
     "meaning": "brevity, defect, fault, short, weak point",
-    "reading": "みじか.い / タン",
+    "reading": "みじか.い / たん",
     "type": "kanji"
   },
   "知": {
     "id": 223,
     "meaning": "know, wisdom",
-    "reading": "し.らせる / し.る / チ",
+    "reading": "し.らせる / し.る / ち",
     "type": "kanji"
   },
   "死": {
     "id": 224,
     "meaning": "death, die",
-    "reading": "し.に- / し.ぬ / シ",
+    "reading": "し.に- / し.ぬ / し",
     "type": "kanji"
   },
   "医": {
     "id": 225,
     "meaning": "doctor, medicine",
-    "reading": "い.する / い.やす / くすし / イ",
+    "reading": "い.する / い.やす / くすし / い",
     "type": "kanji"
   },
   "者": {
     "id": 226,
     "meaning": "person, someone",
-    "reading": "もの / シャ",
+    "reading": "もの / しゃ",
     "type": "kanji"
   },
   "都": {
     "id": 227,
     "meaning": "all, capital, everything, metropolis",
-    "reading": "みやこ / ツ / ト",
+    "reading": "みやこ / つ / と",
     "type": "kanji"
   },
   "京": {
     "id": 228,
     "meaning": "10**16, capital",
-    "reading": "みやこ / キョウ / キン / ケイ",
+    "reading": "みやこ / きょう / きん / けい",
     "type": "kanji"
   },
   "県": {
     "id": 229,
     "meaning": "prefecture",
-    "reading": "か.ける / ケン",
+    "reading": "か.ける / けん",
     "type": "kanji"
   },
   "民": {
     "id": 230,
     "meaning": "nation, people, subjects",
-    "reading": "たみ / ミン",
+    "reading": "たみ / みん",
     "type": "kanji"
   },
   "同": {
     "id": 231,
     "meaning": "agree, equal, same",
-    "reading": "おな.じ / ドウ",
+    "reading": "おな.じ / どう",
     "type": "kanji"
   },
   "合": {
     "id": 232,
     "meaning": "0.1, fit, join, suit",
-    "reading": "-あ.い / -あ.う / -あ.わせる / -あい / あ.い / あ.う / あ.わす / あ.わせる / あい- / カッ / ガッ / ゴウ",
+    "reading": "-あ.い / -あ.う / -あ.わせる / -あい / あ.い / あ.う / あ.わす / あ.わせる / あい- / かっ / がっ / ごう",
     "type": "kanji"
   },
   "答": {
     "id": 233,
     "meaning": "answer, solution",
-    "reading": "こた.え / こた.える / トウ",
+    "reading": "こた.え / こた.える / とう",
     "type": "kanji"
   },
   "家": {
     "id": 234,
     "meaning": "expert, family, home, house, performer, professional",
-    "reading": "いえ / うち / や / カ / ケ",
+    "reading": "いえ / うち / や / か / け",
     "type": "kanji"
   },
   "場": {
     "id": 235,
     "meaning": "location, place",
-    "reading": "ば / ジョウ / チョウ",
+    "reading": "ば / じょう / ちょう",
     "type": "kanji"
   },
   "所": {
     "id": 236,
     "meaning": "extent, place",
-    "reading": "-ところ / とこ / ところ / どころ / ショ",
+    "reading": "-ところ / とこ / ところ / どころ / しょ",
     "type": "kanji"
   },
   "世": {
     "id": 237,
     "meaning": "generation, public, society, world",
-    "reading": "よ / セ / セイ / ソウ",
+    "reading": "よ / せ / せい / そう",
     "type": "kanji"
   },
   "代": {
     "id": 238,
     "meaning": "age, change, charge, convert, counter for decades of ages, eras, etc., fee, generation, period, rate, replace, substitute",
-    "reading": "-が.わり / -がわ.り / か.える / か.わり / か.わる / かわ.り / かわ.る / しろ / よ / タイ / ダイ",
+    "reading": "-が.わり / -がわ.り / か.える / か.わり / か.わる / かわ.り / かわ.る / しろ / よ / たい / だい",
     "type": "kanji"
   },
   "貸": {
     "id": 239,
     "meaning": "lend",
-    "reading": "か.し- / か.す / かし- / タイ",
+    "reading": "か.し- / か.す / かし- / たい",
     "type": "kanji"
   },
   "地": {
     "id": 240,
     "meaning": "earth, ground",
-    "reading": "ジ / チ",
+    "reading": "じ / ち",
     "type": "kanji"
   },
   "池": {
     "id": 241,
     "meaning": "cistern, pond, pool, reservoir",
-    "reading": "いけ / チ",
+    "reading": "いけ / ち",
     "type": "kanji"
   },
   "洗": {
     "id": 242,
     "meaning": "inquire into, probe, wash",
-    "reading": "あら.う / セン",
+    "reading": "あら.う / せん",
     "type": "kanji"
   },
   "光": {
     "id": 243,
     "meaning": "light, ray",
-    "reading": "ひか.る / ひかり / コウ",
+    "reading": "ひか.る / ひかり / こう",
     "type": "kanji"
   },
   "英": {
     "id": 244,
     "meaning": "England, English, calyx, hero, outstanding",
-    "reading": "はなぶさ / エイ",
+    "reading": "はなぶさ / えい",
     "type": "kanji"
   },
   "映": {
     "id": 245,
     "meaning": "projection, reflect, reflection",
-    "reading": "-ば.え / うつ.す / うつ.る / は.える / エイ",
+    "reading": "-ば.え / うつ.す / うつ.る / は.える / えい",
     "type": "kanji"
   },
   "歌": {
     "id": 246,
     "meaning": "sing, song",
-    "reading": "うた / うた.う / カ",
+    "reading": "うた / うた.う / か",
     "type": "kanji"
   },
   "楽": {
     "id": 247,
     "meaning": "comfort, ease, music",
-    "reading": "この.む / たの.しい / たの.しむ / ガク / ゴウ / ラク",
+    "reading": "この.む / たの.しい / たの.しむ / がく / ごう / らく",
     "type": "kanji"
   },
   "薬": {
     "id": 248,
     "meaning": "benefit, chemical, enamel, gunpowder, medicine",
-    "reading": "くすり / ヤク",
+    "reading": "くすり / やく",
     "type": "kanji"
   },
   "界": {
     "id": 249,
     "meaning": "boundary, world",
-    "reading": "カイ",
+    "reading": "かい",
     "type": "kanji"
   },
   "産": {
     "id": 250,
     "meaning": "bear, childbirth, give birth, native, products, property, yield",
-    "reading": "う.まれる / う.む / うぶ- / む.す / サン",
+    "reading": "う.まれる / う.む / うぶ- / む.す / さん",
     "type": "kanji"
   },
   "業": {
     "id": 251,
     "meaning": "arts, business, performance, vocation",
-    "reading": "わざ / ギョウ / ゴウ",
+    "reading": "わざ / ぎょう / ごう",
     "type": "kanji"
   },
   "林": {
     "id": 252,
     "meaning": "forest, grove",
-    "reading": "はやし / リン",
+    "reading": "はやし / りん",
     "type": "kanji"
   },
   "森": {
     "id": 253,
     "meaning": "forest, woods",
-    "reading": "もり / シン",
+    "reading": "もり / しん",
     "type": "kanji"
   },
   "物": {
     "id": 254,
     "meaning": "matter, object, thing",
-    "reading": "もの / もの- / ブツ / モツ",
+    "reading": "もの / もの- / ぶつ / もつ",
     "type": "kanji"
   },
   "品": {
     "id": 255,
     "meaning": "article, counter for meal courses, dignity, goods, refinement",
-    "reading": "しな / ヒン / ホン",
+    "reading": "しな / ひん / ほん",
     "type": "kanji"
   },
   "建": {
     "id": 256,
     "meaning": "build",
-    "reading": "-だ.て / た.つ / た.て / た.てる / ケン / コン",
+    "reading": "-だ.て / た.つ / た.て / た.てる / けん / こん",
     "type": "kanji"
   },
   "館": {
     "id": 257,
     "meaning": "building, large building, mansion, palace",
-    "reading": "たて / やかた / カン",
+    "reading": "たて / やかた / かん",
     "type": "kanji"
   },
   "図": {
     "id": 258,
     "meaning": "audacious, drawing, extraordinary, map, plan",
-    "reading": "え / はか.る / ズ / ト",
+    "reading": "え / はか.る / ず / と",
     "type": "kanji"
   },
   "使": {
     "id": 259,
     "meaning": "ambassador, cause, envoy, messenger, order, send on a mission, use",
-    "reading": "-つか.い / -づか.い / つか.い / つか.う / シ",
+    "reading": "-つか.い / -づか.い / つか.い / つか.う / し",
     "type": "kanji"
   },
   "便": {
     "id": 260,
     "meaning": "chance, convenience, excrement, facility, feces, letter",
-    "reading": "たよ.り / ビン / ベン",
+    "reading": "たよ.り / びん / べん",
     "type": "kanji"
   },
   "借": {
     "id": 261,
     "meaning": "borrow, rent",
-    "reading": "か.りる / シャク",
+    "reading": "か.りる / しゃく",
     "type": "kanji"
   },
   "作": {
     "id": 262,
     "meaning": "build, make, prepare, production",
-    "reading": "-づく.り / つく.り / つく.る / サ / サク",
+    "reading": "-づく.り / つく.り / つく.る / さ / さく",
     "type": "kanji"
   },
   "広": {
     "id": 263,
     "meaning": "broad, spacious, wide",
-    "reading": "ひろ.い / ひろ.がる / ひろ.げる / ひろ.まる / ひろ.める / コウ",
+    "reading": "ひろ.い / ひろ.がる / ひろ.げる / ひろ.まる / ひろ.める / こう",
     "type": "kanji"
   },
   "私": {
     "id": 264,
     "meaning": "I, me, private",
-    "reading": "わたくし / わたし / シ",
+    "reading": "わたくし / わたし / し",
     "type": "kanji"
   },
   "去": {
     "id": 265,
     "meaning": "divorce, elapse, eliminate, gone, leave, past, quit",
-    "reading": "-さ.る / さ.る / キョ / コ",
+    "reading": "-さ.る / さ.る / きょ / こ",
     "type": "kanji"
   },
   "室": {
     "id": 266,
     "meaning": "apartment, cellar, chamber, greenhouse, room",
-    "reading": "むろ / シツ",
+    "reading": "むろ / しつ",
     "type": "kanji"
   },
   "屋": {
     "id": 267,
     "meaning": "dealer, house, roof, seller, shop",
-    "reading": "や / オク",
+    "reading": "や / おく",
     "type": "kanji"
   },
   "教": {
     "id": 268,
     "meaning": "doctrine, faith, teach",
-    "reading": "おし.える / おそ.わる / キョウ",
+    "reading": "おし.える / おそ.わる / きょう",
     "type": "kanji"
   },
   "研": {
     "id": 269,
     "meaning": "polish, sharpen, study of",
-    "reading": "と.ぐ / ケン",
+    "reading": "と.ぐ / けん",
     "type": "kanji"
   },
   "発": {
     "id": 270,
     "meaning": "counter for gunshots, departure, discharge, disclose, emit, publish, start from",
-    "reading": "あば.く / おこ.る / た.つ / つか.わす / はな.つ / ハツ / ホツ",
+    "reading": "あば.く / おこ.る / た.つ / つか.わす / はな.つ / はつ / ほつ",
     "type": "kanji"
   },
   "究": {
     "id": 271,
     "meaning": "research, study",
-    "reading": "きわ.める / キュウ / ク",
+    "reading": "きわ.める / きゅう / く",
     "type": "kanji"
   },
   "着": {
     "id": 272,
     "meaning": "arrive, counter for suits of clothing, don, wear",
-    "reading": "き.せる / き.る / つ.く / つ.ける / ジャク / チャク",
+    "reading": "き.せる / き.る / つ.く / つ.ける / じゃく / ちゃく",
     "type": "kanji"
   },
   "乗": {
     "id": 273,
     "meaning": "board, counter for vehicles, join, mount, multiplication, power, record, ride",
-    "reading": "-の.り / の.せる / の.る / ショウ / ジョウ",
+    "reading": "-の.り / の.せる / の.る / しょう / じょう",
     "type": "kanji"
   },
   "計": {
     "id": 274,
     "meaning": "measure, plan, plot, scheme",
-    "reading": "はか.らう / はか.る / ケイ",
+    "reading": "はか.らう / はか.る / けい",
     "type": "kanji"
   },
   "画": {
     "id": 275,
     "meaning": "brush-stroke, picture",
-    "reading": "えが.く / かぎ.る / かく.する / はか.る / はかりごと / エ / カイ / カク / ガ",
+    "reading": "えが.く / かぎ.る / かく.する / はか.る / はかりごと / え / かい / かく / が",
     "type": "kanji"
   },
   "説": {
     "id": 276,
     "meaning": "explanation, opinion, rumor, theory",
-    "reading": "と.く / セツ / ゼイ",
+    "reading": "と.く / せつ / ぜい",
     "type": "kanji"
   },
   "院": {
     "id": 277,
     "meaning": "Inst., institution, mansion, school, temple",
-    "reading": "イン",
+    "reading": "いん",
     "type": "kanji"
   },
   "病": {
     "id": 278,
     "meaning": "ill, sick",
-    "reading": "-や.み / や.む / やまい / ビョウ / ヘイ",
+    "reading": "-や.み / や.む / やまい / びょう / へい",
     "type": "kanji"
   },
   "科": {
     "id": 279,
     "meaning": "course, department, section",
-    "reading": "カ",
+    "reading": "か",
     "type": "kanji"
   },
   "度": {
     "id": 280,
     "meaning": "attitude, consider, counter for occurrences, degrees, occurrence, time",
-    "reading": "-た.い / たび / タク / ト / ド",
+    "reading": "-た.い / たび / たく / と / ど",
     "type": "kanji"
   },
   "頭": {
     "id": 281,
     "meaning": "counter for large animals, head",
-    "reading": "-がしら / あたま / かしら / かぶり / ズ / ト / トウ",
+    "reading": "-がしら / あたま / かしら / かぶり / ず / と / とう",
     "type": "kanji"
   },
   "顔": {
     "id": 282,
     "meaning": "Kanji",
-    "reading": "かお / ガン",
+    "reading": "かお / がん",
     "type": "kanji"
   },
   "声": {
     "id": 283,
     "meaning": "Kanji",
-    "reading": "こえ / こわ- / ショウ / セイ",
+    "reading": "こえ / こわ- / しょう / せい",
     "type": "kanji"
   },
   "題": {
     "id": 284,
     "meaning": "Kanji",
-    "reading": "ダイ",
+    "reading": "だい",
     "type": "kanji"
   },
   "色": {
     "id": 285,
     "meaning": "Kanji",
-    "reading": "いろ / シキ / ショク",
+    "reading": "いろ / しき / しょく",
     "type": "kanji"
   },
   "漢": {
     "id": 286,
     "meaning": "Kanji",
-    "reading": "カン",
+    "reading": "かん",
     "type": "kanji"
   },
   "字": {
     "id": 287,
     "meaning": "Kanji",
-    "reading": "-な / あざ / あざな / ジ",
+    "reading": "-な / あざ / あざな / じ",
     "type": "kanji"
   },
   "写": {
     "id": 288,
     "meaning": "Kanji",
-    "reading": "うつ- / うつ.し / うつ.す / うつ.る / シャ / ジャ",
+    "reading": "うつ- / うつ.し / うつ.す / うつ.る / しゃ / じゃ",
     "type": "kanji"
   },
   "考": {
     "id": 289,
     "meaning": "Kanji",
-    "reading": "かんが.え / かんが.える / コウ",
+    "reading": "かんが.え / かんが.える / こう",
     "type": "kanji"
   },
   "真": {
     "id": 290,
     "meaning": "Kanji",
-    "reading": "ま / ま- / まこと / シン",
+    "reading": "ま / ま- / まこと / しん",
     "type": "kanji"
   },
   "集": {
     "id": 291,
     "meaning": "congregate, flock, gather, meet, swarm",
-    "reading": "あつ.まる / あつ.める / つど.う / シュウ",
+    "reading": "あつ.まる / あつ.める / つど.う / しゅう",
     "type": "kanji"
   },
   "曜": {
     "id": 292,
     "meaning": "Kanji",
-    "reading": "ヨウ",
+    "reading": "よう",
     "type": "kanji"
   },
   "進": {
     "id": 293,
     "meaning": "Kanji",
-    "reading": "すす.む / すす.める / シン",
+    "reading": "すす.む / すす.める / しん",
     "type": "kanji"
   },
   "帰": {
     "id": 294,
     "meaning": "Kanji",
-    "reading": "おく.る / かえ.す / かえ.る / とつ.ぐ / キ",
+    "reading": "おく.る / かえ.す / かえ.る / とつ.ぐ / き",
     "type": "kanji"
   },
   "別": {
     "id": 295,
     "meaning": "Kanji",
-    "reading": "わ.ける / わか.れる / ベツ",
+    "reading": "わ.ける / わか.れる / べつ",
     "type": "kanji"
   },
   "以": {
     "id": 296,
     "meaning": "Kanji",
-    "reading": "もっ.て / イ",
+    "reading": "もっ.て / い",
     "type": "kanji"
   },
   "堂": {
     "id": 297,
     "meaning": "Kanji",
-    "reading": "ドウ",
+    "reading": "どう",
     "type": "kanji"
   },
   "税": {
     "id": 298,
     "meaning": "duty, tax",
-    "reading": "ゼイ",
+    "reading": "ぜい",
     "type": "kanji"
   },
   "込": {
@@ -1798,7 +1798,7 @@ export const componentsDb = {
   "申": {
     "id": 300,
     "meaning": "3-5PM, have the honor to, ninth sign of Chinese zodiac, sign of the monkey",
-    "reading": "さる / もう.し- / もう.す / シン",
+    "reading": "さる / もう.し- / もう.す / しん",
     "type": "kanji"
   },
   "王": {
@@ -2080,19 +2080,19 @@ export const componentsDb = {
   "丨": {
     "kanji": "丨",
     "meaning": "line, number one, rod radical (no. 2)",
-    "reading": "しりぞ.く / すす.む / コン / シ / ジョ / ニョ",
+    "reading": "しりぞ.く / すす.む / こん / し / じょ / にょ",
     "type": "external_kanji"
   },
   "凵": {
     "kanji": "凵",
     "meaning": "open box enclosure, open box radical (no. 17)",
-    "reading": "カン",
+    "reading": "かん",
     "type": "external_kanji"
   },
   "丿": {
     "kanji": "丿",
     "meaning": "katakana no radical (no. 4)",
-    "reading": "えい / よう / ヘツ",
+    "reading": "えい / よう / へつ",
     "type": "external_kanji"
   },
   "亻": {
@@ -2104,121 +2104,121 @@ export const componentsDb = {
   "宀": {
     "kanji": "宀",
     "meaning": "katakana u radical (no. 40), shaped crown",
-    "reading": "ベン / メン",
+    "reading": "べん / めん",
     "type": "external_kanji"
   },
   "丶": {
     "kanji": "丶",
     "meaning": "dot, tick or dot radical (no. 3)",
-    "reading": "チュ",
+    "reading": "ちゅ",
     "type": "external_kanji"
   },
   "亅": {
     "kanji": "亅",
     "meaning": "barb radical (no. 6), feathered stick",
-    "reading": "かぎ / ケツ",
+    "reading": "かぎ / けつ",
     "type": "external_kanji"
   },
   "了": {
     "kanji": "了",
     "meaning": "complete, finish",
-    "reading": "リョウ",
+    "reading": "りょう",
     "type": "external_kanji"
   },
   "冖": {
     "kanji": "冖",
     "meaning": "wa-shaped crown radical (no. 14)",
-    "reading": "ベキ",
+    "reading": "べき",
     "type": "external_kanji"
   },
   "囗": {
     "kanji": "囗",
     "meaning": "box, box or enclosure radical (no. 31)",
-    "reading": "イ / コク",
+    "reading": "い / こく",
     "type": "external_kanji"
   },
   "亠": {
     "kanji": "亠",
     "meaning": "kettle lid radical (no. 8)",
-    "reading": "トウ",
+    "reading": "とう",
     "type": "external_kanji"
   },
   "乙": {
     "kanji": "乙",
     "meaning": "duplicate, fishhook radical (no. 5), strange",
-    "reading": "おと- / きのと / イツ / オツ",
+    "reading": "おと- / きのと / いつ / おつ",
     "type": "external_kanji"
   },
   "干": {
     "kanji": "干",
     "meaning": "dry, ebb, intercede",
-    "reading": "-ぼ.し / ひ.る / ほ.し- / ほ.す / カン",
+    "reading": "-ぼ.し / ひ.る / ほ.し- / ほ.す / かん",
     "type": "external_kanji"
   },
   "又": {
     "kanji": "又",
     "meaning": "furthermore, on the other hand, or again",
-    "reading": "また / また- / また.の- / ユウ",
+    "reading": "また / また- / また.の- / ゆう",
     "type": "external_kanji"
   },
   "己": {
     "kanji": "己",
     "meaning": "self",
-    "reading": "おのれ / つちのと / な / キ / コ",
+    "reading": "おのれ / つちのと / な / き / こ",
     "type": "external_kanji"
   },
   "久": {
     "kanji": "久",
     "meaning": "long time, old story",
-    "reading": "ひさ.しい / キュウ / ク",
+    "reading": "ひさ.しい / きゅう / く",
     "type": "external_kanji"
   },
   "乂": {
     "kanji": "乂",
     "meaning": "cut grass, mow, subdue",
-    "reading": "おさ.める / か.る / カイ / ガイ / ゲ",
+    "reading": "おさ.める / か.る / かい / がい / げ",
     "type": "external_kanji"
   },
   "丁": {
     "kanji": "丁",
     "meaning": "4th calendar sign, counter for guns, tools, leaves or cakes of something, even number",
-    "reading": "ひのと / チ / チョウ / チン / テイ / トウ",
+    "reading": "ひのと / ち / ちょう / ちん / てい / とう",
     "type": "external_kanji"
   },
   "毋": {
     "kanji": "毋",
     "meaning": "be not, do not, mother radical (no. 80)",
-    "reading": "ない / なか.れ / はは / ぼ / ブ / ム",
+    "reading": "ない / なか.れ / はは / ぼ / ぶ / む",
     "type": "external_kanji"
   },
   "兀": {
     "kanji": "兀",
     "meaning": "bald, dangerous, high & level",
-    "reading": "コツ",
+    "reading": "こつ",
     "type": "external_kanji"
   },
   "匕": {
     "kanji": "匕",
     "meaning": "spoon, spoon or katakana hi radical (no. 21)",
-    "reading": "さじ / ヒ",
+    "reading": "さじ / ひ",
     "type": "external_kanji"
   },
   "彐": {
     "kanji": "彐",
     "meaning": "pig's head radical (no. 58), snout",
-    "reading": "ケイ",
+    "reading": "けい",
     "type": "external_kanji"
   },
   "幺": {
     "kanji": "幺",
     "meaning": "short thread radical (no. 52)",
-    "reading": "ちいさい / ヨウ",
+    "reading": "ちいさい / よう",
     "type": "external_kanji"
   },
   "艮": {
     "kanji": "艮",
     "meaning": "good radical (no. 138), northeast (Oriental zodiac), stopping",
-    "reading": "うしとら / コン / ゴン",
+    "reading": "うしとら / こん / ごん",
     "type": "external_kanji"
   },
   "飠": {
@@ -2230,217 +2230,217 @@ export const componentsDb = {
   "反": {
     "kanji": "反",
     "meaning": "anti-",
-    "reading": "-かえ.る / かえ.す / かえ.る / そ.らす / そ.る / タン / ハン / ホ / ホン",
+    "reading": "-かえ.る / かえ.す / かえ.る / そ.らす / そ.る / たん / はん / ほ / ほん",
     "type": "external_kanji"
   },
   "舌": {
     "kanji": "舌",
     "meaning": "clapper, reed, tongue",
-    "reading": "した / ゼツ",
+    "reading": "した / ぜつ",
     "type": "external_kanji"
   },
   "吾": {
     "kanji": "吾",
     "meaning": "I, my, one's own",
-    "reading": "あ- / わが- / われ / ゴ",
+    "reading": "あ- / わが- / われ / ご",
     "type": "external_kanji"
   },
   "聿": {
     "kanji": "聿",
     "meaning": "brush, fast, finally",
-    "reading": "ここに / ふで / イチ / イツ",
+    "reading": "ここに / ふで / いち / いつ",
     "type": "external_kanji"
   },
   "灬": {
     "kanji": "灬",
     "meaning": "fire, fire radical (no. 86)",
-    "reading": "カ / ヒョウ",
+    "reading": "か / ひょう",
     "type": "external_kanji"
   },
   "尺": {
     "kanji": "尺",
     "meaning": "Japanese foot, measure, rule",
-    "reading": "さし / シャク / セキ",
+    "reading": "さし / しゃく / せき",
     "type": "external_kanji"
   },
   "勹": {
     "kanji": "勹",
     "meaning": "wrapping enclosure, wrapping radical (no. 20)",
-    "reading": "つつ.む / ホウ",
+    "reading": "つつ.む / ほう",
     "type": "external_kanji"
   },
   "巾": {
     "kanji": "巾",
     "meaning": "cloth radical (no. 50), hanging scroll, towel",
-    "reading": "おお.い / きれ / ちきり / キン / フク",
+    "reading": "おお.い / きれ / ちきり / きん / ふく",
     "type": "external_kanji"
   },
   "气": {
     "kanji": "气",
     "meaning": "spirit, steam radical (no. 84)",
-    "reading": "いき / キ / ケ",
+    "reading": "いき / き / け",
     "type": "external_kanji"
   },
   "穴": {
     "kanji": "穴",
     "meaning": "aperture, cave, den",
-    "reading": "あな / ケツ",
+    "reading": "あな / けつ",
     "type": "external_kanji"
   },
   "礻": {
     "kanji": "礻",
     "meaning": "cult, showing radical (no. 113)",
-    "reading": "シ",
+    "reading": "し",
     "type": "external_kanji"
   },
   "云": {
     "kanji": "云",
     "meaning": "say",
-    "reading": "い.う / ここに / ウン",
+    "reading": "い.う / ここに / うん",
     "type": "external_kanji"
   },
   "罒": {
     "kanji": "罒",
     "meaning": "net radical variant (no. 122)",
-    "reading": "あみがしら / よこめ / ボウ / モウ",
+    "reading": "あみがしら / よこめ / ぼう / もう",
     "type": "external_kanji"
   },
   "占": {
     "kanji": "占",
     "meaning": "divining, forecasting, fortune-telling",
-    "reading": "うらな.う / し.める / セン",
+    "reading": "うらな.う / し.める / せん",
     "type": "external_kanji"
   },
   "廾": {
     "kanji": "廾",
     "meaning": "twenty, twenty or letter H radical (no. 55)",
-    "reading": "にじゅう / キョウ / ク",
+    "reading": "にじゅう / きょう / く",
     "type": "external_kanji"
   },
   "才": {
     "kanji": "才",
     "meaning": "cubic shaku, genius, years old",
-    "reading": "サイ",
+    "reading": "さい",
     "type": "external_kanji"
   },
   "周": {
     "kanji": "周",
     "meaning": "circuit, circumference, lap",
-    "reading": "まわ.り / シュウ",
+    "reading": "まわ.り / しゅう",
     "type": "external_kanji"
   },
   "里": {
     "kanji": "里",
     "meaning": "league, parent's home, ri",
-    "reading": "さと / リ",
+    "reading": "さと / り",
     "type": "external_kanji"
   },
   "化": {
     "kanji": "化",
     "meaning": "-ization, change, delude",
-    "reading": "け.する / ば.かす / ば.ける / ふ.ける / カ / ケ",
+    "reading": "け.する / ば.かす / ば.ける / ふ.ける / か / け",
     "type": "external_kanji"
   },
   "軍": {
     "kanji": "軍",
     "meaning": "army, battle, force",
-    "reading": "いくさ / グン",
+    "reading": "いくさ / ぐん",
     "type": "external_kanji"
   },
   "旦": {
     "kanji": "旦",
     "meaning": "dawn, daybreak, morning",
-    "reading": "あき.らか / あきら / あさ / あした / ただし / タン / ダン",
+    "reading": "あき.らか / あきら / あさ / あした / ただし / たん / だん",
     "type": "external_kanji"
   },
   "几": {
     "kanji": "几",
     "meaning": "table, table enclosure, table or windy radical (no. 16)",
-    "reading": "きにょう / キ",
+    "reading": "きにょう / き",
     "type": "external_kanji"
   },
   "甲": {
     "kanji": "甲",
     "meaning": "A grade, armor, carapace",
-    "reading": "きのえ / カン / コウ",
+    "reading": "きのえ / かん / こう",
     "type": "external_kanji"
   },
   "冫": {
     "kanji": "冫",
     "meaning": "two-stroke water radical or ice radical (no. 15)",
-    "reading": "こおり / ヒョウ",
+    "reading": "こおり / ひょう",
     "type": "external_kanji"
   },
   "免": {
     "kanji": "免",
     "meaning": "dismissal, excuse",
-    "reading": "まぬか.れる / まぬが.れる / メン",
+    "reading": "まぬか.れる / まぬが.れる / めん",
     "type": "external_kanji"
   },
   "亜": {
     "kanji": "亜",
     "meaning": "-ous, Asia, come after",
-    "reading": "つ.ぐ / ア",
+    "reading": "つ.ぐ / あ",
     "type": "external_kanji"
   },
   "井": {
     "kanji": "井",
     "meaning": "community, town, well",
-    "reading": "い / ショウ / セイ",
+    "reading": "い / しょう / せい",
     "type": "external_kanji"
   },
   "卩": {
     "kanji": "卩",
     "meaning": "seal radical (no. 26)",
-    "reading": "わりふ / セツ",
+    "reading": "わりふ / せつ",
     "type": "external_kanji"
   },
   "弋": {
     "kanji": "弋",
     "meaning": "ceremony radical (no. 56), piling",
-    "reading": "いぐるみ / ヨク",
+    "reading": "いぐるみ / よく",
     "type": "external_kanji"
   },
   "衣": {
     "kanji": "衣",
     "meaning": "clothes, dressing, garment",
-    "reading": "-ぎ / きぬ / ころも / イ / エ",
+    "reading": "-ぎ / きぬ / ころも / い / え",
     "type": "external_kanji"
   },
   "尹": {
     "kanji": "尹",
     "meaning": "an official rank",
-    "reading": "おさ / ただ.す / イン",
+    "reading": "おさ / ただ.す / いん",
     "type": "external_kanji"
   },
   "斗": {
     "kanji": "斗",
     "meaning": "Big Dipper, dots and cross radical (no. 68), sake dipper",
-    "reading": "ト / トウ",
+    "reading": "と / とう",
     "type": "external_kanji"
   },
   "予": {
     "kanji": "予",
     "meaning": "I, beforehand, myself",
-    "reading": "あらかじ.め / シャ / ヨ",
+    "reading": "あらかじ.め / しゃ / よ",
     "type": "external_kanji"
   },
   "采": {
     "kanji": "采",
     "meaning": "appearance, coloring, dice",
-    "reading": "いろどり / と.る / サイ",
+    "reading": "いろどり / と.る / さい",
     "type": "external_kanji"
   },
   "匚": {
     "kanji": "匚",
     "meaning": "box-on-side enclosure radical (no. 22)",
-    "reading": "ホウ",
+    "reading": "ほう",
     "type": "external_kanji"
   },
   "歹": {
     "kanji": "歹",
     "meaning": "bad, bare bone, death radical (n. 78)",
-    "reading": "ガチ / ガツ / タイ",
+    "reading": "がち / がつ / たい",
     "type": "external_kanji"
   },
   "耂": {
@@ -2458,163 +2458,163 @@ export const componentsDb = {
   "巳": {
     "kanji": "巳",
     "meaning": "9-11AM, sign of the snake or serpent, sixth sign of Chinese zodiac",
-    "reading": "み / シ",
+    "reading": "み / し",
     "type": "external_kanji"
   },
   "竹": {
     "kanji": "竹",
     "meaning": "bamboo",
-    "reading": "たけ / チク",
+    "reading": "たけ / ちく",
     "type": "external_kanji"
   },
   "勿": {
     "kanji": "勿",
     "meaning": "be not, do not, must not",
-    "reading": "なか.れ / なし / ブツ / ボツ / モチ",
+    "reading": "なか.れ / なし / ぶつ / ぼつ / もち",
     "type": "external_kanji"
   },
   "戸": {
     "kanji": "戸",
     "meaning": "counter for houses, door, door radical (no. 63)",
-    "reading": "と / コ",
+    "reading": "と / こ",
     "type": "external_kanji"
   },
   "廿": {
     "kanji": "廿",
     "meaning": "twenty",
-    "reading": "にじゅう / ジュウ / ニュウ",
+    "reading": "にじゅう / じゅう / にゅう",
     "type": "external_kanji"
   },
   "也": {
     "kanji": "也",
     "meaning": "to be (classical)",
-    "reading": "か / なり / また / エ / ヤ",
+    "reading": "か / なり / また / え / や",
     "type": "external_kanji"
   },
   "介": {
     "kanji": "介",
     "meaning": "concern oneself with, jammed in, mediate",
-    "reading": "カイ",
+    "reading": "かい",
     "type": "external_kanji"
   },
   "厂": {
     "kanji": "厂",
     "meaning": "trailing cliff radical (no. 27), wild goose",
-    "reading": "かりがね / カン",
+    "reading": "かりがね / かん",
     "type": "external_kanji"
   },
   "廴": {
     "kanji": "廴",
     "meaning": "long stride or stretching radical (no. 54)",
-    "reading": "イン",
+    "reading": "いん",
     "type": "external_kanji"
   },
   "官": {
     "kanji": "官",
     "meaning": "bureaucrat, organ, the government",
-    "reading": "カン",
+    "reading": "かん",
     "type": "external_kanji"
   },
   "吏": {
     "kanji": "吏",
     "meaning": "an official, officer",
-    "reading": "リ",
+    "reading": "り",
     "type": "external_kanji"
   },
   "更": {
     "kanji": "更",
     "meaning": "again, further, grow late",
-    "reading": "さら / さら.に / ふ.かす / ふ.ける / コウ",
+    "reading": "さら / さら.に / ふ.かす / ふ.ける / こう",
     "type": "external_kanji"
   },
   "乍": {
     "kanji": "乍",
     "meaning": "all, both, during",
-    "reading": "-なが.ら / たちま.ち / サ / サク",
+    "reading": "-なが.ら / たちま.ち / さ / さく",
     "type": "external_kanji"
   },
   "至": {
     "kanji": "至",
     "meaning": "arrive, attain, climax",
-    "reading": "いた.る / シ",
+    "reading": "いた.る / し",
     "type": "external_kanji"
   },
   "尸": {
     "kanji": "尸",
     "meaning": "corpse, flag radical (no. 44), remains",
-    "reading": "かたしろ / シ",
+    "reading": "かたしろ / し",
     "type": "external_kanji"
   },
   "孝": {
     "kanji": "孝",
     "meaning": "child's respect, filial piety",
-    "reading": "キョウ / コウ",
+    "reading": "きょう / こう",
     "type": "external_kanji"
   },
   "攵": {
     "kanji": "攵",
     "meaning": "folding chair radical variant (no. 66), hit, strike",
-    "reading": "ホク",
+    "reading": "ほく",
     "type": "external_kanji"
   },
   "癶": {
     "kanji": "癶",
     "meaning": "dotted tent radical (no. 105)",
-    "reading": "ハツ",
+    "reading": "はつ",
     "type": "external_kanji"
   },
   "完": {
     "kanji": "完",
     "meaning": "completion, end, perfect",
-    "reading": "カン",
+    "reading": "かん",
     "type": "external_kanji"
   },
   "疒": {
     "kanji": "疒",
     "meaning": "sick radical (no. 104), trailing sickness",
-    "reading": "や.む / シツ / ジョウ / ソウ / ダク / ニャク",
+    "reading": "や.む / しつ / じょう / そう / だく / にゃく",
     "type": "external_kanji"
   },
   "丙": {
     "kanji": "丙",
     "meaning": "3rd, 3rd calendar sign, third class",
-    "reading": "ひのえ / ヘイ",
+    "reading": "ひのえ / へい",
     "type": "external_kanji"
   },
   "彦": {
     "kanji": "彦",
     "meaning": "boy (ancient), lad",
-    "reading": "ひこ / ゲン",
+    "reading": "ひこ / げん",
     "type": "external_kanji"
   },
   "是": {
     "kanji": "是",
     "meaning": "just so, justice, right",
-    "reading": "ここ / この / これ / シ / ゼ",
+    "reading": "ここ / この / これ / し / ぜ",
     "type": "external_kanji"
   },
   "巴": {
     "kanji": "巴",
     "meaning": "comma-design",
-    "reading": "うずまき / ともえ / ハ",
+    "reading": "うずまき / ともえ / は",
     "type": "external_kanji"
   },
   "夫": {
     "kanji": "夫",
     "meaning": "husband, man",
-    "reading": "おっと / それ / フ / フウ / ブ",
+    "reading": "おっと / それ / ふ / ふう / ぶ",
     "type": "external_kanji"
   },
   "与": {
     "kanji": "与",
     "meaning": "award, bestow, cause",
-    "reading": "あずか.る / あた.える / くみ.する / ともに / ヨ",
+    "reading": "あずか.る / あた.える / くみ.する / ともに / よ",
     "type": "external_kanji"
   },
   "具": {
     "kanji": "具",
     "meaning": "counter for armor, suits, sets of furniture, ingredients, means",
-    "reading": "そな.える / つぶさ.に / グ",
+    "reading": "そな.える / つぶさ.に / ぐ",
     "type": "external_kanji"
   }
 };

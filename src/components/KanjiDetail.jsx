@@ -5,6 +5,8 @@ import { kanjiData } from '../data/kanji';
 import { radicalsData } from '../data/radicals';
 import { ArrowLeft, Play, Edit3, Trash2, Eye, EyeOff, Grid } from 'lucide-react';
 import { componentsDb, kanjiDecompositions } from '../data/components';
+import { toHiragana } from '../utils/kanaConverter';
+import FuriganaWord from './FuriganaWord';
 
 export default function KanjiDetail() {
   const { id } = useParams();
@@ -20,11 +22,14 @@ export default function KanjiDetail() {
   }
   
   const decompComps = kanjiItem ? (kanjiDecompositions[kanjiItem.kanji] || []) : [];
+
+  const standaloneWords = kanjiItem?.standalone || [];
   
   const renderReadingBadge = (reading, type) => {
     const className = type === 'onyomi' ? 'onyomi-badge' : 'kunyomi-badge';
-    if (reading.includes('.')) {
-      const [main, okuri] = reading.split('.');
+    const displayReading = type === 'onyomi' ? toHiragana(reading) : reading;
+    if (displayReading.includes('.')) {
+      const [main, okuri] = displayReading.split('.');
       return (
         <span className={className} key={reading}>
           {main}
@@ -34,7 +39,7 @@ export default function KanjiDetail() {
     }
     return (
       <span className={className} key={reading}>
-        {reading}
+        {displayReading}
       </span>
     );
   };
@@ -306,6 +311,26 @@ export default function KanjiDetail() {
             </span>
             <h1 className="detail-kanji-char">{kanjiItem.kanji}</h1>
             <div className="detail-meaning">{kanjiItem.meaning}</div>
+            
+            {/* Standalone Reading / Word Section */}
+            {!kanjiItem.isRadical && standaloneWords.length > 0 && (
+              <div className="standalone-reading-box">
+                <div className="standalone-title">
+                  Standalone Word & Reading (単体での言葉)
+                </div>
+                <div className="standalone-list">
+                  {standaloneWords.map((item, idx) => (
+                    <div key={idx} className="standalone-row">
+                      <span className="standalone-word">
+                        <FuriganaWord segments={item.segments} />
+                      </span>
+                      <span className="standalone-arrow">→</span>
+                      <span className="standalone-val">{item.reading}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
           {!kanjiItem.isRadical && (

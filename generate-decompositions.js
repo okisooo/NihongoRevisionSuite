@@ -19,6 +19,13 @@ const radicalsData = JSON.parse(jsonRadicalsStr);
 console.log(`Loaded ${kanjiData.length} curriculum kanjis.`);
 console.log(`Loaded ${radicalsData.length} radicals.`);
 
+function toHiragana(str) {
+  if (!str) return '';
+  return str.replace(/[\u30a1-\u30f6]/g, (match) => {
+    return String.fromCharCode(match.charCodeAt(0) - 0x60);
+  });
+}
+
 const dbChars = new Set([
   ...kanjiData.map(k => k.kanji),
   ...radicalsData.map(r => r.kanji)
@@ -75,7 +82,7 @@ async function run() {
           externalComponents[comp] = {
             kanji: comp,
             meaning: apiData.meanings.slice(0, 3).join(', '),
-            reading: [...apiData.kun_readings, ...apiData.on_readings].join(' / '),
+            reading: [...apiData.kun_readings, ...apiData.on_readings].map(toHiragana).join(' / '),
             type: 'external_kanji'
           };
         } else {

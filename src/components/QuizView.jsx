@@ -14,6 +14,7 @@ import {
   ArrowRight, 
   Trash2 
 } from 'lucide-react';
+import { parseRangeString } from '../utils/rangeParser';
 
 export default function QuizView() {
   // Setup states
@@ -51,7 +52,7 @@ export default function QuizView() {
   // Format readings helper
   const formatReadingString = (readingStr) => {
     if (!readingStr) return '';
-    return readingStr
+    return toHiragana(readingStr)
       .split(' / ')
       .map((r) => {
         if (r.includes('.')) {
@@ -65,9 +66,14 @@ export default function QuizView() {
   };
 
   // Kanjis available in the current selected range
-  const rangeKanjis = kanjiData.filter(
-    (k) => k.id >= rangeFrom && k.id <= rangeTo && !k.isRadical
-  );
+  const rangeKanjis = kanjiData.filter((k) => {
+    if (k.isRadical) return false;
+    if (customRangeText.trim()) {
+      const activeIds = parseRangeString(customRangeText, 1, 300);
+      return activeIds.has(k.id);
+    }
+    return k.id >= rangeFrom && k.id <= rangeTo;
+  });
 
   // Kanjis filtered by search text
   const filteredRangeKanjis = rangeKanjis.filter((k) => {
@@ -157,59 +163,17 @@ export default function QuizView() {
     setRangeFrom(from);
     setRangeTo(to);
     setSearchText('');
+    setCustomRangeText(''); // Clear query when preset is clicked
     const newKanjis = kanjiData.filter(k => k.id >= from && k.id <= to && !k.isRadical);
     setSelectedIds(new Set(newKanjis.map(k => k.id)));
   };
 
   const handleApplyCustomRanges = () => {
-    if (!customRangeText) return;
-    const additionIds = new Set();
-    const exclusionIds = new Set();
-    const parts = customRangeText.split(',');
-    
-    parts.forEach(part => {
-      const cleanPart = part.trim();
-      if (!cleanPart) return;
-      
-      const isExclusion = cleanPart.startsWith('!') || cleanPart.startsWith('-') || cleanPart.startsWith('^');
-      const innerPart = isExclusion ? cleanPart.slice(1).trim() : cleanPart;
-      
-      const targetSet = isExclusion ? exclusionIds : additionIds;
-      
-      if (innerPart.includes('-')) {
-        const [startStr, endStr] = innerPart.split('-');
-        const start = parseInt(startStr.trim());
-        const end = parseInt(endStr.trim());
-        if (!isNaN(start) && !isNaN(end)) {
-          const min = Math.min(start, end);
-          const max = Math.max(start, end);
-          for (let i = min; i <= max; i++) {
-            if (i >= 1 && i <= 300) {
-              targetSet.add(i);
-            }
-          }
-        }
-      } else {
-        const singleId = parseInt(innerPart);
-        if (!isNaN(singleId) && singleId >= 1 && singleId <= 300) {
-          targetSet.add(singleId);
-        }
-      }
-    });
-
-    // Compute final parsed set: additions minus exclusions
-    const finalIds = new Set();
-    additionIds.forEach(id => {
-      if (!exclusionIds.has(id)) {
-        finalIds.add(id);
-      }
-    });
+    if (!customRangeText.trim()) return;
+    const finalIds = parseRangeString(customRangeText, 1, 300);
 
     if (finalIds.size > 0) {
       setSelectedIds(finalIds);
-      const idsArray = Array.from(finalIds);
-      setRangeFrom(Math.min(...idsArray));
-      setRangeTo(Math.max(...idsArray));
       setSearchText('');
     }
   };
@@ -691,7 +655,7 @@ export default function QuizView() {
                   <span className="study-reading-vals">
                     {currentKanji.onyomi.map((r, i) => (
                       <span key={i} className="r-val">
-                        {r}
+                        {toHiragana(r)}
                         {i < currentKanji.onyomi.length - 1 && <span className="comma">, </span>}
                       </span>
                     ))}
@@ -854,7 +818,7 @@ export default function QuizView() {
                       <span className="study-badge on">Onyomi</span>
                       <span className="study-reading-vals">
                         {kanjiItem.onyomi.map((r, i) => (
-                          <span key={i} className="r-val">{r}</span>
+                          <span key={i} className="r-val">{toHiragana(r)}</span>
                         ))}
                       </span>
                     </div>

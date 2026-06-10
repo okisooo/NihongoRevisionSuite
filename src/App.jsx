@@ -2,8 +2,9 @@ import { HashRouter, Routes, Route, NavLink } from 'react-router-dom';
 import DictionaryView from './components/DictionaryView';
 import GrammarView from './components/GrammarView';
 import QuizView from './components/QuizView';
+import FuriganaGameView from './components/FuriganaGameView';
 import KanjiDetail from './components/KanjiDetail';
-import { BookA, Gamepad2, GraduationCap } from 'lucide-react';
+import { BookA, Gamepad2, GraduationCap, Keyboard } from 'lucide-react';
 import './App.css';
 
 function App() {
@@ -43,6 +44,14 @@ function App() {
               <Gamepad2 size={20} />
               <span>Vocabulary Quiz</span>
             </NavLink>
+
+            <NavLink 
+              to="/furigana-game" 
+              className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
+            >
+              <Keyboard size={20} />
+              <span>Furigana Game</span>
+            </NavLink>
           </div>
         </nav>
 
@@ -53,6 +62,7 @@ function App() {
             <Route path="/kanji/:id" element={<KanjiDetail />} />
             <Route path="/grammar" element={<GrammarView />} />
             <Route path="/quiz" element={<QuizView />} />
+            <Route path="/furigana-game" element={<FuriganaGameView />} />
           </Routes>
         </main>
 

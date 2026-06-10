@@ -426,6 +426,13 @@ classmateKanji.forEach(item => {
   classmateMap.set(item.kanji, item);
 });
 
+function toHiragana(str) {
+  if (!str) return '';
+  return str.replace(/[\u30a1-\u30f6]/g, (match) => {
+    return String.fromCharCode(match.charCodeAt(0) - 0x60);
+  });
+}
+
 const lines = rawList.trim().split('\n');
 const mergedKanjiData = [];
 const radicalsData = [];
@@ -442,12 +449,16 @@ lines.forEach((line) => {
 
   let reading = '';
   let meaning = '';
+  let onyomi = [];
+  let kunyomi = [];
+  let examples = [];
+  let standalone = [];
 
   if (isRadical) {
     radicalCounter++;
     const id = radicalCounter;
     const info = radicalMap[char];
-    reading = info ? info.reading : 'n/a';
+    reading = info ? toHiragana(info.reading) : 'n/a';
     meaning = info ? `[Radical] ${info.meaning}` : '[Radical/Component]';
     
     const radicalItem = {
@@ -464,16 +475,20 @@ lines.forEach((line) => {
     // If classmate updated this Kanji, use their values. Otherwise fall back to a generic default.
     const classmate = classmateMap.get(char);
     if (classmate) {
-      reading = classmate.reading;
+      reading = toHiragana(classmate.reading);
       meaning = classmate.meaning;
+      onyomi = (classmate.onyomi || []).map(toHiragana);
+      kunyomi = classmate.kunyomi || [];
+      examples = classmate.examples || [];
+      standalone = classmate.standalone || [];
     } else {
       // Fallback
       if (char === '質') {
-        reading = 'シツ, シチ / たち';
+        reading = toHiragana('シツ, シチ / たち');
         meaning = 'quality, substance, matter, temperament, pawn';
       } else {
         const info = radicalMap[char];
-        reading = info ? info.reading : 'n/a';
+        reading = info ? toHiragana(info.reading) : 'n/a';
         meaning = info ? info.meaning : 'Kanji';
       }
     }
@@ -483,7 +498,11 @@ lines.forEach((line) => {
       kanji: char,
       reading,
       meaning,
-      isRadical: false
+      isRadical: false,
+      onyomi,
+      kunyomi,
+      examples,
+      standalone
     });
   }
 });
