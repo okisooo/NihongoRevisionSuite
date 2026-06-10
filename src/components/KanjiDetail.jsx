@@ -4,6 +4,7 @@ import HanziWriter from 'hanzi-writer';
 import { kanjiData } from '../data/kanji';
 import { radicalsData } from '../data/radicals';
 import { ArrowLeft, Play, Edit3, Trash2, Eye, EyeOff, Grid } from 'lucide-react';
+import { componentsDb, kanjiDecompositions } from '../data/components';
 
 export default function KanjiDetail() {
   const { id } = useParams();
@@ -17,6 +18,8 @@ export default function KanjiDetail() {
     const numericId = parseInt(id && id.startsWith('k') ? id.substring(1) : id);
     kanjiItem = kanjiData.find(k => k.id === numericId);
   }
+  
+  const decompComps = kanjiItem ? (kanjiDecompositions[kanjiItem.kanji] || []) : [];
   
   const renderReadingBadge = (reading, type) => {
     const className = type === 'onyomi' ? 'onyomi-badge' : 'kunyomi-badge';
@@ -331,6 +334,75 @@ export default function KanjiDetail() {
                   </div>
                 </div>
               </div>
+              
+              {/* Kanji Building Blocks */}
+              {decompComps && decompComps.length > 0 && (
+                <div className="decomposition-section">
+                  <h3>Kanji Building Blocks (漢字の構成)</h3>
+                  <div className="decomp-formula">
+                    <span className="main-char">{kanjiItem.kanji}</span>
+                    <span className="equals-sign">=</span>
+                    {decompComps.map((comp, idx) => (
+                      <span key={idx} className="formula-part">
+                        {idx > 0 && <span className="plus-sign">+</span>}
+                        <span className="part-char">{comp}</span>
+                      </span>
+                    ))}
+                  </div>
+                  
+                  <div className="decomp-cards-grid">
+                    {decompComps.map((comp, idx) => {
+                      const info = componentsDb[comp];
+                      if (!info) {
+                        return (
+                          <div key={idx} className="decomp-part-card">
+                            <div className="decomp-part-header">
+                              <span className="part-kanji">{comp}</span>
+                            </div>
+                            <div className="decomp-part-body">
+                              <div className="part-meaning">Component</div>
+                            </div>
+                          </div>
+                        );
+                      }
+                      
+                      const isLinkable = info.type === 'kanji' || info.type === 'radical';
+                      const linkPath = `/kanji/${info.id}`;
+                      
+                      return (
+                        <div 
+                          key={idx} 
+                          className={`decomp-part-card ${isLinkable ? 'linkable' : ''}`}
+                          onClick={() => {
+                            if (isLinkable) {
+                              navigate(linkPath);
+                            }
+                          }}
+                        >
+                          <div className="decomp-part-header">
+                            <span className="part-kanji">{comp}</span>
+                            {isLinkable && (
+                              <span className="part-id-badge">
+                                {info.type === 'radical' ? `Radical` : `#${info.id}`}
+                              </span>
+                            )}
+                          </div>
+                          <div className="decomp-part-body">
+                            <div className="part-meaning" title={info.meaning}>
+                              {info.meaning}
+                            </div>
+                            {info.reading && info.reading !== 'n/a' && (
+                              <div className="part-reading">
+                                {info.reading.split(' / ').slice(0, 2).join(' / ')}
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
 
               {/* Example Compounds */}
               <div className="examples-section">

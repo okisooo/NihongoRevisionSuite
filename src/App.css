@@ -1851,4 +1851,461 @@
   margin-left: 2px;
 }
 
+/* Dictionary Card ID tag */
+.kanji-card {
+  position: relative;
+}
+
+.kanji-card-id {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  background: rgba(148, 163, 184, 0.08);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Custom Multi-Range Input styling */
+.custom-multi-range-container {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+.custom-multi-range-container label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.custom-range-input-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.selection-search-input.range {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  outline: none;
+}
+
+.selection-search-input.range:focus {
+  border-color: var(--primary-color);
+}
+
+.apply-range-btn {
+  padding: 8px 16px;
+  height: 38px;
+  font-size: 0.85rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+/* Weak Kanjis Practice styling */
+.weak-kanjis-container {
+  background: rgba(239, 68, 68, 0.02);
+  border: 1px dashed rgba(239, 68, 68, 0.2);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: left;
+}
+
+.weak-kanjis-container h3 {
+  color: #ef4444 !important;
+}
+
+.weak-focus-btn {
+  flex: 2;
+  background: rgba(239, 68, 68, 0.05);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.weak-focus-btn:hover {
+  background: #ef4444;
+  color: #ffffff;
+  border-color: #ef4444;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.15);
+}
+
+.weak-clear-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid var(--glass-border);
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.weak-clear-btn:hover {
+  background: rgba(239, 68, 68, 0.05);
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+/* Checklist Filter buttons */
+.checklist-filter-selector {
+  display: flex;
+  background: #f1f5f9;
+  border: 1px solid var(--glass-border);
+  padding: 3px;
+  border-radius: 8px;
+  gap: 2px;
+}
+
+.checklist-filter-selector .filter-btn {
+  background: none;
+  border: none;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.checklist-filter-selector .filter-btn:hover {
+  color: var(--text-main);
+}
+
+.checklist-filter-selector .filter-btn.active {
+  background: #ffffff;
+  color: var(--primary-color);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+}
+
+/* Flashcard study mode layout */
+.study-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.study-header h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.study-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  width: 100%;
+  gap: 12px;
+}
+
+.start-quiz-from-study {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 3D Flip Card Container */
+.flashcard-item {
+  background: transparent;
+  perspective: 1000px;
+  width: 100%;
+  height: 380px;
+  cursor: pointer;
+  position: relative;
+}
+
+.flashcard-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 20px;
+  padding: 32px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  box-shadow: var(--glass-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+.flashcard-item.flipped .front {
+  transform: rotateY(180deg);
+}
+
+.flashcard-item.flipped .back {
+  transform: rotateY(0deg);
+}
+
+.flashcard-face.front {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.flashcard-face.back {
+  transform: rotateY(-180deg);
+  z-index: 1;
+  align-items: stretch;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.card-id-badge {
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.card-kanji {
+  font-size: 8rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1;
+  margin-bottom: 20px;
+  font-family: 'Klee One', 'YuMincho', 'MS Mincho', serif;
+  text-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+}
+
+.card-hint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  background: rgba(148, 163, 184, 0.05);
+  padding: 6px 16px;
+  border-radius: 99px;
+}
+
+/* Back Face details */
+.card-header-small {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid var(--sidebar-border);
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+}
+
+.card-kanji-small {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--text-main);
+  font-family: 'Klee One', 'YuMincho', 'MS Mincho', serif;
+  line-height: 1;
+}
+
+.card-meaning-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.study-mode-btn {
+  border-color: rgba(99, 102, 241, 0.2) !important;
+  color: var(--primary-color) !important;
+  background: #ffffff;
+}
+
+.study-mode-btn:hover {
+  background: rgba(99, 102, 241, 0.04) !important;
+  border-color: var(--primary-color) !important;
+}
+
+/* Visual Decomposition Styles */
+.decomposition-section {
+  margin-top: 32px;
+  text-align: left;
+  border-top: 1px solid var(--sidebar-border);
+  padding-top: 24px;
+}
+
+.decomposition-section h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text-main);
+}
+
+.decomp-formula {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(15, 23, 42, 0.02);
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: 1px dashed rgba(15, 23, 42, 0.08);
+  margin-bottom: 20px;
+  font-family: 'Klee One', 'Noto Sans JP', sans-serif;
+}
+
+.decomp-formula .main-char {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--primary-color);
+}
+
+.decomp-formula .equals-sign {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.decomp-formula .plus-sign {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin: 0 4px;
+}
+
+.decomp-formula .part-char {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.decomp-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.decomp-part-card {
+  background: #ffffff;
+  border: 1px solid var(--sidebar-border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.decomp-part-card.linkable {
+  cursor: pointer;
+}
+
+.decomp-part-card.linkable:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.08);
+  background: rgba(99, 102, 241, 0.01);
+}
+
+.decomp-part-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.decomp-part-header .part-kanji {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-main);
+  font-family: 'Klee One', 'Noto Sans JP', sans-serif;
+}
+
+.decomp-part-header .part-id-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  background: rgba(99, 102, 241, 0.06);
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid rgba(99, 102, 241, 0.1);
+}
+
+.decomp-part-body .part-meaning {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.decomp-part-body .part-reading {
+  font-size: 0.7rem;
+  color: var(--primary-color);
+  font-weight: 500;
+  margin-top: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Flashcard study mnemonic equation */
+.study-decomp-formula {
+  background: rgba(99, 102, 241, 0.03);
+  border: 1px solid rgba(99, 102, 241, 0.08);
+  border-radius: 12px;
+  padding: 10px 16px;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.study-decomp-equation {
+  font-family: 'Klee One', 'Noto Sans JP', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.study-decomp-meanings {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.study-decomp-part-meaning {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+
+
 

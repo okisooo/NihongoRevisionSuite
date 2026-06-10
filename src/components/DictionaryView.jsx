@@ -246,6 +246,7 @@ export default function DictionaryView() {
               key={`${item.isRadical ? 'r' : 'k'}-${item.id}`} 
               className="kanji-card"
             >
+              <div className="kanji-card-id">#{item.id}</div>
               <div className="kanji-card-char">
                 {item.kanji}
                 {item.isRadical && <span className="radical-badge">*</span>}

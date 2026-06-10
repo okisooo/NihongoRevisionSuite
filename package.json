@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "start": "electron .",
-    "dist": "vite build && electron-builder"
+    "dist": "vite build && electron-builder && node create-desktop-shortcut.js"
   },
   "dependencies": {
     "hanzi-writer": "^3.7.3",

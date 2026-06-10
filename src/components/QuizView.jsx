@@ -1,16 +1,36 @@
 import { useState, useEffect } from 'react';
 import { kanjiData } from '../data/kanji';
-import { SlidersHorizontal, Settings, HelpCircle, RefreshCw, CheckCircle2, Search } from 'lucide-react';
+import { componentsDb, kanjiDecompositions } from '../data/components';
+import { 
+  SlidersHorizontal, 
+  Settings, 
+  HelpCircle, 
+  RefreshCw, 
+  CheckCircle2, 
+  Search, 
+  BookOpen, 
+  Play, 
+  ArrowLeft, 
+  ArrowRight, 
+  Trash2 
+} from 'lucide-react';
 
 export default function QuizView() {
   // Setup states
-  const [view, setView] = useState('setup'); // setup, playing, summary
+  const [view, setView] = useState('setup'); // setup, playing, summary, study
   const [quizMode, setQuizMode] = useState('meaning'); // meaning, reading
   const [numQuestions, setNumQuestions] = useState(10); // 10, 20, 50, all
   const [rangeFrom, setRangeFrom] = useState(1);
   const [rangeTo, setRangeTo] = useState(50);
-  const [selectedIds, setSelectedIds] = useState(new Set());
+  const [selectedIds, setSelectedIds] = useState(() => {
+    return new Set(kanjiData.filter(k => k.id >= 1 && k.id <= 50 && !k.isRadical).map(k => k.id));
+  });
   const [searchText, setSearchText] = useState('');
+  const [customRangeText, setCustomRangeText] = useState('');
+  const [checklistFilter, setChecklistFilter] = useState('all'); // all, selected
+  const [studyIdx, setStudyIdx] = useState(0);
+  const [isFlipped, setIsFlipped] = useState(false);
+  const [weakIdsCount, setWeakIdsCount] = useState(0);
 
   // Game states
   const [quizList, setQuizList] = useState([]);
@@ -67,11 +87,28 @@ export default function QuizView() {
     );
   });
 
-  // Initialize/adjust selectedIds when range changes
+  // Kanjis to display in the checklist grid
+  const displayedChecklistKanjis = filteredRangeKanjis.filter(k => {
+    if (checklistFilter === 'selected') {
+      return selectedIds.has(k.id);
+    }
+    return true;
+  });
+
+  // Load weak kanjis count on mount
+  const getWeakKanjisCount = () => {
+    try {
+      const weakJson = localStorage.getItem('weak_kanji_ids') || '[]';
+      const weakIds = JSON.parse(weakJson);
+      return Array.isArray(weakIds) ? weakIds.length : 0;
+    } catch (e) {
+      return 0;
+    }
+  };
+
   useEffect(() => {
-    const ids = new Set(rangeKanjis.map(k => k.id));
-    setSelectedIds(ids);
-  }, [rangeFrom, rangeTo]);
+    setWeakIdsCount(getWeakKanjisCount());
+  }, []);
 
   const handleToggleKanji = (id) => {
     const nextIds = new Set(selectedIds);
@@ -120,6 +157,76 @@ export default function QuizView() {
     setRangeFrom(from);
     setRangeTo(to);
     setSearchText('');
+    const newKanjis = kanjiData.filter(k => k.id >= from && k.id <= to && !k.isRadical);
+    setSelectedIds(new Set(newKanjis.map(k => k.id)));
+  };
+
+  const handleApplyCustomRanges = () => {
+    if (!customRangeText) return;
+    const parsedIds = new Set();
+    const parts = customRangeText.split(',');
+    
+    parts.forEach(part => {
+      const cleanPart = part.trim();
+      if (cleanPart.includes('-')) {
+        const [startStr, endStr] = cleanPart.split('-');
+        const start = parseInt(startStr.trim());
+        const end = parseInt(endStr.trim());
+        if (!isNaN(start) && !isNaN(end)) {
+          const min = Math.min(start, end);
+          const max = Math.max(start, end);
+          for (let i = min; i <= max; i++) {
+            if (i >= 1 && i <= 300) {
+              parsedIds.add(i);
+            }
+          }
+        }
+      } else {
+        const singleId = parseInt(cleanPart);
+        if (!isNaN(singleId) && singleId >= 1 && singleId <= 300) {
+          parsedIds.add(singleId);
+        }
+      }
+    });
+
+    if (parsedIds.size > 0) {
+      setSelectedIds(parsedIds);
+      const idsArray = Array.from(parsedIds);
+      setRangeFrom(Math.min(...idsArray));
+      setRangeTo(Math.max(...idsArray));
+      setSearchText('');
+    }
+  };
+
+  const handleSelectWeakKanjis = () => {
+    try {
+      const weakJson = localStorage.getItem('weak_kanji_ids') || '[]';
+      const weakIds = new Set(JSON.parse(weakJson));
+      const validWeakIds = new Set(
+        Array.from(weakIds).filter(id => kanjiData.some(k => k.id === id && !k.isRadical))
+      );
+      setSelectedIds(validWeakIds);
+      if (validWeakIds.size > 0) {
+        const idsArray = Array.from(validWeakIds);
+        setRangeFrom(Math.min(...idsArray));
+        setRangeTo(Math.max(...idsArray));
+        setSearchText('');
+      }
+    } catch (e) {
+      setSelectedIds(new Set());
+    }
+  };
+
+  const handleClearWeakKanjis = () => {
+    localStorage.removeItem('weak_kanji_ids');
+    setWeakIdsCount(0);
+  };
+
+  const startStudyMode = () => {
+    if (selectedIds.size === 0) return;
+    setStudyIdx(0);
+    setIsFlipped(false);
+    setView('study');
   };
 
   const shuffle = (array) => [...array].sort(() => Math.random() - 0.5);
@@ -193,6 +300,29 @@ export default function QuizView() {
 
     if (isCorrect) {
       setScore(s => s + 1);
+      // Remove from weak kanjis list in localStorage
+      try {
+        const weakJson = localStorage.getItem('weak_kanji_ids') || '[]';
+        const weakIds = new Set(JSON.parse(weakJson));
+        if (weakIds.has(kanjiItem.id)) {
+          weakIds.delete(kanjiItem.id);
+          localStorage.setItem('weak_kanji_ids', JSON.stringify(Array.from(weakIds)));
+          setWeakIdsCount(weakIds.size);
+        }
+      } catch (e) {
+        console.error('Error updating weak kanji', e);
+      }
+    } else {
+      // Add to weak kanjis list in localStorage
+      try {
+        const weakJson = localStorage.getItem('weak_kanji_ids') || '[]';
+        const weakIds = new Set(JSON.parse(weakJson));
+        weakIds.add(kanjiItem.id);
+        localStorage.setItem('weak_kanji_ids', JSON.stringify(Array.from(weakIds)));
+        setWeakIdsCount(weakIds.size);
+      } catch (e) {
+        console.error('Error saving weak kanji', e);
+      }
     }
 
     // Record history
@@ -297,7 +427,39 @@ export default function QuizView() {
                 </button>
               ))}
             </div>
+
+            {/* Custom Multi-Range Input */}
+            <div className="custom-multi-range-container">
+              <label className="study-label">Multi-Range Input (Comma-separated ranges or IDs):</label>
+              <div className="custom-range-input-row">
+                <input 
+                  type="text" 
+                  className="selection-search-input range"
+                  placeholder="e.g. 101-110, 121-130, 131-140"
+                  value={customRangeText}
+                  onChange={(e) => setCustomRangeText(e.target.value)}
+                />
+                <button className="quick-sel-btn apply-range-btn" onClick={handleApplyCustomRanges}>
+                  Apply
+                </button>
+              </div>
+            </div>
           </div>
+
+          {/* Weak Kanjis Practice Focus */}
+          {weakIdsCount > 0 && (
+            <div className="setup-group weak-kanjis-container">
+              <h3>Weak Kanjis Focus ({weakIdsCount} incorrect previously)</h3>
+              <div style={{ display: 'flex', gap: '10px' }}>
+                <button className="control-button weak-focus-btn" onClick={handleSelectWeakKanjis}>
+                  Select All Weak Kanjis
+                </button>
+                <button className="control-button danger weak-clear-btn" onClick={handleClearWeakKanjis}>
+                  <Trash2 size={14} style={{ marginRight: '6px' }} /> Clear History
+                </button>
+              </div>
+            </div>
+          )}
 
           {/* 3. Detailed Kanji Checkbox Selection */}
           <div className="setup-group">
@@ -311,16 +473,35 @@ export default function QuizView() {
               </div>
             </div>
 
-            {/* Search Box */}
-            <div className="selection-search-container">
-              <Search className="search-icon" size={16} />
-              <input 
-                type="text"
-                className="selection-search-input"
-                placeholder="Search by Kanji, reading, or meaning..."
-                value={searchText}
-                onChange={(e) => setSearchText(e.target.value)}
-              />
+            {/* Display Mode Toggles and Search */}
+            <div style={{ display: 'flex', gap: '10px', alignItems: 'center', marginBottom: '8px' }}>
+              {/* Checklist display filter */}
+              <div className="checklist-filter-selector">
+                <button 
+                  className={`filter-btn ${checklistFilter === 'all' ? 'active' : ''}`}
+                  onClick={() => setChecklistFilter('all')}
+                >
+                  Show All
+                </button>
+                <button 
+                  className={`filter-btn ${checklistFilter === 'selected' ? 'active' : ''}`}
+                  onClick={() => setChecklistFilter('selected')}
+                >
+                  Selected Only ({selectedIds.size})
+                </button>
+              </div>
+
+              {/* Search Box */}
+              <div className="selection-search-container" style={{ flex: 1 }}>
+                <Search className="search-icon" size={16} />
+                <input 
+                  type="text"
+                  className="selection-search-input"
+                  placeholder="Search by Kanji, reading, meaning..."
+                  value={searchText}
+                  onChange={(e) => setSearchText(e.target.value)}
+                />
+              </div>
             </div>
 
             {/* Quick Presets */}
@@ -334,13 +515,13 @@ export default function QuizView() {
               </div>
             </div>
 
-            {filteredRangeKanjis.length === 0 ? (
+            {displayedChecklistKanjis.length === 0 ? (
               <div className="empty-message" style={{ padding: '20px' }}>
-                No Kanjis found matching search.
+                No Kanjis found matching search/filter.
               </div>
             ) : (
               <div className="kanji-selection-list">
-                {filteredRangeKanjis.map((k) => (
+                {displayedChecklistKanjis.map((k) => (
                   <label 
                     key={k.id} 
                     className={`kanji-select-box ${selectedIds.has(k.id) ? 'selected' : ''}`}
@@ -375,14 +556,187 @@ export default function QuizView() {
             </div>
           </div>
 
-          {/* Start Quiz Action */}
+          {/* Quiz Action Buttons (Quiz / Study) */}
+          <div style={{ display: 'flex', gap: '12px', marginTop: '10px' }}>
+            <button 
+              className="control-button study-mode-btn" 
+              style={{ flex: 1, borderRadius: '12px' }}
+              disabled={selectedIds.size === 0}
+              onClick={startStudyMode}
+            >
+              <BookOpen size={18} style={{ marginRight: '6px' }} />
+              Study Selected ({selectedIds.size})
+            </button>
+            <button 
+              className="action-button primary" 
+              style={{ flex: 1.5, borderRadius: '12px' }}
+              disabled={selectedIds.size === 0}
+              onClick={startQuiz}
+            >
+              <Play size={18} style={{ marginRight: '6px' }} />
+              Start Quiz
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (view === 'study') {
+    const studyList = kanjiData.filter(k => selectedIds.has(k.id));
+    const currentKanji = studyList[studyIdx];
+
+    if (!currentKanji) {
+      setView('setup');
+      return null;
+    }
+
+    const decompComps = kanjiDecompositions[currentKanji.kanji] || [];
+
+    return (
+      <div className="quiz-container">
+        <button className="back-button" onClick={() => setView('setup')}>
+          <ArrowLeft size={18} />
+          Back to Setup
+        </button>
+
+        <div className="study-header">
+          <h2>Study Selected Kanjis</h2>
+          <span className="score">Card {studyIdx + 1} of {studyList.length}</span>
+        </div>
+
+        {/* The Card */}
+        <div 
+          className={`flashcard-item ${isFlipped ? 'flipped' : ''}`}
+          onClick={() => setIsFlipped(!isFlipped)}
+        >
+          <div className="flashcard-face front">
+            <span className="card-id-badge">#{currentKanji.id}</span>
+            <div className="card-kanji">{currentKanji.kanji}</div>
+            <div className="card-hint">Click card to flip & reveal readings</div>
+          </div>
+
+          <div className="flashcard-face back">
+            <span className="card-id-badge">#{currentKanji.id}</span>
+            <div className="card-header-small">
+              <span className="card-kanji-small">{currentKanji.kanji}</span>
+              <div className="card-meaning-title">{currentKanji.meaning}</div>
+            </div>
+
+            {/* Visual Decomposition Formula */}
+            {decompComps.length > 0 && (
+              <div className="study-decomp-formula">
+                <span className="study-decomp-equation">
+                  {currentKanji.kanji} = {decompComps.join(' + ')}
+                </span>
+                <div className="study-decomp-meanings">
+                  {decompComps.map((comp, idx) => {
+                    const info = componentsDb[comp];
+                    if (!info) return null;
+                    const cleanMeaning = info.meaning.replace(/^\[Radical\]\s*/, '').split(', ')[0];
+                    return (
+                      <span key={idx} className="study-decomp-part-meaning">
+                        <strong>{comp}</strong> ({cleanMeaning}){idx < decompComps.length - 1 ? ' + ' : ''}
+                      </span>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
+            <div className="card-readings-list">
+              {currentKanji.kunyomi && currentKanji.kunyomi.length > 0 && (
+                <div className="study-reading-row kun">
+                  <span className="study-badge kun">Kun</span>
+                  <span className="study-reading-vals">
+                    {currentKanji.kunyomi.map((r, i) => {
+                      let displayValue = r;
+                      let okuriValue = '';
+                      if (r.includes('.')) {
+                        const [main, okuri] = r.split('.');
+                        displayValue = main;
+                        okuriValue = `(${okuri})`;
+                      }
+                      return (
+                        <span key={i} className="r-val">
+                          {displayValue}
+                          {okuriValue && <span className="r-okuri">{okuriValue}</span>}
+                          {i < currentKanji.kunyomi.length - 1 && <span className="comma">, </span>}
+                        </span>
+                      );
+                    })}
+                  </span>
+                </div>
+              )}
+
+              {currentKanji.onyomi && currentKanji.onyomi.length > 0 && (
+                <div className="study-reading-row on">
+                  <span className="study-badge on">On</span>
+                  <span className="study-reading-vals">
+                    {currentKanji.onyomi.map((r, i) => (
+                      <span key={i} className="r-val">
+                        {r}
+                        {i < currentKanji.onyomi.length - 1 && <span className="comma">, </span>}
+                      </span>
+                    ))}
+                  </span>
+                </div>
+              )}
+            </div>
+
+            {currentKanji.examples && currentKanji.examples.length > 0 && (
+              <div className="study-compounds-section">
+                <div className="study-label">Compounds</div>
+                <div className="study-compounds-mini-grid">
+                  {currentKanji.examples.slice(0, 3).map((ex, i) => (
+                    <div key={i} className="study-compound-card">
+                      <div className="comp-word-header">
+                        <span className="c-word">{ex.word}</span>
+                        <span className="c-reading">{ex.reading}</span>
+                      </div>
+                      <div className="c-meaning">{ex.meaning}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Controls */}
+        <div className="study-controls">
           <button 
-            className="action-button primary" 
-            style={{ width: '100%', borderRadius: '12px', marginTop: '10px' }}
-            disabled={selectedIds.size === 0}
-            onClick={startQuiz}
+            className="control-button" 
+            disabled={studyIdx === 0}
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsFlipped(false);
+              setStudyIdx(idx => idx - 1);
+            }}
           >
-            Start Quiz
+            <ArrowLeft size={16} /> Previous
+          </button>
+
+          <button 
+            className="action-button primary start-quiz-from-study"
+            style={{ padding: '12px 24px', borderRadius: '12px' }}
+            onClick={() => {
+              startQuiz();
+            }}
+          >
+            <Play size={16} style={{ marginRight: '6px' }} /> Start Quiz ({studyList.length})
+          </button>
+
+          <button 
+            className="control-button" 
+            disabled={studyIdx === studyList.length - 1}
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsFlipped(false);
+              setStudyIdx(idx => idx + 1);
+            }}
+          >
+            Next <ArrowRight size={16} />
           </button>
         </div>
       </div>
