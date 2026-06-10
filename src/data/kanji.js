@@ -153,7 +153,8 @@ export const kanjiData = [
     ],
     "kunyomi": [
       "ふた",
-      "ふた.つ"
+      "ふた.つ",
+      "ふたたび"
     ],
     "examples": [
       {
@@ -290,7 +291,8 @@ export const kanjiData = [
     "meaning": "three",
     "isRadical": false,
     "onyomi": [
-      "サン"
+      "サン",
+      "ゾウ"
     ],
     "kunyomi": [
       "み",
@@ -4872,6 +4874,7 @@ export const kanjiData = [
       "ジュッ"
     ],
     "kunyomi": [
+      "そ",
       "と",
       "とお"
     ],
@@ -19086,15 +19089,148 @@ export const kanjiData = [
   },
   {
     "id": 135,
-    "kanji": "广",
-    "reading": "ゲン",
-    "meaning": "dotted cliff radical (no. 53)",
+    "kanji": "質",
+    "reading": "シツ, シチ / たち",
+    "meaning": "quality, substance, matter, temperament, pawn",
     "isRadical": false,
     "onyomi": [
-      "ゲン"
+      "シチ",
+      "シツ",
+      "チ"
     ],
-    "kunyomi": [],
-    "examples": []
+    "kunyomi": [
+      "ただ.す",
+      "たち",
+      "もと",
+      "わりふ"
+    ],
+    "examples": [
+      {
+        "word": "地質",
+        "reading": "ちしつ",
+        "meaning": "geological features"
+      },
+      {
+        "word": "人質",
+        "reading": "ひとじち",
+        "meaning": "hostage"
+      },
+      {
+        "word": "質量",
+        "reading": "しつりょう",
+        "meaning": "mass"
+      },
+      {
+        "word": "質屋",
+        "reading": "しちや",
+        "meaning": "pawnshop"
+      },
+      {
+        "word": "品質",
+        "reading": "ひんしつ",
+        "meaning": "quality (of a product or a service)"
+      },
+      {
+        "word": "硬質",
+        "reading": "こうしつ",
+        "meaning": "hardness, stiffness"
+      },
+      {
+        "word": "均質",
+        "reading": "きんしつ",
+        "meaning": "homogeneous, homogeneity"
+      },
+      {
+        "word": "特質",
+        "reading": "とくしつ",
+        "meaning": "characteristic, feature, special quality"
+      },
+      {
+        "word": "性質",
+        "reading": "せいしつ",
+        "meaning": "nature, property, disposition"
+      },
+      {
+        "word": "質問",
+        "reading": "しつもん",
+        "meaning": "question, inquiry, enquiry"
+      },
+      {
+        "word": "糖質",
+        "reading": "とうしつ",
+        "meaning": "sugariness, saccharinity, carbohydrate"
+      },
+      {
+        "word": "本質",
+        "reading": "ほんしつ",
+        "meaning": "essence, true nature, substance"
+      },
+      {
+        "word": "物質",
+        "reading": "ぶっしつ",
+        "meaning": "matter"
+      },
+      {
+        "word": "質素",
+        "reading": "しっそ",
+        "meaning": "simple, plain"
+      },
+      {
+        "word": "素質",
+        "reading": "そしつ",
+        "meaning": "nature, character, temperament"
+      },
+      {
+        "word": "悪質",
+        "reading": "あくしつ",
+        "meaning": "malicious, vicious, malignant"
+      },
+      {
+        "word": "体質",
+        "reading": "たいしつ",
+        "meaning": "character (of a group, organization, etc.), innate characteristics, make-up"
+      },
+      {
+        "word": "皮質",
+        "reading": "ひしつ",
+        "meaning": "cortex"
+      },
+      {
+        "word": "上質",
+        "reading": "じょうしつ",
+        "meaning": "fine quality"
+      },
+      {
+        "word": "形質",
+        "reading": "けいしつ",
+        "meaning": "form and nature"
+      },
+      {
+        "word": "脂質",
+        "reading": "ししつ",
+        "meaning": "lipid"
+      },
+      {
+        "word": "紙質",
+        "reading": "ししつ",
+        "meaning": "paper quality"
+      },
+      {
+        "word": "質的",
+        "reading": "しつてき",
+        "meaning": "qualitative"
+      },
+      {
+        "word": "水質",
+        "reading": "すいしつ",
+        "meaning": "water quality"
+      },
+      {
+        "word": "異質",
+        "reading": "いしつ",
+        "meaning": "different (quality, nature), heterogeneous"
+      }
+    ]
   },
   {
     "id": 136,
@@ -24348,285 +24484,6 @@ export const kanjiData = [
   },
   {
     "id": 173,
-    "kanji": "用",
-    "reading": "もち.いる / ヨウ",
-    "meaning": "business, employ, service, use, utilize",
-    "isRadical": false,
-    "onyomi": [
-      "ヨウ"
-    ],
-    "kunyomi": [
-      "もち.いる"
-    ],
-    "examples": [
-      {
-        "word": "代用",
-        "reading": "だいよう",
-        "meaning": "substitution"
-      },
-      {
-        "word": "適用",
-        "reading": "てきよう",
-        "meaning": "applying (e.g. a technology), adoption"
-      },
-      {
-        "word": "費用",
-        "reading": "ひよう",
-        "meaning": "cost, expense"
-      },
-      {
-        "word": "用例",
-        "reading": "ようれい",
-        "meaning": "example, illustration"
-      },
-      {
-        "word": "常用",
-        "reading": "じょうよう",
-        "meaning": "habitual use, daily use"
-      },
-      {
-        "word": "実用",
-        "reading": "じつよう",
-        "meaning": "practical use, utility"
-      },
-      {
-        "word": "服用",
-        "reading": "ふくよう",
-        "meaning": "taking medicine, dosing"
-      },
-      {
-        "word": "悪用",
-        "reading": "あくよう",
-        "meaning": "abuse, misuse, perversion"
-      },
-      {
-        "word": "共用",
-        "reading": "きょうよう",
-        "meaning": "common use, communal use, sharing"
-      },
-      {
-        "word": "愛用",
-        "reading": "あいよう",
-        "meaning": "favorite, favourite, habitually used"
-      },
-      {
-        "word": "引用",
-        "reading": "いんよう",
-        "meaning": "quotation, citation, reference"
-      },
-      {
-        "word": "用途",
-        "reading": "ようと",
-        "meaning": "use, service, purpose"
-      },
-      {
-        "word": "作用",
-        "reading": "さよう",
-        "meaning": "action, operation, effect"
-      },
-      {
-        "word": "用件",
-        "reading": "ようけん",
-        "meaning": "business, thing to be done, something that should be performed"
-      },
-      {
-        "word": "用心",
-        "reading": "ようじん",
-        "meaning": "care, precaution, guarding"
-      },
-      {
-        "word": "盗用",
-        "reading": "とうよう",
-        "meaning": "embezzlement, fraudulent use, plagiarism"
-      },
-      {
-        "word": "用具",
-        "reading": "ようぐ",
-        "meaning": "tool, implement, instrument"
-      },
-      {
-        "word": "利用",
-        "reading": "りよう",
-        "meaning": "use, utilization, utilisation"
-      },
-      {
-        "word": "用意",
-        "reading": "ようい",
-        "meaning": "preparation, arrangements, provision"
-      },
-      {
-        "word": "使用",
-        "reading": "しよう",
-        "meaning": "use, application, employment"
-      },
-      {
-        "word": "用事",
-        "reading": "ようじ",
-        "meaning": "tasks, things to do, errand"
-      },
-      {
-        "word": "応用",
-        "reading": "おうよう",
-        "meaning": "applied (e.g. physics, linguistics, research)"
-      },
-      {
-        "word": "用紙",
-        "reading": "ようし",
-        "meaning": "blank form"
-      },
-      {
-        "word": "信用",
-        "reading": "しんよう",
-        "meaning": "credit (finance)"
-      },
-      {
-        "word": "多用",
-        "reading": "たよう",
-        "meaning": "busyness, a lot of things to do"
-      }
-    ]
-  },
-  {
-    "id": 174,
-    "kanji": "不",
-    "reading": "フ / ブ",
-    "meaning": "bad, clumsy, negative, non-, ugly",
-    "isRadical": false,
-    "onyomi": [
-      "フ",
-      "ブ"
-    ],
-    "kunyomi": [],
-    "examples": [
-      {
-        "word": "不要",
-        "reading": "ふよう",
-        "meaning": "unnecessary, unneeded"
-      },
-      {
-        "word": "不況",
-        "reading": "ふきょう",
-        "meaning": "depression, recession, slump"
-      },
-      {
-        "word": "不利",
-        "reading": "ふり",
-        "meaning": "disadvantage, handicap, unfavorable position"
-      },
-      {
-        "word": "不便",
-        "reading": "ふべん",
-        "meaning": "inconvenience, inexpediency, unhandiness"
-      },
-      {
-        "word": "不精",
-        "reading": "ぶしょう",
-        "meaning": "indolence, laziness, sloth"
-      },
-      {
-        "word": "不屈",
-        "reading": "ふくつ",
-        "meaning": "persistence, fortitude, indomitability"
-      },
-      {
-        "word": "不眠",
-        "reading": "ふみん",
-        "meaning": "sleeplessness, insomnia, wakefulness"
-      },
-      {
-        "word": "不平",
-        "reading": "ふへい",
-        "meaning": "discontent, dissatisfaction, complaint"
-      },
-      {
-        "word": "不審",
-        "reading": "ふしん",
-        "meaning": "doubt, suspicion, question"
-      },
-      {
-        "word": "不慣",
-        "reading": "ふなれ",
-        "meaning": "inexperienced, unfamiliar (with), unversed"
-      },
-      {
-        "word": "不運",
-        "reading": "ふうん",
-        "meaning": "misfortune, bad luck, ill luck"
-      },
-      {
-        "word": "不吉",
-        "reading": "ふきつ",
-        "meaning": "ominous, sinister, unlucky"
-      },
-      {
-        "word": "不意",
-        "reading": "ふい",
-        "meaning": "sudden, abrupt, unexpected"
-      },
-      {
-        "word": "不慮",
-        "reading": "ふりょ",
-        "meaning": "unforeseen, unexpected, sudden"
-      },
-      {
-        "word": "不敵",
-        "reading": "ふてき",
-        "meaning": "daring, fearless, intrepid"
-      },
-      {
-        "word": "不満",
-        "reading": "ふまん",
-        "meaning": "dissatisfaction, discontent, displeasure"
-      },
-      {
-        "word": "不振",
-        "reading": "ふしん",
-        "meaning": "dullness, slump, stagnation"
-      },
-      {
-        "word": "不和",
-        "reading": "ふわ",
-        "meaning": "friction, discord, trouble"
-      },
-      {
-        "word": "不純",
-        "reading": "ふじゅん",
-        "meaning": "impure, adulterated, foul"
-      },
-      {
-        "word": "不順",
-        "reading": "ふじゅん",
-        "meaning": "irregular, unseasonable, changeable"
-      },
-      {
-        "word": "不徳",
-        "reading": "ふとく",
-        "meaning": "lack of virtue, immorality, vice"
-      },
-      {
-        "word": "不通",
-        "reading": "ふつう",
-        "meaning": "suspension, interruption, stoppage"
-      },
-      {
-        "word": "不朽",
-        "reading": "ふきゅう",
-        "meaning": "everlasting, immortal, eternal"
-      },
-      {
-        "word": "不当",
-        "reading": "ふとう",
-        "meaning": "injustice, impropriety, unreasonableness"
-      },
-      {
-        "word": "不安",
-        "reading": "ふあん",
-        "meaning": "anxiety, uneasiness, worry"
-      }
-    ]
-  },
-  {
-    "id": 175,
     "kanji": "急",
     "reading": "いそ.ぎ / いそ.ぐ / せ.く / キュウ",
     "meaning": "emergency, hurry, steep, sudden",
@@ -24768,7 +24625,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 176,
+    "id": 174,
     "kanji": "悪",
     "reading": "-にく.い / あ.し / ああ / いずくに / いずくんぞ / にく.い / にく.む / わる- / わる.い / アク / オ",
     "meaning": "bad, evil, false, rascal, vice, wrong",
@@ -24917,7 +24774,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 177,
+    "id": 175,
     "kanji": "兄",
     "reading": "あに / キョウ / ケイ",
     "meaning": "big brother, elder brother",
@@ -25058,7 +24915,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 178,
+    "id": 176,
     "kanji": "弟",
     "reading": "おとうと / ダイ / テイ / デ",
     "meaning": "faithful service to elders, younger brother",
@@ -25200,7 +25057,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 179,
+    "id": 177,
     "kanji": "親",
     "reading": "おや / おや- / した.しい / した.しむ / シン",
     "meaning": "dealer (cards), familiarity, intimacy, parent, relative",
@@ -25343,7 +25200,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 180,
+    "id": 178,
     "kanji": "主",
     "reading": "あるじ / おも / ぬし / シュ / シュウ / ス",
     "meaning": "chief, lord, main thing, master, principal",
@@ -25487,7 +25344,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 181,
+    "id": 179,
     "kanji": "注",
     "reading": "さ.す / そそ.ぐ / つ.ぐ / チュウ",
     "meaning": "annotate, comment, concentrate on, flow into, irrigate, notes, pour, shed (tears)",
@@ -25629,7 +25486,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 182,
+    "id": 180,
     "kanji": "住",
     "reading": "-ず.まい / す.まう / す.む / ジュウ / チュウ / ヂュウ",
     "meaning": "dwell, inhabit, live, reside",
@@ -25773,7 +25630,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 183,
+    "id": 181,
     "kanji": "春",
     "reading": "はる / シュン",
     "meaning": "spring (season), springtime",
@@ -25913,7 +25770,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 184,
+    "id": 182,
     "kanji": "夏",
     "reading": "なつ / カ / ガ / ゲ",
     "meaning": "summer",
@@ -26055,7 +25912,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 185,
+    "id": 183,
     "kanji": "秋",
     "reading": "あき / とき / シュウ",
     "meaning": "autumn",
@@ -26196,7 +26053,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 186,
+    "id": 184,
     "kanji": "冬",
     "reading": "ふゆ / トウ",
     "meaning": "winter",
@@ -26336,7 +26193,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 187,
+    "id": 185,
     "kanji": "寒",
     "reading": "さむ.い / カン",
     "meaning": "cold",
@@ -26476,7 +26333,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 188,
+    "id": 186,
     "kanji": "暑",
     "reading": "あつ.い / ショ",
     "meaning": "hot, sultry, summer heat",
@@ -26616,7 +26473,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 189,
+    "id": 187,
     "kanji": "晴",
     "reading": "-ば.れ / は.らす / は.れ / は.れ- / は.れる / セイ",
     "meaning": "clear up",
@@ -26760,7 +26617,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 190,
+    "id": 188,
     "kanji": "終",
     "reading": "-お.わる / お.える / お.わる / おわ.る / つい / つい.に / シュウ",
     "meaning": "end, finish",
@@ -26905,7 +26762,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 191,
+    "id": 189,
     "kanji": "紙",
     "reading": "かみ / シ",
     "meaning": "paper",
@@ -27045,7 +26902,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 192,
+    "id": 190,
     "kanji": "低",
     "reading": "ひく.い / ひく.まる / ひく.める / テイ",
     "meaning": "humble, lower, short",
@@ -27187,7 +27044,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 193,
+    "id": 191,
     "kanji": "肉",
     "reading": "しし / ニク",
     "meaning": "meat",
@@ -27327,7 +27184,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 194,
+    "id": 192,
     "kanji": "鳥",
     "reading": "とり / チョウ",
     "meaning": "bird, chicken",
@@ -27467,7 +27324,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 195,
+    "id": 193,
     "kanji": "犬",
     "reading": "いぬ / いぬ- / ケン",
     "meaning": "dog",
@@ -27608,7 +27465,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 196,
+    "id": 194,
     "kanji": "洋",
     "reading": "ヨウ",
     "meaning": "Western style, foreign, ocean, sea",
@@ -27746,7 +27603,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 197,
+    "id": 195,
     "kanji": "和",
     "reading": "あ.える / なご.む / なご.やか / やわ.らぐ / やわ.らげる / オ / カ / ワ",
     "meaning": "Japan, Japanese style, harmony, peace, soften",
@@ -27892,7 +27749,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 198,
+    "id": 196,
     "kanji": "服",
     "reading": "フク",
     "meaning": "admit, clothing, discharge, obey",
@@ -28030,7 +27887,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 199,
+    "id": 197,
     "kanji": "式",
     "reading": "シキ",
     "meaning": "ceremony, expression, form, function, method, rite, style, system",
@@ -28168,7 +28025,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 200,
+    "id": 198,
     "kanji": "試",
     "reading": "こころ.みる / ため.す / シ",
     "meaning": "attempt, experiment, ordeal, test, try",
@@ -28309,7 +28166,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 201,
+    "id": 199,
     "kanji": "験",
     "reading": "あかし / しるし / ため.す / ためし / ケン / ゲン",
     "meaning": "effect, testing, verification",
@@ -28453,7 +28310,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 202,
+    "id": 200,
     "kanji": "近",
     "reading": "ちか.い / キン / コン",
     "meaning": "akin, early, near, tantamount",
@@ -28594,7 +28451,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 203,
+    "id": 201,
     "kanji": "遠",
     "reading": "とお.い / エン / オン",
     "meaning": "distant, far",
@@ -28735,7 +28592,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 204,
+    "id": 202,
     "kanji": "送",
     "reading": "おく.る / ソウ",
     "meaning": "escort, send",
@@ -28875,7 +28732,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 205,
+    "id": 203,
     "kanji": "回",
     "reading": "-まわ.し / -まわ.す / -まわ.り / -まわ.る / か.える / まわ.し- / まわ.す / まわ.る / もとお.る / エ / カイ",
     "meaning": "-times, counter for occurrences, game, revolve, round",
@@ -29024,7 +28881,434 @@ export const kanjiData = [
     ]
   },
   {
+    "id": 204,
+    "kanji": "用",
+    "reading": "もち.いる / ヨウ",
+    "meaning": "business, employ, service, use, utilize",
+    "isRadical": false,
+    "onyomi": [
+      "ヨウ"
+    ],
+    "kunyomi": [
+      "もち.いる"
+    ],
+    "examples": [
+      {
+        "word": "代用",
+        "reading": "だいよう",
+        "meaning": "substitution"
+      },
+      {
+        "word": "適用",
+        "reading": "てきよう",
+        "meaning": "applying (e.g. a technology), adoption"
+      },
+      {
+        "word": "費用",
+        "reading": "ひよう",
+        "meaning": "cost, expense"
+      },
+      {
+        "word": "用例",
+        "reading": "ようれい",
+        "meaning": "example, illustration"
+      },
+      {
+        "word": "常用",
+        "reading": "じょうよう",
+        "meaning": "habitual use, daily use"
+      },
+      {
+        "word": "実用",
+        "reading": "じつよう",
+        "meaning": "practical use, utility"
+      },
+      {
+        "word": "服用",
+        "reading": "ふくよう",
+        "meaning": "taking medicine, dosing"
+      },
+      {
+        "word": "悪用",
+        "reading": "あくよう",
+        "meaning": "abuse, misuse, perversion"
+      },
+      {
+        "word": "共用",
+        "reading": "きょうよう",
+        "meaning": "common use, communal use, sharing"
+      },
+      {
+        "word": "愛用",
+        "reading": "あいよう",
+        "meaning": "favorite, favourite, habitually used"
+      },
+      {
+        "word": "引用",
+        "reading": "いんよう",
+        "meaning": "quotation, citation, reference"
+      },
+      {
+        "word": "用途",
+        "reading": "ようと",
+        "meaning": "use, service, purpose"
+      },
+      {
+        "word": "作用",
+        "reading": "さよう",
+        "meaning": "action, operation, effect"
+      },
+      {
+        "word": "用件",
+        "reading": "ようけん",
+        "meaning": "business, thing to be done, something that should be performed"
+      },
+      {
+        "word": "用心",
+        "reading": "ようじん",
+        "meaning": "care, precaution, guarding"
+      },
+      {
+        "word": "盗用",
+        "reading": "とうよう",
+        "meaning": "embezzlement, fraudulent use, plagiarism"
+      },
+      {
+        "word": "用具",
+        "reading": "ようぐ",
+        "meaning": "tool, implement, instrument"
+      },
+      {
+        "word": "利用",
+        "reading": "りよう",
+        "meaning": "use, utilization, utilisation"
+      },
+      {
+        "word": "用意",
+        "reading": "ようい",
+        "meaning": "preparation, arrangements, provision"
+      },
+      {
+        "word": "使用",
+        "reading": "しよう",
+        "meaning": "use, application, employment"
+      },
+      {
+        "word": "用事",
+        "reading": "ようじ",
+        "meaning": "tasks, things to do, errand"
+      },
+      {
+        "word": "応用",
+        "reading": "おうよう",
+        "meaning": "applied (e.g. physics, linguistics, research)"
+      },
+      {
+        "word": "用紙",
+        "reading": "ようし",
+        "meaning": "blank form"
+      },
+      {
+        "word": "信用",
+        "reading": "しんよう",
+        "meaning": "credit (finance)"
+      },
+      {
+        "word": "多用",
+        "reading": "たよう",
+        "meaning": "busyness, a lot of things to do"
+      }
+    ]
+  },
+  {
+    "id": 205,
+    "kanji": "通",
+    "reading": "-とお.り / -どお.し / -どお.り / かよ.う / とお.し / とお.す / とお.り / とお.る / ツ / ツウ",
+    "meaning": "avenue, commute, counter for letters, notes, documents, etc., pass through, traffic",
+    "isRadical": false,
+    "onyomi": [
+      "ツ",
+      "ツウ"
+    ],
+    "kunyomi": [
+      "-とお.り",
+      "-どお.し",
+      "-どお.り",
+      "かよ.う",
+      "とお.し",
+      "とお.す",
+      "とお.り",
+      "とお.る"
+    ],
+    "examples": [
+      {
+        "word": "通勤",
+        "reading": "つうきん",
+        "meaning": "commuting to work"
+      },
+      {
+        "word": "通貨",
+        "reading": "つうか",
+        "meaning": "currency"
+      },
+      {
+        "word": "通学",
+        "reading": "つうがく",
+        "meaning": "commuting to school, school commute"
+      },
+      {
+        "word": "文通",
+        "reading": "ぶんつう",
+        "meaning": "correspondence, exchange of letters"
+      },
+      {
+        "word": "表通",
+        "reading": "おもてどおり",
+        "meaning": "main street (as opposed to a side street), high street"
+      },
+      {
+        "word": "通帳",
+        "reading": "つうちょう",
+        "meaning": "passbook, bankbook"
+      },
+      {
+        "word": "大通",
+        "reading": "おおどおり",
+        "meaning": "main street, avenue, boulevard"
+      },
+      {
+        "word": "直通",
+        "reading": "ちょくつう",
+        "meaning": "direct line, direct communication, connecting directly"
+      },
+      {
+        "word": "通路",
+        "reading": "つうろ",
+        "meaning": "passage, pathway, roadway"
+      },
+      {
+        "word": "不通",
+        "reading": "ふつう",
+        "meaning": "suspension, interruption, stoppage"
+      },
+      {
+        "word": "交通",
+        "reading": "こうつう",
+        "meaning": "traffic, transportation, communication"
+      },
+      {
+        "word": "通信",
+        "reading": "つうしん",
+        "meaning": "correspondence, communication, transmission"
+      },
+      {
+        "word": "通常",
+        "reading": "つうじょう",
+        "meaning": "usual, ordinary, normal"
+      },
+      {
+        "word": "貫通",
+        "reading": "かんつう",
+        "meaning": "being well versed (in)"
+      },
+      {
+        "word": "通話",
+        "reading": "つうわ",
+        "meaning": "counter for telephone calls of a set duration"
+      },
+      {
+        "word": "通訳",
+        "reading": "つうやく",
+        "meaning": "interpretation (i.e. oral translation)"
+      },
+      {
+        "word": "通知",
+        "reading": "つうち",
+        "meaning": "notification (on a smartphone, PC, etc.)"
+      },
+      {
+        "word": "流通",
+        "reading": "りゅうつう",
+        "meaning": "circulation (of money, goods, etc.), distribution"
+      },
+      {
+        "word": "通行",
+        "reading": "つうこう",
+        "meaning": "common usage, widespread use"
+      },
+      {
+        "word": "精通",
+        "reading": "せいつう",
+        "meaning": "(a boy's) first ejaculation, spermarche, semenarche"
+      },
+      {
+        "word": "共通",
+        "reading": "きょうつう",
+        "meaning": "-wide"
+      },
+      {
+        "word": "通り",
+        "reading": "どおり",
+        "meaning": "Street, Avenue"
+      },
+      {
+        "word": "通用",
+        "reading": "つうよう",
+        "meaning": "going in and out, entrance and exit"
+      },
+      {
+        "word": "普通",
+        "reading": "ふつう",
+        "meaning": "local train, train that stops at every station"
+      },
+      {
+        "word": "通過",
+        "reading": "つうか",
+        "meaning": "passage (of a bill, e.g. through parliament), carriage"
+      }
+    ]
+  },
+  {
     "id": 206,
+    "kanji": "不",
+    "reading": "フ / ブ",
+    "meaning": "bad, clumsy, negative, non-, ugly",
+    "isRadical": false,
+    "onyomi": [
+      "フ",
+      "ブ"
+    ],
+    "kunyomi": [],
+    "examples": [
+      {
+        "word": "不要",
+        "reading": "ふよう",
+        "meaning": "unnecessary, unneeded"
+      },
+      {
+        "word": "不況",
+        "reading": "ふきょう",
+        "meaning": "depression, recession, slump"
+      },
+      {
+        "word": "不利",
+        "reading": "ふり",
+        "meaning": "disadvantage, handicap, unfavorable position"
+      },
+      {
+        "word": "不便",
+        "reading": "ふべん",
+        "meaning": "inconvenience, inexpediency, unhandiness"
+      },
+      {
+        "word": "不精",
+        "reading": "ぶしょう",
+        "meaning": "indolence, laziness, sloth"
+      },
+      {
+        "word": "不屈",
+        "reading": "ふくつ",
+        "meaning": "persistence, fortitude, indomitability"
+      },
+      {
+        "word": "不眠",
+        "reading": "ふみん",
+        "meaning": "sleeplessness, insomnia, wakefulness"
+      },
+      {
+        "word": "不平",
+        "reading": "ふへい",
+        "meaning": "discontent, dissatisfaction, complaint"
+      },
+      {
+        "word": "不審",
+        "reading": "ふしん",
+        "meaning": "doubt, suspicion, question"
+      },
+      {
+        "word": "不慣",
+        "reading": "ふなれ",
+        "meaning": "inexperienced, unfamiliar (with), unversed"
+      },
+      {
+        "word": "不運",
+        "reading": "ふうん",
+        "meaning": "misfortune, bad luck, ill luck"
+      },
+      {
+        "word": "不吉",
+        "reading": "ふきつ",
+        "meaning": "ominous, sinister, unlucky"
+      },
+      {
+        "word": "不意",
+        "reading": "ふい",
+        "meaning": "sudden, abrupt, unexpected"
+      },
+      {
+        "word": "不慮",
+        "reading": "ふりょ",
+        "meaning": "unforeseen, unexpected, sudden"
+      },
+      {
+        "word": "不敵",
+        "reading": "ふてき",
+        "meaning": "daring, fearless, intrepid"
+      },
+      {
+        "word": "不満",
+        "reading": "ふまん",
+        "meaning": "dissatisfaction, discontent, displeasure"
+      },
+      {
+        "word": "不振",
+        "reading": "ふしん",
+        "meaning": "dullness, slump, stagnation"
+      },
+      {
+        "word": "不和",
+        "reading": "ふわ",
+        "meaning": "friction, discord, trouble"
+      },
+      {
+        "word": "不純",
+        "reading": "ふじゅん",
+        "meaning": "impure, adulterated, foul"
+      },
+      {
+        "word": "不順",
+        "reading": "ふじゅん",
+        "meaning": "irregular, unseasonable, changeable"
+      },
+      {
+        "word": "不徳",
+        "reading": "ふとく",
+        "meaning": "lack of virtue, immorality, vice"
+      },
+      {
+        "word": "不通",
+        "reading": "ふつう",
+        "meaning": "suspension, interruption, stoppage"
+      },
+      {
+        "word": "不朽",
+        "reading": "ふきゅう",
+        "meaning": "everlasting, immortal, eternal"
+      },
+      {
+        "word": "不当",
+        "reading": "ふとう",
+        "meaning": "injustice, impropriety, unreasonableness"
+      },
+      {
+        "word": "不安",
+        "reading": "ふあん",
+        "meaning": "anxiety, uneasiness, worry"
+      }
+    ]
+  },
+  {
+    "id": 207,
     "kanji": "事",
     "reading": "こと / つか.う / つか.える / ジ / ズ",
     "meaning": "business, fact, matter, possibly, reason, thing",
@@ -29167,7 +29451,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 207,
+    "id": 208,
     "kanji": "仕",
     "reading": "つか.える / シ / ジ",
     "meaning": "attend, doing, official, serve",
@@ -29308,7 +29592,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 208,
+    "id": 209,
     "kanji": "料",
     "reading": "リョウ",
     "meaning": "fee, materials",
@@ -29446,7 +29730,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 209,
+    "id": 210,
     "kanji": "理",
     "reading": "ことわり / リ",
     "meaning": "arrangement, justice, logic, reason, truth",
@@ -29586,7 +29870,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 210,
+    "id": 211,
     "kanji": "有",
     "reading": "あ.る / ウ / ユウ",
     "meaning": "approx, exist, happen, have, occur, possess",
@@ -29727,7 +30011,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 211,
+    "id": 212,
     "kanji": "無",
     "reading": "な.い / ブ / ム",
     "meaning": "ain't, nil, none, not, nothing, nothingness",
@@ -29868,7 +30152,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 212,
+    "id": 213,
     "kanji": "野",
     "reading": "の / の- / ショ / ヤ",
     "meaning": "civilian life, field, plains, rustic",
@@ -30010,7 +30294,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 213,
+    "id": 214,
     "kanji": "黒",
     "reading": "くろ / くろ.い / くろ.ずむ / コク",
     "meaning": "black",
@@ -30152,7 +30436,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 214,
+    "id": 215,
     "kanji": "町",
     "reading": "まち / チョウ",
     "meaning": "block, street, town, village",
@@ -30292,7 +30576,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 215,
+    "id": 216,
     "kanji": "村",
     "reading": "むら / ソン",
     "meaning": "town, village",
@@ -30432,7 +30716,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 216,
+    "id": 217,
     "kanji": "菜",
     "reading": "な / サイ",
     "meaning": "greens, side dish, vegetable",
@@ -30572,7 +30856,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 217,
+    "id": 218,
     "kanji": "区",
     "reading": "オウ / ク / コウ",
     "meaning": "district, ward",
@@ -30712,7 +30996,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 218,
+    "id": 219,
     "kanji": "方",
     "reading": "-かた / -がた / かた / ホウ",
     "meaning": "alternative, direction, person",
@@ -30854,7 +31138,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 219,
+    "id": 220,
     "kanji": "旅",
     "reading": "たび / リョ",
     "meaning": "travel, trip",
@@ -30994,7 +31278,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 220,
+    "id": 221,
     "kanji": "族",
     "reading": "ゾク",
     "meaning": "family, tribe",
@@ -31132,7 +31416,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 221,
+    "id": 222,
     "kanji": "短",
     "reading": "みじか.い / タン",
     "meaning": "brevity, defect, fault, short, weak point",
@@ -31272,7 +31556,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 222,
+    "id": 223,
     "kanji": "知",
     "reading": "し.らせる / し.る / チ",
     "meaning": "know, wisdom",
@@ -31413,7 +31697,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 223,
+    "id": 224,
     "kanji": "死",
     "reading": "し.に- / し.ぬ / シ",
     "meaning": "death, die",
@@ -31554,7 +31838,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 224,
+    "id": 225,
     "kanji": "医",
     "reading": "い.する / い.やす / くすし / イ",
     "meaning": "doctor, medicine",
@@ -31696,7 +31980,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 225,
+    "id": 226,
     "kanji": "者",
     "reading": "もの / シャ",
     "meaning": "person, someone",
@@ -31836,7 +32120,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 226,
+    "id": 227,
     "kanji": "都",
     "reading": "みやこ / ツ / ト",
     "meaning": "all, capital, everything, metropolis",
@@ -31977,7 +32261,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 227,
+    "id": 228,
     "kanji": "京",
     "reading": "みやこ / キョウ / キン / ケイ",
     "meaning": "10**16, capital",
@@ -32119,7 +32403,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 228,
+    "id": 229,
     "kanji": "県",
     "reading": "か.ける / ケン",
     "meaning": "prefecture",
@@ -32259,7 +32543,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 229,
+    "id": 230,
     "kanji": "民",
     "reading": "たみ / ミン",
     "meaning": "nation, people, subjects",
@@ -32399,7 +32683,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 230,
+    "id": 231,
     "kanji": "同",
     "reading": "おな.じ / ドウ",
     "meaning": "agree, equal, same",
@@ -32539,7 +32823,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 231,
+    "id": 232,
     "kanji": "合",
     "reading": "-あ.い / -あ.う / -あ.わせる / -あい / あ.い / あ.う / あ.わす / あ.わせる / あい- / カッ / ガッ / ゴウ",
     "meaning": "0.1, fit, join, suit",
@@ -32689,7 +32973,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 232,
+    "id": 233,
     "kanji": "答",
     "reading": "こた.え / こた.える / トウ",
     "meaning": "answer, solution",
@@ -32830,7 +33114,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 233,
+    "id": 234,
     "kanji": "家",
     "reading": "いえ / うち / や / カ / ケ",
     "meaning": "expert, family, home, house, performer, professional",
@@ -32973,7 +33257,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 234,
+    "id": 235,
     "kanji": "場",
     "reading": "ば / ジョウ / チョウ",
     "meaning": "location, place",
@@ -33114,7 +33398,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 235,
+    "id": 236,
     "kanji": "所",
     "reading": "-ところ / とこ / ところ / どころ / ショ",
     "meaning": "extent, place",
@@ -33257,7 +33541,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 236,
+    "id": 237,
     "kanji": "世",
     "reading": "よ / セ / セイ / ソウ",
     "meaning": "generation, public, society, world",
@@ -33399,7 +33683,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 237,
+    "id": 238,
     "kanji": "代",
     "reading": "-が.わり / -がわ.り / か.える / か.わり / か.わる / かわ.り / かわ.る / しろ / よ / タイ / ダイ",
     "meaning": "age, change, charge, convert, counter for decades of ages, eras, etc., fee, generation, period, rate, replace, substitute",
@@ -33548,7 +33832,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 238,
+    "id": 239,
     "kanji": "貸",
     "reading": "か.し- / か.す / かし- / タイ",
     "meaning": "lend",
@@ -33690,7 +33974,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 239,
+    "id": 240,
     "kanji": "地",
     "reading": "ジ / チ",
     "meaning": "earth, ground",
@@ -33829,7 +34113,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 240,
+    "id": 241,
     "kanji": "池",
     "reading": "いけ / チ",
     "meaning": "cistern, pond, pool, reservoir",
@@ -33969,7 +34253,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 241,
+    "id": 242,
     "kanji": "洗",
     "reading": "あら.う / セン",
     "meaning": "inquire into, probe, wash",
@@ -34109,7 +34393,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 242,
+    "id": 243,
     "kanji": "光",
     "reading": "ひか.る / ひかり / コウ",
     "meaning": "light, ray",
@@ -34250,7 +34534,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 243,
+    "id": 244,
     "kanji": "英",
     "reading": "はなぶさ / エイ",
     "meaning": "England, English, calyx, hero, outstanding",
@@ -34390,7 +34674,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 244,
+    "id": 245,
     "kanji": "映",
     "reading": "-ば.え / うつ.す / うつ.る / は.える / エイ",
     "meaning": "projection, reflect, reflection",
@@ -34533,7 +34817,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 245,
+    "id": 246,
     "kanji": "歌",
     "reading": "うた / うた.う / カ",
     "meaning": "sing, song",
@@ -34674,7 +34958,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 246,
+    "id": 247,
     "kanji": "楽",
     "reading": "この.む / たの.しい / たの.しむ / ガク / ゴウ / ラク",
     "meaning": "comfort, ease, music",
@@ -34818,7 +35102,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 247,
+    "id": 248,
     "kanji": "薬",
     "reading": "くすり / ヤク",
     "meaning": "benefit, chemical, enamel, gunpowder, medicine",
@@ -34958,7 +35242,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 248,
+    "id": 249,
     "kanji": "界",
     "reading": "カイ",
     "meaning": "boundary, world",
@@ -35096,7 +35380,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 249,
+    "id": 250,
     "kanji": "産",
     "reading": "う.まれる / う.む / うぶ- / む.す / サン",
     "meaning": "bear, childbirth, give birth, native, products, property, yield",
@@ -35239,7 +35523,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 250,
+    "id": 251,
     "kanji": "業",
     "reading": "わざ / ギョウ / ゴウ",
     "meaning": "arts, business, performance, vocation",
@@ -35380,7 +35664,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 251,
+    "id": 252,
     "kanji": "林",
     "reading": "はやし / リン",
     "meaning": "forest, grove",
@@ -35520,7 +35804,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 252,
+    "id": 253,
     "kanji": "森",
     "reading": "もり / シン",
     "meaning": "forest, woods",
@@ -35660,7 +35944,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 253,
+    "id": 254,
     "kanji": "物",
     "reading": "もの / もの- / ブツ / モツ",
     "meaning": "matter, object, thing",
@@ -35802,7 +36086,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 254,
+    "id": 255,
     "kanji": "品",
     "reading": "しな / ヒン / ホン",
     "meaning": "article, counter for meal courses, dignity, goods, refinement",
@@ -35943,7 +36227,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 255,
+    "id": 256,
     "kanji": "建",
     "reading": "-だ.て / た.つ / た.て / た.てる / ケン / コン",
     "meaning": "build",
@@ -36087,7 +36371,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 256,
+    "id": 257,
     "kanji": "館",
     "reading": "たて / やかた / カン",
     "meaning": "building, large building, mansion, palace",
@@ -36228,7 +36512,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 257,
+    "id": 258,
     "kanji": "図",
     "reading": "え / はか.る / ズ / ト",
     "meaning": "audacious, drawing, extraordinary, map, plan",
@@ -36370,7 +36654,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 258,
+    "id": 259,
     "kanji": "使",
     "reading": "-つか.い / -づか.い / つか.い / つか.う / シ",
     "meaning": "ambassador, cause, envoy, messenger, order, send on a mission, use",
@@ -36513,7 +36797,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 259,
+    "id": 260,
     "kanji": "便",
     "reading": "たよ.り / ビン / ベン",
     "meaning": "chance, convenience, excrement, facility, feces, letter",
@@ -36654,7 +36938,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 260,
+    "id": 261,
     "kanji": "借",
     "reading": "か.りる / シャク",
     "meaning": "borrow, rent",
@@ -36794,7 +37078,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 261,
+    "id": 262,
     "kanji": "作",
     "reading": "-づく.り / つく.り / つく.る / サ / サク",
     "meaning": "build, make, prepare, production",
@@ -36937,7 +37221,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 262,
+    "id": 263,
     "kanji": "広",
     "reading": "ひろ.い / ひろ.がる / ひろ.げる / ひろ.まる / ひろ.める / コウ",
     "meaning": "broad, spacious, wide",
@@ -37081,7 +37365,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 263,
+    "id": 264,
     "kanji": "私",
     "reading": "わたくし / わたし / シ",
     "meaning": "I, me, private",
@@ -37222,7 +37506,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 264,
+    "id": 265,
     "kanji": "去",
     "reading": "-さ.る / さ.る / キョ / コ",
     "meaning": "divorce, elapse, eliminate, gone, leave, past, quit",
@@ -37364,7 +37648,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 265,
+    "id": 266,
     "kanji": "室",
     "reading": "むろ / シツ",
     "meaning": "apartment, cellar, chamber, greenhouse, room",
@@ -37504,7 +37788,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 266,
+    "id": 267,
     "kanji": "屋",
     "reading": "や / オク",
     "meaning": "dealer, house, roof, seller, shop",
@@ -37644,7 +37928,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 267,
+    "id": 268,
     "kanji": "教",
     "reading": "おし.える / おそ.わる / キョウ",
     "meaning": "doctrine, faith, teach",
@@ -37785,7 +38069,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 268,
+    "id": 269,
     "kanji": "研",
     "reading": "と.ぐ / ケン",
     "meaning": "polish, sharpen, study of",
@@ -37925,7 +38209,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 269,
+    "id": 270,
     "kanji": "発",
     "reading": "あば.く / おこ.る / た.つ / つか.わす / はな.つ / ハツ / ホツ",
     "meaning": "counter for gunshots, departure, discharge, disclose, emit, publish, start from",
@@ -38070,7 +38354,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 270,
+    "id": 271,
     "kanji": "究",
     "reading": "きわ.める / キュウ / ク",
     "meaning": "research, study",
@@ -38211,7 +38495,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 271,
+    "id": 272,
     "kanji": "着",
     "reading": "き.せる / き.る / つ.く / つ.ける / ジャク / チャク",
     "meaning": "arrive, counter for suits of clothing, don, wear",
@@ -38355,7 +38639,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 272,
+    "id": 273,
     "kanji": "乗",
     "reading": "-の.り / の.せる / の.る / ショウ / ジョウ",
     "meaning": "board, counter for vehicles, join, mount, multiplication, power, record, ride",
@@ -38498,7 +38782,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 273,
+    "id": 274,
     "kanji": "計",
     "reading": "はか.らう / はか.る / ケイ",
     "meaning": "measure, plan, plot, scheme",
@@ -38639,7 +38923,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 274,
+    "id": 275,
     "kanji": "画",
     "reading": "えが.く / かぎ.る / かく.する / はか.る / はかりごと / エ / カイ / カク / ガ",
     "meaning": "brush-stroke, picture",
@@ -38786,7 +39070,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 275,
+    "id": 276,
     "kanji": "説",
     "reading": "と.く / セツ / ゼイ",
     "meaning": "explanation, opinion, rumor, theory",
@@ -38927,7 +39211,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 276,
+    "id": 277,
     "kanji": "院",
     "reading": "イン",
     "meaning": "Inst., institution, mansion, school, temple",
@@ -39065,7 +39349,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 277,
+    "id": 278,
     "kanji": "病",
     "reading": "-や.み / や.む / やまい / ビョウ / ヘイ",
     "meaning": "ill, sick",
@@ -39208,7 +39492,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 278,
+    "id": 279,
     "kanji": "科",
     "reading": "カ",
     "meaning": "course, department, section",
@@ -39346,7 +39630,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 279,
+    "id": 280,
     "kanji": "度",
     "reading": "-た.い / たび / タク / ト / ド",
     "meaning": "attitude, consider, counter for occurrences, degrees, occurrence, time",
@@ -39489,7 +39773,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 280,
+    "id": 281,
     "kanji": "頭",
     "reading": "-がしら / あたま / かしら / かぶり / ズ / ト / トウ",
     "meaning": "counter for large animals, head",
@@ -39634,7 +39918,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 281,
+    "id": 282,
     "kanji": "顔",
     "reading": "かお / ガン",
     "meaning": "Kanji",
@@ -39774,7 +40058,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 282,
+    "id": 283,
     "kanji": "声",
     "reading": "こえ / こわ- / ショウ / セイ",
     "meaning": "Kanji",
@@ -39916,7 +40200,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 283,
+    "id": 284,
     "kanji": "題",
     "reading": "ダイ",
     "meaning": "Kanji",
@@ -40054,7 +40338,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 284,
+    "id": 285,
     "kanji": "色",
     "reading": "いろ / シキ / ショク",
     "meaning": "Kanji",
@@ -40195,7 +40479,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 285,
+    "id": 286,
     "kanji": "漢",
     "reading": "カン",
     "meaning": "Kanji",
@@ -40333,7 +40617,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 286,
+    "id": 287,
     "kanji": "字",
     "reading": "-な / あざ / あざな / ジ",
     "meaning": "Kanji",
@@ -40475,7 +40759,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 287,
+    "id": 288,
     "kanji": "写",
     "reading": "うつ- / うつ.し / うつ.す / うつ.る / シャ / ジャ",
     "meaning": "Kanji",
@@ -40619,7 +40903,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 288,
+    "id": 289,
     "kanji": "考",
     "reading": "かんが.え / かんが.える / コウ",
     "meaning": "Kanji",
@@ -40760,7 +41044,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 289,
+    "id": 290,
     "kanji": "真",
     "reading": "ま / ま- / まこと / シン",
     "meaning": "Kanji",
@@ -40902,7 +41186,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 290,
+    "id": 291,
     "kanji": "集",
     "reading": "あつ.まる / あつ.める / つど.う / シュウ",
     "meaning": "congregate, flock, gather, meet, swarm",
@@ -41044,7 +41328,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 291,
+    "id": 292,
     "kanji": "曜",
     "reading": "ヨウ",
     "meaning": "Kanji",
@@ -41182,7 +41466,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 292,
+    "id": 293,
     "kanji": "進",
     "reading": "すす.む / すす.める / シン",
     "meaning": "Kanji",
@@ -41323,7 +41607,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 293,
+    "id": 294,
     "kanji": "帰",
     "reading": "おく.る / かえ.す / かえ.る / とつ.ぐ / キ",
     "meaning": "Kanji",
@@ -41466,7 +41750,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 294,
+    "id": 295,
     "kanji": "別",
     "reading": "わ.ける / わか.れる / ベツ",
     "meaning": "Kanji",
@@ -41607,7 +41891,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 295,
+    "id": 296,
     "kanji": "以",
     "reading": "もっ.て / イ",
     "meaning": "Kanji",
@@ -41747,7 +42031,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 296,
+    "id": 297,
     "kanji": "堂",
     "reading": "ドウ",
     "meaning": "Kanji",
@@ -41885,7 +42169,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 297,
+    "id": 298,
     "kanji": "税",
     "reading": "ゼイ",
     "meaning": "duty, tax",
@@ -42023,7 +42307,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 298,
+    "id": 299,
     "kanji": "込",
     "reading": "-こ.み / -こ.む / こ.み / こ.む / こ.める",
     "meaning": "(kokuji), crowded, in bulk, included, mixture",
@@ -42165,7 +42449,7 @@ export const kanjiData = [
     ]
   },
   {
-    "id": 299,
+    "id": 300,
     "kanji": "申",
     "reading": "さる / もう.し- / もう.す / シン",
     "meaning": "3-5PM, have the honor to, ninth sign of Chinese zodiac, sign of the monkey",
@@ -42303,154 +42587,6 @@ export const kanjiData = [
         "word": "申し合わせる",
         "reading": "もうしあわせる",
         "meaning": "to arrange, to make an appointment, to agree upon"
-      }
-    ]
-  },
-  {
-    "id": 300,
-    "kanji": "通",
-    "reading": "-とお.り / -どお.し / -どお.り / かよ.う / とお.し / とお.す / とお.り / とお.る / ツ / ツウ",
-    "meaning": "avenue, commute, counter for letters, notes, documents, etc., pass through, traffic",
-    "isRadical": false,
-    "onyomi": [
-      "ツ",
-      "ツウ"
-    ],
-    "kunyomi": [
-      "-とお.り",
-      "-どお.し",
-      "-どお.り",
-      "かよ.う",
-      "とお.し",
-      "とお.す",
-      "とお.り",
-      "とお.る"
-    ],
-    "examples": [
-      {
-        "word": "通勤",
-        "reading": "つうきん",
-        "meaning": "commuting to work"
-      },
-      {
-        "word": "通貨",
-        "reading": "つうか",
-        "meaning": "currency"
-      },
-      {
-        "word": "通学",
-        "reading": "つうがく",
-        "meaning": "commuting to school, school commute"
-      },
-      {
-        "word": "文通",
-        "reading": "ぶんつう",
-        "meaning": "correspondence, exchange of letters"
-      },
-      {
-        "word": "表通",
-        "reading": "おもてどおり",
-        "meaning": "main street (as opposed to a side street), high street"
-      },
-      {
-        "word": "通帳",
-        "reading": "つうちょう",
-        "meaning": "passbook, bankbook"
-      },
-      {
-        "word": "大通",
-        "reading": "おおどおり",
-        "meaning": "main street, avenue, boulevard"
-      },
-      {
-        "word": "直通",
-        "reading": "ちょくつう",
-        "meaning": "direct line, direct communication, connecting directly"
-      },
-      {
-        "word": "通路",
-        "reading": "つうろ",
-        "meaning": "passage, pathway, roadway"
-      },
-      {
-        "word": "不通",
-        "reading": "ふつう",
-        "meaning": "suspension, interruption, stoppage"
-      },
-      {
-        "word": "交通",
-        "reading": "こうつう",
-        "meaning": "traffic, transportation, communication"
-      },
-      {
-        "word": "通信",
-        "reading": "つうしん",
-        "meaning": "correspondence, communication, transmission"
-      },
-      {
-        "word": "通常",
-        "reading": "つうじょう",
-        "meaning": "usual, ordinary, normal"
-      },
-      {
-        "word": "貫通",
-        "reading": "かんつう",
-        "meaning": "being well versed (in)"
-      },
-      {
-        "word": "通話",
-        "reading": "つうわ",
-        "meaning": "counter for telephone calls of a set duration"
-      },
-      {
-        "word": "通訳",
-        "reading": "つうやく",
-        "meaning": "interpretation (i.e. oral translation)"
-      },
-      {
-        "word": "通知",
-        "reading": "つうち",
-        "meaning": "notification (on a smartphone, PC, etc.)"
-      },
-      {
-        "word": "流通",
-        "reading": "りゅうつう",
-        "meaning": "circulation (of money, goods, etc.), distribution"
-      },
-      {
-        "word": "通行",
-        "reading": "つうこう",
-        "meaning": "common usage, widespread use"
-      },
-      {
-        "word": "精通",
-        "reading": "せいつう",
-        "meaning": "(a boy's) first ejaculation, spermarche, semenarche"
-      },
-      {
-        "word": "共通",
-        "reading": "きょうつう",
-        "meaning": "-wide"
-      },
-      {
-        "word": "通り",
-        "reading": "どおり",
-        "meaning": "Street, Avenue"
-      },
-      {
-        "word": "通用",
-        "reading": "つうよう",
-        "meaning": "going in and out, entrance and exit"
-      },
-      {
-        "word": "普通",
-        "reading": "ふつう",
-        "meaning": "local train, train that stops at every station"
-      },
-      {
-        "word": "通過",
-        "reading": "つうか",
-        "meaning": "passage (of a bill, e.g. through parliament), carriage"
       }
     ]
   }

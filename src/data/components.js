@@ -805,11 +805,11 @@ export const componentsDb = {
     "reading": "イン",
     "type": "kanji"
   },
-  "广": {
-    "id": "r59",
-    "meaning": "Slanted roof radical",
-    "reading": "まだれ (madare)",
-    "type": "radical"
+  "質": {
+    "id": 135,
+    "meaning": "quality, substance, matter, temperament, pawn",
+    "reading": "シツ, シチ / たち",
+    "type": "kanji"
   },
   "店": {
     "id": 136,
@@ -1033,272 +1033,278 @@ export const componentsDb = {
     "reading": "イ",
     "type": "kanji"
   },
-  "用": {
-    "id": 173,
-    "meaning": "business, employ, service, use, utilize",
-    "reading": "もち.いる / ヨウ",
-    "type": "kanji"
-  },
-  "不": {
-    "id": 174,
-    "meaning": "bad, clumsy, negative, non-, ugly",
-    "reading": "フ / ブ",
-    "type": "kanji"
-  },
   "急": {
-    "id": 175,
+    "id": 173,
     "meaning": "emergency, hurry, steep, sudden",
     "reading": "いそ.ぎ / いそ.ぐ / せ.く / キュウ",
     "type": "kanji"
   },
   "悪": {
-    "id": 176,
+    "id": 174,
     "meaning": "bad, evil, false, rascal, vice, wrong",
     "reading": "-にく.い / あ.し / ああ / いずくに / いずくんぞ / にく.い / にく.む / わる- / わる.い / アク / オ",
     "type": "kanji"
   },
   "兄": {
-    "id": 177,
+    "id": 175,
     "meaning": "big brother, elder brother",
     "reading": "あに / キョウ / ケイ",
     "type": "kanji"
   },
   "弟": {
-    "id": 178,
+    "id": 176,
     "meaning": "faithful service to elders, younger brother",
     "reading": "おとうと / ダイ / テイ / デ",
     "type": "kanji"
   },
   "親": {
-    "id": 179,
+    "id": 177,
     "meaning": "dealer (cards), familiarity, intimacy, parent, relative",
     "reading": "おや / おや- / した.しい / した.しむ / シン",
     "type": "kanji"
   },
   "主": {
-    "id": 180,
+    "id": 178,
     "meaning": "chief, lord, main thing, master, principal",
     "reading": "あるじ / おも / ぬし / シュ / シュウ / ス",
     "type": "kanji"
   },
   "注": {
-    "id": 181,
+    "id": 179,
     "meaning": "annotate, comment, concentrate on, flow into, irrigate, notes, pour, shed (tears)",
     "reading": "さ.す / そそ.ぐ / つ.ぐ / チュウ",
     "type": "kanji"
   },
   "住": {
-    "id": 182,
+    "id": 180,
     "meaning": "dwell, inhabit, live, reside",
     "reading": "-ず.まい / す.まう / す.む / ジュウ / チュウ / ヂュウ",
     "type": "kanji"
   },
   "春": {
-    "id": 183,
+    "id": 181,
     "meaning": "spring (season), springtime",
     "reading": "はる / シュン",
     "type": "kanji"
   },
   "夏": {
-    "id": 184,
+    "id": 182,
     "meaning": "summer",
     "reading": "なつ / カ / ガ / ゲ",
     "type": "kanji"
   },
   "秋": {
-    "id": 185,
+    "id": 183,
     "meaning": "autumn",
     "reading": "あき / とき / シュウ",
     "type": "kanji"
   },
   "冬": {
-    "id": 186,
+    "id": 184,
     "meaning": "winter",
     "reading": "ふゆ / トウ",
     "type": "kanji"
   },
   "寒": {
-    "id": 187,
+    "id": 185,
     "meaning": "cold",
     "reading": "さむ.い / カン",
     "type": "kanji"
   },
   "暑": {
-    "id": 188,
+    "id": 186,
     "meaning": "hot, sultry, summer heat",
     "reading": "あつ.い / ショ",
     "type": "kanji"
   },
   "晴": {
-    "id": 189,
+    "id": 187,
     "meaning": "clear up",
     "reading": "-ば.れ / は.らす / は.れ / は.れ- / は.れる / セイ",
     "type": "kanji"
   },
   "終": {
-    "id": 190,
+    "id": 188,
     "meaning": "end, finish",
     "reading": "-お.わる / お.える / お.わる / おわ.る / つい / つい.に / シュウ",
     "type": "kanji"
   },
   "紙": {
-    "id": 191,
+    "id": 189,
     "meaning": "paper",
     "reading": "かみ / シ",
     "type": "kanji"
   },
   "低": {
-    "id": 192,
+    "id": 190,
     "meaning": "humble, lower, short",
     "reading": "ひく.い / ひく.まる / ひく.める / テイ",
     "type": "kanji"
   },
   "肉": {
-    "id": 193,
+    "id": 191,
     "meaning": "meat",
     "reading": "しし / ニク",
     "type": "kanji"
   },
   "鳥": {
-    "id": 194,
+    "id": 192,
     "meaning": "bird, chicken",
     "reading": "とり / チョウ",
     "type": "kanji"
   },
   "犬": {
-    "id": 195,
+    "id": 193,
     "meaning": "dog",
     "reading": "いぬ / いぬ- / ケン",
     "type": "kanji"
   },
   "洋": {
-    "id": 196,
+    "id": 194,
     "meaning": "Western style, foreign, ocean, sea",
     "reading": "ヨウ",
     "type": "kanji"
   },
   "和": {
-    "id": 197,
+    "id": 195,
     "meaning": "Japan, Japanese style, harmony, peace, soften",
     "reading": "あ.える / なご.む / なご.やか / やわ.らぐ / やわ.らげる / オ / カ / ワ",
     "type": "kanji"
   },
   "服": {
-    "id": 198,
+    "id": 196,
     "meaning": "admit, clothing, discharge, obey",
     "reading": "フク",
     "type": "kanji"
   },
   "式": {
-    "id": 199,
+    "id": 197,
     "meaning": "ceremony, expression, form, function, method, rite, style, system",
     "reading": "シキ",
     "type": "kanji"
   },
   "試": {
-    "id": 200,
+    "id": 198,
     "meaning": "attempt, experiment, ordeal, test, try",
     "reading": "こころ.みる / ため.す / シ",
     "type": "kanji"
   },
   "験": {
-    "id": 201,
+    "id": 199,
     "meaning": "effect, testing, verification",
     "reading": "あかし / しるし / ため.す / ためし / ケン / ゲン",
     "type": "kanji"
   },
   "近": {
-    "id": 202,
+    "id": 200,
     "meaning": "akin, early, near, tantamount",
     "reading": "ちか.い / キン / コン",
     "type": "kanji"
   },
   "遠": {
-    "id": 203,
+    "id": 201,
     "meaning": "distant, far",
     "reading": "とお.い / エン / オン",
     "type": "kanji"
   },
   "送": {
-    "id": 204,
+    "id": 202,
     "meaning": "escort, send",
     "reading": "おく.る / ソウ",
     "type": "kanji"
   },
   "回": {
-    "id": 205,
+    "id": 203,
     "meaning": "-times, counter for occurrences, game, revolve, round",
     "reading": "-まわ.し / -まわ.す / -まわ.り / -まわ.る / か.える / まわ.し- / まわ.す / まわ.る / もとお.る / エ / カイ",
     "type": "kanji"
   },
-  "事": {
+  "用": {
+    "id": 204,
+    "meaning": "business, employ, service, use, utilize",
+    "reading": "もち.いる / ヨウ",
+    "type": "kanji"
+  },
+  "通": {
+    "id": 205,
+    "meaning": "avenue, commute, counter for letters, notes, documents, etc., pass through, traffic",
+    "reading": "-とお.り / -どお.し / -どお.り / かよ.う / とお.し / とお.す / とお.り / とお.る / ツ / ツウ",
+    "type": "kanji"
+  },
+  "不": {
     "id": 206,
+    "meaning": "bad, clumsy, negative, non-, ugly",
+    "reading": "フ / ブ",
+    "type": "kanji"
+  },
+  "事": {
+    "id": 207,
     "meaning": "business, fact, matter, possibly, reason, thing",
     "reading": "こと / つか.う / つか.える / ジ / ズ",
     "type": "kanji"
   },
   "仕": {
-    "id": 207,
+    "id": 208,
     "meaning": "attend, doing, official, serve",
     "reading": "つか.える / シ / ジ",
     "type": "kanji"
   },
   "料": {
-    "id": 208,
+    "id": 209,
     "meaning": "fee, materials",
     "reading": "リョウ",
     "type": "kanji"
   },
   "理": {
-    "id": 209,
+    "id": 210,
     "meaning": "arrangement, justice, logic, reason, truth",
     "reading": "ことわり / リ",
     "type": "kanji"
   },
   "有": {
-    "id": 210,
+    "id": 211,
     "meaning": "approx, exist, happen, have, occur, possess",
     "reading": "あ.る / ウ / ユウ",
     "type": "kanji"
   },
   "無": {
-    "id": 211,
+    "id": 212,
     "meaning": "ain't, nil, none, not, nothing, nothingness",
     "reading": "な.い / ブ / ム",
     "type": "kanji"
   },
   "野": {
-    "id": 212,
+    "id": 213,
     "meaning": "civilian life, field, plains, rustic",
     "reading": "の / の- / ショ / ヤ",
     "type": "kanji"
   },
   "黒": {
-    "id": 213,
+    "id": 214,
     "meaning": "black",
     "reading": "くろ / くろ.い / くろ.ずむ / コク",
     "type": "kanji"
   },
   "町": {
-    "id": 214,
+    "id": 215,
     "meaning": "block, street, town, village",
     "reading": "まち / チョウ",
     "type": "kanji"
   },
   "村": {
-    "id": 215,
+    "id": 216,
     "meaning": "town, village",
     "reading": "むら / ソン",
     "type": "kanji"
   },
   "菜": {
-    "id": 216,
+    "id": 217,
     "meaning": "greens, side dish, vegetable",
     "reading": "な / サイ",
     "type": "kanji"
   },
   "区": {
-    "id": 217,
+    "id": 218,
     "meaning": "district, ward",
     "reading": "オウ / ク / コウ",
     "type": "kanji"
@@ -1310,495 +1316,489 @@ export const componentsDb = {
     "type": "radical"
   },
   "旅": {
-    "id": 219,
+    "id": 220,
     "meaning": "travel, trip",
     "reading": "たび / リョ",
     "type": "kanji"
   },
   "族": {
-    "id": 220,
+    "id": 221,
     "meaning": "family, tribe",
     "reading": "ゾク",
     "type": "kanji"
   },
   "短": {
-    "id": 221,
+    "id": 222,
     "meaning": "brevity, defect, fault, short, weak point",
     "reading": "みじか.い / タン",
     "type": "kanji"
   },
   "知": {
-    "id": 222,
+    "id": 223,
     "meaning": "know, wisdom",
     "reading": "し.らせる / し.る / チ",
     "type": "kanji"
   },
   "死": {
-    "id": 223,
+    "id": 224,
     "meaning": "death, die",
     "reading": "し.に- / し.ぬ / シ",
     "type": "kanji"
   },
   "医": {
-    "id": 224,
+    "id": 225,
     "meaning": "doctor, medicine",
     "reading": "い.する / い.やす / くすし / イ",
     "type": "kanji"
   },
   "者": {
-    "id": 225,
+    "id": 226,
     "meaning": "person, someone",
     "reading": "もの / シャ",
     "type": "kanji"
   },
   "都": {
-    "id": 226,
+    "id": 227,
     "meaning": "all, capital, everything, metropolis",
     "reading": "みやこ / ツ / ト",
     "type": "kanji"
   },
   "京": {
-    "id": 227,
+    "id": 228,
     "meaning": "10**16, capital",
     "reading": "みやこ / キョウ / キン / ケイ",
     "type": "kanji"
   },
   "県": {
-    "id": 228,
+    "id": 229,
     "meaning": "prefecture",
     "reading": "か.ける / ケン",
     "type": "kanji"
   },
   "民": {
-    "id": 229,
+    "id": 230,
     "meaning": "nation, people, subjects",
     "reading": "たみ / ミン",
     "type": "kanji"
   },
   "同": {
-    "id": 230,
+    "id": 231,
     "meaning": "agree, equal, same",
     "reading": "おな.じ / ドウ",
     "type": "kanji"
   },
   "合": {
-    "id": 231,
+    "id": 232,
     "meaning": "0.1, fit, join, suit",
     "reading": "-あ.い / -あ.う / -あ.わせる / -あい / あ.い / あ.う / あ.わす / あ.わせる / あい- / カッ / ガッ / ゴウ",
     "type": "kanji"
   },
   "答": {
-    "id": 232,
+    "id": 233,
     "meaning": "answer, solution",
     "reading": "こた.え / こた.える / トウ",
     "type": "kanji"
   },
   "家": {
-    "id": 233,
+    "id": 234,
     "meaning": "expert, family, home, house, performer, professional",
     "reading": "いえ / うち / や / カ / ケ",
     "type": "kanji"
   },
   "場": {
-    "id": 234,
+    "id": 235,
     "meaning": "location, place",
     "reading": "ば / ジョウ / チョウ",
     "type": "kanji"
   },
   "所": {
-    "id": 235,
+    "id": 236,
     "meaning": "extent, place",
     "reading": "-ところ / とこ / ところ / どころ / ショ",
     "type": "kanji"
   },
   "世": {
-    "id": 236,
+    "id": 237,
     "meaning": "generation, public, society, world",
     "reading": "よ / セ / セイ / ソウ",
     "type": "kanji"
   },
   "代": {
-    "id": 237,
+    "id": 238,
     "meaning": "age, change, charge, convert, counter for decades of ages, eras, etc., fee, generation, period, rate, replace, substitute",
     "reading": "-が.わり / -がわ.り / か.える / か.わり / か.わる / かわ.り / かわ.る / しろ / よ / タイ / ダイ",
     "type": "kanji"
   },
   "貸": {
-    "id": 238,
+    "id": 239,
     "meaning": "lend",
     "reading": "か.し- / か.す / かし- / タイ",
     "type": "kanji"
   },
   "地": {
-    "id": 239,
+    "id": 240,
     "meaning": "earth, ground",
     "reading": "ジ / チ",
     "type": "kanji"
   },
   "池": {
-    "id": 240,
+    "id": 241,
     "meaning": "cistern, pond, pool, reservoir",
     "reading": "いけ / チ",
     "type": "kanji"
   },
   "洗": {
-    "id": 241,
+    "id": 242,
     "meaning": "inquire into, probe, wash",
     "reading": "あら.う / セン",
     "type": "kanji"
   },
   "光": {
-    "id": 242,
+    "id": 243,
     "meaning": "light, ray",
     "reading": "ひか.る / ひかり / コウ",
     "type": "kanji"
   },
   "英": {
-    "id": 243,
+    "id": 244,
     "meaning": "England, English, calyx, hero, outstanding",
     "reading": "はなぶさ / エイ",
     "type": "kanji"
   },
   "映": {
-    "id": 244,
+    "id": 245,
     "meaning": "projection, reflect, reflection",
     "reading": "-ば.え / うつ.す / うつ.る / は.える / エイ",
     "type": "kanji"
   },
   "歌": {
-    "id": 245,
+    "id": 246,
     "meaning": "sing, song",
     "reading": "うた / うた.う / カ",
     "type": "kanji"
   },
   "楽": {
-    "id": 246,
+    "id": 247,
     "meaning": "comfort, ease, music",
     "reading": "この.む / たの.しい / たの.しむ / ガク / ゴウ / ラク",
     "type": "kanji"
   },
   "薬": {
-    "id": 247,
+    "id": 248,
     "meaning": "benefit, chemical, enamel, gunpowder, medicine",
     "reading": "くすり / ヤク",
     "type": "kanji"
   },
   "界": {
-    "id": 248,
+    "id": 249,
     "meaning": "boundary, world",
     "reading": "カイ",
     "type": "kanji"
   },
   "産": {
-    "id": 249,
+    "id": 250,
     "meaning": "bear, childbirth, give birth, native, products, property, yield",
     "reading": "う.まれる / う.む / うぶ- / む.す / サン",
     "type": "kanji"
   },
   "業": {
-    "id": 250,
+    "id": 251,
     "meaning": "arts, business, performance, vocation",
     "reading": "わざ / ギョウ / ゴウ",
     "type": "kanji"
   },
   "林": {
-    "id": 251,
+    "id": 252,
     "meaning": "forest, grove",
     "reading": "はやし / リン",
     "type": "kanji"
   },
   "森": {
-    "id": 252,
+    "id": 253,
     "meaning": "forest, woods",
     "reading": "もり / シン",
     "type": "kanji"
   },
   "物": {
-    "id": 253,
+    "id": 254,
     "meaning": "matter, object, thing",
     "reading": "もの / もの- / ブツ / モツ",
     "type": "kanji"
   },
   "品": {
-    "id": 254,
+    "id": 255,
     "meaning": "article, counter for meal courses, dignity, goods, refinement",
     "reading": "しな / ヒン / ホン",
     "type": "kanji"
   },
   "建": {
-    "id": 255,
+    "id": 256,
     "meaning": "build",
     "reading": "-だ.て / た.つ / た.て / た.てる / ケン / コン",
     "type": "kanji"
   },
   "館": {
-    "id": 256,
+    "id": 257,
     "meaning": "building, large building, mansion, palace",
     "reading": "たて / やかた / カン",
     "type": "kanji"
   },
   "図": {
-    "id": 257,
+    "id": 258,
     "meaning": "audacious, drawing, extraordinary, map, plan",
     "reading": "え / はか.る / ズ / ト",
     "type": "kanji"
   },
   "使": {
-    "id": 258,
+    "id": 259,
     "meaning": "ambassador, cause, envoy, messenger, order, send on a mission, use",
     "reading": "-つか.い / -づか.い / つか.い / つか.う / シ",
     "type": "kanji"
   },
   "便": {
-    "id": 259,
+    "id": 260,
     "meaning": "chance, convenience, excrement, facility, feces, letter",
     "reading": "たよ.り / ビン / ベン",
     "type": "kanji"
   },
   "借": {
-    "id": 260,
+    "id": 261,
     "meaning": "borrow, rent",
     "reading": "か.りる / シャク",
     "type": "kanji"
   },
   "作": {
-    "id": 261,
+    "id": 262,
     "meaning": "build, make, prepare, production",
     "reading": "-づく.り / つく.り / つく.る / サ / サク",
     "type": "kanji"
   },
   "広": {
-    "id": 262,
+    "id": 263,
     "meaning": "broad, spacious, wide",
     "reading": "ひろ.い / ひろ.がる / ひろ.げる / ひろ.まる / ひろ.める / コウ",
     "type": "kanji"
   },
   "私": {
-    "id": 263,
+    "id": 264,
     "meaning": "I, me, private",
     "reading": "わたくし / わたし / シ",
     "type": "kanji"
   },
   "去": {
-    "id": 264,
+    "id": 265,
     "meaning": "divorce, elapse, eliminate, gone, leave, past, quit",
     "reading": "-さ.る / さ.る / キョ / コ",
     "type": "kanji"
   },
   "室": {
-    "id": 265,
+    "id": 266,
     "meaning": "apartment, cellar, chamber, greenhouse, room",
     "reading": "むろ / シツ",
     "type": "kanji"
   },
   "屋": {
-    "id": 266,
+    "id": 267,
     "meaning": "dealer, house, roof, seller, shop",
     "reading": "や / オク",
     "type": "kanji"
   },
   "教": {
-    "id": 267,
+    "id": 268,
     "meaning": "doctrine, faith, teach",
     "reading": "おし.える / おそ.わる / キョウ",
     "type": "kanji"
   },
   "研": {
-    "id": 268,
+    "id": 269,
     "meaning": "polish, sharpen, study of",
     "reading": "と.ぐ / ケン",
     "type": "kanji"
   },
   "発": {
-    "id": 269,
+    "id": 270,
     "meaning": "counter for gunshots, departure, discharge, disclose, emit, publish, start from",
     "reading": "あば.く / おこ.る / た.つ / つか.わす / はな.つ / ハツ / ホツ",
     "type": "kanji"
   },
   "究": {
-    "id": 270,
+    "id": 271,
     "meaning": "research, study",
     "reading": "きわ.める / キュウ / ク",
     "type": "kanji"
   },
   "着": {
-    "id": 271,
+    "id": 272,
     "meaning": "arrive, counter for suits of clothing, don, wear",
     "reading": "き.せる / き.る / つ.く / つ.ける / ジャク / チャク",
     "type": "kanji"
   },
   "乗": {
-    "id": 272,
+    "id": 273,
     "meaning": "board, counter for vehicles, join, mount, multiplication, power, record, ride",
     "reading": "-の.り / の.せる / の.る / ショウ / ジョウ",
     "type": "kanji"
   },
   "計": {
-    "id": 273,
+    "id": 274,
     "meaning": "measure, plan, plot, scheme",
     "reading": "はか.らう / はか.る / ケイ",
     "type": "kanji"
   },
   "画": {
-    "id": 274,
+    "id": 275,
     "meaning": "brush-stroke, picture",
     "reading": "えが.く / かぎ.る / かく.する / はか.る / はかりごと / エ / カイ / カク / ガ",
     "type": "kanji"
   },
   "説": {
-    "id": 275,
+    "id": 276,
     "meaning": "explanation, opinion, rumor, theory",
     "reading": "と.く / セツ / ゼイ",
     "type": "kanji"
   },
   "院": {
-    "id": 276,
+    "id": 277,
     "meaning": "Inst., institution, mansion, school, temple",
     "reading": "イン",
     "type": "kanji"
   },
   "病": {
-    "id": 277,
+    "id": 278,
     "meaning": "ill, sick",
     "reading": "-や.み / や.む / やまい / ビョウ / ヘイ",
     "type": "kanji"
   },
   "科": {
-    "id": 278,
+    "id": 279,
     "meaning": "course, department, section",
     "reading": "カ",
     "type": "kanji"
   },
   "度": {
-    "id": 279,
+    "id": 280,
     "meaning": "attitude, consider, counter for occurrences, degrees, occurrence, time",
     "reading": "-た.い / たび / タク / ト / ド",
     "type": "kanji"
   },
   "頭": {
-    "id": 280,
+    "id": 281,
     "meaning": "counter for large animals, head",
     "reading": "-がしら / あたま / かしら / かぶり / ズ / ト / トウ",
     "type": "kanji"
   },
   "顔": {
-    "id": 281,
+    "id": 282,
     "meaning": "Kanji",
     "reading": "かお / ガン",
     "type": "kanji"
   },
   "声": {
-    "id": 282,
+    "id": 283,
     "meaning": "Kanji",
     "reading": "こえ / こわ- / ショウ / セイ",
     "type": "kanji"
   },
   "題": {
-    "id": 283,
+    "id": 284,
     "meaning": "Kanji",
     "reading": "ダイ",
     "type": "kanji"
   },
   "色": {
-    "id": 284,
+    "id": 285,
     "meaning": "Kanji",
     "reading": "いろ / シキ / ショク",
     "type": "kanji"
   },
   "漢": {
-    "id": 285,
+    "id": 286,
     "meaning": "Kanji",
     "reading": "カン",
     "type": "kanji"
   },
   "字": {
-    "id": 286,
+    "id": 287,
     "meaning": "Kanji",
     "reading": "-な / あざ / あざな / ジ",
     "type": "kanji"
   },
   "写": {
-    "id": 287,
+    "id": 288,
     "meaning": "Kanji",
     "reading": "うつ- / うつ.し / うつ.す / うつ.る / シャ / ジャ",
     "type": "kanji"
   },
   "考": {
-    "id": 288,
+    "id": 289,
     "meaning": "Kanji",
     "reading": "かんが.え / かんが.える / コウ",
     "type": "kanji"
   },
   "真": {
-    "id": 289,
+    "id": 290,
     "meaning": "Kanji",
     "reading": "ま / ま- / まこと / シン",
     "type": "kanji"
   },
   "集": {
-    "id": 290,
+    "id": 291,
     "meaning": "congregate, flock, gather, meet, swarm",
     "reading": "あつ.まる / あつ.める / つど.う / シュウ",
     "type": "kanji"
   },
   "曜": {
-    "id": 291,
+    "id": 292,
     "meaning": "Kanji",
     "reading": "ヨウ",
     "type": "kanji"
   },
   "進": {
-    "id": 292,
+    "id": 293,
     "meaning": "Kanji",
     "reading": "すす.む / すす.める / シン",
     "type": "kanji"
   },
   "帰": {
-    "id": 293,
+    "id": 294,
     "meaning": "Kanji",
     "reading": "おく.る / かえ.す / かえ.る / とつ.ぐ / キ",
     "type": "kanji"
   },
   "別": {
-    "id": 294,
+    "id": 295,
     "meaning": "Kanji",
     "reading": "わ.ける / わか.れる / ベツ",
     "type": "kanji"
   },
   "以": {
-    "id": 295,
+    "id": 296,
     "meaning": "Kanji",
     "reading": "もっ.て / イ",
     "type": "kanji"
   },
   "堂": {
-    "id": 296,
+    "id": 297,
     "meaning": "Kanji",
     "reading": "ドウ",
     "type": "kanji"
   },
   "税": {
-    "id": 297,
+    "id": 298,
     "meaning": "duty, tax",
     "reading": "ゼイ",
     "type": "kanji"
   },
   "込": {
-    "id": 298,
+    "id": 299,
     "meaning": "(kokuji), crowded, in bulk, included, mixture",
     "reading": "-こ.み / -こ.む / こ.み / こ.む / こ.める",
     "type": "kanji"
   },
   "申": {
-    "id": 299,
+    "id": 300,
     "meaning": "3-5PM, have the honor to, ninth sign of Chinese zodiac, sign of the monkey",
     "reading": "さる / もう.し- / もう.す / シン",
-    "type": "kanji"
-  },
-  "通": {
-    "id": 300,
-    "meaning": "avenue, commute, counter for letters, notes, documents, etc., pass through, traffic",
-    "reading": "-とお.り / -どお.し / -どお.り / かよ.う / とお.し / とお.す / とお.り / とお.る / ツ / ツウ",
     "type": "kanji"
   },
   "王": {
@@ -1833,8 +1833,8 @@ export const componentsDb = {
   },
   "𡈼": {
     "id": "r11",
-    "meaning": "Royal component / tall",
-    "reading": "てい (tei)",
+    "meaning": "[Radical/Component]",
+    "reading": "n/a",
     "type": "radical"
   },
   "儿": {
@@ -1881,8 +1881,8 @@ export const componentsDb = {
   },
   "𩙿": {
     "id": "r20",
-    "meaning": "Food radical / component",
-    "reading": "しょく (shoku)",
+    "meaning": "[Radical/Component]",
+    "reading": "n/a",
     "type": "radical"
   },
   "欠": {
@@ -1933,16 +1933,22 @@ export const componentsDb = {
     "reading": "かい (kai)",
     "type": "radical"
   },
+  "广": {
+    "id": "r59",
+    "meaning": "Slanted roof radical",
+    "reading": "まだれ (madare)",
+    "type": "radical"
+  },
   "辶": {
     "id": "r49",
     "meaning": "Road / Walk radical",
     "reading": "しんにょう (shinnyou)",
     "type": "radical"
   },
-  "周": {
+  "冂": {
     "id": "r34",
-    "meaning": "Circumference / Week component",
-    "reading": "しゅう (shuu)",
+    "meaning": "Open box / border radical",
+    "reading": "けいがまえ (keigamae)",
     "type": "radical"
   },
   "艹": {
@@ -2093,12 +2099,6 @@ export const componentsDb = {
     "kanji": "亻",
     "meaning": "radical number 9",
     "reading": "",
-    "type": "external_kanji"
-  },
-  "冂": {
-    "kanji": "冂",
-    "meaning": "upside-down box radical (no. 13)",
-    "reading": "キョウ / ケイ",
     "type": "external_kanji"
   },
   "宀": {
@@ -2305,12 +2305,6 @@ export const componentsDb = {
     "reading": "あみがしら / よこめ / ボウ / モウ",
     "type": "external_kanji"
   },
-  "厂": {
-    "kanji": "厂",
-    "meaning": "trailing cliff radical (no. 27), wild goose",
-    "reading": "かりがね / カン",
-    "type": "external_kanji"
-  },
   "占": {
     "kanji": "占",
     "meaning": "divining, forecasting, fortune-telling",
@@ -2327,6 +2321,12 @@ export const componentsDb = {
     "kanji": "才",
     "meaning": "cubic shaku, genius, years old",
     "reading": "サイ",
+    "type": "external_kanji"
+  },
+  "周": {
+    "kanji": "周",
+    "meaning": "circuit, circumference, lap",
+    "reading": "まわ.り / シュウ",
     "type": "external_kanji"
   },
   "里": {
@@ -2495,6 +2495,12 @@ export const componentsDb = {
     "kanji": "介",
     "meaning": "concern oneself with, jammed in, mediate",
     "reading": "カイ",
+    "type": "external_kanji"
+  },
+  "厂": {
+    "kanji": "厂",
+    "meaning": "trailing cliff radical (no. 27), wild goose",
+    "reading": "かりがね / カン",
     "type": "external_kanji"
   },
   "廴": {
@@ -3158,9 +3164,9 @@ export const kanjiDecompositions = {
     "口",
     "貝"
   ],
-  "广": [
-    "厂",
-    "丶"
+  "質": [
+    "斤",
+    "貝"
   ],
   "店": [
     "广",
@@ -3316,16 +3322,6 @@ export const kanjiDecompositions = {
     "音",
     "心"
   ],
-  "用": [
-    "冂",
-    "二",
-    "丨"
-  ],
-  "不": [
-    "一",
-    "丿",
-    "卜"
-  ],
   "急": [
     "勹",
     "彐",
@@ -3465,6 +3461,22 @@ export const kanjiDecompositions = {
   "回": [
     "囗",
     "口"
+  ],
+  "用": [
+    "冂",
+    "二",
+    "丨"
+  ],
+  "通": [
+    "辶",
+    "了",
+    "丶",
+    "用"
+  ],
+  "不": [
+    "一",
+    "丿",
+    "卜"
   ],
   "事": [
     "十",
@@ -3872,11 +3884,5 @@ export const kanjiDecompositions = {
   "申": [
     "日",
     "丨"
-  ],
-  "通": [
-    "辶",
-    "了",
-    "丶",
-    "用"
   ]
 };

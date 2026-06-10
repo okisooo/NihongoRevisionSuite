@@ -51,8 +51,8 @@ export const radicalsData = [
   {
     "id": 11,
     "kanji": "𡈼",
-    "reading": "てい (tei)",
-    "meaning": "[Radical] Royal component / tall",
+    "reading": "n/a",
+    "meaning": "[Radical/Component]",
     "isRadical": true
   },
   {
@@ -114,8 +114,8 @@ export const radicalsData = [
   {
     "id": 20,
     "kanji": "𩙿",
-    "reading": "しょく (shoku)",
-    "meaning": "[Radical] Food radical / component",
+    "reading": "n/a",
+    "meaning": "[Radical/Component]",
     "isRadical": true
   },
   {
@@ -211,9 +211,9 @@ export const radicalsData = [
   },
   {
     "id": 34,
-    "kanji": "周",
-    "reading": "しゅう (shuu)",
-    "meaning": "[Radical] Circumference / Week component",
+    "kanji": "冂",
+    "reading": "けいがまえ (keigamae)",
+    "meaning": "[Radical] Open box / border radical",
     "isRadical": true
   },
   {
