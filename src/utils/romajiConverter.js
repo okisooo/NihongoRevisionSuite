@@ -10,13 +10,13 @@ const romajiMap = {
   "bya": "びゃ", "byu": "びゅ", "byo": "びょ",
   "pya": "ぴゃ", "pyu": "ぴゅ", "pyo": "ぴょ",
   "mya": "みゃ", "myu": "みゅ", "myo": "みょ",
-  "rya": "りゃ", "ryu": "りゅ", "ryo": "りょ",
+  "rya": "りゃ", "ryu": "りょ", "ryo": "りょ",
   "ja": "じゃ", "ju": "じゅ", "jo": "じょ",
   
   // Double characters / Syllables
-  "sha": "しゃ", "shu": "しゅ", "sho": "しょ", "shi": "し",
-  "cha": "ちゃ", "chu": "ちゅ", "cho": "ちょ", "chi": "ち",
-  "tsu": "つ",
+  "sha": "しゃ", "shu": "しゅ", "sho": "しょ", "shi": "し", "si": "し",
+  "cha": "ちゃ", "chu": "ちゅ", "cho": "ちょ", "chi": "ち", "ti": "ち",
+  "tsu": "つ", "tu": "つ",
   
   "ka": "か", "ki": "き", "ku": "く", "ke": "け", "ko": "こ",
   "sa": "さ", "su": "す", "se": "せ", "so": "そ",
@@ -98,4 +98,131 @@ export function romajiToHiragana(str) {
   }
   
   return result;
+}
+
+/**
+ * Generates all possible Romaji spellings for a given Hiragana string.
+ * 
+ * @param {string} hiragana - Target Hiragana string
+ * @returns {string[]} Array of possible Romaji spellings
+ */
+export function generateRomajiCombinations(hiragana) {
+  if (!hiragana) return [""];
+  
+  // Dynamic reverse map of romajiMap
+  const reverseMap = {};
+  for (const [romaji, kana] of Object.entries(romajiMap)) {
+    if (!reverseMap[kana]) {
+      reverseMap[kana] = [];
+    }
+    if (!reverseMap[kana].includes(romaji)) {
+      reverseMap[kana].push(romaji);
+    }
+  }
+  
+  // Parse hiragana into syllables
+  const syllables = [];
+  let idx = 0;
+  while (idx < hiragana.length) {
+    const char = hiragana[idx];
+    const nextChar = hiragana[idx + 1];
+    
+    // Check for yoon / contracted sounds
+    if (nextChar && "ゃゅょぁぃぅぇぉ".includes(nextChar)) {
+      const combined = char + nextChar;
+      if (reverseMap[combined]) {
+        syllables.push(combined);
+        idx += 2;
+        continue;
+      }
+    }
+    
+    syllables.push(char);
+    idx += 1;
+  }
+  
+  // Generate combinations
+  let results = [""];
+  for (let sIdx = 0; sIdx < syllables.length; sIdx++) {
+    const syl = syllables[sIdx];
+    let spellings = [];
+    
+    if (syl === "っ") {
+      const nextSyl = syllables[sIdx + 1];
+      if (nextSyl) {
+        const nextSpellings = reverseMap[nextSyl] || [nextSyl[0]];
+        const firstChars = [...new Set(nextSpellings.map(sp => sp[0]).filter(Boolean))];
+        if (firstChars.length > 0) {
+          spellings = firstChars;
+        } else {
+          spellings = ["t"];
+        }
+      } else {
+        spellings = ["tsu", "xtsu"];
+      }
+    } else {
+      spellings = reverseMap[syl] || [syl];
+    }
+    
+    const newResults = [];
+    for (const r of results) {
+      for (const sp of spellings) {
+        newResults.push(r + sp);
+      }
+    }
+    results = newResults;
+  }
+  
+  return results;
+}
+
+/**
+ * Checks if a typed Hiragana/Romaji input is a valid match/prefix of a target Hiragana reading.
+ * 
+ * @param {string} targetReading - Expected Hiragana reading
+ * @param {string} typedInput - User typed input (Hiragana + trailing Romaji)
+ * @returns {object} { isError: boolean, matchedCount: number, isComplete: boolean }
+ */
+export function checkMatch(targetReading, typedInput) {
+  let commonLen = 0;
+  
+  // Find longest exact Hiragana match
+  while (commonLen < typedInput.length && commonLen < targetReading.length) {
+    const tChar = typedInput[commonLen];
+    const rChar = targetReading[commonLen];
+    
+    // Check if character is Hiragana (Japanese Hiragana range: \u3040-\u309F)
+    const isHiragana = tChar >= '\u3040' && tChar <= '\u309F';
+    
+    if (isHiragana) {
+      if (tChar === rChar) {
+        commonLen++;
+      } else {
+        return { isError: true, matchedCount: commonLen, isComplete: false };
+      }
+    } else {
+      break;
+    }
+  }
+  
+  const remainingTarget = targetReading.substring(commonLen);
+  const remainingTyped = typedInput.substring(commonLen);
+  
+  if (remainingTyped.length === 0) {
+    return { isError: false, matchedCount: commonLen, isComplete: remainingTarget.length === 0 };
+  }
+  
+  if (remainingTarget.length === 0) {
+    return { isError: true, matchedCount: commonLen, isComplete: false };
+  }
+  
+  const romajiSpellings = generateRomajiCombinations(remainingTarget);
+  const isValidPrefix = romajiSpellings.some(spelling => spelling.startsWith(remainingTyped));
+  
+  if (isValidPrefix) {
+    const isComplete = romajiSpellings.includes(remainingTyped);
+    return { isError: false, matchedCount: commonLen, isComplete };
+  } else {
+    return { isError: true, matchedCount: commonLen, isComplete: false };
+  }
 }

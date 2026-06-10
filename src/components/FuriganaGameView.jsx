@@ -1,73 +1,81 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { kanjiData } from '../data/kanji';
 import { sentencesData } from '../data/sentences';
-import { romajiToHiragana } from '../utils/romajiConverter';
+import { romajiToHiragana, checkMatch } from '../utils/romajiConverter';
 import { parseRangeString } from '../utils/rangeParser';
 import { SlidersHorizontal, Settings, HelpCircle, RefreshCw, CheckCircle2, Play, ArrowLeft, ArrowRight, Eye, EyeOff, Keyboard, Search } from 'lucide-react';
 import FuriganaWord from './FuriganaWord';
 
-// Segment matcher function
+// Segment matcher function using robust checkMatch
 function matchTypedSegments(segments, typedText) {
-  let remaining = typedText;
-  let errorOccurred = false;
+  const fullTarget = segments.map(s => s.rt || s.ruby).join('');
+  const match = checkMatch(fullTarget, typedText);
+  
+  let currentIdx = 0;
+  let errorSegmentFound = false;
   
   const result = segments.map((seg) => {
-    if (errorOccurred) {
+    const segText = seg.rt || seg.ruby;
+    const segLen = segText.length;
+    
+    if (errorSegmentFound) {
       return { ...seg, typedRt: '', status: 'pending' };
     }
     
-    if (!seg.rt) {
-      // Okurigana segment (e.g. "しい" or "つ")
-      if (remaining.length === 0) {
+    if (match.isError) {
+      const errorIdx = match.matchedCount;
+      
+      if (errorIdx >= currentIdx && errorIdx < currentIdx + segLen) {
+        errorSegmentFound = true;
+        const matchedInSeg = errorIdx - currentIdx;
+        const matchedPart = segText.substring(0, matchedInSeg);
+        const typedErrorChar = typedText[errorIdx] || '';
+        
+        return {
+          ...seg,
+          typedRt: seg.rt ? (matchedPart + typedErrorChar) : '',
+          status: 'error'
+        };
+      } else if (errorIdx < currentIdx) {
         return { ...seg, typedRt: '', status: 'pending' };
-      }
-      
-      let matchLength = 0;
-      while (matchLength < seg.ruby.length && matchLength < remaining.length) {
-        if (seg.ruby[matchLength] === remaining[matchLength]) {
-          matchLength++;
-        } else {
-          break;
-        }
-      }
-      
-      if (matchLength === remaining.length) {
-        remaining = '';
-        return { ...seg, typedRt: '', status: 'partial' };
-      } else if (matchLength < remaining.length && matchLength === seg.ruby.length) {
-        remaining = remaining.substring(seg.ruby.length);
-        return { ...seg, typedRt: '', status: 'correct' };
       } else {
-        errorOccurred = true;
-        remaining = '';
-        return { ...seg, typedRt: '', status: 'error' };
+        currentIdx += segLen;
+        return {
+          ...seg,
+          typedRt: seg.rt ? segText : '',
+          status: 'correct'
+        };
       }
     } else {
-      // Kanji segment with target reading (e.g. "あたら")
-      if (remaining.length === 0) {
-        return { ...seg, typedRt: '', status: 'pending' };
-      }
+      const activeIdx = match.matchedCount;
       
-      if (seg.rt.startsWith(remaining)) {
-        const typed = remaining;
-        remaining = '';
-        return { ...seg, typedRt: typed, status: 'partial' };
-      } else if (remaining.startsWith(seg.rt)) {
-        remaining = remaining.substring(seg.rt.length);
-        return { ...seg, typedRt: seg.rt, status: 'correct' };
+      if (activeIdx >= currentIdx && activeIdx < currentIdx + segLen) {
+        const matchedInSeg = activeIdx - currentIdx;
+        const matchedPart = segText.substring(0, matchedInSeg);
+        const pendingRomaji = typedText.substring(match.matchedCount);
+        
+        currentIdx += segLen;
+        
+        return {
+          ...seg,
+          typedRt: seg.rt ? (matchedPart + pendingRomaji) : '',
+          status: pendingRomaji.length === 0 && matchedInSeg === 0 ? 'pending' : 'partial'
+        };
+      } else if (activeIdx >= currentIdx + segLen) {
+        currentIdx += segLen;
+        return {
+          ...seg,
+          typedRt: seg.rt ? segText : '',
+          status: 'correct'
+        };
       } else {
-        errorOccurred = true;
-        const typed = remaining;
-        remaining = '';
-        return { ...seg, typedRt: typed, status: 'error' };
+        return { ...seg, typedRt: '', status: 'pending' };
       }
     }
   });
   
-  // Entire word is correct only if all segments are 'correct' and no remaining typed text
-  const allCorrect = result.every(s => s.status === 'correct') && remaining.length === 0;
-  
-  return { segments: result, hasError: errorOccurred, allCorrect };
+  const allCorrect = match.isComplete && !match.isError;
+  return { segments: result, hasError: match.isError, allCorrect };
 }
 
 export default function FuriganaGameView() {
@@ -81,13 +89,14 @@ export default function FuriganaGameView() {
   const [customRangeText, setCustomRangeText] = useState('');
   const [checklistFilter, setChecklistFilter] = useState('all'); // all, selected
   const [showTranslation, setShowTranslation] = useState(false);
+  const [isAdvancing, setIsAdvancing] = useState(false);
 
   // Game states
   const [gameSentences, setGameSentences] = useState([]);
   const [currentSentenceIdx, setCurrentSentenceIdx] = useState(0);
   const [activeTargetIdx, setActiveTargetIdx] = useState(0);
   const [typedInput, setTypedInput] = useState('');
-  const [targetStates, setTargetStates] = useState([]); // Array of { word, reading, segments, status: 'pending'|'correct'|'error', typedText: '' }
+  const [targetStates, setTargetStates] = useState([]); // Array of { word, reading, segments, status: 'pending'|'correct'|'error'|'skipped', typedText: '' }
   const [stats, setStats] = useState({ totalKeystrokes: 0, errors: 0, startTime: 0, endTime: 0 });
 
   const inputRef = useRef(null);
@@ -211,6 +220,7 @@ export default function FuriganaGameView() {
 
   // Handle typing input
   const handleInputChange = (e) => {
+    if (isAdvancing) return;
     const val = e.target.value;
     // Convert Romaji to Hiragana in real-time
     const converted = romajiToHiragana(val);
@@ -246,8 +256,10 @@ export default function FuriganaGameView() {
         setActiveTargetIdx(idx => idx + 1);
       } else {
         // All targets in sentence correct!
+        setIsAdvancing(true);
         setTimeout(() => {
           handleNextSentence();
+          setIsAdvancing(false);
         }, 800);
       }
     }
@@ -263,6 +275,53 @@ export default function FuriganaGameView() {
       setStats(s => ({ ...s, endTime: Date.now() }));
       setView('summary');
     }
+  };
+
+  // Skip target and reveal answer
+  const handleSkipTarget = () => {
+    if (isAdvancing) return;
+    const activeTarget = targetStates[activeTargetIdx];
+    if (!activeTarget) return;
+
+    setIsAdvancing(true);
+
+    const nextStates = [...targetStates];
+    const revealSegments = activeTarget.segments.map(seg => ({
+      ...seg,
+      typedRt: seg.rt || '',
+      status: 'correct'
+    }));
+
+    nextStates[activeTargetIdx] = {
+      ...activeTarget,
+      typedText: activeTarget.segments.map(seg => seg.rt || seg.ruby).join(''),
+      matchResult: revealSegments,
+      status: 'skipped'
+    };
+
+    setTargetStates(nextStates);
+    setTypedInput('');
+    setStats(s => ({ ...s, errors: s.errors + 1 }));
+
+    setTimeout(() => {
+      if (activeTargetIdx + 1 < targetStates.length) {
+        setActiveTargetIdx(idx => idx + 1);
+        setIsAdvancing(false);
+      } else {
+        // Last target in sentence skipped, move to next sentence
+        if (currentSentenceIdx + 1 < gameSentences.length) {
+          const nextIdx = currentSentenceIdx + 1;
+          setCurrentSentenceIdx(nextIdx);
+          setupSentence(gameSentences[nextIdx]);
+          setIsAdvancing(false);
+        } else {
+          // Game completed
+          setStats(s => ({ ...s, endTime: Date.now() }));
+          setView('summary');
+          setIsAdvancing(false);
+        }
+      }
+    }, 1500); // 1.5 seconds reveal time
   };
 
   // Render the sentence with interactive inputs
@@ -304,21 +363,23 @@ export default function FuriganaGameView() {
       let targetClass = "game-target-word";
       if (isActive) targetClass += " active";
       if (state.status === 'correct') targetClass += " correct";
+      if (state.status === 'skipped') targetClass += " skipped";
       if (state.status === 'error') targetClass += " error";
 
       // Render ruby segments with typed characters
       elements.push(
         <span key={`target-${idx}`} className={targetClass}>
           {state.segments.map((seg, sIdx) => {
+            const isSkipped = state.status === 'skipped';
             const matchSeg = state.matchResult ? state.matchResult[sIdx] : null;
-            const typedRt = matchSeg ? matchSeg.typedRt : '';
+            const typedRt = isSkipped ? seg.rt : (matchSeg ? matchSeg.typedRt : '');
             const isError = matchSeg?.status === 'error';
-            const isCorrect = matchSeg?.status === 'correct' || matchSeg?.status === 'partial';
+            const isCorrect = isSkipped || matchSeg?.status === 'correct' || matchSeg?.status === 'partial';
 
             return seg.rt ? (
               <ruby key={sIdx} className="game-ruby">
                 {seg.ruby}
-                <rt className={`game-rt ${isError ? 'error' : (isCorrect ? 'typed' : '')}`}>
+                <rt className={`game-rt ${isError ? 'error' : (isSkipped ? 'skipped' : (isCorrect ? 'typed' : ''))}`}>
                   {typedRt || <span className="placeholder-dot">.</span>}
                 </rt>
               </ruby>
@@ -530,25 +591,38 @@ export default function FuriganaGameView() {
               <span className="typed-preview-val">{romajiToHiragana(typedInput) || <span className="blink-cursor">|</span>}</span>
             </div>
 
-            {/* Show/Hide Translation */}
-            <div className="translation-toggle-container" style={{ marginTop: '24px' }}>
+            {/* Show/Hide Translation & Skip Controls */}
+            <div className="game-controls-row" style={{ marginTop: '24px', display: 'flex', gap: '12px', justifyContent: 'center' }}>
               <button 
                 className="control-button"
                 onClick={(e) => {
                   e.stopPropagation();
                   setShowTranslation(!showTranslation);
                 }}
+                style={{ flex: 'none', minWidth: '220px' }}
               >
                 {showTranslation ? <EyeOff size={16} /> : <Eye size={16} />}
                 {showTranslation ? "Hide English" : "Show English Translation"}
               </button>
 
-              {showTranslation && (
-                <div className="game-translation-card animate-fade-in">
-                  <p>{currentSentence?.translation}</p>
-                </div>
-              )}
+              <button 
+                className="control-button warning skip-btn"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleSkipTarget();
+                }}
+                disabled={isAdvancing}
+                style={{ flex: 'none', minWidth: '150px' }}
+              >
+                Reveal & Skip
+              </button>
             </div>
+
+            {showTranslation && (
+              <div className="game-translation-card animate-fade-in">
+                <p>{currentSentence?.translation}</p>
+              </div>
+            )}
           </div>
         </div>
 

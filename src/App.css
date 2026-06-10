@@ -2487,6 +2487,11 @@
   background: rgba(16, 185, 129, 0.05);
 }
 
+.game-target-word.skipped {
+  border-bottom-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.05);
+}
+
 .game-target-word.error {
   border-bottom-color: var(--incorrect-color);
   background: rgba(239, 68, 68, 0.05);
@@ -2513,6 +2518,10 @@
 
 .game-rt.typed {
   color: var(--primary-color);
+}
+
+.game-rt.skipped {
+  color: #f59e0b;
 }
 
 .game-rt.error {
