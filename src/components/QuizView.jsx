@@ -163,13 +163,21 @@ export default function QuizView() {
 
   const handleApplyCustomRanges = () => {
     if (!customRangeText) return;
-    const parsedIds = new Set();
+    const additionIds = new Set();
+    const exclusionIds = new Set();
     const parts = customRangeText.split(',');
     
     parts.forEach(part => {
       const cleanPart = part.trim();
-      if (cleanPart.includes('-')) {
-        const [startStr, endStr] = cleanPart.split('-');
+      if (!cleanPart) return;
+      
+      const isExclusion = cleanPart.startsWith('!') || cleanPart.startsWith('-') || cleanPart.startsWith('^');
+      const innerPart = isExclusion ? cleanPart.slice(1).trim() : cleanPart;
+      
+      const targetSet = isExclusion ? exclusionIds : additionIds;
+      
+      if (innerPart.includes('-')) {
+        const [startStr, endStr] = innerPart.split('-');
         const start = parseInt(startStr.trim());
         const end = parseInt(endStr.trim());
         if (!isNaN(start) && !isNaN(end)) {
@@ -177,21 +185,29 @@ export default function QuizView() {
           const max = Math.max(start, end);
           for (let i = min; i <= max; i++) {
             if (i >= 1 && i <= 300) {
-              parsedIds.add(i);
+              targetSet.add(i);
             }
           }
         }
       } else {
-        const singleId = parseInt(cleanPart);
+        const singleId = parseInt(innerPart);
         if (!isNaN(singleId) && singleId >= 1 && singleId <= 300) {
-          parsedIds.add(singleId);
+          targetSet.add(singleId);
         }
       }
     });
 
-    if (parsedIds.size > 0) {
-      setSelectedIds(parsedIds);
-      const idsArray = Array.from(parsedIds);
+    // Compute final parsed set: additions minus exclusions
+    const finalIds = new Set();
+    additionIds.forEach(id => {
+      if (!exclusionIds.has(id)) {
+        finalIds.add(id);
+      }
+    });
+
+    if (finalIds.size > 0) {
+      setSelectedIds(finalIds);
+      const idsArray = Array.from(finalIds);
       setRangeFrom(Math.min(...idsArray));
       setRangeTo(Math.max(...idsArray));
       setSearchText('');
@@ -435,7 +451,7 @@ export default function QuizView() {
                 <input 
                   type="text" 
                   className="selection-search-input range"
-                  placeholder="e.g. 101-110, 121-130, 131-140"
+                  placeholder="e.g. 101-140, !111-120"
                   value={customRangeText}
                   onChange={(e) => setCustomRangeText(e.target.value)}
                 />
