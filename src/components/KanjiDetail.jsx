@@ -77,6 +77,22 @@ export default function KanjiDetail() {
         drawingColor: '#0284c7',
         showOutline: true,
         showCharacter: false, // Start hidden to animate properly
+        // Stroke data is bundled by scripts/copy-hanzi-data.js so it works offline
+        // (XHR rather than fetch, because Electron's file:// pages can't use fetch)
+        charDataLoader: (char, onLoad, onError) => {
+          const xhr = new XMLHttpRequest();
+          xhr.open('GET', `./hanzi-data/${char}.json`);
+          xhr.onload = () => {
+            try {
+              if (xhr.status !== 200 && xhr.status !== 0) throw new Error(`No stroke data for ${char}`);
+              onLoad(JSON.parse(xhr.responseText));
+            } catch (err) {
+              onError(err);
+            }
+          };
+          xhr.onerror = onError;
+          xhr.send();
+        },
       });
 
       setWriter(newWriter);

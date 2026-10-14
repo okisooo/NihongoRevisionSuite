@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { kanjiData } from '../data/kanji';
 import { componentsDb, kanjiDecompositions } from '../data/components';
+import { toHiragana } from '../utils/kanaConverter';
 import { 
   SlidersHorizontal, 
   Settings, 

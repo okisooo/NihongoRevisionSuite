@@ -26,6 +26,18 @@ Built as a lightweight, standalone desktop app using **React (Vite)** packaged i
 
 ---
 
+## Web App (Desktop & Phone)
+
+Every push to `main` builds the app and publishes it to the `gh-pages` branch (`.github/workflows/deploy-web.yml`), which GitHub Pages serves at **https://nihongo.okiso.net**.
+
+- It's an installable PWA: on iPhone use **Share → Add to Home Screen**, on Android/desktop Chrome use **Install app**.
+- It works offline once opened. Kanji stroke data is bundled at build time by `scripts/copy-hanzi-data.js`.
+- When a new version is deployed, the app shows a "new version available" prompt; tap **Refresh** to update.
+
+One-time setup: add a DNS `CNAME` record `nihongo` → `okisooo.github.io`. If Pages isn't serving yet, check **Settings → Pages** is set to deploy from the `gh-pages` branch.
+
+---
+
 ## Getting Started (Local Development)
 
 To run the application locally on your machine, ensure you have [Node.js](https://nodejs.org/) installed.
