@@ -2604,3 +2604,102 @@
 
 
 
+
+/* "New version available" toast for the installed web app */
+.update-toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(24px + env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px 10px 18px;
+  background: #1e1b4b;
+  color: #fff;
+  border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.25);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.update-toast button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  border-radius: 999px;
+  padding: 6px 14px;
+  background: var(--primary-color);
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.update-toast .update-toast-dismiss {
+  background: transparent;
+  padding: 6px 8px;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+/* Phone layout: sidebar becomes a bottom tab bar */
+@media (max-width: 768px) {
+  .desktop-layout {
+    flex-direction: column-reverse;
+    height: 100dvh;
+  }
+
+  .sidebar-nav {
+    width: 100%;
+    height: auto;
+    padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
+    border-right: none;
+    border-top: 1px solid var(--sidebar-border);
+    box-shadow: 0 -4px 20px rgba(15, 23, 42, 0.04);
+  }
+
+  .brand {
+    display: none;
+  }
+
+  .nav-items {
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 4px;
+  }
+
+  .nav-item {
+    flex: 1;
+    flex-direction: column;
+    gap: 2px;
+    padding: 6px 4px;
+    font-size: 0.68rem;
+    text-align: center;
+  }
+
+  .main-content {
+    min-height: 0;
+  }
+
+  .dictionary-container,
+  .grammar-container,
+  .quiz-container,
+  .kanji-detail-container {
+    padding: 16px;
+  }
+
+  .glass-panel {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .dictionary-header {
+    flex-wrap: wrap;
+  }
+
+  .update-toast {
+    bottom: calc(84px + env(safe-area-inset-bottom));
+  }
+}

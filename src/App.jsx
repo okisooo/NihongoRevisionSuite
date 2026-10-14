@@ -4,6 +4,7 @@ import GrammarView from './components/GrammarView';
 import QuizView from './components/QuizView';
 import FuriganaGameView from './components/FuriganaGameView';
 import KanjiDetail from './components/KanjiDetail';
+import UpdatePrompt from './components/UpdatePrompt';
 import { BookA, Gamepad2, GraduationCap, Keyboard } from 'lucide-react';
 import './App.css';
 
@@ -67,6 +68,7 @@ function App() {
         </main>
 
       </div>
+      <UpdatePrompt />
     </HashRouter>
   );
 }
