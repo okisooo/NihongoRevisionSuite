@@ -1,7 +1,7 @@
 import { contextsFor } from "./characterData";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { ArrowRight, ArrowUpRight, Check, Flame, RotateCcw, Download, Upload, Zap } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, RotateCcw, Download, Upload } from "lucide-react";
 import { useProgress, updateProgress, getWarning, getRawProgress } from "./store";
 import { exportBackup } from "./backup";
 import {
@@ -9,23 +9,11 @@ import {
   lessons,
   readings,
   lessonTitle,
-  kanjiDueKeys,
   createSession,
   contextWords,
 } from "./content";
 import { schedule, validateProgress, recordSessionAnswer } from "./progress";
-import {
-  STAGE_COUNT,
-  bestKey,
-  localDay,
-  masteryOf,
-  nextStage,
-  rushOf,
-  stageIds,
-  streakDays,
-  nextKanaStage,
-} from "../rush/mastery";
-import { characterById, dueDeck, TYPED } from "../rush/deck";
+import { STAGE_COUNT } from "../rush/mastery";
 import { KanjiSettings } from "../rush/KanjiViews";
 
 function SaveError({ error }) {
@@ -34,14 +22,6 @@ function SaveError({ error }) {
       {error}
     </p>
   ) : null;
-}
-function useNow() {
-  const [now, setNow] = useState(() => Date.now());
-  useEffect(() => {
-    const timer = setInterval(() => setNow(Date.now()), 30000);
-    return () => clearInterval(timer);
-  }, []);
-  return now;
 }
 function useSave() {
   const [error, setError] = useState("");
@@ -89,184 +69,6 @@ function StartButton({ mode = "today", children = "start" }) {
       </button>
       <SaveError error={error} />
     </>
-  );
-}
-
-const when = (time) =>
-  new Date(time).toLocaleString("en", { weekday: "short", hour: "numeric", minute: "2-digit" });
-
-/** Today: one short plan. Kanji reviews, new kanji, grammar. */
-export function Today() {
-  const progress = useProgress();
-  const now = useNow();
-  const rush = rushOf(progress);
-  const kanjiDue = dueDeck(kanjiDueKeys(progress, now)).length;
-  const nextKanjiDue = Object.entries(progress.cards)
-    .filter(([key, card]) => cards[key]?.character && card.due > now)
-    .reduce((soonest, [, card]) => Math.min(soonest, card.due), Infinity);
-  const stage = nextStage(rush);
-  const clearedToday = Object.values(rush.stages).some((s) => localDay(s.cleared) === localDay(now));
-  const study = createSession(progress, "today", now).queue;
-  const grammarCount = progress.active ? progress.active.queue.length - progress.active.index : study.length;
-  const nextLesson = lessons.find((l) => !progress.lessons[l.lesson]);
-  const streak = streakDays(rush, now);
-  const playedToday = rush.days[0] === localDay(now);
-  const mastered = Array.from({ length: 300 }, (_, i) => masteryOf(progress, i + 1));
-  // Beginners (no kanji yet) and anyone partway through kana learn kana first.
-  const kanaNext = nextKanaStage(rush);
-  const kanaFirst =
-    kanaNext && (Object.keys(rush.kanaStages).length > 0 || !mastered.some((tier) => tier > 0));
-  const kanaClearedToday = Object.values(rush.kanaStages).some((s) => localDay(s.cleared) === localDay(now));
-  const best = rush.best[bestKey("challenge", rush.settings.kinds.filter((k) => TYPED.includes(k)))] || 0;
-
-  const steps = [
-    {
-      title: "review kanji",
-      done: kanjiDue === 0,
-      detail: kanjiDue
-        ? `${kanjiDue} due · typed and written`
-        : Number.isFinite(nextKanjiDue)
-          ? `all caught up · next ${when(nextKanjiDue)}`
-          : "nothing to review yet",
-      action: kanjiDue > 0 && (
-        <Link className="primary-button" to="/kanji/play?mode=practice&source=due">
-          start <ArrowRight size={17} />
-        </Link>
-      ),
-    },
-    kanaFirst ? {
-      title: "new kana",
-      done: kanaClearedToday,
-      detail: (
-        <>
-          {kanaNext.script} {kanaNext.number} ·{" "}
-          <span lang="ja" className="plan-glyphs">
-            {kanaNext.kana.join("")}
-          </span>
-          {kanaClearedToday && " · a stage is cleared today"}
-        </>
-      ),
-      action: (
-        <Link className={kanaClearedToday ? "secondary-button" : "primary-button"} to={`/kana/stage/${kanaNext.id}`}>
-          learn <ArrowRight size={17} />
-        </Link>
-      ),
-    } : {
-      title: "new kanji",
-      done: clearedToday,
-      detail: stage ? (
-        <>
-          stage {stage} ·{" "}
-          <span lang="ja" className="plan-glyphs">
-            {stageIds(stage).map((id) => characterById(id).kanji).join("")}
-          </span>
-          {clearedToday && " · a stage is cleared today"}
-        </>
-      ) : (
-        `all ${STAGE_COUNT} stages cleared`
-      ),
-      action: stage && (
-        <Link className={clearedToday ? "secondary-button" : "primary-button"} to={`/kanji/stage/${stage}`}>
-          learn <ArrowRight size={17} />
-        </Link>
-      ),
-    },
-    {
-      title: "grammar",
-      done: grammarCount === 0,
-      detail: grammarCount
-        ? `${grammarCount} card${grammarCount === 1 ? "" : "s"} · patterns and sentences`
-        : nextLesson
-          ? `next lesson ${nextLesson.lesson}: ${lessonTitle(nextLesson)}`
-          : "all lessons complete",
-      action: grammarCount ? (
-        <StartButton />
-      ) : (
-        nextLesson && (
-          <Link className="secondary-button" to={`/grammar/${nextLesson.lesson}`}>
-            lesson <ArrowRight size={17} />
-          </Link>
-        )
-      ),
-    },
-  ];
-
-  return (
-    <div className="page today-page">
-      <div className="today-head">
-        <PageHeading title="today" />
-        <span className={`rush-streak ${streak ? "on" : ""}`} title="days in a row">
-          <Flame size={17} /> {streak}-day streak
-          {!playedToday && streak > 0 && <small> · play today to keep it</small>}
-        </span>
-      </div>
-      {getWarning() && (
-        <p role="alert" className="save-error">
-          {getWarning()} <Link to="/settings">backups</Link>
-        </p>
-      )}
-      <ol className="plan">
-        {steps.map((step, i) => (
-          <li key={step.title} className={step.done ? "done" : ""}>
-            <span className="plan-step">{step.done ? <Check size={18} /> : i + 1}</span>
-            <div>
-              <h2>{step.title}</h2>
-              <p>{step.detail}</p>
-            </div>
-            <div className="plan-action">{step.action}</div>
-          </li>
-        ))}
-      </ol>
-      <Link className="plan-bonus" to="/kanji/play?mode=challenge">
-        <Zap size={18} />
-        <span>
-          <b>rush</b> · timed kanji typing{best ? ` · best ${best.toLocaleString("en")}` : ""}
-        </span>
-        <ArrowRight size={16} />
-      </Link>
-      <div className="study-stats">
-        <Link to="/kanji">
-          <strong>
-            {mastered.filter((t) => t > 0).length}
-            <small> / 300</small>
-          </strong>
-          <span>kanji met</span>
-        </Link>
-        <Link to="/kanji">
-          <strong>{mastered.filter((t) => t === 4).length}</strong>
-          <span>mastered</span>
-        </Link>
-        <Link to="/kanji">
-          <strong>
-            {Object.keys(rush.stages).length}
-            <small> / {STAGE_COUNT}</small>
-          </strong>
-          <span>stages</span>
-        </Link>
-        <Link to="/grammar">
-          <strong>
-            {Object.keys(progress.lessons).length}
-            <small> / 30</small>
-          </strong>
-          <span>lessons</span>
-        </Link>
-      </div>
-      {progress.sessions.length > 0 && (
-        <details className="reference-details">
-          <summary>grammar history · {progress.sessions.length} sessions</summary>
-          {progress.sessions.slice(0, 7).map((session, i) => (
-            <div className="review-row" key={i}>
-              <span>
-                {new Date(session.finished).toLocaleDateString("en", { month: "short", day: "numeric" })}
-              </span>
-              <span>
-                {session.correct} / {session.total} remembered
-              </span>
-            </div>
-          ))}
-        </details>
-      )}
-    </div>
   );
 }
 

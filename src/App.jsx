@@ -10,14 +10,16 @@ import {
   useParams,
 } from "react-router-dom";
 import FuriganaGameView from "./components/FuriganaGameView";
-import { Sun, BookOpen, PenLine, Search } from "lucide-react";
-import { Today, Grammar, GrammarTabs, Lesson, Session, Settings } from "./study/StudyViews";
+import { Gamepad2, BookOpen, PenLine, Search, Settings as SettingsIcon } from "lucide-react";
+import { Grammar, GrammarTabs, Lesson, Session, Settings } from "./study/StudyViews";
+import { PlayRoom, FlowPlay } from "./play/PlayRoom";
 import { Library, CharacterPage } from "./study/Library";
 import { KanjiHub, KanjiPlay, KanjiStage } from "./rush/KanjiViews";
 import { KanaHub, KanaPlay, KanaStage } from "./rush/KanaViews";
 import UpdatePrompt from "./components/UpdatePrompt";
 import "./App.css";
 import "./study/study.css";
+import "./play/play.css";
 
 function RouteFocus() {
   const { pathname } = useLocation();
@@ -55,9 +57,8 @@ function MainNav() {
   return (
     <nav aria-label="Main navigation">
       {[
-        ["/", "today", Sun],
-        ["/kanji", "kana·kanji", PenLine],
-        ["/grammar", "grammar", BookOpen],
+        ["/", "play", Gamepad2],
+        ["/kanji", "practice", PenLine],
         ["/library", "library", Search],
       ].map(([path, label, Icon]) => (
         <NavLink
@@ -65,7 +66,7 @@ function MainNav() {
           to={path}
           end={path === "/"}
           // Kana and kanji are two halves of one tab.
-          className={({ isActive }) => (isActive || (path === "/kanji" && pathname.startsWith("/kana")) ? "active" : "")}
+          className={({ isActive }) => (isActive || (path === "/kanji" && pathname.startsWith("/kana")) || (path === "/" && pathname === "/play") || (path === "/library" && pathname.startsWith("/grammar")) ? "active" : "")}
         >
           <Icon size={17} />
           <span>{label}</span>
@@ -75,11 +76,12 @@ function MainNav() {
   );
 }
 
-function App() {
+function Workspace() {
+  const { pathname } = useLocation();
   return (
-    <HashRouter>
+    <>
       <RouteFocus />
-      <div className="suite">
+      <div className={`suite ${pathname === "/" ? "is-room" : pathname === "/play" ? "is-playing" : ""}`}>
         <a
           className="skip-link"
           href="#main"
@@ -98,13 +100,14 @@ function App() {
             </span>
           </Link>
           <MainNav />
-          <Link className="settings-link" to="/settings">
-            settings
+          <Link className="settings-link" to="/settings" aria-label="settings">
+            <SettingsIcon size={17} />
           </Link>
         </header>
         <main id="main" tabIndex={-1}>
           <Routes>
-            <Route path="/" element={<Today />} />
+            <Route path="/" element={<PlayRoom />} />
+            <Route path="/play" element={<FlowPlay />} />
             <Route path="/kanji" element={<KanjiHub />} />
             <Route path="/kanji/play" element={<KanjiPlay />} />
             <Route path="/kanji/stage/:n" element={<KanjiStage />} />
@@ -137,7 +140,7 @@ function App() {
               element={
                 <div className="page">
                   <h1>this page has moved.</h1>
-                  <Link to="/">return to today</Link>
+                  <Link to="/">back to play</Link>
                 </div>
               }
             />
@@ -145,8 +148,12 @@ function App() {
         </main>
         <UpdatePrompt />
       </div>
-    </HashRouter>
+    </>
   );
+}
+
+function App() {
+  return <HashRouter><Workspace /></HashRouter>;
 }
 
 export default App;

@@ -181,19 +181,8 @@ a {
   border-radius: 50%;
   background: #2463eb;
 }
-.today-intro {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 35px;
-  margin: 40px 0 34px;
-}
 .page-heading {
   margin: 6px 0 24px;
-}
-.today-intro .page-heading {
-  margin: 0;
-  max-width: 690px;
 }
 .eyebrow {
   font-size: 10px;
@@ -241,11 +230,6 @@ a {
   font-style: italic;
   font-size: 13px;
   margin-top: 8px;
-}
-.today-grid {
-  display: grid;
-  grid-template-columns: 1.85fr 1fr;
-  gap: 26px;
 }
 .session-feature {
   padding: 28px 30px;
@@ -1119,10 +1103,6 @@ summary {
   .paper-mark {
     padding: 10px;
   }
-  .today-grid {
-    grid-template-columns: 1.6fr 1fr;
-    gap: 12px;
-  }
   .session-feature {
     padding: 25px;
   }
@@ -1165,16 +1145,12 @@ summary {
   .settings-link {
     margin-left: auto;
   }
-  .today-intro {
-    margin: 30px 0;
-  }
   .paper-mark {
     display: none;
   }
   .page h1 {
     font-size: 28px;
   }
-  .today-grid,
   .explore-grid {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -1718,14 +1694,6 @@ input[type="checkbox"] {
   font-size: 11px;
   color: var(--muted);
 }
-.today-page .preview-strip {
-  margin-top: 26px;
-}
-.today-page .preview-strip > .section-top {
-  margin: 0 0 12px;
-  overflow: visible;
-  padding: 0;
-}
 .preview-strip h2 {
   font-size: 16px;
 }
@@ -1800,9 +1768,6 @@ input[type="checkbox"] {
   }
   .study-shortcuts a {
     padding: 6px 0;
-  }
-  .today-page .preview-strip > div:not(.section-top) {
-    overflow-x: auto;
   }
   .preview-strip > div:not(.section-top) > a {
     min-width: 100px;

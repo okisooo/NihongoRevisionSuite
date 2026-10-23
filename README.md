@@ -1,13 +1,20 @@
 # Nihongo Revision Suite
 
-A daily language study service at **https://nihongo.okiso.net**. The short address,
+A self-paced language practice game at **https://nihongo.okiso.net**. The short address,
 **https://nihongo.oki.so**, permanently redirects to the same page on the canonical
 host, preserving the path, query string and browser fragment.
 
-The current app has four tabs: today, kana/kanji, grammar and library. It includes
-28 kana stages, 60 kanji stages, graded handwriting, listening practice, timed
-rush, 30 grammar lessons, sentence reading and saved review schedules. Japanese
-stroke-order data and fonts are bundled locally.
+The app opens in a compact play room. Choose sounds or characters, meet a few new
+items, then recall them with the answers hidden. Clean answers build a combo;
+helped answers return after other prompts. Each short round finishes after two
+unassisted recalls of five skills, with an immediate replay or next-round action.
+There are no daily quotas or streaks on the home screen.
+
+Practice tools and the library retain 28 kana sets, 60 kanji stages, graded
+handwriting, listening, timed rush, 30 grammar lessons and sentence reading.
+Japanese stroke data and fonts remain bundled locally. Quick rounds update the
+existing per-skill records and review schedules without claiming writing mastery
+or clearing the separate timed stage tests.
 
 ## use on a phone or computer
 
@@ -17,7 +24,8 @@ app. After the first successful offline download, the study content, writing and
 fonts work without a connection. Listening depends on the device's installed
 speech voices.
 
-Progress saves on the current browser/device, after each completed answer or run.
+Progress saves on the current browser/device, after each answer in a play round.
+An unfinished round resumes after reload, including already-scored feedback.
 It does not yet sync between devices. Settings can export and validate a JSON
 backup to move progress between browser, desktop and native installations.
 Existing `study_suite_v1` backups remain supported. When an update is ready, the
