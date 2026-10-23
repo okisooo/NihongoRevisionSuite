@@ -57,7 +57,9 @@ export function WritePad({ kanji, mode = "recall", hinted = false, size = 280, t
         writer.current.quiz({
           leniency: mode === "trace" ? 1.3 : 1.1,
           showHintAfterMisses: mode === "trace" ? 1 : 2,
-          markStrokeCorrectAfterMisses: 3,
+          // A hint can teach the stroke, but a miss must never auto-complete it.
+          markStrokeCorrectAfterMisses: false,
+          acceptBackwardsStrokes: false,
           highlightOnComplete: true,
           onMistake: () => {
             mistakes.current++;

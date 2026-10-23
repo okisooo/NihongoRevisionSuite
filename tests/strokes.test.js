@@ -29,3 +29,26 @@ test('three-part loops merge and ordinary strokes stay unchanged', () => {
   assert.throws(() => mergeStrokeParts(data, '<path id="z1d1"/>'), /do not match/);
   assert.throws(() => mergeStrokeParts(data, '<path id="z1d1"/><path id="z1d3"/><path id="z1d4"/><path id="z1d5"/>'), /consecutive/);
 });
+
+test('circle diacritics start at the bottom and travel clockwise', () => {
+  const characters = Object.keys(strokeData).filter(c => c.normalize('NFD').endsWith('\u309a'));
+  assert.equal(characters.length, 10);
+  for (const character of characters) {
+    const circle = strokeData[character].medians.at(-1);
+    const area = circle.reduce((sum, p, i) => { const q = circle[(i + 1) % circle.length]; return sum + p[0] * q[1] - q[0] * p[1]; }, 0) / 2;
+    assert.ok(area < 0, `${character}: clockwise in the model's upward-y coordinates`);
+    assert.equal(circle[0][1], Math.min(...circle.map(p => p[1])), `${character}: start at six o'clock`);
+    assert.deepEqual(circle.at(-1), circle[0], `${character}: close the circle`);
+  }
+});
+
+test('importing circle directions is idempotent and preserves the outline', () => {
+  const data = { character: 'ぴ', strokes: ['base', 'circle'], medians: [[[1, 2], [3, 4]], [[0, 1], [-1, 0], [0, -1], [1, 0], [0, 1]]] };
+  const svg = '<path id="z1d1"/><path id="z1d2"/>';
+  const once = mergeStrokeParts(data, svg);
+  const twice = mergeStrokeParts({ ...once, character: data.character }, svg);
+  assert.deepEqual(once, twice, 'a corrected future source must not be reversed again');
+  assert.deepEqual(once.strokes, data.strokes);
+  assert.deepEqual(once.medians[1][0], [0, -1]);
+  assert.deepEqual(data.medians[1][0], [0, 1], 'source remains untouched');
+});

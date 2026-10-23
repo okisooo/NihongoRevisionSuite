@@ -1,15 +1,12 @@
 // Japanese stroke data ships with the app (src/data/strokes.js, loaded on first
-// use). Anything missing falls back to hanzi-writer's online data.
+// use). Missing characters must not silently switch to another language's data.
 let local = null;
 const loadLocal = () => (local ??= import("../data/strokes.js").then((m) => m.strokeData));
-const ONLINE = "https://cdn.jsdelivr.net/npm/hanzi-writer-data@2.0.1/";
 
 export async function strokesFor(character) {
   const data = await loadLocal();
-  if (data[character]) return data[character];
-  const response = await fetch(`${ONLINE}${encodeURIComponent(character)}.json`);
-  if (!response.ok) throw new Error(`no stroke data for ${character}`);
-  return response.json();
+  if (Object.hasOwn(data, character)) return data[character];
+  throw new Error(`Japanese stroke data unavailable for ${character}`);
 }
 
 /** hanzi-writer `charDataLoader` option. */
