@@ -1,0 +1,29 @@
+Dictionary content
+JMdict and KANJIDIC2: copyright James William BREEN and the Electronic Dictionary
+Research and Development Group (EDRDG), used under CC BY-SA 4.0.
+https://www.edrdg.org/edrdg/licence.html
+https://creativecommons.org/licenses/by-sa/4.0/
+https://www.edrdg.org/wiki/index.php/JMdict-EDICT_Dictionary_Project
+https://www.edrdg.org/wiki/index.php/KANJIDIC_Project
+
+This app uses a selected, normalized and learner-edited subset of those files.
+Word senses are restricted to the matching spelling and pronunciation. Dictionary
+frequency markers select examples for practice. Full dictionary readings can
+include rare or historical uses. Last checked: 2026-10-24.
+
+School curriculum
+Learning 300 Kanji through Stories, basic level, Kurosio Publishers.
+English, Korean, Portuguese, Spanish edition. ISBN 978-4-87424-402-9.
+https://www.9640.jp/nihongo/ja/detail/?402
+The learner's original numbered list supplies the 300-character order.
+The publisher's public preview confirms entries 37-56 independently.
+Book illustrations and stories are not reproduced. No publisher endorsement is implied.
+
+Grammar review references
+The Japan Foundation, Irodori: Japanese for Life in Japan, grammar notes.
+https://www.irodori.jpf.go.jp/en/starter/pdf.html
+https://www.irodori.jpf.go.jp/en/elementary01/pdf.html
+https://www.irodori.jpf.go.jp/en/elementary02/pdf.html
+Explanations and exercises in the app have been edited for this app.
+
+Writing model credits and licence: strokes.LICENSE.txt.
