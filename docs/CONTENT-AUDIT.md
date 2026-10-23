@@ -11,16 +11,19 @@ ISBN **978-4-87424-402-9**. [Publisher](https://www.9640.jp/nihongo/ja/detail/?4
 [official sample](https://www.9640.jp/BOOK_PDF/9784874244029.pdf).
 
 All 300 current characters and their positions match the original school list in
-`restore-curriculum.js`, excluding the separately starred components. The
-publisher's sample independently confirms numbers **37–56**, including their
-order. Its sample shows chapter 3, not the complete 300-character index. A full
-comparison with the physical book's index is still outstanding. Do not claim
-that all 300 positions have been independently checked against printed pages.
+`restore-curriculum.js`, excluding the separately starred components. All 300
+also match the independently transcribed printed index in the companion workbook
+(ISBN 978-4-87424-666-5), available through Hanoi University of Industry's Library
+and Information Center. The publisher describes that workbook as based on the
+main book. The exact main-book edition's publisher sample independently confirms
+numbers **37–56**, including their order. See `SCHOOL-BOOK-VERIFICATION.md` for
+sources, method and scope. No character photographs are needed from the learner.
 
 Keep the character IDs and order: they identify saved study records. Do not run
 the older database generators blindly: `fetch-kanji.js` and
 `rebuild-database.js` contain different, obsolete lists. Tests now protect the
-original list and the independently checked publisher sample.
+original list, the complete printed index and the independently checked
+publisher sample.
 
 ## Dictionary checks
 

@@ -9,7 +9,8 @@
     "revision": "e985b2567b3495075f2823e26556b3e928e1fd94",
     "bookIdentity": "Learning 300 Kanji through Stories, basic level; English, Korean, Portuguese, Spanish; ISBN 978-4-87424-402-9",
     "publisherSample": "https://www.9640.jp/BOOK_PDF/9784874244029.pdf",
-    "verification": "All 300 match the original saved school list. Publisher chapter 3 independently confirms positions 37-56. The public sample does not include the complete inventory."
+    "verification": "All 300 characters and numbered positions independently match the printed companion-workbook index (ISBN 978-4-87424-666-5, PDF pages 2-3). Exact main-book publisher sample also confirms positions 37-56.",
+    "completeReference": "school-book-reference.json"
   },
   "curriculum": [
     [
