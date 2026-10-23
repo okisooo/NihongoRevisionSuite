@@ -10,7 +10,7 @@ export function normalizeMeaning(text) {
 }
 
 /** Splits senses on commas and semicolons outside parentheses. */
-export function meaningAnswers(text) {
+export function meaningSenses(text) {
   const senses = [];
   let depth = 0;
   let start = 0;
@@ -23,6 +23,11 @@ export function meaningAnswers(text) {
     }
   }
   senses.push(text.slice(start));
+  return senses.map(part => part.trim()).filter(Boolean);
+}
+
+export function meaningAnswers(text) {
+  const senses = meaningSenses(text);
   return [
     ...new Set(
       senses

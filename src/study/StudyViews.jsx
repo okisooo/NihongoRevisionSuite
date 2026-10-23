@@ -474,6 +474,7 @@ export function Settings() {
       )}
       <details className="reference-details">
         <summary>library & progress info</summary>
+        <p>dictionary data: <a href="./content-sources.txt" target="_blank" rel="noreferrer">edrdg · sources & credits</a>.</p>
         <p>
           300 characters in {STAGE_COUNT} stages · 58 radicals · 30 lessons · 300 sentences. stroke order is
           Japanese and works offline.

@@ -11,7 +11,8 @@ export const sentences = sentencesData;
 export const readings = (item) =>
   [...(item.kunyomi || []), ...(item.onyomi || [])]
     .map(toHiragana)
-    .map((x) => x.replaceAll(".", " · "));
+    // Parentheses distinguish the written kana ending from the character part.
+    .map((x) => x.replace(/\.(.+)$/, "($1)"));
 export const lessonTitle = (lesson) =>
   lesson.title.replace(/^Lesson \d+:\s*/, "");
 export const normalize = (text) =>

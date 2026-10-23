@@ -259,7 +259,8 @@ export function KanjiPlay() {
 
 function teachSteps(character) {
   const words = commonWords(character, 12);
-  const kun = (character.standalone || []).find((w) => w.word !== character.kanji) || (character.standalone || [])[0];
+  const nativeWords = (character.standalone || []).filter((w) => w.common);
+  const kun = nativeWords.find((w) => w.word !== character.kanji) || nativeWords[0];
   const onyomi = (character.onyomi || []).map(toHiragana);
   // Teach the on'yomi that starts the most everyday words (二 → に, not じ).
   const starts = (reading) => words.filter((w) => toHiragana(w.reading).startsWith(reading)).length;

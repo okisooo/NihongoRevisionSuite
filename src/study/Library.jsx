@@ -18,6 +18,7 @@ import { contextsFor, compactReadings } from "./characterData";
 import { learnedIds, masteryOf, skillStrengths, stageOf, TIERS } from "../rush/mastery";
 import { WritePractice } from "../rush/KanjiParts";
 import { commonWords } from "../rush/deck";
+import { schoolBook } from "../data/schoolBook";
 
 export function Library() {
   const [params, setParams] = useSearchParams();
@@ -82,6 +83,7 @@ export function Library() {
       <div className="page-heading">
         <h1>library</h1>
       </div>
+      {tab === "characters" && <p className="muted">school book · {schoolBook.title.toLowerCase()} · {schoolBook.level}</p>}
       <div className="library-toolbar">
         <label className="search-field">
           <span>search the library</span>
@@ -371,6 +373,7 @@ export function CharacterPage() {
         <summary>all readings & words ({item.examples.length})</summary>
         <p className="explanation">{item.meaning}</p>
         <p className="reading-line">{readings(item).join(" / ")}</p>
+        <p className="explanation">endings in parentheses are written after the character; hyphens mark readings used as part of a word. dictionary readings include rare uses. your class may require only some of these.</p>
         <div className="word-examples">
           {item.examples.map((word, i) => (
             <div key={i}>

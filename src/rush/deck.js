@@ -1,6 +1,6 @@
 import { kanjiData } from "../data/kanji.js";
 import { contextsFor, compactReadings } from "../study/characterData.js";
-import { meaningAnswers } from "../study/meanings.js";
+import { meaningAnswers, meaningSenses } from "../study/meanings.js";
 import { primaryMeaning } from "../study/primaryMeanings.js";
 import { toHiragana } from "../utils/kanaConverter.js";
 import { romajiOf, scriptOf, toHira, writable } from "./kana.js";
@@ -26,12 +26,12 @@ const byKanji = new Map(kanjiData.map((c) => [c.kanji, c]));
 export const characterById = (id) => byId.get(id);
 export const characterByKanji = (kanji) => byKanji.get(kanji);
 
-/** Every whole reading a learner may type for the bare character. */
+/** Bare-character cues cannot silently include unwritten okurigana. */
 export function readingAnswers(character) {
   const values = [...(character.onyomi || []), ...(character.kunyomi || [])]
     // Affix-only readings (-び, もう.し-) are not answers for a bare character.
-    .filter((reading) => !reading.startsWith("-") && !reading.endsWith("-"))
-    .map((reading) => toHiragana(reading).replaceAll(".", ""));
+    .filter((reading) => !/[.-]/.test(reading))
+    .map(toHiragana);
   return [...new Set(values)].filter(Boolean);
 }
 
@@ -51,19 +51,16 @@ const HAN = /[㐀-鿿]/g;
 const exampleMeaning = new Map();
 for (const character of kanjiData)
   for (const example of character.examples || [])
-    if (!exampleMeaning.has(example.word) && example.meaning)
-      exampleMeaning.set(example.word, example.meaning.split(/[,;]/)[0].trim());
+    if (!exampleMeaning.has(`${example.word}:${toHiragana(example.reading)}`) && example.meaning)
+      exampleMeaning.set(`${example.word}:${toHiragana(example.reading)}`, meaningSenses(example.meaning)[0]);
+for (const character of kanjiData)
+  for (const word of character.standalone || [])
+    if (word.meaning) exampleMeaning.set(`${word.word}:${toHiragana(word.reading)}`, meaningSenses(word.meaning)[0]);
 
 function kanjiIdsIn(word) {
   return [...new Set(word.match(HAN) || [])].map((k) => byKanji.get(k)?.id);
 }
 
-// Dictionary examples are noisy (二八, 一々); one listed under both of its
-// kanji is more likely an everyday word.
-const listedBy = new Map();
-for (const character of kanjiData)
-  for (const example of character.examples || [])
-    listedBy.set(example.word, (listedBy.get(example.word) || 0) + 1);
 const UNUSUAL = /derog|\bsens\b|vulg|archaic|obsc|obs\.|abbr/i;
 
 // Built once: every usable word with the characters it needs.
@@ -84,7 +81,7 @@ const wordIndex = (() => {
   for (const character of kanjiData) {
     // Standalone words carry okurigana (休む, 二つ): the best kun'yomi practice.
     for (const item of character.standalone || [])
-      if (item.word !== character.kanji) add(item.word, item.reading, character.id, 3);
+      if (item.common && item.word !== character.kanji) add(item.word, item.reading, character.id, 3);
     for (const sentence of contextsFor(character))
       for (const target of sentence.targets)
         if ([...target.word].length > 1) add(target.word, target.reading, character.id, 2);
@@ -92,7 +89,7 @@ const wordIndex = (() => {
       if (
         [...example.word].length === 2 &&
         !example.word.includes("々") &&
-        listedBy.get(example.word) > 1 &&
+        example.common &&
         !UNUSUAL.test(example.meaning || "")
       )
         add(example.word, example.reading, character.id, 1);
@@ -112,21 +109,25 @@ export function commonWords(character, limit = 3) {
     .map((entry) => ({
       word: entry.word,
       reading: [...entry.readings][0],
-      meaning: exampleMeaning.get(entry.word) || "",
+      meaning: exampleMeaning.get(`${entry.word}:${[...entry.readings][0]}`) || "",
     }));
 }
 
 function readingPrompt(character) {
-  const answers = readingAnswers(character);
+  const bare = readingAnswers(character);
+  // Some native-only characters have no standalone reading without an ending.
+  // Show a verified whole word instead of attaching invisible kana to the cue.
+  const word = !bare.length && ((character.standalone || []).find((item) => item.common) || commonWords(character, 1)[0]);
+  const answers = bare.length ? bare : word ? [toHiragana(word.reading)] : [];
   return {
     id: `reading:${character.id}`,
     kind: "reading",
-    text: character.kanji,
+    text: word ? word.word : character.kanji,
     answers,
     kanjiIds: [character.id],
     characterId: character.id,
     srsKeys: [`character:${character.id}:reading`],
-    reveal: { main: answers.slice(0, 5).join(" · "), sub: meaningOf(character) },
+    reveal: { main: answers.slice(0, 5).join(" · "), sub: word?.meaning || meaningOf(character) },
     say: answers[0],
     length: Math.min(...answers.map((a) => a.length)),
   };
@@ -152,6 +153,10 @@ function meaningPrompt(character) {
 
 function wordPrompt(entry) {
   const answers = [...entry.readings];
+  const meanings = answers.map((reading) => {
+    const meaning = exampleMeaning.get(`${entry.word}:${reading}`);
+    return meaning ? (answers.length > 1 ? `${reading}: ${meaning}` : meaning) : "";
+  }).filter(Boolean).join(" · ");
   return {
     id: `word:${entry.word}`,
     kind: "word",
@@ -160,7 +165,7 @@ function wordPrompt(entry) {
     kanjiIds: entry.ids,
     characterId: entry.owner,
     srsKeys: [`drill:${entry.owner}:reading`],
-    reveal: { main: answers.join(" · "), sub: exampleMeaning.get(entry.word) || "" },
+    reveal: { main: answers.join(" · "), sub: meanings },
     say: answers[0],
     length: Math.min(...answers.map((a) => a.length)),
     priority: entry.priority,
@@ -247,6 +252,7 @@ function listenPrompt(word) {
     ...word,
     id: `listen:${word.text}`,
     kind: "listen",
+    answers: [word.say],
     srsKeys: [],
     reveal: { main: `${word.text} · ${word.answers[0]}`, sub: word.reveal.sub },
   };

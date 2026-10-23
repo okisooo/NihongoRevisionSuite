@@ -12,7 +12,7 @@ export const grammarData = [
       },
       {
         pattern: "N1 は N2 じゃありません",
-        explanation: "N1 is not N2. Casual-polite negative form of 'です'.",
+        explanation: "N1 is not N2. じゃありません is a polite negative used in conversation; ではありません is a more formal alternative.",
         exampleJa: "サントスさんは学生じゃありません。",
         exampleFurigana: "サントスさんはがくせい[学生]じゃありません。",
         exampleEn: "Mr. Santos is not a student."
@@ -20,7 +20,7 @@ export const grammarData = [
     ],
     quiz: [
       {
-        question: "Complete the sentence: わたし ___ マイクです。",
+        question: "Choose the topic marker: わたし ___ マイクです。",
         options: ["は", "が", "を", "の"],
         answer: "は"
       },
@@ -37,7 +37,7 @@ export const grammarData = [
     patterns: [
       {
         pattern: "これ / それ / あれ は N です",
-        explanation: "This / That / That over there is N. Evaluated from the speaker's perspective.",
+        explanation: "これ refers to a thing near the speaker, それ to one near the listener, and あれ to one away from both. These forms stand on their own as nouns.",
         exampleJa: "これは本です。",
         exampleFurigana: "これはほん[本]です。",
         exampleEn: "This is a book."
@@ -84,7 +84,7 @@ export const grammarData = [
     ],
     quiz: [
       {
-        question: "おてあらいは ___ ですか。",
+        question: "Ask where the restroom is: おてあらいは ___ ですか。",
         options: ["どこ", "これ", "なに", "だれ"],
         answer: "どこ"
       },
@@ -107,8 +107,8 @@ export const grammarData = [
         exampleEn: "It is 4:30 right now."
       },
       {
-        pattern: "V-ます / V-ました / V-ません",
-        explanation: "Polite verbs: ます (present), ました (past), ません (negative present).",
+        pattern: "V-ます / V-ません / V-ました / V-ませんでした",
+        explanation: "Polite verb endings: ます is affirmative non-past (habits or future); ません is negative non-past; ました is affirmative past; ませんでした is negative past.",
         exampleJa: "毎朝六時に起きます。",
         exampleFurigana: "まいあさ[毎朝]ろくじ[六時]にお[起]きます。",
         exampleEn: "I get up at 6 o'clock every morning."
@@ -121,8 +121,8 @@ export const grammarData = [
         answer: "働きました"
       },
       {
-        question: "Time marker particle is:",
-        options: ["に", "を", "は", "で"],
+        question: "Choose the particle marking the specific clock time: 六時 ___ 起きます。",
+        options: ["に", "を", "の", "と"],
         answer: "に"
       }
     ]
@@ -180,12 +180,12 @@ export const grammarData = [
     ],
     quiz: [
       {
-        question: "お酒 ___ 飲みますか。",
+        question: "Choose the direct-object marker: お酒 ___ 飲みますか。",
         options: ["を", "は", "が", "に"],
         answer: "を"
       },
       {
-        question: "Join someone in an action: いっしょに映画を ___。",
+        question: "Suggest 'Let's watch a film together': いっしょに映画を ___。",
         options: ["見ます", "見ましょう", "見ますか", "見ました"],
         answer: "見ましょう"
       }
@@ -204,7 +204,7 @@ export const grammarData = [
       },
       {
         pattern: "N (person) に あげます / もらいます",
-        explanation: "Give to N / Receive from N. 'に' marks the target/recipient.",
+        explanation: "With あげます, に marks the recipient. With もらいます, に or から marks the giver (the source); the subject is the receiver.",
         exampleJa: "私は木村さんに花をあげました。",
         exampleFurigana: "わたし[私]はきむら[木村]さんにはな[花]をあげました。",
         exampleEn: "I gave flowers to Ms. Kimura."
@@ -217,7 +217,7 @@ export const grammarData = [
         answer: "で"
       },
       {
-        question: "山田さんにプレゼントを ___。",
+        question: "Complete 'I gave a present to Yamada': 私は山田さんにプレゼントを ___。",
         options: ["もらいました", "あげました", "くれました", "あります"],
         answer: "あげました"
       }
@@ -249,7 +249,7 @@ export const grammarData = [
         answer: "高い"
       },
       {
-        question: "Negative of きれいです:",
+        question: "Choose the polite negative ending with ありません: きれいです → ___。",
         options: ["きれいじゃないです", "きれいじゃありません", "きれいくないです", "きれいでした"],
         answer: "きれいじゃありません"
       }
@@ -261,7 +261,7 @@ export const grammarData = [
     patterns: [
       {
         pattern: "N が あります / 好きです / 上手です",
-        explanation: "State of ownership, preference, or ability. Object takes 'が' instead of 'を'.",
+        explanation: "が marks what exists with あります and what is liked or done skillfully with 好きです and 上手です. These patterns do not use を as a direct-object marker. は can mark a contrast instead.",
         exampleJa: "私はイタリア料理が好きです。",
         exampleFurigana: "わたし[私]はイタリアりょうり[料理]がす[好]きです。",
         exampleEn: "I like Italian food."
@@ -276,18 +276,13 @@ export const grammarData = [
     ],
     quiz: [
       {
-        question: "日本語 ___ わかりますか。",
+        question: "Choose the neutral subject marker: 日本語 ___ わかりますか。",
         options: ["を", "が", "で", "に"],
         answer: "が"
       },
       {
         question: "Translate: 'Because it's hot, I will drink water.'",
-        options: [
-          "暑いですから、水を飲みます。",
-          "暑いです、水が欲しいです。",
-          "暑いし、水があります。",
-          "暑いですから、水があります。"
-        ],
+        options: ["暑いですから、水を飲みます。", "暑いです、水が欲しいです。", "暑いし、水があります。", "暑いですから、水があります。"],
         answer: "暑いですから、水を飲みます。"
       }
     ]
@@ -298,9 +293,9 @@ export const grammarData = [
     patterns: [
       {
         pattern: "Place に N が あります / います",
-        explanation: "There is N in [place]. 'あります' for inanimate objects; 'います' for living beings.",
-        exampleJa: "つくえの上に乗る本があります。あそこに男の人がいます。",
-        exampleFurigana: "つくえのうえ[上]にの[乗]るほん[本]があります。あそこにおとこのひと[男の人]がいます。",
+        explanation: "あります expresses the existence of things, including plants. います is used for people and animals. Place に marks the location; N が introduces what is there.",
+        exampleJa: "つくえの上に本があります。あそこに男の人がいます。",
+        exampleFurigana: "つくえのうえ[上]にほん[本]があります。あそこにおとこのひと[男の人]がいます。",
         exampleEn: "There is a book on the desk. There is a man over there."
       },
       {
@@ -313,7 +308,7 @@ export const grammarData = [
     ],
     quiz: [
       {
-        question: "庭に犬 ___ います。",
+        question: "Introduce what is in the garden using the neutral subject marker: 庭に犬 ___ います。",
         options: ["が", "を", "は", "に"],
         answer: "が"
       },
@@ -350,8 +345,8 @@ export const grammarData = [
         answer: "います"
       },
       {
-        question: "一週間 ___ 二回テニスをします。",
-        options: ["に", "で", "を", "は"],
+        question: "Express frequency per week: 一週間 ___ 二回テニスをします。",
+        options: ["に", "と", "を", "の"],
         answer: "に"
       }
     ]
@@ -377,8 +372,8 @@ export const grammarData = [
     ],
     quiz: [
       {
-        question: "昨日天気は ___ ですか。",
-        options: ["よかった", "よかったです", "いいでした", "よくなかった"],
+        question: "Complete 'Was the weather good yesterday?': 昨日は天気が ___ か。",
+        options: ["よかった", "よかったです", "いいでした", "よくない"],
         answer: "よかったです"
       },
       {
@@ -393,8 +388,8 @@ export const grammarData = [
     title: "Lesson 13: Desires & Purpose of Movement",
     patterns: [
       {
-        pattern: "N が 欲しいです / V-たいです",
-        explanation: "I want N (noun) / I want to do V (verb). Negative is 欲しくない / たくない.",
+        pattern: "N が 欲しいです / V-stem + たいです",
+        explanation: "欲しいです expresses wanting a thing; add たいです to a verb stem (ます-form without ます) to say you want to do something. With たい, a direct object can take either を or が. These usually express the speaker’s desire, or ask about the listener’s desire.",
         exampleJa: "新しい車が欲しいです。日本へ行きたいです。",
         exampleFurigana: "あたら[新]しいくるま[車]がほ[欲]しいです。にほん[日本]へい[行]きたいです。",
         exampleEn: "I want a new car. I want to go to Japan."
@@ -409,9 +404,9 @@ export const grammarData = [
     ],
     quiz: [
       {
-        question: "のどが渇きました。水 ___ 飲みたいです。",
-        options: ["が", "を", "に", "へ"],
-        answer: "が"
+        question: "Choose the verb ending meaning “want to drink”: 水を飲み ___ です。",
+        options: ["たい", "た", "て", "ます"],
+        answer: "たい"
       },
       {
         question: "図書館へ本を ___ に行きます。",
@@ -433,7 +428,7 @@ export const grammarData = [
       },
       {
         pattern: "V-て います",
-        explanation: "Currently doing V. Represents present continuous action.",
+        explanation: "In this use, V-ています describes an action happening now. The same form can also describe an ongoing state or repeated activity; the meaning depends on the verb and context.",
         exampleJa: "今雨が降っています。",
         exampleFurigana: "いま[今]あめ[雨]がふ[降]っています。",
         exampleEn: "It is raining right now."
@@ -473,12 +468,12 @@ export const grammarData = [
     ],
     quiz: [
       {
-        question: "ここでタバコを吸っては ___。",
+        question: "Express prohibition (must not smoke): ここでタバコを吸っては ___。",
         options: ["いいです", "いけません", "あります", "います"],
         answer: "いけません"
       },
       {
-        question: "私は結婚して ___。",
+        question: "Complete 'I am married': 私は結婚して ___。",
         options: ["います", "あります", "いいです", "みます"],
         answer: "います"
       }
@@ -537,7 +532,7 @@ export const grammarData = [
     ],
     quiz: [
       {
-        question: "時間を守ら ___ なりません。",
+        question: "Choose the なければ form expressing obligation: 時間を守ら ___ なりません。",
         options: ["なくては", "なければ", "ないで", "なくても"],
         answer: "なければ"
       },
@@ -553,8 +548,8 @@ export const grammarData = [
     title: "Lesson 18: Dictionary Form, Abilities & Habits",
     patterns: [
       {
-        pattern: "N / V-る こと が できます",
-        explanation: "Can do V / N is possible. Uses Verb Dictionary Form.",
+        pattern: "N が できます / V-dictionary-form + ことができます",
+        explanation: "N ができます expresses an ability with an activity noun, such as 日本語 or 料理. For a verb, use its dictionary form followed by ことができます.",
         exampleJa: "日本語を話すことができます。",
         exampleFurigana: "にほんご[日本語]をはな[話]すことができます。",
         exampleEn: "I can speak Japanese."
@@ -574,9 +569,9 @@ export const grammarData = [
         answer: "書く"
       },
       {
-        question: "食事の ___ に、手を洗います。",
+        question: "Complete 'Before a meal, I wash my hands': 食事の ___ に、手を洗います。",
         options: ["まえ", "まえに", "あとで", "ときに"],
-        answer: "まえに"
+        answer: "まえ"
       }
     ]
   },
@@ -592,8 +587,8 @@ export const grammarData = [
         exampleEn: "I have seen Kabuki before."
       },
       {
-        pattern: "V-たり、V-tari します",
-        explanation: "Doing things like V1, V2 (non-exhaustive list of actions).",
+        pattern: "V1-たり、V2-たり します",
+        explanation: "Add り to each verb’s past plain form to list example actions, then finish with します. This is a non-exhaustive list, not necessarily a time sequence. To describe a change of state, use an い-adjective stem + くなります, a な-adjective + になります, or a noun + になります.",
         exampleJa: "日曜日は買い物をしたり、掃除をしたりします。",
         exampleFurigana: "にちようび[日曜日]はか[買]いもの[物]をしたり、そうじ[掃除]をしたりします。",
         exampleEn: "On Sundays, I do things like shopping and cleaning."
@@ -601,12 +596,12 @@ export const grammarData = [
     ],
     quiz: [
       {
-        question: "日本へ ___ ことがありますか。",
+        question: "Ask about past experience: 日本へ ___ ことがありますか。",
         options: ["行く", "行って", "行きた", "行った"],
         answer: "行った"
       },
       {
-        question: "風邪をひいて、寒く ___ なりました。",
+        question: "Complete 'It got cold': 寒 ___ なりました。",
         options: ["く", "に", "で", "して"],
         answer: "く"
       }
@@ -618,7 +613,7 @@ export const grammarData = [
     patterns: [
       {
         pattern: "Plain Form Sentences",
-        explanation: "Casual conversation between close friends and family. Verbs end in plain form; drop です.",
+        explanation: "Plain style is common with close friends and family. Use plain verb endings with the same tense and polarity: 食べます → 食べる, 食べました → 食べた, 食べません → 食べない. Nouns and な-adjectives normally use だ in affirmative non-past statements; い-adjectives do not take だ.",
         exampleJa: "明日、学校行く？ うん、行くよ。",
         exampleFurigana: "あした[明日]、がっこう[学校]い[行]く？ うん、い[行]くよ。",
         exampleEn: "Are you going to school tomorrow? Yeah, I am."
@@ -626,12 +621,12 @@ export const grammarData = [
     ],
     quiz: [
       {
-        question: "What is the plain form of '食べます'?",
+        question: "What is the affirmative non-past plain form of 食べます?",
         options: ["食べる", "食べて", "食べた", "食べない"],
         answer: "食べる"
       },
       {
-        question: "What is the casual equivalent of 'いいえ、ちがいます'?",
+        question: "Choose the casual reply using the informal word for “no”: いいえ、ちがいます。",
         options: ["ううん、ちがう。", "うん、ちがう。", "いいえ、ちがう。", "ちがいません。"],
         answer: "ううん、ちがう。"
       }
@@ -650,7 +645,7 @@ export const grammarData = [
       },
       {
         pattern: "Plain-form と 言いました",
-        explanation: "[Someone] said that [Plain-form clause]. Indirect/direct quotation.",
+        explanation: "For an indirect quotation, put a plain-form clause before と言いました. A direct quotation keeps the speaker’s original wording, including polite endings.",
         exampleJa: "木村さんは来週大阪へ行くと言いました。",
         exampleFurigana: "きむら[木村]さんはらいしゅう[来週]おおさか[大阪]へい[行]くとい[言]いました。",
         exampleEn: "Ms. Kimura said she will go to Osaka next week."
@@ -683,18 +678,13 @@ export const grammarData = [
     ],
     quiz: [
       {
-        question: "あそこで本を ___ 人は山田さんです。",
+        question: "Complete 'The person reading a book over there is Yamada': あそこで本を ___ 人は山田さんです。",
         options: ["読みます", "読んでいる", "読みたい", "読むの"],
         answer: "読んでいる"
       },
       {
-        question: "Translate: 'The cake that my mother made.'",
-        options: [
-          "母が作ったケーキ。",
-          "母の作ったケーキですね。",
-          "母で作ったケーキ。",
-          "母を作ったケーキ。"
-        ],
+        question: "Choose the noun phrase 'the cake my mother made':",
+        options: ["母が作ったケーキ。", "母が作るケーキ。", "母で作ったケーキ。", "母を作ったケーキ。"],
         answer: "母が作ったケーキ。"
       }
     ]
@@ -704,8 +694,8 @@ export const grammarData = [
     title: "Lesson 23: When & Natural Consequence",
     patterns: [
       {
-        pattern: "V-る / Adj-い / N-の とき、〜",
-        explanation: "When doing V / When it is N / When Adj.",
+        pattern: "V-plain-form / い-Adj / な-Adj な / N の + とき",
+        explanation: "とき means “when”. Verbs use plain form; い-adjectives keep い; な-adjectives take な; nouns take の. A verb before とき can be non-past or past depending on whether that action is not yet completed or already completed at the reference time.",
         exampleJa: "図書館で本を借りるとき、カードが必要です。",
         exampleFurigana: "としょかん[図書館]でほん[本]をか[借]りるとき、カードがひつよう[必要]です。",
         exampleEn: "When you borrow books at the library, a card is required."
@@ -714,18 +704,18 @@ export const grammarData = [
         pattern: "V-る と、〜",
         explanation: "If/when V happens, [consequence] naturally/inevitably follows.",
         exampleJa: "このボタンを押すと、お釣りが出ます。",
-        exampleFurigana: "このボタンをお[押]すと、おつ[釣]りが出ます。",
+        exampleFurigana: "このボタンをお[押]すと、おつ[釣]りがで[出]ます。",
         exampleEn: "If you press this button, change will come out."
       }
     ],
     quiz: [
       {
-        question: "寂しい ___、家族に電話をかけます。",
+        question: "Use とき without an extra particle: 寂しい ___、家族に電話をかけます。",
         options: ["とき", "ときに", "と", "たら"],
         answer: "とき"
       },
       {
-        question: "これを右へ曲がる ___、駅があります。",
+        question: "Choose the と conditional: ここを右へ曲がる ___、駅があります。",
         options: ["と", "とき", "たら", "れば"],
         answer: "と"
       }
@@ -737,9 +727,9 @@ export const grammarData = [
     patterns: [
       {
         pattern: "V-て くれます / もらいます / あげます",
-        explanation: "Perform an action as a favor: くれます (someone does for me); もらいます (I receive favor from); あげます (I do for someone).",
-        exampleJa: "山田さんは私に自転車を修理してくれました。",
-        exampleFurigana: "やまだ[山田]さんはわたし[私]にじてんしゃ[自転車]をしゅうり[修理]してくれました。",
+        explanation: "V-てくれます: someone does something for me or my in-group. V-てもらいます: I (the subject) receive someone’s help. V-てあげます: the subject does something for someone else. The subject and beneficiary determine the direction of the favor.",
+        exampleJa: "山田さんは私の自転車を修理してくれました。",
+        exampleFurigana: "やまだ[山田]さんはわたし[私]のじてんしゃ[自転車]をしゅうり[修理]してくれました。",
         exampleEn: "Mr. Yamada repaired the bicycle for me."
       }
     ],
@@ -750,7 +740,7 @@ export const grammarData = [
         answer: "もらい"
       },
       {
-        question: "佐藤さんは私にお茶をいれて ___ました。",
+        question: "Complete 'Sato made tea for me': 佐藤さんは私にお茶をいれて ___ました。",
         options: ["くれ", "もらい", "あげ", "やり"],
         answer: "くれ"
       }
@@ -770,14 +760,14 @@ export const grammarData = [
     ],
     quiz: [
       {
-        question: "お金が ___、旅行に行きます。",
+        question: "Use the たら conditional: お金が ___、旅行に行きます。",
         options: ["あったら", "あっても", "あれば", "あると"],
         answer: "あったら"
       },
       {
-        question: "高く ___、買いたいです。",
+        question: "Complete 'Even if it is expensive, I want to buy it': 高く ___、買いたいです。",
         options: ["ても", "くて", "くても", "なら"],
-        answer: "くても"
+        answer: "ても"
       }
     ]
   },
@@ -786,8 +776,8 @@ export const grammarData = [
     title: "Lesson 26: Explanatory Tone & Polite Favors",
     patterns: [
       {
-        pattern: "Plain-form + んです",
-        explanation: "Used to explain causes, seek reasons, or emphasize a point in conversation.",
+        pattern: "V-plain-form / い-Adj / な-Adj な / N な + んです",
+        explanation: "んです gives or asks for an explanation connected to the situation. Use a plain-form verb or い-adjective; affirmative non-past nouns and な-adjectives take な instead of だ before んです.",
         exampleJa: "どうして遅れたんですか。バスが遅れたんです。",
         exampleFurigana: "どうしておく[遅]れたんですか。バスがおく[遅]れたんです。",
         exampleEn: "Why are you late? It is because the bus was late."
@@ -802,7 +792,7 @@ export const grammarData = [
     ],
     quiz: [
       {
-        question: "頭が痛い ___、早く帰ります。",
+        question: "Choose んです to give an explanation: どうしたんですか。—頭が痛い ___。",
         options: ["んです", "んですから", "ので", "から"],
         answer: "んです"
       },
@@ -821,7 +811,7 @@ export const grammarData = [
         pattern: "Potential Verb (Group 1: -u -> -eru, Group 2: -ru -> -られる, Group 3: できる / こられる)",
         explanation: "Ability to do actions. Direct objects generally take 'が' instead of 'を' with potential verbs.",
         exampleJa: "私は日本語が少し話せます。漢字が書けます。",
-        exampleFurigana: "わたし[私]はにほんご[日本語]がすこ[少し]はな[話]せます。かんじ[漢字]がか[書]けます。",
+        exampleFurigana: "わたし[私]はにほんご[日本語]がすこ[少]しはな[話]せます。かんじ[漢字]がか[書]けます。",
         exampleEn: "I can speak a little Japanese. I can write Kanji."
       },
       {
@@ -871,13 +861,8 @@ export const grammarData = [
         answer: "見"
       },
       {
-        question: "Mr. Miller teaches English at a university (occupation/habit):",
-        options: [
-          "ミラーさんは大学で英語を教えています。",
-          "ミラーさんは大学で英語を教えます。",
-          "ミラーさんは大学で英語を教えてあります。",
-          "ミラーさんは大学で英語を教えておきます。"
-        ],
+        question: "Describe Miller’s ongoing job using ています:",
+        options: ["ミラーさんは大学で英語を教えています。", "ミラーさんは大学で英語を教えます。", "ミラーさんは大学で英語を教えてあります。", "ミラーさんは大学で英語を教えておきます。"],
         answer: "ミラーさんは大学で英語を教えています。"
       }
     ]
@@ -888,7 +873,7 @@ export const grammarData = [
     patterns: [
       {
         pattern: "Intransitive V-て います",
-        explanation: "Describes a state resulting from an action. Used with intransitive verbs (e.g. broken, open).",
+        explanation: "With change-of-state intransitive verbs such as 閉まる or つく, V-ています describes the resulting state. It is not the meaning of every intransitive verb: 走っています can describe an action in progress.",
         exampleJa: "窓が閉まっています。電気がついています。",
         exampleFurigana: "まど[窓]がし[閉]まっています。でんき[電気]がついています。",
         exampleEn: "The window is closed. The light is on."
@@ -935,12 +920,12 @@ export const grammarData = [
     ],
     quiz: [
       {
-        question: "交番に地図がはって ___。",
+        question: "Describe the result of someone intentionally putting up a map: 交番に地図がはって ___。",
         options: ["います", "あります", "おきます", "しまいます"],
         answer: "あります"
       },
       {
-        question: "授業の前に予習をして ___ ください。",
+        question: "Use おく for advance preparation: 授業の前に予習をして ___ ください。",
         options: ["いて", "おいて", "しまって", "あって"],
         answer: "おいて"
       }

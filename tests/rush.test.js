@@ -82,18 +82,20 @@ test("meaning matcher allows articles and needs a whole sense", () => {
   assert.equal(matchMeaning(answers, "dax").ok, false);
 });
 
-test("bare-character readings skip affixes and join okurigana", () => {
+test("bare-character readings never accept an unwritten kana ending", () => {
   const sun = readingAnswers(characterById(41));
   assert.ok(sun.includes("ひ") && sun.includes("にち"));
   assert.ok(!sun.some((r) => r.includes("-")));
-  assert.ok(readingAnswers(characterById(10)).includes("やすむ"));
+  assert.ok(!readingAnswers(characterById(10)).includes("やすむ"));
+  assert.ok(readingAnswers(characterById(10)).includes("きゅう"));
   assert.ok(meaningAnswersFor(characterById(1)).every((m) => !m.includes("radical")));
 });
 
 test("every character yields typable prompts", () => {
   for (let id = 1; id <= 300; id++) {
     const c = characterById(id);
-    assert.ok(readingAnswers(c).length, `reading for ${c.kanji}`);
+    const prompt = buildDeck({ ids: [id], kinds: ["reading"] })[0];
+    assert.ok(prompt?.answers.length, `reading for ${c.kanji}`);
     assert.ok(meaningAnswersFor(c).length, `meaning for ${c.kanji}`);
     for (const answer of readingAnswers(c))
       assert.equal(matchKana(answer, romajiFor(answer)).complete, true, `${c.kanji} ${answer}`);

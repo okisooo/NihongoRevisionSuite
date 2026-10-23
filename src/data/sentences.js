@@ -1,7 +1,3 @@
-// Static sentence database for the Furigana Writing Game.
-// Contains 300 example sentences, one for each Kanji ID (1-300).
-// Each sentence has pre-segmented words for ruby/furigana rendering.
-
 export const sentencesData = [
   {
     "kanjiId": 1,
@@ -33,12 +29,8 @@ export const sentencesData = [
         "reading": "ふたり",
         "segments": [
           {
-            "ruby": "二",
-            "rt": "ふた"
-          },
-          {
-            "ruby": "人",
-            "rt": "り"
+            "ruby": "二人",
+            "rt": "ふたり"
           }
         ]
       }
@@ -345,12 +337,12 @@ export const sentencesData = [
     "translation": "Go down the slope and you will reach the station.",
     "targets": [
       {
-        "word": "下",
-        "reading": "くだ",
+        "word": "下りる",
+        "reading": "おりる",
         "segments": [
           {
-            "ruby": "下",
-            "rt": "くだ"
+            "ruby": "下りる",
+            "rt": "おりる"
           }
         ]
       }
@@ -379,15 +371,12 @@ export const sentencesData = [
     "translation": "This is a very big dog, isn't it?",
     "targets": [
       {
-        "word": "大きい",
-        "reading": "おおきい",
+        "word": "大きな",
+        "reading": "おおきな",
         "segments": [
           {
-            "ruby": "大",
-            "rt": "おお"
-          },
-          {
-            "ruby": "きい"
+            "ruby": "大きな",
+            "rt": "おおきな"
           }
         ]
       }
@@ -419,15 +408,12 @@ export const sentencesData = [
     "translation": "That small flower is very cute.",
     "targets": [
       {
-        "word": "小さい",
-        "reading": "ちいさい",
+        "word": "小さな",
+        "reading": "ちいさな",
         "segments": [
           {
-            "ruby": "小",
-            "rt": "ちい"
-          },
-          {
-            "ruby": "さい"
+            "ruby": "小さな",
+            "rt": "ちいさな"
           }
         ]
       }
@@ -816,15 +802,12 @@ export const sentencesData = [
     "translation": "The room became bright.",
     "targets": [
       {
-        "word": "明るい",
-        "reading": "あかるい",
+        "word": "明るく",
+        "reading": "あかるく",
         "segments": [
           {
-            "ruby": "明",
-            "rt": "あかる"
-          },
-          {
-            "ruby": "い"
+            "ruby": "明るく",
+            "rt": "あかるく"
           }
         ]
       }
@@ -1141,11 +1124,8 @@ export const sentencesData = [
         "reading": "わけました",
         "segments": [
           {
-            "ruby": "分",
-            "rt": "わけ"
-          },
-          {
-            "ruby": "ました"
+            "ruby": "分けました",
+            "rt": "わけました"
           }
         ]
       }
@@ -1428,15 +1408,12 @@ export const sentencesData = [
     "translation": "Let's meet again next week.",
     "targets": [
       {
-        "word": "会いましょう",
-        "reading": "あいましょう",
+        "word": "お会いしましょう",
+        "reading": "おあいしましょう",
         "segments": [
           {
-            "ruby": "会",
-            "rt": "あ"
-          },
-          {
-            "ruby": "いましょう"
+            "ruby": "お会いしましょう",
+            "rt": "おあいしましょう"
           }
         ]
       }
@@ -1485,16 +1462,16 @@ export const sentencesData = [
   },
   {
     "kanjiId": 78,
-    "sentence": "青い天気が一日中続きました。",
-    "translation": "Beautiful clear skies continued all day.",
+    "sentence": "今日はいい天気です。",
+    "translation": "The weather is nice today.",
     "targets": [
       {
-        "word": "天",
-        "reading": "てん",
+        "word": "天気",
+        "reading": "てんき",
         "segments": [
           {
-            "ruby": "天",
-            "rt": "てん"
+            "ruby": "天気",
+            "rt": "てんき"
           }
         ]
       }
@@ -1565,11 +1542,8 @@ export const sentencesData = [
         "reading": "いきましょう",
         "segments": [
           {
-            "ruby": "行",
-            "rt": "いき"
-          },
-          {
-            "ruby": "ましょう"
+            "ruby": "行きましょう",
+            "rt": "いきましょう"
           }
         ]
       }
@@ -1712,12 +1686,12 @@ export const sentencesData = [
     "translation": "We enter the school through the main gate.",
     "targets": [
       {
-        "word": "門",
-        "reading": "もん",
+        "word": "正門",
+        "reading": "せいもん",
         "segments": [
           {
-            "ruby": "門",
-            "rt": "もん"
+            "ruby": "正門",
+            "rt": "せいもん"
           }
         ]
       }
@@ -1729,15 +1703,12 @@ export const sentencesData = [
     "translation": "I listened to the news on the radio.",
     "targets": [
       {
-        "word": "聞き",
-        "reading": "きき",
+        "word": "聞きました",
+        "reading": "ききました",
         "segments": [
           {
-            "ruby": "聞",
-            "rt": "き"
-          },
-          {
-            "ruby": "き"
+            "ruby": "聞きました",
+            "rt": "ききました"
           }
         ]
       }
@@ -2143,11 +2114,8 @@ export const sentencesData = [
         "reading": "あたらしい",
         "segments": [
           {
-            "ruby": "新",
-            "rt": "あたら"
-          },
-          {
-            "ruby": "い"
+            "ruby": "新しい",
+            "rt": "あたらしい"
           }
         ]
       }
@@ -2682,12 +2650,12 @@ export const sentencesData = [
     "translation": "I ride my bicycle and go out.",
     "targets": [
       {
-        "word": "自",
-        "reading": "じ",
+        "word": "自転車",
+        "reading": "じてんしゃ",
         "segments": [
           {
-            "ruby": "自",
-            "rt": "じ"
+            "ruby": "自転車",
+            "rt": "じてんしゃ"
           }
         ]
       }
@@ -2783,12 +2751,8 @@ export const sentencesData = [
         "reading": "じんじゃ",
         "segments": [
           {
-            "ruby": "神",
-            "rt": "じん"
-          },
-          {
-            "ruby": "社",
-            "rt": "module"
+            "ruby": "神社",
+            "rt": "じんじゃ"
           }
         ]
       }
@@ -4915,15 +4879,12 @@ export const sentencesData = [
     "translation": "A new building will be built here.",
     "targets": [
       {
-        "word": "建て",
-        "reading": "たて",
+        "word": "建てられます",
+        "reading": "たてられます",
         "segments": [
           {
-            "ruby": "建",
-            "rt": "た"
-          },
-          {
-            "ruby": "て"
+            "ruby": "建てられます",
+            "rt": "たてられます"
           }
         ]
       }
@@ -5120,16 +5081,16 @@ export const sentencesData = [
   },
   {
     "kanjiId": 264,
-    "sentence": "会議はあちらの室で行われます。",
-    "translation": "The meeting will be held in that room over there.",
+    "sentence": "会議はあちらの会議室で行われます。",
+    "translation": "The meeting will be held in that meeting room over there.",
     "targets": [
       {
-        "word": "室",
-        "reading": "しつ",
+        "word": "会議室",
+        "reading": "かいぎしつ",
         "segments": [
           {
-            "ruby": "室",
-            "rt": "しつ"
+            "ruby": "会議室",
+            "rt": "かいぎしつ"
           }
         ]
       }
@@ -5199,20 +5160,16 @@ export const sentencesData = [
   },
   {
     "kanjiId": 268,
-    "sentence": "新しいアイディアを発見しました。",
-    "translation": "I discovered a new idea.",
+    "sentence": "新しい星を発見しました。",
+    "translation": "I discovered a new star.",
     "targets": [
       {
         "word": "発見",
-        "reading": "ハッケン",
+        "reading": "はっけん",
         "segments": [
           {
-            "ruby": "発",
-            "rt": "はっ"
-          },
-          {
-            "ruby": "見",
-            "rt": "けん"
+            "ruby": "発見",
+            "rt": "はっけん"
           }
         ]
       }
@@ -5732,20 +5689,16 @@ export const sentencesData = [
   },
   {
     "kanjiId": 294,
-    "sentence": "これ以降は立ち入り禁止です。",
+    "sentence": "ここから先は立ち入り禁止です。",
     "translation": "Entry is prohibited beyond this point.",
     "targets": [
       {
-        "word": "以降",
-        "reading": "いこう",
+        "word": "禁止",
+        "reading": "きんし",
         "segments": [
           {
-            "ruby": "以",
-            "rt": "い"
-          },
-          {
-            "ruby": "降",
-            "rt": "こう"
+            "ruby": "禁止",
+            "rt": "きんし"
           }
         ]
       }
@@ -5795,19 +5748,16 @@ export const sentencesData = [
   },
   {
     "kanjiId": 297,
-    "sentence": "税金が込みの値段です。",
-    "translation": "The price is tax-inclusive.",
+    "sentence": "これは税込みの値段です。",
+    "translation": "This price includes tax.",
     "targets": [
       {
-        "word": "込み",
-        "reading": "こみ",
+        "word": "税込み",
+        "reading": "ぜいこみ",
         "segments": [
           {
-            "ruby": "込",
-            "rt": "こ"
-          },
-          {
-            "ruby": "み"
+            "ruby": "税込み",
+            "rt": "ぜいこみ"
           }
         ]
       }
@@ -5819,19 +5769,12 @@ export const sentencesData = [
     "translation": "I apply for membership.",
     "targets": [
       {
-        "word": "申し込む",
-        "reading": "もうしこむ",
+        "word": "申し込みます",
+        "reading": "もうしこみます",
         "segments": [
           {
-            "ruby": "申",
-            "rt": "もう"
-          },
-          {
-            "ruby": "し"
-          },
-          {
-            "ruby": "込む",
-            "rt": "こむ"
+            "ruby": "申し込みます",
+            "rt": "もうしこみます"
           }
         ]
       }
