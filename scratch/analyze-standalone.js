@@ -1,5 +1,4 @@
 import fs from 'fs';
-import path from 'path';
 
 const kanjiFilePath = 'src/data/kanji.js';
 const fileContent = fs.readFileSync(kanjiFilePath, 'utf-8');

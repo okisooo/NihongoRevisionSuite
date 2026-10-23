@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { kanjiData } from '../data/kanji';
 import { sentencesData } from '../data/sentences';
 import { romajiToHiragana, checkMatch } from '../utils/romajiConverter';
 import { parseRangeString } from '../utils/rangeParser';
-import { SlidersHorizontal, Settings, HelpCircle, RefreshCw, CheckCircle2, Play, ArrowLeft, ArrowRight, Eye, EyeOff, Keyboard, Search } from 'lucide-react';
+import { RefreshCw, CheckCircle2, Play, ArrowLeft, Eye, EyeOff, Keyboard, Search } from 'lucide-react';
 import FuriganaWord from './FuriganaWord';
 
 // Segment matcher function using robust checkMatch
@@ -183,11 +183,15 @@ export default function FuriganaGameView() {
   };
 
   // Start the game
-  const startGame = () => {
+  const startGame = (started) => {
     if (selectedIds.size === 0) return;
 
     // Filter sentences that contain any of the selected Kanji IDs
-    const matchedSentences = sentencesData.filter(s => selectedIds.has(s.kanjiId));
+    const selectedCharacters = kanjiData.filter(item => selectedIds.has(item.id)).map(item => item.kanji);
+    const matchedSentences = sentencesData.flatMap(sentence => {
+      const targets = sentence.targets.filter(target => sentence.sentence.includes(target.word) && selectedCharacters.some(character => target.word.includes(character)));
+      return targets.length ? [{ ...sentence, targets }] : [];
+    });
     if (matchedSentences.length === 0) {
       alert("No sentences found containing your selected Kanjis. Please select a different range.");
       return;
@@ -200,7 +204,7 @@ export default function FuriganaGameView() {
     setGameSentences(selectedSentences);
     setCurrentSentenceIdx(0);
     setupSentence(selectedSentences[0]);
-    setStats({ totalKeystrokes: 0, errors: 0, startTime: Date.now(), endTime: 0 });
+    setStats({ totalKeystrokes: 0, errors: 0, startTime: started, endTime: 0 });
     setView('playing');
   };
 
@@ -272,7 +276,8 @@ export default function FuriganaGameView() {
       setupSentence(gameSentences[nextIdx]);
     } else {
       // Game completed!
-      setStats(s => ({ ...s, endTime: Date.now() }));
+      const ended = Date.now();
+      setStats(s => ({ ...s, endTime: ended }));
       setView('summary');
     }
   };
@@ -316,7 +321,8 @@ export default function FuriganaGameView() {
           setIsAdvancing(false);
         } else {
           // Game completed
-          setStats(s => ({ ...s, endTime: Date.now() }));
+          const ended = Date.now();
+          setStats(s => ({ ...s, endTime: ended }));
           setView('summary');
           setIsAdvancing(false);
         }
@@ -420,16 +426,15 @@ export default function FuriganaGameView() {
         <div className="glass-panel quiz-setup-panel">
           <div className="dictionary-header">
             <Keyboard className="icon" size={28} />
-            <h2>Furigana Writing Practice</h2>
+            <h2>reading practice</h2>
           </div>
 
-          <p className="game-description-text" style={{ margin: '12px 0 24px', color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: '1.5' }}>
-            Practice writing correct Kanji readings in full sentences! Type either in <strong>Romaji</strong> or <strong>Hiragana</strong>. Mistakes are flagged immediately. Complete the sentence by typing the readings of all highlighted Kanji words.
-          </p>
+          <p className="game-description-text">type the highlighted word’s reading.</p>
 
+          <details className="practice-options"><summary>characters · {selectedIds.size} selected</summary>
           {/* 1. Range Selector */}
           <div className="setup-group">
-            <h3>Filter Range</h3>
+            <h3>range</h3>
             <div className="preset-grid" style={{ marginBottom: '16px' }}>
               {presets.map((preset, idx) => (
                 <button
@@ -446,7 +451,7 @@ export default function FuriganaGameView() {
 
             {/* Custom Multi-Range Input */}
             <div className="custom-multi-range-container">
-              <label className="study-label">Multi-Range Input (Comma-separated ranges or IDs):</label>
+              <label className="study-label">ranges</label>
               <div className="custom-range-input-row">
                 <input 
                   type="text" 
@@ -465,7 +470,7 @@ export default function FuriganaGameView() {
           {/* 2. Detailed Kanji Checkbox Selection Grid */}
           <div className="setup-group" style={{ marginTop: '16px' }}>
             <div className="kanji-selection-header">
-              <h3>Select Kanjis to Practice ({selectedIds.size} selected)</h3>
+              <h3>characters ({selectedIds.size} selected)</h3>
               <div className="select-links">
                 <span className="select-link" onClick={handleSelectAllFiltered}>Select All Filtered</span>
                 <span className="select-link" onClick={handleDeselectAllFiltered}>Clear All</span>
@@ -496,7 +501,7 @@ export default function FuriganaGameView() {
                 <input 
                   type="text"
                   className="selection-search-input"
-                  placeholder="Search by Kanji, reading, meaning..."
+                  placeholder="character, reading, meaning"
                   value={searchText}
                   onChange={(e) => setSearchText(e.target.value)}
                 />
@@ -528,14 +533,15 @@ export default function FuriganaGameView() {
             )}
           </div>
 
+          </details>
           {/* Start Button */}
           <button 
             className="action-button primary start-quiz-btn"
             style={{ width: '100%', marginTop: '20px', padding: '16px', borderRadius: '14px', fontSize: '1.1rem' }}
             disabled={selectedIds.size === 0}
-            onClick={startGame}
+            onClick={() => startGame(Date.now())}
           >
-            <Play size={20} style={{ marginRight: '8px' }} /> Start Furigana Practice
+            <Play size={20} style={{ marginRight: '8px' }} /> start
           </button>
         </div>
       </div>
@@ -660,7 +666,7 @@ export default function FuriganaGameView() {
           <div className="stats-cards-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', marginBottom: '32px' }}>
             <div className="stat-card" style={{ padding: '20px', borderRadius: '12px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)' }}>
               <span className="stat-label" style={{ display: 'block', fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', marginBottom: '8px' }}>Sentences Practiced</span>
-              <strong className="stat-val" style={{ fontSize: '2rem', color: '#6366f1' }}>{gameSentences.length}</strong>
+              <strong className="stat-val" style={{ fontSize: '2rem', color: '#2463eb' }}>{gameSentences.length}</strong>
             </div>
             <div className="stat-card" style={{ padding: '20px', borderRadius: '12px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)' }}>
               <span className="stat-label" style={{ display: 'block', fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', marginBottom: '8px' }}>Accuracy Rate</span>
@@ -688,7 +694,7 @@ export default function FuriganaGameView() {
                   </div>
                   <div className="review-sentence-targets" style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '6px' }}>
                     {s.targets.map((t, tIdx) => (
-                      <span key={tIdx} className="review-target-badge" style={{ padding: '4px 8px', borderRadius: '6px', background: 'rgba(99, 102, 241, 0.15)', border: '1px solid rgba(99,102,241,0.2)', fontSize: '0.85rem', color: '#c7d2fe' }}>
+                      <span key={tIdx} className="review-target-badge" style={{ padding: '4px 8px', borderRadius: '6px', background: 'rgba(36, 99, 235, 0.15)', border: '1px solid rgba(36,99,235,0.2)', fontSize: '0.85rem', color: '#c7d2fe' }}>
                         <FuriganaWord segments={t.segments} />
                       </span>
                     ))}

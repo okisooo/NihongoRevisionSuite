@@ -10,7 +10,7 @@ const romajiMap = {
   "bya": "びゃ", "byu": "びゅ", "byo": "びょ",
   "pya": "ぴゃ", "pyu": "ぴゅ", "pyo": "ぴょ",
   "mya": "みゃ", "myu": "みゅ", "myo": "みょ",
-  "rya": "りゃ", "ryu": "りょ", "ryo": "りょ",
+  "rya": "りゃ", "ryu": "りゅ", "ryo": "りょ",
   "ja": "じゃ", "ju": "じゅ", "jo": "じょ",
   
   // Double characters / Syllables
@@ -145,7 +145,7 @@ export function generateRomajiCombinations(hiragana) {
   let results = [""];
   for (let sIdx = 0; sIdx < syllables.length; sIdx++) {
     const syl = syllables[sIdx];
-    let spellings = [];
+    let spellings;
     
     if (syl === "っ") {
       const nextSyl = syllables[sIdx + 1];

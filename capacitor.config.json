@@ -1,0 +1,10 @@
+{
+  "appId": "com.japaneserevision.app",
+  "appName": "revision",
+  "webDir": "dist-ios",
+  "ios": {
+    "contentInset": "never",
+    "backgroundColor": "#ffffff",
+    "preferredContentMode": "mobile"
+  }
+}

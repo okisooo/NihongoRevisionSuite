@@ -462,8 +462,8 @@ async function main() {
     const id = parseInt(match[1]);
     const char = match[2].trim();
 
-    let reading = '';
-    let meaning = '';
+    let reading;
+    let meaning;
 
     // Check classmate map first
     const classmate = classmateMap.get(char);

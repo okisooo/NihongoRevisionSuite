@@ -447,8 +447,8 @@ lines.forEach((line) => {
   const isRadical = match[2] === '*';
   const char = match[3].trim();
 
-  let reading = '';
-  let meaning = '';
+  let reading;
+  let meaning;
   let onyomi = [];
   let kunyomi = [];
   let examples = [];

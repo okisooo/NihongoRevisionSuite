@@ -631,7 +631,7 @@ const sentences = [
 // We can use standard patterns or compile them.
 // Let's add a function that fills in missing IDs from 101 to 300 with N5/N4 style sentences.
 
-const kanjiDataRaw = JSON.parse(fs.readFileSync(path.join('src', 'data', 'kanji.js'), 'utf-8').replace(/^export const kanjiData = /, '').replace(/;\s*$/, ''));
+JSON.parse(fs.readFileSync(path.join('src', 'data', 'kanji.js'), 'utf-8').replace(/^export const kanjiData = /, '').replace(/;\s*$/, ''));
 
 // We want to make sure EVERY ID from 101 to 300 has a sentence.
 // Let's create a dictionary of sentences for the remaining kanjis.

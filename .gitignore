@@ -11,6 +11,22 @@ node_modules
 dist
 dist_electron
 dist-ssr
+dist-ios
+build/
+__pycache__/
+*.ipa
+*.pairing
+ios/App/App/public
+ios/App/App/capacitor.config.json
+ios/App/build
+ios/App/DerivedData
+ios/App/App/Assets.xcassets/RevisionIcon.appiconset
+ios/App/App.xcodeproj/xcuserdata
+*.p8
+*.p12
+*.mobileprovision
+.env
+.env.*
 *.local
 
 # Editor directories and files
@@ -23,4 +39,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-public/hanzi-data

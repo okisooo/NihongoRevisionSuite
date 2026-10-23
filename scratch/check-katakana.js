@@ -1,5 +1,4 @@
 import fs from 'fs';
-import path from 'path';
 
 // Let's import kanji.js and radicals.js manually by reading and parsing them.
 const kanjiFilePath = 'src/data/kanji.js';

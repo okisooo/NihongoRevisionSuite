@@ -1,5 +1,4 @@
 import fs from 'fs';
-import path from 'path';
 
 // Load databases
 const kanjiFilePath = 'src/data/kanji.js';
@@ -194,7 +193,7 @@ if (fs.existsSync(kanjiFilePath)) {
     const reading = toHiragana(rawReading);
 
     // Derive standalone word lists
-    let standalone = [];
+    let standalone;
     if (standaloneOverrides[item.kanji]) {
       // Use curated override
       standalone = standaloneOverrides[item.kanji];

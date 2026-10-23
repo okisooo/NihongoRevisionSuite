@@ -47033,7 +47033,7 @@ export const kanjiData = [
     "id": 282,
     "kanji": "顔",
     "reading": "かお / がん",
-    "meaning": "Kanji",
+    "meaning": "face, expression",
     "isRadical": false,
     "onyomi": [
       "がん"
@@ -47185,7 +47185,7 @@ export const kanjiData = [
     "id": 283,
     "kanji": "声",
     "reading": "こえ / こわ- / しょう / せい",
-    "meaning": "Kanji",
+    "meaning": "voice",
     "isRadical": false,
     "onyomi": [
       "しょう",
@@ -47339,7 +47339,7 @@ export const kanjiData = [
     "id": 284,
     "kanji": "題",
     "reading": "だい",
-    "meaning": "Kanji",
+    "meaning": "topic, subject",
     "isRadical": false,
     "onyomi": [
       "だい"
@@ -47478,7 +47478,7 @@ export const kanjiData = [
     "id": 285,
     "kanji": "色",
     "reading": "いろ / しき / しょく",
-    "meaning": "Kanji",
+    "meaning": "color",
     "isRadical": false,
     "onyomi": [
       "しき",
@@ -47631,7 +47631,7 @@ export const kanjiData = [
     "id": 286,
     "kanji": "漢",
     "reading": "かん",
-    "meaning": "Kanji",
+    "meaning": "Sino-, China",
     "isRadical": false,
     "onyomi": [
       "かん"
@@ -47770,7 +47770,7 @@ export const kanjiData = [
     "id": 287,
     "kanji": "字",
     "reading": "-な / あざ / あざな / じ",
-    "meaning": "Kanji",
+    "meaning": "character, letter, word, section of village",
     "isRadical": false,
     "onyomi": [
       "じ"
@@ -47924,7 +47924,7 @@ export const kanjiData = [
     "id": 288,
     "kanji": "写",
     "reading": "うつ- / うつ.し / うつ.す / うつ.る / しゃ / じゃ",
-    "meaning": "Kanji",
+    "meaning": "copy, be photographed, describe",
     "isRadical": false,
     "onyomi": [
       "しゃ",
@@ -48109,7 +48109,7 @@ export const kanjiData = [
     "id": 289,
     "kanji": "考",
     "reading": "かんが.え / かんが.える / こう",
-    "meaning": "Kanji",
+    "meaning": "consider, think over",
     "isRadical": false,
     "onyomi": [
       "こう"
@@ -48278,7 +48278,7 @@ export const kanjiData = [
     "id": 290,
     "kanji": "真",
     "reading": "ま / ま- / まこと / しん",
-    "meaning": "Kanji",
+    "meaning": "true, reality, Buddhist sect",
     "isRadical": false,
     "onyomi": [
       "しん"
@@ -48625,7 +48625,7 @@ export const kanjiData = [
     "id": 292,
     "kanji": "曜",
     "reading": "よう",
-    "meaning": "Kanji",
+    "meaning": "weekday",
     "isRadical": false,
     "onyomi": [
       "よう"
@@ -48775,7 +48775,7 @@ export const kanjiData = [
     "id": 293,
     "kanji": "進",
     "reading": "すす.む / すす.める / しん",
-    "meaning": "Kanji",
+    "meaning": "advance, proceed, progress, promote",
     "isRadical": false,
     "onyomi": [
       "しん"
@@ -48944,7 +48944,7 @@ export const kanjiData = [
     "id": 294,
     "kanji": "帰",
     "reading": "おく.る / かえ.す / かえ.る / とつ.ぐ / き",
-    "meaning": "Kanji",
+    "meaning": "homecoming, arrive at, lead to, result in",
     "isRadical": false,
     "onyomi": [
       "き"
@@ -49141,7 +49141,7 @@ export const kanjiData = [
     "id": 295,
     "kanji": "別",
     "reading": "わ.ける / わか.れる / べつ",
-    "meaning": "Kanji",
+    "meaning": "separate, branch off, diverge, fork, another, extra, specially",
     "isRadical": false,
     "onyomi": [
       "べつ"
@@ -49310,7 +49310,7 @@ export const kanjiData = [
     "id": 296,
     "kanji": "以",
     "reading": "もっ.て / い",
-    "meaning": "Kanji",
+    "meaning": "by means of, because, in view of, compared with",
     "isRadical": false,
     "onyomi": [
       "い"
@@ -49465,7 +49465,7 @@ export const kanjiData = [
     "id": 297,
     "kanji": "堂",
     "reading": "どう",
-    "meaning": "Kanji",
+    "meaning": "public chamber, hall",
     "isRadical": false,
     "onyomi": [
       "どう"

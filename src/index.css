@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Noto+Sans+JP:wght@400;700&family=Klee+One:wght@400;600&display=swap');
+@import '@fontsource/klee-one/japanese-400.css';
+@import '@fontsource/noto-sans-jp/japanese-400.css';
 
 :root {
   --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
@@ -6,8 +7,8 @@
   --glass-border: rgba(148, 163, 184, 0.25);
   --glass-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
   
-  --primary-color: #6366f1; /* Modern Indigo */
-  --primary-hover: #4f46e5;
+  --primary-color: #2463eb; /* Modern Indigo */
+  --primary-hover: #174dcb;
   --correct-color: #10b981; /* Emerald */
   --incorrect-color: #ef4444; /* Red */
   
@@ -17,7 +18,7 @@
   /* Layout variables */
   --sidebar-bg: #ffffff;
   --sidebar-border: rgba(148, 163, 184, 0.15);
-  --active-nav-bg: rgba(99, 102, 241, 0.08);
+  --active-nav-bg: rgba(36, 99, 235, 0.08);
 }
 
 * {

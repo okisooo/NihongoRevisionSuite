@@ -1,5 +1,4 @@
 import fs from 'fs';
-import path from 'path';
 
 const fileContent = fs.readFileSync('src/data/kanji.js', 'utf-8');
 const jsonStr = fileContent.substring(fileContent.indexOf('['), fileContent.lastIndexOf(']') + 1);

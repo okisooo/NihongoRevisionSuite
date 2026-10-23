@@ -1,4 +1,3 @@
-import React from 'react';
 
 /**
  * Renders a Japanese word with Furigana.

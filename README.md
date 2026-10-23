@@ -1,83 +1,65 @@
-# Nihongo Revision Suite 🇯🇵
+# Nihongo Revision Suite
 
-A desktop revision suite for Japanese language studies based on the **Minna no Nihongo (MNN)** curriculum. It includes a comprehensive Kanji dictionary (with touch/mouse writing practices), detailed grammar lessons (covering chapters 1 to 30), and vocabulary/grammar quizzes.
+A daily language study service at **https://nihongo.okiso.net**. The short address,
+**https://nihongo.oki.so**, permanently redirects to the same page on the canonical
+host, preserving the path, query string and browser fragment.
 
-Built as a lightweight, standalone desktop app using **React (Vite)** packaged inside **Electron**.
+The current app has four tabs: today, kana/kanji, grammar and library. It includes
+28 kana stages, 60 kanji stages, graded handwriting, listening practice, timed
+rush, 30 grammar lessons, sentence reading and saved review schedules. Japanese
+stroke-order data and fonts are bundled locally.
 
----
+## use on a phone or computer
 
-## Key Features
+Open the website once while online and let its offline download finish. On iPhone,
+use Safari's Share → Add to Home Screen; on Android or desktop Chrome, use Install
+app. After the first successful offline download, the study content, writing and
+fonts work without a connection. Listening depends on the device's installed
+speech voices.
 
-1. **Minna no Nihongo Kanji (1 - 356):**
-   - Clean, searchable dictionary interface.
-   - Dynamic stroke animation order powered by `hanzi-writer`.
-   - **Handwriting Practice Pad:** An HTML5 drawing canvas overlay. You can write freely without auto-deletion. Toggle guides like alignment grids (田 shape) or the background ghost template outline.
-   - Falls back to static text view for components/radicals.
-2. **Grammar Curriculum (Lessons 1 - 30):**
-   - Curated grammar pattern breakdowns and explanations.
-   - Real MNN example sentences using native HTML5 `<ruby>` tags for Furigana pronunciation lookups.
-   - Mini-quizzes built directly into each lesson page to test comprehension.
-3. **Widescreen Desktop-First UI:**
-   - 16:9 aspect ratio (`1200 x 720` desktop frame).
-   - Sidebar navigation.
-   - Locked viewports to ensure no outer double scrollbars.
-4. **Authentic Typography:**
-   - Uses the **Klee One** handwriting/regular-script font for all Kanji displays, matching school textbooks rather than blocky digital Gothic fonts.
+Progress saves on the current browser/device, after each completed answer or run.
+It does not yet sync between devices. Settings can export and validate a JSON
+backup to move progress between browser, desktop and native installations.
+Existing `study_suite_v1` backups remain supported. When an update is ready, the
+app offers a refresh after your session; it does not force a reload during study.
 
----
+## develop and check
 
-## Web App (Desktop & Phone)
+Use Node.js 22 and the committed npm lockfile:
 
-Every push to `main` builds the app and publishes it to the `gh-pages` branch (`.github/workflows/deploy-web.yml`), which GitHub Pages serves at **https://nihongo.okiso.net**.
-
-- It's an installable PWA: on iPhone use **Share → Add to Home Screen**, on Android/desktop Chrome use **Install app**.
-- It works offline once opened. Kanji stroke data is bundled at build time by `scripts/copy-hanzi-data.js`.
-- When a new version is deployed, the app shows a "new version available" prompt; tap **Refresh** to update.
-
-One-time setup: add a DNS `CNAME` record `nihongo` → `okisooo.github.io`. If Pages isn't serving yet, check **Settings → Pages** is set to deploy from the `gh-pages` branch.
-
----
-
-## Getting Started (Local Development)
-
-To run the application locally on your machine, ensure you have [Node.js](https://nodejs.org/) installed.
-
-### 1. Clone the repository
-```bash
-git clone https://github.com/okisooo/NihongoRevisionSuite.git
-cd NihongoRevisionSuite
-```
-
-### 2. Install dependencies
-```bash
-npm install
-```
-
-### 3. Run in Dev Mode
-To run the app in your browser with Hot Module Replacement (HMR):
-```bash
+```sh
+npm ci
 npm run dev
 ```
 
-To run the app in the desktop Electron wrapper:
-```bash
-npm run start
+```sh
+npm test
+npm run lint
+npm run build
+npm run preview
 ```
 
-### 4. Build & Package Standalone Executable (.exe)
-To compile the React files and bundle them into a single, portable Windows `.exe` file:
-```bash
-npm run dist
-```
-The compiled output will be generated inside the `dist_electron/` directory as `Japanese Revision 1.0.0.exe`.
+Generated outputs and local dependency/build caches on this machine belong on S:.
+Use an S: checkout, or junction `dist` and `node_modules` to S: before building.
 
----
+## hosting
 
-## Release Pipeline
-This repository includes a GitHub Action configured to build and package the `.exe` automatically when a version tag is pushed:
+Every push to `main` checks tests and lint, builds the app and publishes `dist` to
+the `gh-pages` branch. GitHub Pages is configured for `nihongo.okiso.net`; its
+`CNAME` must remain in place. Routing uses URL fragments so bookmarked study
+screens work on static hosting and offline.
 
-```bash
-git tag v1.0.0
-git push origin v1.0.0
-```
-This triggers the runner, compiles the Electron client, and attaches the compiled `.exe` to the repository's **Releases** tab.
+See [web deployment](docs/WEB-DEPLOYMENT.md) for DNS, HTTPS, the short-domain
+redirect, verification and rollback.
+
+## native apps
+
+The React study core also runs in Electron and the existing Capacitor iOS target.
+Native preferences and backup sharing remain supported. See [iOS setup](docs/IOS.md)
+for the existing personal-build workflow and its unverified installation steps.
+Android packaging and app-store release are future work. The installable website
+works on both phone platforms now; it is not an App Store or Play Store release.
+
+For desktop packaging, `npm start` opens Electron and `npm run dist` builds the
+portable Windows app. Native signing, store publishing and paid memberships are
+separate release steps.

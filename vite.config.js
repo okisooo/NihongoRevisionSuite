@@ -10,17 +10,17 @@ export default defineConfig({
       // We register the service worker ourselves (see src/pwa.js) so Electron's file:// build skips it.
       injectRegister: false,
       registerType: 'prompt',
-      includeAssets: ['favicon.svg', 'apple-touch-icon.png'],
+      includeAssets: ['revision-mark.svg', 'apple-touch-icon.png'],
       manifest: {
         name: 'Nihongo Revision Suite',
         short_name: 'Nihongo',
-        description: 'Kanji, grammar and furigana practice based on Minna no Nihongo.',
-        lang: 'ja',
+        description: 'Daily language study with kana, kanji, grammar and saved reviews.',
+        lang: 'en',
         start_url: './',
         scope: './',
         display: 'standalone',
-        background_color: '#f8fafc',
-        theme_color: '#4f46e5',
+        background_color: '#ffffff',
+        theme_color: '#2463eb',
         icons: [
           { src: 'pwa-192x192.png', sizes: '192x192', type: 'image/png' },
           { src: 'pwa-512x512.png', sizes: '512x512', type: 'image/png' },
@@ -28,26 +28,12 @@ export default defineConfig({
         ],
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,svg,png,json}'],
+        // Precache fonts and bundled Japanese stroke data before offline use.
+        globPatterns: ['**/*.{js,css,html,svg,png,json,woff2,txt}'],
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
-        runtimeCaching: [
-          {
-            urlPattern: ({ url }) => url.origin === 'https://fonts.googleapis.com',
-            handler: 'StaleWhileRevalidate',
-            options: { cacheName: 'google-fonts-css' },
-          },
-          {
-            urlPattern: ({ url }) => url.origin === 'https://fonts.gstatic.com',
-            handler: 'CacheFirst',
-            options: {
-              cacheName: 'google-fonts-files',
-              expiration: { maxEntries: 300, maxAgeSeconds: 60 * 60 * 24 * 365 },
-              cacheableResponse: { statuses: [0, 200] },
-            },
-          },
-        ],
       },
     }),
   ],
   base: './',
+  server: { watch: { awaitWriteFinish: { stabilityThreshold: 200, pollInterval: 30 } } },
 })

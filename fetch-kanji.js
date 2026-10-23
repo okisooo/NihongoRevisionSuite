@@ -446,8 +446,8 @@ async function main() {
 
     console.log(`Processing ${id}: ${char} (Radical: ${isRadical})`);
 
-    let reading = '';
-    let meaning = '';
+    let reading;
+    let meaning;
 
     if (isRadical) {
       const info = radicalMap[char];
