@@ -23,11 +23,13 @@ If you've spotted a bug or have an idea for a feature, please search existing Is
    ```bash
    git checkout -b feature/my-new-feature
    ```
-4. Set up the environment and run:
+4. set up the web development server with Node.js 22:
    ```bash
-   npm install
-   npm run start
+   npm ci
+   npm run dev
    ```
+   `npm start` launches the Electron wrapper, which loads the built `dist` folder; run `npm run build` first for that path. before a code pull request, run `npm test`, `npm run lint`, and `npm run build`. report which checks and browser/device behaviors you verified.
+
 5. Commit your changes:
    ```bash
    git commit -m "feat: add user feature"
