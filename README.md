@@ -1,73 +1,44 @@
-# Nihongo Revision Suite
+# practice room — language learning in short rounds
 
-A self-paced language practice game at **https://nihongo.okiso.net**. The short address,
-**https://nihongo.oki.so**, permanently redirects to the same page on the canonical
-host, preserving the path, query string and browser fragment.
+short Japanese practice rounds for reading, recall, handwriting, and listening. meet a few items, recall them with the answers hidden, and revisit helped answers as you play.
 
-The app opens in a compact play room. Choose sounds or characters, meet a few new
-items, then recall them with the answers hidden. Clean answers build a combo;
-helped answers return after other prompts. Each short round finishes after two
-unassisted recalls of five skills, with an immediate replay or next-round action.
-There are no daily quotas or streaks on the home screen.
+[open the app](https://nihongo.okiso.net/) · [short link](https://nihongo.oki.so/) · [deployment notes](docs/WEB-DEPLOYMENT.md)
 
-Practice tools and the library retain 28 kana sets, 60 kanji stages, graded
-handwriting, listening, timed rush, 30 grammar lessons and sentence reading.
-Japanese stroke data and fonts remain bundled locally. Quick rounds update the
-existing per-skill records and review schedules without claiming writing mastery
-or clearing the separate timed stage tests.
+## practice
 
-## use on a phone or computer
+- work through 28 sets for the two phonetic alphabets and 60 written-character stages, with saved skill progress.
+- use guided stroke models, graded handwriting, device speech, and timed practice tools.
+- study 30 grammar lessons and sentence reading, or look things up in the library.
+- resume an unfinished round and export/import a JSON progress backup in settings.
 
-Open the website once while online and let its offline download finish. On iPhone,
-use Safari's Share → Add to Home Screen; on Android or desktop Chrome, use Install
-app. After the first successful offline download, the study content, writing and
-fonts work without a connection. Listening depends on the device's installed
-speech voices.
+## phone, desktop & offline use
 
-Progress saves on the current browser/device, after each answer in a play round.
-An unfinished round resumes after reload, including already-scored feedback.
-It does not yet sync between devices. Settings can export and validate a JSON
-backup to move progress between browser, desktop and native installations.
-Existing `study_suite_v1` backups remain supported. When an update is ready, the
-app offers a refresh after your session; it does not force a reload during study.
+open the website online and let its offline download finish. on iPhone, use Safari's share menu and add to home screen; on Android or supported desktop browsers, use the install-app option. study content, stroke data, and fonts are bundled for offline use after that first successful download. listening depends on an available Japanese speech voice; offline voice support varies by device.
 
-## develop and check
+progress stays in the current browser or native installation. there are no accounts or automatic cross-device sync. use a backup to transfer progress, and export one before clearing browser data. backup files contain your study records. device speech services may have their own network behavior.
 
-Use Node.js 22 and the committed npm lockfile:
+the source also includes an Electron desktop wrapper, Windows portable packaging, and a Capacitor iOS target. no public GitHub Releases are currently published. native signing and real-device installation need separate verification; there is no App Store or Play Store release offered here.
+
+## source & development
+
+JavaScript/JSX, React 19, Vite 8, and a progressive web app service worker. use Node.js 22 and the committed npm lockfile:
 
 ```sh
 npm ci
 npm run dev
 ```
 
-```sh
-npm test
-npm run lint
-npm run build
-npm run preview
-```
+`npm run build` generates `dist`; the web workflow runs tests and lint before publishing it to GitHub Pages. Electron's `npm start` loads that built `dist` directory, so build first when using the desktop wrapper.
 
-Generated outputs and local dependency/build caches on this machine belong on S:.
-Use an S: checkout, or junction `dist` and `node_modules` to S: before building.
+the short-round logic is in [src/play](src/play), practice tools in [src/rush](src/rush), and study/progress/backup code in [src/study](src/study). see [web deployment](docs/WEB-DEPLOYMENT.md) and the [content review](docs/CONTENT-AUDIT.md) for scope and known limits.
 
-## hosting
+## credits & licensing
 
-Every push to `main` checks tests and lint, builds the app and publishes `dist` to
-the `gh-pages` branch. GitHub Pages is configured for `nihongo.okiso.net`; its
-`CNAME` must remain in place. Routing uses URL fragments so bookmarked study
-screens work on static hosting and offline.
+stroke data is credited to [AnimCJK](https://github.com/parsimonhi/animCJK), with the Arphic Public License and upstream attribution in the [bundled notice](src/data/strokes.LICENSE.txt). [Klee One](public/licenses/klee-one.txt) and [Noto Sans JP](public/licenses/noto-sans-jp.txt) have separate SIL Open Font License notices.
 
-See [web deployment](docs/WEB-DEPLOYMENT.md) for DNS, HTTPS, the short-domain
-redirect, verification and rollback.
+no top-level application-code license is declared. bundled content and third-party assets retain their own terms; see the existing [distribution notes](docs/IOS.md#before-any-public-release). this is a practice aid, and the content review records known limits.
 
-## native apps
+## related
 
-The React study core also runs in Electron and the existing Capacitor iOS target.
-Native preferences and backup sharing remain supported. See [iOS setup](docs/IOS.md)
-for the existing personal-build workflow and its unverified installation steps.
-Android packaging and app-store release are future work. The installable website
-works on both phone platforms now; it is not an App Store or Play Store release.
+[OKISO's music & art site](https://okiso.net/) · [website source](https://github.com/okisooo/site) · [more projects by okisooo](https://github.com/okisooo)
 
-For desktop packaging, `npm start` opens Electron and `npm run dist` builds the
-portable Windows app. Native signing, store publishing and paid memberships are
-separate release steps.
