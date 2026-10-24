@@ -1,10 +1,11 @@
+<p><a href="https://nihongo.okiso.net/"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/okisooo/NihongoRevisionSuite/main/docs/media/practice-sleeve-dark.gif">
+  <img src="https://raw.githubusercontent.com/okisooo/NihongoRevisionSuite/main/docs/media/practice-sleeve-light.gif" alt="practice room — a little practice, a little play. five flash cards turn over from a question mark to read, recall, write, listen and play, in the app's own paper, green and terracotta; reading, recall, handwriting and listening; offline after the first download; no account" width="900">
+</picture></a></p>
+
 <div align="center">
 
-# practice room
-
-### offline Japanese learning, a few minutes at a time
-
-read, recall, write and listen — then come back to what needs another try.
+offline Japanese learning, a few minutes at a time. read, recall, write and listen — then come back to what needs another try.
 
 **[open the web app](https://nihongo.okiso.net/)** · [install on your device](#take-it-offline) · [run from source](#run-from-source)
 
@@ -64,4 +65,4 @@ stroke data comes from [AnimCJK](https://github.com/parsimonhi/animCJK), with th
 
 ---
 
-made by [OKISO](https://github.com/okisooo). also building [Backdrop — AI desktop wallpapers](https://github.com/okisooo/backdrop), [Fleet — Windows AI usage tracking](https://github.com/okisooo/fleet), and a [music & art website](https://github.com/okisooo/site).
+made by [OKISO](https://github.com/okisooo) — no.03 in the little tools. also building no.01 [Backdrop — AI desktop wallpapers](https://github.com/okisooo/backdrop), no.02 [Fleet — Windows AI usage tracking](https://github.com/okisooo/fleet), and a [music & art website](https://github.com/okisooo/site).
