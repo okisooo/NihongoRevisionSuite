@@ -476,7 +476,7 @@ function StageBody({ stage }) {
         onExit={() => setPhase("intro")}
         onFinish={async (run) => {
           if (phase === "review") {
-            if (await saveRun(save, run, { srs: false })) setPhase("review-done");
+            if (await saveRun(save, run, { srs: true })) setPhase("review-done");
             return;
           }
           const report = await saveRun(save, run, { stage, srs: true, kinds: ["reading", "meaning"] });

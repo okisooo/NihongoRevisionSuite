@@ -1,5 +1,5 @@
 import { contextsFor } from "./characterData";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { ArrowRight, ArrowUpRight, Check, RotateCcw, Download, Upload } from "lucide-react";
 import { useProgress, updateProgress, getWarning, getRawProgress } from "./store";
@@ -11,8 +11,17 @@ import {
   lessonTitle,
   createSession,
   contextWords,
+  studyDueKeys,
 } from "./content";
-import { schedule, validateProgress, recordSessionAnswer } from "./progress";
+import { validateProgress, recordSessionAnswer } from "./progress";
+import {
+  commitGrammarAttempt,
+  completeLessonQuiz,
+  openGrammarModel,
+  sameLessonSession,
+  savedGrammarFeedback,
+  startLessonSession,
+} from "./grammarPractice";
 import { STAGE_COUNT } from "../rush/mastery";
 import { KanjiSettings } from "../rush/KanjiViews";
 
@@ -38,6 +47,20 @@ function useSave() {
     }
   };
   return [save, error];
+}
+function useGuardedSave() {
+  const [save, error] = useSave();
+  const busy = useRef(false);
+  const run = async (change) => {
+    if (busy.current) return false;
+    busy.current = true;
+    try {
+      return await save(change);
+    } finally {
+      busy.current = false;
+    }
+  };
+  return [run, error];
 }
 function PageHeading({ title }) {
   return (
@@ -92,6 +115,8 @@ export function GrammarTabs({ current }) {
 export function Grammar() {
   const progress = useProgress();
   const [query, setQuery] = useState("");
+  const [openedAt] = useState(() => Date.now());
+  const dueCount = studyDueKeys(progress, openedAt).length;
   const matches = lessons.filter((l) =>
     `${l.lesson} ${l.title} ${l.patterns.map((p) => p.explanation).join(" ")}`
       .toLowerCase()
@@ -108,9 +133,22 @@ export function Grammar() {
         </label>
         <span className="muted">{Object.keys(progress.lessons).length} / 30 complete</span>
       </div>
+      <p className="muted">complete means the quiz was passed. revise a lesson to practice sentences. that quiz is not a recall score.</p>
+      {(progress.active || dueCount > 0) && (
+        <div className="practice-links">
+          {progress.active ? (
+            <Link className="primary-button" to="/session">
+              continue review <ArrowRight size={18} />
+            </Link>
+          ) : (
+            <StartButton mode="review">review due items</StartButton>
+          )}
+          {dueCount > 0 && <span className="muted">{dueCount} due</span>}
+        </div>
+      )}
       <div className="lesson-path">
         {matches.map((l) => (
-          <Link className="lesson-row" to={`/grammar/${l.lesson}`} key={l.lesson}>
+          <div className="lesson-row" key={l.lesson}>
             <span className={`lesson-step ${progress.lessons[l.lesson] ? "done" : ""}`}>
               {progress.lessons[l.lesson] ? <Check size={20} /> : String(l.lesson).padStart(2, "0")}
             </span>
@@ -120,8 +158,13 @@ export function Grammar() {
                 {l.patterns.length} patterns · {l.quiz.length} questions
               </p>
             </span>
-            <ArrowRight size={19} />
-          </Link>
+            <Link className="text-link" to={`/grammar/${l.lesson}`}>
+              open
+            </Link>
+            <Link className="text-link" to={`/grammar/${l.lesson}/revise`}>
+              revise
+            </Link>
+          </div>
         ))}
       </div>
       {!matches.length && <p className="empty-state">no lessons match. try a different topic.</p>}
@@ -153,6 +196,11 @@ function LessonBody({ id }) {
         ← all lessons
       </Link>
       <PageHeading title={lessonTitle(lesson)} />
+      <p>
+        <Link className="text-link" to={`/grammar/${id}/revise`}>
+          revise this lesson <ArrowRight size={16} />
+        </Link>
+      </p>
       {lesson.patterns.map((pattern, index) => (
         <section className="pattern-section" key={index}>
           <span className="eyebrow">pattern {index + 1}</span>
@@ -201,16 +249,7 @@ function LessonBody({ id }) {
           disabled={Object.keys(answers).length !== lesson.quiz.length}
           onClick={async () => {
             setChecked(false);
-            if (passed)
-              await save((p) => {
-                const now = Date.now();
-                const nextCards = { ...p.cards };
-                lesson.patterns.forEach((_, index) => {
-                  const key = `grammar:${id}:${index}`;
-                  if (!nextCards[key]) nextCards[key] = schedule(null, true, now);
-                });
-                return { ...p, cards: nextCards, lessons: { ...p.lessons, [id]: now } };
-              });
+            if (passed) await save((p) => completeLessonQuiz(p, id, Date.now()));
             setChecked(true);
           }}
         >
@@ -219,18 +258,105 @@ function LessonBody({ id }) {
         <SaveError error={error} />
         {checked && passed && !error && (
           <p className="answer-good" role="status">
-            lesson saved.
+            lesson marked complete. patterns with no review record are saved as needing review. this quiz does not count as recall.
           </p>
         )}
       </section>
       <div className="page-bottom">
-        <span className="muted">{progress.lessons[id] ? "completed" : "answer all questions to finish."}</span>
+        <span className="muted">
+          {progress.lessons[id]
+            ? "lesson complete. this is not a recall score."
+            : "answer all questions to mark the lesson complete."}
+        </span>
         {id < 30 && (
           <Link to={`/grammar/${id + 1}`}>
             next lesson <ArrowRight size={18} />
           </Link>
         )}
       </div>
+    </div>
+  );
+}
+
+export function GrammarRevision() {
+  const { id } = useParams();
+  return <GrammarRevisionBody key={id} id={Number(id)} />;
+}
+function GrammarRevisionBody({ id }) {
+  const lesson = lessons.find((item) => item.lesson === id);
+  const progress = useProgress();
+  const navigate = useNavigate();
+  const [run, error] = useGuardedSave();
+  const [note, setNote] = useState("");
+  if (!lesson)
+    return (
+      <div className="page">
+        <h1>lesson not found</h1>
+        <Link to="/grammar">all lessons</Link>
+      </div>
+    );
+  const active = progress.active;
+  const same = sameLessonSession(active, id);
+  const begin = async (allowReplace) => {
+    const seen = active?.started ?? null;
+    let opened = false;
+    setNote("");
+    const ok = await run((progressNow) => {
+      if ((progressNow.active?.started ?? null) !== seen) return progressNow;
+      if (sameLessonSession(progressNow.active, id)) return progressNow;
+      if (progressNow.active && !allowReplace) return progressNow;
+      const next = startLessonSession(progressNow, id, Date.now());
+      opened = next !== progressNow;
+      return next;
+    });
+    if (ok && opened) navigate("/session");
+    else if (ok) setNote("that review changed. look again before starting.");
+  };
+  return (
+    <div className="page reading-page">
+      <Link className="back-link" to={`/grammar/${id}`}>
+        ← this lesson
+      </Link>
+      <PageHeading title={lessonTitle(lesson)} />
+      <p>
+        make one sentence for each pattern in this lesson. type it, or say or write it first. a model
+        sentence stays hidden until you ask for it. afterwards you rate the sentence yourself. the rating
+        is self-rated, not an exact match to the example.
+      </p>
+      <p className="muted">{lesson.patterns.length} patterns in this round. other lessons stay as they are.</p>
+      <div className="backup-actions">
+        {same ? (
+          <Link className="primary-button" to="/session">
+            continue this lesson <ArrowRight size={18} />
+          </Link>
+        ) : active ? (
+          <>
+            <Link className="secondary-button" to="/session">
+              continue current review
+            </Link>
+            <button className="primary-button" onClick={() => begin(true)}>
+              start this lesson
+            </button>
+          </>
+        ) : (
+          <button className="primary-button" onClick={() => begin(false)}>
+            start this lesson <ArrowRight size={18} />
+          </button>
+        )}
+      </div>
+      {same && <p className="rating-note">this lesson's revision is already open.</p>}
+      {active && !same && (
+        <p className="rating-note">
+          another review is still open. continue it, or start this lesson instead. starting replaces that
+          open review without saving it as finished.
+        </p>
+      )}
+      {note && (
+        <p className="notice" role="status">
+          {note}
+        </p>
+      )}
+      <SaveError error={error} />
     </div>
   );
 }
@@ -262,7 +388,9 @@ function SessionComplete() {
         </span>
         <h1>session complete</h1>
         <p>
-          {active.correct} remembered across {active.index} recall attempts.
+          {active.mode === "lesson" || active.queue.some((key) => key.startsWith("grammar:"))
+            ? `${active.correct} self-rated as matching across ${active.index} attempts.`
+            : `${active.correct} remembered across ${active.index} recall attempts.`}
         </p>
         <button
           className="primary-button"
@@ -286,6 +414,106 @@ function SessionComplete() {
         >
           done <Check size={18} />
         </button>
+        <SaveError error={error} />
+      </div>
+    </div>
+  );
+}
+function GrammarRecall({ card }) {
+  const progress = useProgress();
+  const active = progress.active;
+  const key = card.key;
+  const index = active.index;
+  const saved = savedGrammarFeedback(active, key, index);
+  const [draft, setDraft] = useState("");
+  const [run, error] = useGuardedSave();
+  const helped = Boolean(active.hints?.includes(index));
+  const text = saved ? saved.text : draft;
+  return (
+    <div className="page session-page">
+      <div className="session-top">
+        <Link to="/">← pause</Link>
+        <span>
+          {index + 1} / {active.queue.length}
+        </span>
+        <span className="skill-tag">grammar</span>
+      </div>
+      <progress className="session-progress" value={index} max={active.queue.length} />
+      <div className="recall-paper">
+        <p className="eyebrow">{progress.cards[key] ? "review" : "new"}</p>
+        <p className="recall-instruction">form a sentence using this pattern.</p>
+        <h1 className="recall-prompt">{card.pattern.pattern}</h1>
+        <p className="explanation">{card.pattern.explanation}</p>
+        <div className="reference-details">
+          <label className="search-field">
+            <span>your sentence</span>
+            <textarea
+              value={text}
+              onChange={(event) => setDraft(event.target.value)}
+              readOnly={Boolean(saved)}
+              maxLength={5000}
+              rows={3}
+              autoCapitalize="off"
+              autoCorrect="off"
+              spellCheck={false}
+              placeholder="type a sentence, or leave this empty if you said or wrote it"
+            />
+          </label>
+        </div>
+        {!saved && (
+          <>
+            <div className="backup-actions">
+              <button className="primary-button" onClick={() => run((p) => commitGrammarAttempt(p, key, index, draft))}>
+                i've made a sentence <Check size={17} />
+              </button>
+              <button className="secondary-button" onClick={() => run((p) => openGrammarModel(p, key, index, draft))}>
+                show a model
+              </button>
+            </div>
+            <p className="rating-note">showing a model before your sentence marks this as help.</p>
+          </>
+        )}
+        {saved && !saved.revealed && (
+          <div className="backup-actions">
+            <button className="primary-button" onClick={() => run((p) => openGrammarModel(p, key, index, saved.text))}>
+              show the model <ArrowRight size={18} />
+            </button>
+          </div>
+        )}
+        {saved?.revealed && (
+          <div className="recall-answer">
+            <div className="sentence-paper">
+              <span className="eyebrow">one model sentence</span>
+              <p className="sentence-text">{card.pattern.exampleJa}</p>
+              <p>{card.pattern.exampleEn}</p>
+            </div>
+            <p className="rating-note">
+              one way to use the pattern. a different sentence can still be right. this is not graded by matching these words.
+            </p>
+            <p>{saved.text ? `your sentence: ${saved.text}` : "your sentence was said or written, and not typed."}</p>
+            <p className="rating-note">self-rated. you decide whether your sentence matches the intended use.</p>
+            {helped && (
+              <p className="rating-note">the model was opened before your attempt, so a match is saved as practice.</p>
+            )}
+            <div className="rating-actions">
+              <button
+                className="secondary-button"
+                onClick={() => run((p) => recordSessionAnswer(p, key, index, false, Date.now()))}
+              >
+                needs practice <RotateCcw size={16} />
+              </button>
+              <button
+                className="primary-button"
+                onClick={() => run((p) => recordSessionAnswer(p, key, index, true, Date.now()))}
+              >
+                matches the intended use <Check size={17} />
+              </button>
+            </div>
+            <Link className="text-link" to={`/grammar/${card.lesson.lesson}`}>
+              lesson
+            </Link>
+          </div>
+        )}
         <SaveError error={error} />
       </div>
     </div>
@@ -315,6 +543,7 @@ function RecallCard() {
         <SaveError error={error} />
       </div>
     );
+  if (card.pattern) return <GrammarRecall card={card} />;
   const sentence = card.character && contextsFor(card.character)[0];
   const isNew = !progress.cards[key];
   return (
@@ -375,13 +604,6 @@ function RecallCard() {
                 ))}
               </div>
             )}
-            {card.pattern && (
-              <div className="sentence-paper">
-                <p className="sentence-text">{card.pattern.exampleJa}</p>
-                <p>{card.pattern.exampleEn}</p>
-                <Link to={`/grammar/${card.lesson.lesson}`}>lesson</Link>
-              </div>
-            )}
             <div className="rating-actions">
               <button className="secondary-button" onClick={() => record(false)}>
                 again <RotateCcw size={16} />
@@ -418,6 +640,12 @@ export function Settings() {
       <section className="settings-section">
         <h2>backups</h2>
         <p>saved on this device. export a backup to move your progress.</p>
+        <p>
+          on a phone, install this site from the browser: add to home screen in safari, or install app in
+          chrome. study works on that device after the page has loaded once. progress stays on this device
+          only. export a backup before clearing site data, reinstalling, or switching phones or computers,
+          then import the file there. there is no account sync.
+        </p>
         <div className="backup-actions">
           <button className="secondary-button" onClick={exportData}>
             <Download size={17} /> export backup
@@ -480,9 +708,9 @@ export function Settings() {
           Japanese and works offline.
         </p>
         <p>
-          kanji reviews are typed and written, and each skill (reading, meaning, writing, words) keeps its own
-          schedule. mastered means reading, meaning and writing are all solid. browser and desktop progress are
-          separate.
+          study rounds keep word reading, word meaning and writing records separate. later recall is recorded only
+          after an unassisted cold check. the kanji practice grid’s highest tier also requires spaced meaning,
+          reading and writing checks. progress stays on each device until you transfer a backup.
         </p>
       </details>
     </div>

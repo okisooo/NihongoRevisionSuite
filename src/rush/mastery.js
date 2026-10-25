@@ -84,8 +84,9 @@ export function masteryOf(progress, id) {
   const scores = CORE.map(([kind, skill]) =>
     Math.max(skillEase(rush, id, kind) ?? 0, Math.min(1, srsStreak(progress, id, skill) / 4)),
   );
-  const score = scores.reduce((a, b) => a + b, 0) / scores.length;
-  return score >= 0.85 ? 4 : score >= 0.6 ? 3 : score >= 0.3 ? 2 : 1;
+  const score = Math.min(...scores);
+  const spaced = CORE.every(([,skill]) => srsStreak(progress,id,skill) >= 2);
+  return score >= 0.85 && spaced ? 4 : score >= 0.6 ? 3 : score >= 0.3 ? 2 : 1;
 }
 
 /** Per-skill strength for one character (0..1), for the library page. */

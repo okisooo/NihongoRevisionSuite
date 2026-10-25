@@ -215,11 +215,12 @@ export function WritePractice({ character }) {
   };
   return (
     <section className="write-practice">
+      <p className="muted">reference practice · <Link className="text-link" to={`/?from=${character.id}&to=${character.id}`}>study this character with saved recall</Link></p>
       <div className="section-top">
         <h2>write</h2>
         <div className="write-modes" role="group" aria-label="writing mode">
           <button type="button" aria-pressed={mode === "recall"} className={mode === "recall" ? "on" : ""} onClick={() => restart("recall")}>
-            <PenLine size={15} /> from memory
+            <PenLine size={15} /> blank pad
           </button>
           <button type="button" aria-pressed={mode === "trace"} className={mode === "trace" ? "on" : ""} onClick={() => restart("trace")}>
             <Eye size={15} /> trace
@@ -232,7 +233,7 @@ export function WritePractice({ character }) {
           kanji={character.kanji}
           mode={mode}
           hinted={hinted}
-          onDone={({ mistakes, strokes }) => setResult({ mistakes, clean: mistakes <= allowedMistakes(strokes) })}
+          onDone={({ mistakes, strokes, assisted }) => setResult({ mistakes, clean: !assisted && mistakes <= allowedMistakes(strokes) })}
         />
         <div className="write-practice-side">
           <Strokes kanji={character.kanji} size={110} />

@@ -354,11 +354,17 @@ test("older saved settings still load and fall back to a current source", () => 
   assert.ok(emptyRush().settings.kinds.includes("write"), "writing is on by default");
 });
 
-test("mastery needs reading, meaning and writing", () => {
+test("mastery needs every core skill and later spaced checks", () => {
   const p = emptyProgress();
   const strong = { ease: 0.95, seen: 9, hits: 9, misses: 0, last: now };
   p.rush = { ...emptyRush(), kanji: { 5: { learned: now, reading: strong, meaning: strong } } };
   assert.ok(masteryOf(p, 5) < 4, "no writing yet");
   p.rush.kanji[5].write = strong;
+  assert.equal(masteryOf(p, 5), 3, "same-session ease is not retention");
+  for (const skill of ["reading","meaning","writing"]) {
+    p.cards[`drill:5:${skill}`]={attempts:2,misses:0,streak:2,due:now,lastReviewed:now};
+  }
   assert.equal(masteryOf(p, 5), 4);
+  p.rush.kanji[5].write={...strong,ease:0.55};
+  assert.ok(masteryOf(p,5)<4,"strong reading cannot mask weaker writing");
 });

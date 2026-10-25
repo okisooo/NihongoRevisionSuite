@@ -14,13 +14,13 @@ export default defineConfig({
       manifest: {
         name: 'Nihongo Revision Suite',
         short_name: 'Nihongo',
-        description: 'Small, playful language rounds with real recall and saved progress.',
+        description: 'Kanji words, writing and grammar revision with saved progress and offline study.',
         lang: 'en',
         start_url: './',
         scope: './',
         display: 'standalone',
-        background_color: '#202d27',
-        theme_color: '#202d27',
+        background_color: '#ffffff',
+        theme_color: '#2463eb',
         icons: [
           { src: 'pwa-192x192.png', sizes: '192x192', type: 'image/png' },
           { src: 'pwa-512x512.png', sizes: '512x512', type: 'image/png' },

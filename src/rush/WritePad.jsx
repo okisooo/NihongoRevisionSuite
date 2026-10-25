@@ -13,11 +13,14 @@ const THEMES = {
  * and order as it is drawn. `trace` shows the outline; `recall` starts blank and
  * only reveals it when `hinted` turns true.
  */
-export function WritePad({ kanji, mode = "recall", hinted = false, size = 280, theme = "light", onDone, colors }) {
+export function WritePad({ kanji, mode = "recall", hinted = false, size = 280, theme = "light", onDone, onAssisted, colors }) {
   const box = useRef(null);
   const writer = useRef(null);
   const strokes = useRef(0);
   const mistakes = useRef(0);
+  const assisted = useRef(mode === "trace" || hinted);
+  const assist = useRef(onAssisted);
+  const outline = useRef(hinted);
   const done = useRef(onDone);
   const [state, setState] = useState("loading");
   const [round, setRound] = useState(0);
@@ -25,11 +28,13 @@ export function WritePad({ kanji, mode = "recall", hinted = false, size = 280, t
 
   useEffect(() => {
     done.current = onDone;
+    assist.current = onAssisted;
   });
 
   // Starting over keeps earlier mistakes; only a new character resets them.
   useEffect(() => {
     mistakes.current = 0;
+    assisted.current = mode === "trace";
   }, [kanji, mode]);
 
   useEffect(() => {
@@ -45,7 +50,7 @@ export function WritePad({ kanji, mode = "recall", hinted = false, size = 280, t
           height: size,
           padding: Math.round(size * 0.06),
           showCharacter: false,
-          showOutline: mode === "trace",
+          showOutline: mode === "trace" || outline.current,
           strokeColor: palette.stroke,
           radicalColor: palette.stroke,
           outlineColor: palette.outline,
@@ -61,13 +66,17 @@ export function WritePad({ kanji, mode = "recall", hinted = false, size = 280, t
           markStrokeCorrectAfterMisses: false,
           acceptBackwardsStrokes: false,
           highlightOnComplete: true,
-          onMistake: () => {
+          onMistake: (result) => {
             mistakes.current++;
+            if (mode === "trace" || result.mistakesOnStroke >= 2) {
+              assisted.current = true;
+              assist.current?.();
+            }
           },
           onComplete: () => {
             setState("done");
             setTimeout(
-              () => alive && done.current?.({ mistakes: mistakes.current, strokes: strokes.current }),
+              () => alive && done.current?.({ mistakes: mistakes.current, strokes: strokes.current, assisted: assisted.current }),
               520,
             );
           },
@@ -86,8 +95,12 @@ export function WritePad({ kanji, mode = "recall", hinted = false, size = 280, t
   }, [kanji, mode, round]);
 
   useEffect(() => {
-    if (hinted) writer.current?.showOutline();
-  }, [hinted]);
+    outline.current = hinted;
+    if (hinted) {
+      assisted.current = true;
+      writer.current?.showOutline();
+    }
+  }, [hinted, kanji, mode]);
 
   return (
     <div className={`writepad theme-${theme} is-${state}`} style={{ "--pad": `${size}px`, "--grid": palette.grid }}>
@@ -96,7 +109,7 @@ export function WritePad({ kanji, mode = "recall", hinted = false, size = 280, t
           <line x1="50" y1="0" x2="50" y2="100" />
           <line x1="0" y1="50" x2="100" y2="50" />
         </svg>
-        <div ref={box} className="writepad-writer" aria-label={`write ${kanji}`} role="img" />
+        <div ref={box} className="writepad-writer" aria-label={mode === "trace" || hinted ? "guided writing surface" : "blank writing surface"} role="img" />
         {state === "loading" && <span className="writepad-status">loading strokes…</span>}
         {state === "failed" && (
           <span className="writepad-status">

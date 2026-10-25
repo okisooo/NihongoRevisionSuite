@@ -86,7 +86,7 @@ function RoundComplete({ flow, progress, save, busy, error }) {
     <div className="flow-end-stats"><div><strong>+{flow.score}</strong><span>points</span></div><div><strong>{flow.maxCombo}</strong><span>best combo</span></div><div><strong>{flow.clean}</strong><span>clean recalls</span></div></div>
     <button className="room-start" onClick={() => again()} disabled={busy}>one more round <ArrowRight size={22} /></button>
     <p className="flow-next-label">up next · {next.name}</p>
-    <div className="flow-end-links"><button onClick={() => again(flow.set)} disabled={busy}><RotateCcw size={14} /> replay this set</button><Link to="/">back to the room <ArrowRight size={14} /></Link></div>
+    <div className="flow-end-links"><button onClick={() => again(flow.set)} disabled={busy}><RotateCcw size={14} /> replay this set</button><Link to="/play-room">back to the room <ArrowRight size={14} /></Link></div>
     {error && <p className="room-error" role="alert">{error}</p>}
   </section>;
 }
@@ -143,12 +143,12 @@ export function FlowPlay() {
     return { ...p, rush: { ...r, settings: { ...r.settings, sound: !r.settings.sound } } };
   });
 
-  if (!flow) return <section className="flow-empty"><Play size={32} /><h1>ready when you are.</h1><Link className="room-start" to="/">choose a round <ArrowRight /></Link></section>;
+  if (!flow) return <section className="flow-empty"><Play size={32} /><h1>ready when you are.</h1><Link className="room-start" to="/play-room">choose a round <ArrowRight /></Link></section>;
   if (flow.finished) return <RoundComplete flow={flow} progress={progress} save={save} busy={busy} error={error} />;
   const completed = flow.clean;
   const total = flow.ids.length * 2;
   return <section className={`flow-stage ${feedback ? `has-feedback feedback-${feedback.kind}` : ''}`} aria-label="practice round">
-    <div className="flow-topbar"><Link to="/" aria-label="leave round and save your place"><X size={20} /></Link><span>{labels[flow.track]} <i>/</i> {ROUNDS[flow.track].find(s => s.id === flow.set)?.name}</span><button aria-label={rush.settings.sound ? 'mute sound' : 'enable sound'} onClick={toggleSound} disabled={busy}>{rush.settings.sound ? <Volume2 size={18} /> : <VolumeX size={18} />}</button></div>
+    <div className="flow-topbar"><Link to="/play-room" aria-label="leave round and save your place"><X size={20} /></Link><span>{labels[flow.track]} <i>/</i> {ROUNDS[flow.track].find(s => s.id === flow.set)?.name}</span><button aria-label={rush.settings.sound ? 'mute sound' : 'enable sound'} onClick={toggleSound} disabled={busy}>{rush.settings.sound ? <Volume2 size={18} /> : <VolumeX size={18} />}</button></div>
     <div className="flow-progress" role="progressbar" aria-label="clean recalls" aria-valuemin={0} aria-valuemax={total} aria-valuenow={completed}><div style={{ width: `${completed / total * 100}%` }} /></div>
     <div className="flow-scoreline"><span>{current.guide ? 'meet a new one' : flow.assisted ? 'let’s get this one' : 'from memory'}</span><strong className={flow.combo >= 3 ? 'is-combo' : ''}>{flow.combo >= 3 ? <Zap size={14} /> : null}{flow.combo >= 3 ? `${flow.combo} combo` : `${flow.score} pts`}</strong></div>
     <div className="flow-question" key={`${prompt.id}:${current.guide}:${flow.clears}`}>
@@ -164,6 +164,6 @@ export function FlowPlay() {
     </form>
     {error && <p className="room-error" role="alert">{error} <button onClick={feedback ? advance : () => submit(text)} disabled={busy}>try saving again</button></p>}
     <div className="flow-bottom"><span>{completed} / {total} clean recalls</span><button disabled={busy || !!feedback || !!guide} onClick={() => save(p => changeRound(p, 'reveal', null, Date.now()))}><Lightbulb size={15} /> show me</button></div>
-    <Link className="flow-leave" to="/"><ArrowLeft size={13} /> save & leave</Link>
+    <Link className="flow-leave" to="/play-room"><ArrowLeft size={13} /> save & leave</Link>
   </section>;
 }

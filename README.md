@@ -1,35 +1,19 @@
-<p><a href="https://nihongo.okiso.net/"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/okisooo/NihongoRevisionSuite/main/docs/media/practice-sleeve-dark.gif">
-  <img src="https://raw.githubusercontent.com/okisooo/NihongoRevisionSuite/main/docs/media/practice-sleeve-light.gif" alt="practice room — a little practice, a little play. five flash cards turn over from a question mark to read, recall, write, listen and play, in the app's own paper, green and terracotta; reading, recall, handwriting and listening; offline after the first download; no account" width="900">
-</picture></a></p>
+# revision
 
-<div align="center">
+kanji words, writing and grammar revision, on phone and pc.
 
-offline Japanese learning, a few minutes at a time. read, recall, write and listen — then come back to what needs another try.
+**[open the app](https://nihongo.okiso.net/)** · [study guide](docs/STUDY-GUIDE.md) · [install on your device](#take-it-offline) · [run from source](#run-from-source)
 
-**[open the web app](https://nihongo.okiso.net/)** · [install on your device](#take-it-offline) · [run from source](#run-from-source)
+white and blue, no account, and offline after the first download.
 
-phone & desktop · installable web app · no account required
+## a small study round
 
-</div>
+1. **choose a range.** two characters at a time, following the verified 300-character school list and its 16 chapters. unsure where to start? begin small and change the range any time.
+2. **learn through words.** meet an anchor word, recall its hidden reading, write the target from a cue, and check meaning.
+3. **save and return.** partial rounds and feedback survive reload. due reviews check one skill per character without first showing its answer. assisted practice and paper self-checks are labelled honestly.
+4. **revise grammar.** choose one of 30 lessons and produce a sentence before comparing with its model. revision is scoped to that lesson; comparison is self-rated.
 
-[![The public play room: a small set of character cards, short-round controls and a start button](docs/media/practice-play.png)](https://nihongo.okiso.net/)
-
-*the public web app with a fresh, zero-progress view. no personal study history is shown.*
-
-## a small round, then another
-
-1. **pick a set.** meet a few sounds or characters with the answers visible.
-2. **try recalling them.** recall with the answers hidden, and revisit answers you needed help with.
-3. **keep practicing.** use writing, listening and timed tools as you learn; saved progress lets you return later.
-
-| work on | what is included |
-| --- | --- |
-| reading & recall | 28 phonetic-alphabet sets, 60 written-character stages, and saved skill progress |
-| handwriting | guided stroke models and graded writing practice |
-| listening | device speech and listening exercises |
-| grammar & lookup | 30 grammar lessons, sentence reading and a reference library |
-| keeping progress | unfinished-round recovery and JSON backup import/export in settings |
+play, sound practice, listening, the 60-stage campaign and the reference library stay available. the study guide explains progress, writing checks and moving a backup between devices.
 
 ## take it offline
 

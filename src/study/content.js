@@ -92,7 +92,7 @@ for (const lesson of lessons)
       pattern,
       prompt: pattern.pattern,
       answer: pattern.explanation,
-      instruction: "Explain what this pattern means and when to use it.",
+      instruction: "form a sentence using this pattern. the model stays hidden until you try.",
     };
   });
 
@@ -120,28 +120,43 @@ export function metCharacter(progress, id) {
 /**
  * The card session covers grammar and sentences; kanji are reviewed by typing
  * and writing in kanji rush. "today" adds two new context sentences for kanji
- * already met and the next grammar pattern.
+ * already met and the next grammar pattern. "lesson" keeps only that lesson's
+ * patterns: no due items from elsewhere and no new sentences.
  */
-export function createSession(progress, mode, now) {
-  let queue = studyDueKeys(progress, now).slice(0, 20);
-  if (mode === "today") {
-    queue.push(
-      ...characters
-        .filter((c) => metCharacter(progress, c.id))
-        .map((c) => `sentence:${contextsFor(c)[0]?.kanjiId}:context`)
-        .filter((key) => cards[key] && !progress.cards[key])
-        .slice(0, 2),
-    );
-    const lesson = lessons.find((l) => !progress.lessons[l.lesson]);
-    if (lesson) {
-      const next = lesson.patterns
-        .map((_, i) => `grammar:${lesson.lesson}:${i}`)
-        .find((key) => !progress.cards[key]);
-      if (next) queue.push(next);
+export function createSession(progress, mode, now, options) {
+  const requestedLesson = Number(options?.lessonId);
+  const lessonRevision =
+    mode === "lesson"
+      ? lessons.find((item) => item.lesson === requestedLesson)
+      : null;
+  let queue;
+  if (mode === "lesson") {
+    queue = lessonRevision
+      ? lessonRevision.patterns
+          .map((_, index) => `grammar:${lessonRevision.lesson}:${index}`)
+          .filter((key) => cards[key])
+      : [];
+  } else {
+    queue = studyDueKeys(progress, now).slice(0, 20);
+    if (mode === "today") {
+      queue.push(
+        ...characters
+          .filter((c) => metCharacter(progress, c.id))
+          .map((c) => `sentence:${contextsFor(c)[0]?.kanjiId}:context`)
+          .filter((key) => cards[key] && !progress.cards[key])
+          .slice(0, 2),
+      );
+      const lesson = lessons.find((l) => !progress.lessons[l.lesson]);
+      if (lesson) {
+        const next = lesson.patterns
+          .map((_, i) => `grammar:${lesson.lesson}:${i}`)
+          .find((key) => !progress.cards[key]);
+        if (next) queue.push(next);
+      }
     }
   }
   queue = [...new Set(queue)];
-  return {
+  const session = {
     queue,
     variants: Object.fromEntries(
       queue.map((key) => [key, progress.cards[key]?.attempts || 0]),
@@ -152,4 +167,6 @@ export function createSession(progress, mode, now) {
     started: now,
     mode,
   };
+  if (lessonRevision) session.lessonId = lessonRevision.lesson;
+  return session;
 }

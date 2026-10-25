@@ -254,10 +254,10 @@ export function Arena({ mode, makeDeck, goal, palette, sound = true, voice = fal
     react(drain(current));
     setText(current.buffer);
   };
-  const wrote = ({ mistakes, strokes, failed }) => {
+  const wrote = ({ mistakes, strokes, assisted, failed }) => {
     const current = run();
     if (!current || current.paused || current.over) return;
-    completeWrite(current, { clean: !failed && mistakes <= allowedMistakes(strokes), hinted: failed });
+    completeWrite(current, { clean: !failed && mistakes <= allowedMistakes(strokes), hinted: Boolean(failed || assisted) });
     react(drain(current));
     inputRef.current?.focus({ preventScroll: true });
   };
