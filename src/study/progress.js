@@ -1,5 +1,6 @@
 import { validateRush } from "../rush/validate.js";
 import { validateRound } from "../play/validate.js";
+import { validateStudy } from "./studyValidation.js";
 
 export const STORAGE_KEY = "study_suite_v1";
 const DAY = 86400000;
@@ -183,5 +184,6 @@ export function validateProgress(value) {
     throw new Error("This backup contains invalid session history.");
   if (value.rush !== undefined) validateRush(value.rush);
   if (value.flow !== undefined) validateRound(value.flow);
+  if (value.study !== undefined) validateStudy(value.study);
   return value;
 }

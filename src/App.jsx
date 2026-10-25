@@ -10,8 +10,9 @@ import {
   useParams,
 } from "react-router-dom";
 import FuriganaGameView from "./components/FuriganaGameView";
-import { Gamepad2, BookOpen, PenLine, Search, Settings as SettingsIcon } from "lucide-react";
-import { Grammar, GrammarTabs, Lesson, Session, Settings } from "./study/StudyViews";
+import { BookOpen, PenLine, Search, Settings as SettingsIcon } from "lucide-react";
+import { Grammar, GrammarTabs, GrammarRevision, Lesson, Session, Settings } from "./study/StudyViews";
+import { StudyHome, StudyRound } from "./study/StudyRound.jsx";
 import { PlayRoom, FlowPlay } from "./play/PlayRoom";
 import { Library, CharacterPage } from "./study/Library";
 import { KanjiHub, KanjiPlay, KanjiStage } from "./rush/KanjiViews";
@@ -20,6 +21,7 @@ import UpdatePrompt from "./components/UpdatePrompt";
 import "./App.css";
 import "./study/study.css";
 import "./play/play.css";
+import "./study/white-blue.css";
 
 function RouteFocus() {
   const { pathname } = useLocation();
@@ -57,8 +59,9 @@ function MainNav() {
   return (
     <nav aria-label="Main navigation">
       {[
-        ["/", "play", Gamepad2],
-        ["/kanji", "practice", PenLine],
+        ["/", "study", BookOpen],
+        ["/kanji", "kanji", PenLine],
+        ["/grammar", "grammar", BookOpen],
         ["/library", "library", Search],
       ].map(([path, label, Icon]) => (
         <NavLink
@@ -66,7 +69,7 @@ function MainNav() {
           to={path}
           end={path === "/"}
           // Kana and kanji are two halves of one tab.
-          className={({ isActive }) => (isActive || (path === "/kanji" && pathname.startsWith("/kana")) || (path === "/" && pathname === "/play") || (path === "/library" && pathname.startsWith("/grammar")) ? "active" : "")}
+          className={({ isActive }) => (isActive || (path === "/kanji" && pathname.startsWith("/kana")) || (path === "/" && pathname.startsWith("/study"))) ? "active" : ""}
         >
           <Icon size={17} />
           <span>{label}</span>
@@ -81,7 +84,7 @@ function Workspace() {
   return (
     <>
       <RouteFocus />
-      <div className={`suite ${pathname === "/" ? "is-room" : pathname === "/play" ? "is-playing" : ""}`}>
+      <div className={`suite ${pathname === "/play-room" ? "is-room" : pathname === "/play" ? "is-playing" : ""} ${pathname === "/study/round" ? "is-study-round" : ""}`}>
         <a
           className="skip-link"
           href="#main"
@@ -106,7 +109,10 @@ function Workspace() {
         </header>
         <main id="main" tabIndex={-1}>
           <Routes>
-            <Route path="/" element={<PlayRoom />} />
+            <Route path="/" element={<StudyHome />} />
+            <Route path="/study" element={<Navigate replace to="/" />} />
+            <Route path="/study/round" element={<StudyRound />} />
+            <Route path="/play-room" element={<PlayRoom />} />
             <Route path="/play" element={<FlowPlay />} />
             <Route path="/kanji" element={<KanjiHub />} />
             <Route path="/kanji/play" element={<KanjiPlay />} />
@@ -116,6 +122,7 @@ function Workspace() {
             <Route path="/kana/stage/:id" element={<KanaStage />} />
             <Route path="/grammar" element={<Grammar />} />
             <Route path="/grammar/reading" element={<SentenceReading />} />
+            <Route path="/grammar/:id/revise" element={<GrammarRevision />} />
             <Route path="/grammar/:id" element={<Lesson />} />
             <Route path="/session" element={<Session />} />
             <Route path="/library" element={<Library />} />
@@ -140,7 +147,7 @@ function Workspace() {
               element={
                 <div className="page">
                   <h1>this page has moved.</h1>
-                  <Link to="/">back to play</Link>
+                  <Link to="/">back to study</Link>
                 </div>
               }
             />
