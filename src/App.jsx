@@ -13,6 +13,7 @@ import FuriganaGameView from "./components/FuriganaGameView";
 import { BookOpen, PenLine, Search, Settings as SettingsIcon } from "lucide-react";
 import { Grammar, GrammarTabs, GrammarRevision, Lesson, Session, Settings } from "./study/StudyViews";
 import { StudyHome, StudyRound } from "./study/StudyRound.jsx";
+import { TextbookSet } from "./study/TextbookSet.jsx";
 import { PlayRoom, FlowPlay } from "./play/PlayRoom";
 import { Library, CharacterPage } from "./study/Library";
 import { KanjiHub, KanjiPlay, KanjiStage } from "./rush/KanjiViews";
@@ -112,6 +113,7 @@ function Workspace() {
             <Route path="/" element={<StudyHome />} />
             <Route path="/study" element={<Navigate replace to="/" />} />
             <Route path="/study/round" element={<StudyRound />} />
+            <Route path="/study/:setId" element={<TextbookSet />} />
             <Route path="/play-room" element={<PlayRoom />} />
             <Route path="/play" element={<FlowPlay />} />
             <Route path="/kanji" element={<KanjiHub />} />

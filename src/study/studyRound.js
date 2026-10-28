@@ -1,4 +1,5 @@
 import { kanjiData } from "../data/kanji.js";
+import { textbookAnchorFor } from "../data/textbookSets.js";
 import { commonWords } from "../rush/deck.js";
 import { contextsFor, exampleWordsFor } from "./characterData.js";
 import { schedule } from "./progress.js";
@@ -14,7 +15,7 @@ export const STUDY_CHAPTERS = [[1,17],[18,36],[37,56],[57,74],[75,92],[93,111],[
 const anchorCache = new Map();
 function anchorFor(character) {
   if (!anchorCache.has(character.id)) {
-    const candidates = [...commonWords(character, 5), ...exampleWordsFor(character)];
+    const candidates = [textbookAnchorFor(character.id), ...commonWords(character, 5), ...exampleWordsFor(character)].filter(Boolean);
     const word = candidates.find(w => w.word && w.reading && w.meaning);
     anchorCache.set(character.id, word ? { word: word.word, reading: word.reading, meaning: word.meaning } : null);
   }

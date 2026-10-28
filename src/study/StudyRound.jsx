@@ -4,6 +4,7 @@ import { ArrowRight, BookOpen, Check, Eye, Library, PenLine } from "lucide-react
 import { useProgress, updateProgress } from "./store";
 import { primaryMeaning } from "./primaryMeanings";
 import { characterById } from "../rush/deck";
+import { textbookSets } from "../data/textbookSets.js";
 import { matchKana, matchMeaning, romajiFor } from "../rush/romaji";
 import { allowedMistakes } from "../rush/strokes";
 import { Strokes } from "../rush/KanjiParts";
@@ -231,6 +232,15 @@ export function StudyHome() {
           two characters at a time: meet them, read their words, write them from memory. there is no daily quota.
         </p>
       </div>
+
+      <section className="sr-panel" aria-labelledby="sr-textbook-title">
+        <h2 id="sr-textbook-title">your textbook set</h2>
+        {textbookSets.map(set => <div key={set.id}>
+          <p className="sr-sub">{set.title} · 11 kanji · {set.words.length} words</p>
+          <p className="tb-home-glyphs" lang="ja">{[...set.glyphs].join(" ")}</p>
+          <div className="sr-actions"><Link className="primary-button" to={`/study/${set.id}`}>study these words <ArrowRight size={18} /></Link></div>
+        </div>)}
+      </section>
 
       <section className="sr-panel sr-now" aria-labelledby="sr-now-title">
         {unfinished(active) ? (

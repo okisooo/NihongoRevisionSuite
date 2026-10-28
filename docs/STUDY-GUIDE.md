@@ -2,6 +2,12 @@
 
 open **https://nihongo.okiso.net/** on either device. the same web app works on both; no desktop server, account, or native app installation is required.
 
+## textbook entries 180–190
+
+open **https://nihongo.okiso.net/#/study/180-190** for the 11 kanji and 39 words transcribed from these textbook pages. the same set is linked on the study home page. recall a word's reading and meaning, reveal them, then choose **again** or **got it**. missed words return in the round. the queue and revealed answer save on this device and are included in backups; this is self-rated practice, separate from measured writing and spaced-recall evidence.
+
+**study & write 180–190** selects that exact range in the existing saved study flow. it preserves any unfinished round until you choose to replace it. these characters use the first word from their photographed entry as their teaching anchor.
+
 ## begin with a small round
 
 the study page offers two characters at a time from the numbered school list. select a chapter range or enter your own start/end. if you are unsure, **not sure? start small** begins with the first characters without claiming you already know anything. all 300 character ids and the printed book order stay intact.

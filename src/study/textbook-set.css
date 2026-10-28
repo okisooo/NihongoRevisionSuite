@@ -1,0 +1,20 @@
+.tb-glyphs { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 20px; }
+.tb-glyphs a { display:grid; place-items:center; min-width:46px; min-height:48px; border:1px solid var(--sr-line); border-radius:8px; color:var(--sr-blue); background:#fff; font:26px 'Klee One','Yu Mincho',serif; text-decoration:none; }
+.tb-glyphs a:hover { background:var(--sr-soft); }
+.tb-meta { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
+.tb-meta > span, .tb-save { color:var(--sr-muted); font-size:12px; }
+.tb-word { margin:26px 0 8px; text-align:center; color:var(--sr-ink); font:clamp(38px,9vw,64px)/1.5 'Klee One','Yu Mincho',serif; overflow-wrap:anywhere; }
+.tb-answer { min-height:120px; text-align:center; padding:8px 0; color:var(--sr-ink); }
+.tb-reading { font-size:23px; color:var(--sr-blue); margin-bottom:6px; }
+.tb-answer .text-button { display:inline-flex; align-items:center; gap:6px; }
+.tb-practice .sr-actions { justify-content:center; }
+.tb-practice .sr-actions button { min-width:150px; }
+.tb-reference { display:block; margin-top:24px; font-size:13px; text-align:center; }
+.tb-save { margin-top:18px; text-align:center; }
+.tb-list summary { cursor:pointer; font-size:15px; font-weight:600; }
+.tb-list-row { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); align-items:center; gap:16px; padding:14px 0; border-bottom:1px solid var(--sr-line); font-size:14px; overflow-wrap:anywhere; }
+.tb-list-row > span:first-child { font:23px 'Klee One','Yu Mincho',serif; }
+.tb-list-row small { display:block; margin-top:5px; font:13px/1.5 var(--font-ui, sans-serif); color:var(--sr-muted); }
+.tb-list-row > span:last-child { color:var(--sr-muted); }
+.tb-home-glyphs { margin:12px 0; font:clamp(22px,5.6vw,32px)/1.6 'Klee One','Yu Mincho',serif; color:var(--sr-blue); overflow-wrap:anywhere; }
+@media (max-width:640px) { .tb-word { margin-top:20px; } .tb-practice .sr-actions .primary-button,.tb-practice .sr-actions .secondary-button { flex:1 1 40%; } .tb-glyphs { gap:6px; } .tb-glyphs a { min-width:42px; min-height:44px; } }

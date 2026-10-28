@@ -1,3 +1,5 @@
+import { validateTextbookPractice } from "./textbookPractice.js";
+
 const record = value => value !== null && typeof value === "object" && !Array.isArray(value);
 const count = value => Number.isSafeInteger(value) && value >= 0;
 const id = value => Number.isInteger(value) && value >= 1 && value <= 300;
@@ -6,6 +8,7 @@ const outcome = value => record(value) && typeof value.correct === "boolean" && 
 export function validateStudy(value) {
   const invalid = () => { throw new Error("This backup contains invalid focused study records."); };
   if (!record(value)) invalid();
+  if (value.textbookPractice !== undefined) validateTextbookPractice(value.textbookPractice);
   if (value.exposed!==undefined && (!record(value.exposed)||Object.keys(value.exposed).length>300||Object.entries(value.exposed).some(([key,date])=>!/^\d+$/.test(key)||!id(Number(key))||!count(date)))) invalid();
   if (value.introduced !== undefined && (!record(value.introduced) || Object.entries(value.introduced).some(([key,date])=>!/^\d+$/.test(key)||!id(Number(key))||!count(date)))) invalid();
   if (value.evidence !== undefined) {
