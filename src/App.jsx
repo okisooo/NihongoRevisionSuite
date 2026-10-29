@@ -85,7 +85,7 @@ function Workspace() {
   return (
     <>
       <RouteFocus />
-      <div className={`suite ${pathname === "/play-room" ? "is-room" : pathname === "/play" ? "is-playing" : ""} ${pathname === "/study/round" ? "is-study-round" : ""}`}>
+      <div className={`suite ${pathname === "/play-room" ? "is-room" : pathname === "/play" ? "is-playing" : ""} ${pathname.startsWith("/study/") ? "is-study-round" : ""}`}>
         <a
           className="skip-link"
           href="#main"

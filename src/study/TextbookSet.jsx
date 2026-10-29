@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ArrowRight, Volume2 } from "lucide-react";
 import { textbookSetById } from "../data/textbookSets.js";
@@ -20,14 +20,23 @@ function TextbookLesson({ set }) {
   const wordIndex = active.queue[0];
   const word = set.words[wordIndex];
   const busy = useRef(false);
+  const primaryAction = useRef(null);
+  const restoreFocus = useRef(false);
   const [pending, setPending] = useState(false);
   const [error, setError] = useState("");
+  useEffect(() => {
+    if (!pending && restoreFocus.current) {
+      primaryAction.current?.focus({ preventScroll: true });
+      restoreFocus.current = false;
+    }
+  }, [pending, wordIndex, active.revealed]);
   const change = async action => {
     if (busy.current) return;
     busy.current = true;
     setPending(true);
     try {
       await updateProgress(p => changeTextbookPractice(p, { setId: set.id, wordIndex, action }));
+      restoreFocus.current = true;
       setError("");
     } catch {
       setError("your answer could not be saved. free some device storage and try again. this card has not advanced.");
@@ -36,60 +45,76 @@ function TextbookLesson({ set }) {
       setPending(false);
     }
   };
+
   return (
     <div className="page sr-home tb-page">
-      <div className="page-heading">
-        <Link className="text-link" to="/">← study</Link>
-        <p className="eyebrow">your book · 11 kanji · {set.words.length} words</p>
-        <h1>{set.title}</h1>
-        <p className="lead">the words from your pages, ready to practise.</p>
-      </div>
+      <header className="tb-heading">
+        <Link className="text-link tb-back" to="/">← study</Link>
+        <div className="tb-set-heading">
+          <div><p className="tb-eyebrow">textbook</p><h1>{set.from}–{set.to}</h1></div>
+          <p className="tb-set-count">{[...set.glyphs].length} kanji <span aria-hidden="true">·</span> {set.words.length} words</p>
+        </div>
+      </header>
 
-      <nav className="tb-glyphs" aria-label="kanji in this set">
-        {[...set.glyphs].map((glyph, index) => (
-          <Link key={glyph} to={`/library/characters/${set.from + index}`} aria-label={`reference for ${glyph}`} lang="ja">{glyph}</Link>
-        ))}
-      </nav>
+      <section className="tb-practice" aria-labelledby="tb-title">
+        <div className="tb-progress-head">
+          <h2 id="tb-title">reading &amp; meaning</h2>
+          <span>{active.known.length} / {set.words.length} checked</span>
+        </div>
+        <progress className="tb-progress" value={active.known.length} max={set.words.length} aria-label="words marked got it" />
 
-      <section className="sr-panel sr-now tb-practice" aria-labelledby="tb-title">
         {word ? <>
-          <div className="tb-meta"><h2 id="tb-title">read the word</h2><span>{active.known.length} / {set.words.length} checked</span></div>
-          <p className="sr-sub">say the reading and meaning, then check.</p>
           <p className="tb-word" lang="ja">{word.word}</p>
-          <div className="tb-answer" aria-live="polite">
+          <div className={`tb-answer${active.revealed ? " is-revealed" : ""}`} aria-live="polite" aria-atomic="true">
             {active.revealed ? <>
               <p className="tb-reading" lang="ja">{word.reading}</p>
-              <p>{word.meaning}</p>
-              {canSpeak() && <button type="button" className="text-button" onClick={() => say(word.reading)}><Volume2 size={16} /> listen</button>}
-            </> : <p className="sr-sub">reading hidden</p>}
+              <p className="tb-meaning">{word.meaning}</p>
+              {canSpeak() && <button type="button" className="tb-listen" onClick={() => say(word.reading)} aria-label="listen to reading">
+                <Volume2 size={17} aria-hidden="true" /> listen
+              </button>}
+            </> : null}
           </div>
-          <div className="sr-actions">
+          <div className="tb-actions">
             {active.revealed ? <>
               <button type="button" className="secondary-button" disabled={pending} onClick={() => change("again")}>again</button>
-              <button type="button" className="primary-button" disabled={pending} onClick={() => change("known")}>got it <ArrowRight size={17} /></button>
-            </> : <button type="button" className="primary-button" disabled={pending} onClick={() => change("reveal")}>show reading & meaning</button>}
+              <button ref={primaryAction} type="button" className="primary-button" disabled={pending} onClick={() => change("known")}>got it <ArrowRight size={17} aria-hidden="true" /></button>
+            </> : <button ref={primaryAction} type="button" className="primary-button tb-reveal" disabled={pending} onClick={() => change("reveal")}>show answer</button>}
           </div>
-          <Link className="text-link tb-reference" to={`/library/characters/${word.characterId}`}>kanji #{word.characterId} · reference & stroke order</Link>
-        </> : <>
-          <h2 id="tb-title">all {set.words.length} words checked</h2>
-          <p className="sr-sub">a full self-check round. come back later to see what sticks.</p>
-          <div className="sr-actions"><button type="button" className="primary-button" disabled={pending} onClick={() => change("restart")}>practise again</button></div>
-        </>}
-        {error && <p role="alert" className="save-error sr-error">{error}</p>}
-        <p className="tb-save">saved on this device · self-check practice</p>
+          <Link className="tb-word-reference" to={`/library/characters/${word.characterId}`} aria-label={`reference and stroke order for character ${word.characterId}`}>reference &amp; stroke order</Link>
+        </> : <div className="tb-complete">
+          <h3>round complete</h3>
+          <p>all {set.words.length} words marked got it</p>
+          <button ref={primaryAction} type="button" className="primary-button" disabled={pending} onClick={() => change("restart")}>practise again</button>
+        </div>}
+        {error && <p role="alert" className="tb-error">{error}</p>}
       </section>
 
-      <section className="sr-panel" aria-labelledby="tb-writing-title">
-        <h2 id="tb-writing-title">write them from memory</h2>
-        <p className="sr-sub">use the saved study rounds for these 11 characters. two at a time, with reading and writing checks.</p>
-        <div className="sr-actions"><Link className="primary-button" to={`/?from=${set.from}&to=${set.to}`}>study & write 180–190 <ArrowRight size={17} /></Link></div>
+      <section className="tb-writing" aria-labelledby="tb-writing-title">
+        <div>
+          <h2 id="tb-writing-title">writing practice</h2>
+          <p>{[...set.glyphs].length} characters</p>
+        </div>
+        <Link className="tb-tool-link" to={`/?from=${set.from}&to=${set.to}`} aria-label={`writing practice for ${set.from} to ${set.to}`}>open <ArrowRight size={16} aria-hidden="true" /></Link>
       </section>
 
-      <details className="sr-panel tb-list"><summary>all {set.words.length} words from the pages</summary>
-        {set.words.map(item => <div className="tb-list-row" key={item.word}>
-          <span lang="ja">{item.word}<small>{item.reading}</small></span><span>{item.meaning}</span>
-        </div>)}
-      </details>
+      <div className="tb-references">
+        <details>
+          <summary>{[...set.glyphs].length} character references</summary>
+          <nav className="tb-glyphs" aria-label="kanji references in this set">
+            {[...set.glyphs].map((glyph, index) => (
+              <Link key={glyph} to={`/library/characters/${set.from + index}`} aria-label={`reference for ${glyph}`} lang="ja">{glyph}</Link>
+            ))}
+          </nav>
+        </details>
+        <details className="tb-list">
+          <summary>all {set.words.length} words</summary>
+          <div className="tb-list-rows">
+            {set.words.map(item => <div className="tb-list-row" key={item.word}>
+              <span lang="ja">{item.word}<small>{item.reading}</small></span><span>{item.meaning}</span>
+            </div>)}
+          </div>
+        </details>
+      </div>
     </div>
   );
 }
