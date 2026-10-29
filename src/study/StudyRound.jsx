@@ -1,6 +1,6 @@
 import { useCallback, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
-import { ArrowRight, BookOpen, Check, Eye, Library, PenLine } from "lucide-react";
+import { ArrowRight, Check, Eye } from "lucide-react";
 import { useProgress, updateProgress } from "./store";
 import { primaryMeaning } from "./primaryMeanings";
 import { characterById } from "../rush/deck";
@@ -222,30 +222,30 @@ export function StudyHome() {
   const firstChapter = STUDY_CHAPTERS[0];
   const smallOptions = firstChapter ? { from: firstChapter.from, to: firstChapter.to, key: "small" } : null;
   const played = active ? Math.min(active.index, active.tasks.length) : 0;
+  const textbook = (
+    <section className="sr-textbook" aria-labelledby="sr-textbook-title">
+      <h2 id="sr-textbook-title">textbook</h2>
+      {textbookSets.map(set => (
+        <Link className="sr-set-link" key={set.id} to={`/study/${set.id}`}>
+          <span>
+            <strong>{set.from}–{set.to}</strong>
+            <small>{[...set.glyphs].length} kanji · {set.words.length} words</small>
+          </span>
+          <span className="sr-set-action">word practice <ArrowRight size={18} aria-hidden="true" /></span>
+        </Link>
+      ))}
+    </section>
+  );
 
   return (
-    <div className="page sr-home">
-      <div className="page-heading">
-        <p className="eyebrow">study</p>
-        <h1>a short round, then you’re done</h1>
-        <p className="lead">
-          two characters at a time: meet them, read their words, write them from memory. there is no daily quota.
-        </p>
-      </div>
+    <div className="page sr-home sr-study-home">
+      <header className="sr-home-heading"><h1>study</h1></header>
+      {!unfinished(active) && textbook}
 
-      <section className="sr-panel" aria-labelledby="sr-textbook-title">
-        <h2 id="sr-textbook-title">your textbook set</h2>
-        {textbookSets.map(set => <div key={set.id}>
-          <p className="sr-sub">{set.title} · 11 kanji · {set.words.length} words</p>
-          <p className="tb-home-glyphs" lang="ja">{[...set.glyphs].join(" ")}</p>
-          <div className="sr-actions"><Link className="primary-button" to={`/study/${set.id}`}>study these words <ArrowRight size={18} /></Link></div>
-        </div>)}
-      </section>
-
-      <section className="sr-panel sr-now" aria-labelledby="sr-now-title">
+      <section className={`sr-panel sr-now${unfinished(active) ? " sr-resume" : ""}`} aria-labelledby="sr-now-title">
         {unfinished(active) ? (
           <>
-            <h2 id="sr-now-title">a round is waiting</h2>
+            <h2 id="sr-now-title">your round</h2>
             <p className="sr-sub">
               step {played + 1} of {active.tasks.length}
               {active.ids?.length > 0 && (
@@ -263,7 +263,7 @@ export function StudyHome() {
           </>
         ) : (
           <>
-            <h2 id="sr-now-title">{overview.nextIds.length ? "next characters" : "pick a range"}</h2>
+            <h2 id="sr-now-title">read &amp; write</h2>
             {overview.nextIds.length > 0 && (
               <div className="sr-next" role="group" aria-label={`${overview.nextIds.length} characters up next`}>
                 {overview.nextIds.slice(0, 8).map((id) => (
@@ -273,8 +273,8 @@ export function StudyHome() {
             )}
             <p className="sr-sub">
               {hasRange
-                ? `characters ${range.from} to ${range.to} of the school list`
-                : "enter a start and end between 1 and 300"}
+                ? `range ${range.from}–${range.to} · two characters per round`
+                : "choose a range below"}
             </p>
             <div className="sr-actions">
               <button
@@ -283,7 +283,7 @@ export function StudyHome() {
                 disabled={pending || !hasRange}
                 onClick={() => ask(startOptions)}
               >
-                begin a round <ArrowRight size={18} />
+                start round <ArrowRight size={18} />
               </button>
               {overview.dueCount > 0 && (
                 <button
@@ -299,7 +299,7 @@ export function StudyHome() {
             {finished(active) && (
               <p className="sr-sub">
                 <Link className="text-link" to="/study/round">
-                  see the summary of your last round
+                  last round
                 </Link>
               </p>
             )}
@@ -313,7 +313,7 @@ export function StudyHome() {
               disabled={pending || !hasRange}
               onClick={() => ask(startOptions)}
             >
-              start a different set instead
+              start a different round
             </button>
             {overview.dueCount > 0 && (
               <button
@@ -322,7 +322,7 @@ export function StudyHome() {
                 disabled={pending || !hasRange}
                 onClick={() => ask(reviewOptions)}
               >
-                review {overview.dueCount} due instead
+                review {overview.dueCount} due
               </button>
             )}
           </div>
@@ -330,8 +330,7 @@ export function StudyHome() {
         {confirm && (
           <div className="sr-confirm" role="alertdialog" aria-labelledby="sr-confirm-title">
             <p id="sr-confirm-title">
-              this replaces the round you started ({played} of {active.tasks.length} steps done). results already
-              saved stay saved.
+              replace this round? {played} of {active.tasks.length} steps done. saved results are kept.
             </p>
             <div className="sr-actions">
               <button type="button" className="primary-button" disabled={pending} onClick={() => ask(confirm)}>
@@ -351,9 +350,10 @@ export function StudyHome() {
         <SaveNote error={error} />
       </section>
 
-      <section className="sr-panel" aria-labelledby="sr-range-title">
-        <h2 id="sr-range-title">where are you in the book?</h2>
-        <p className="sr-sub">pick the part you are studying now. you can change it any time.</p>
+      {unfinished(active) && textbook}
+
+      <details className="sr-range-picker">
+        <summary>change range <span>{range ? `${range.from}–${range.to}` : "choose a valid range"}</span></summary>
         <div className="sr-chapters" role="group" aria-label="school character ranges">
           {STUDY_CHAPTERS.map((chapter) => {
             const on = range && range.from === chapter.from && range.to === chapter.to;
@@ -411,33 +411,16 @@ export function StudyHome() {
               choose(smallOptions.from, smallOptions.to);
               ask(smallOptions);
             }}>
-              not sure? start small
+              start at 1
             </button>
-            <span>begins at the first characters. it doesn’t mark anything as already known.</span>
           </p>
         )}
-      </section>
+      </details>
 
-      <nav className="sr-links" aria-label="more ways to study">
-        <Link to="/grammar">
-          <BookOpen size={18} /> grammar
-        </Link>
-        <Link to="/library">
-          <Library size={18} /> library
-        </Link>
-        <Link to="/kanji">
-          <PenLine size={18} /> writing practice
-        </Link>
-        <Link to="/play-room">play and warm up</Link>
-      </nav>
-
-      <p className="sr-device">
-        your progress is saved on this device only. to move it to another phone or computer, export a backup in{" "}
-        <Link className="text-link" to="/settings">
-          settings
-        </Link>
-        .
-      </p>
+      <div className="sr-home-footer">
+        <Link to="/play-room">practice games</Link>
+        <Link to="/settings">backup &amp; settings</Link>
+      </div>
     </div>
   );
 }
@@ -454,9 +437,8 @@ export function StudyRound() {
       <div className="page sr-round">
         <div className="sr-panel sr-empty">
           <h1>no round in progress</h1>
-          <p className="sr-sub">choose a range and begin a round from the study page.</p>
           <Link className="primary-button" to="/study">
-            go to study <ArrowRight size={18} />
+            choose a range <ArrowRight size={18} />
           </Link>
         </div>
       </div>
@@ -532,7 +514,7 @@ function TraceBox({ glyph }) {
   return (
     <div className="sr-pad-host" ref={host}>
       {size > 0 && !traced && <WritePad kanji={glyph} mode="trace" size={size} onDone={() => setTraced(true)} />}
-      {traced && <p className="sr-sub" role="status">nicely traced. tracing is practice only and isn’t counted.</p>}
+      {traced && <p className="sr-sub" role="status">traced · practice only</p>}
     </div>
   );
 }
@@ -547,7 +529,7 @@ function MeetTask({ task, active, ctl }) {
     });
   return (
     <section className="sr-panel sr-task" aria-labelledby="sr-title">
-      <p className="eyebrow">meet · no score, just look</p>
+      <p className="eyebrow">meet</p>
       <h1 id="sr-title" className="sr-visually-hidden">
         meet a new character
       </h1>
@@ -579,7 +561,7 @@ function MeetTask({ task, active, ctl }) {
         <TraceBox glyph={task.character} />
       ) : (
         <button type="button" className="text-button" onClick={() => setTracing(true)}>
-          trace it first (optional)
+          trace character
         </button>
       )}
       <div className="sr-actions">
@@ -626,9 +608,9 @@ function ReadTask({ task, active, ctl }) {
   };
   return (
     <section className="sr-panel sr-task" aria-labelledby="sr-title">
-      <p className="eyebrow">read · from memory</p>
+      <p className="eyebrow">reading</p>
       <h1 id="sr-title" className="sr-prompt">
-        how do you read this word?
+        read this word
       </h1>
       <div className="sr-word-card">
         <span className="sr-word big" lang="ja">
@@ -644,7 +626,7 @@ function ReadTask({ task, active, ctl }) {
         <p className="sr-model" role="status">
           answer shown: <b lang="ja">{word.reading}</b> <small>{romajiFor(word.reading)}</small>
           <br />
-          <small>it counts as practice now, not as recalling it.</small>
+          <small>practice · answer shown</small>
         </p>
       )}
       <form onSubmit={check} className="sr-form">
@@ -717,7 +699,7 @@ function UseTask({ task, active, ctl }) {
         <p className="sr-model" role="status">
           answer shown: <b>{word.meaning}</b>
           <br />
-          <small>it counts as practice now, not as recalling it.</small>
+          <small>practice · answer shown</small>
         </p>
       )}
       {self === null ? (
@@ -759,8 +741,8 @@ function UseTask({ task, active, ctl }) {
       ) : (
         <div className="sr-selfcheck">
           <p>
-            that isn’t an exact match, but other wordings can be right. you wrote <b>{self}</b>. the taught meaning
-            is <b>{word.meaning}</b>.
+            your answer: <b>{self}</b><br />
+            meaning: <b>{word.meaning}</b>
           </p>
           <p>is your answer the same idea?</p>
           <div className="sr-actions">
@@ -881,20 +863,19 @@ function WriteTask({ task, active, ctl }) {
           {!committed ? (
             <>
               <p className="sr-sub">
-                write the character on paper without looking it up. you check it yourself; nothing is graded
-                automatically.
+                write from memory on paper, then check against the model.
               </p>
               {showModel && <PaperModel task={task} />}
               <div className="sr-actions">
                 <button type="button" className="primary-button" disabled={ctl.pending} onClick={() => ctl.run(p => waiting(p,active.index,active.started) ? commitStudyPaper(p) : p)}>
-                  i’ve written it on paper
+                  check my writing
                 </button>
               </div>
             </>
           ) : (
             <>
               <PaperModel task={task} />
-              <p className="sr-sub">compare with your paper. be honest; this is just for you.</p>
+              <p className="sr-sub">compare your writing · self-check</p>
               <div className="sr-actions">
                 <button
                   type="button"
@@ -910,7 +891,7 @@ function WriteTask({ task, active, ctl }) {
                   disabled={ctl.pending}
                   onClick={() => finish({ correct: false, assisted: false, method: "paper", mistakes: 0 })}
                 >
-                  i need to go again
+                  again
                 </button>
               </div>
             </>
@@ -923,12 +904,12 @@ function WriteTask({ task, active, ctl }) {
           <button type="button" className="text-button" disabled={ctl.pending} onClick={showOutline}>
             <Eye size={16} /> {mode === "screen" ? "show the outline" : "show me the character"}
           </button>
-          <small>this counts as practice, not as writing it on your own.</small>
+          <small>showing help counts as practice</small>
         </div>
       )}
       {helped && !committed && (
         <p className="sr-sub" role="status">
-          help shown, so this will count as practice.
+          practice · help shown
         </p>
       )}
       {lastResult && mode === "screen" && (
@@ -977,8 +958,8 @@ function Feedback({ task, active, ctl }) {
       {fb.assisted && (
         <p className="sr-sub">
           {task.kind === "write"
-            ? "help was shown before you finished, so this is practice and not an independent write."
-            : "you saw the answer first, so this is practice and not recall."}
+            ? "practice · writing help shown"
+            : "practice · answer shown"}
         </p>
       )}
       {slips && (
@@ -986,9 +967,9 @@ function Feedback({ task, active, ctl }) {
           {fb.mistakes} slip{fb.mistakes === 1 ? "" : "s"} along the way.
         </p>
       )}
-      {paper && <p className="sr-sub">self-checked on paper. nothing was graded automatically.</p>}
-      {fb.primed && !fb.assisted && <p className="sr-sub">you recently saw this item. this is in-session practice; a later cold check stays separate.</p>}
-      {fb.method === "self" && <p className="sr-sub">meaning self-check. your wording was compared with the model, not graded automatically.</p>}
+      {paper && <p className="sr-sub">paper · self-checked</p>}
+      {fb.primed && !fb.assisted && <p className="sr-sub">session practice · recently seen</p>}
+      {fb.method === "self" && <p className="sr-sub">meaning · self-checked</p>}
 
       {task.kind === "write" ? (
         <div className="sr-answer">
@@ -1097,9 +1078,8 @@ function RoundSummary({ progress, active }) {
         <span className="sr-count">round finished</span>
       </header>
       <section className="sr-panel sr-task" aria-labelledby="sr-title">
-        <p className="eyebrow">summary</p>
         <h1 id="sr-title" className="sr-prompt">
-          here’s what happened
+          round complete
         </h1>
         <dl className="sr-tally">
           {lines.map(([label, value]) => (
@@ -1121,8 +1101,7 @@ function RoundSummary({ progress, active }) {
           ))}
         </ul>
         <p className="sr-sub">
-          this is a record of this session, not a measure of what you’ll remember. characters you practised come back
-          in review when they’re due.
+          session results · later recall is checked in review.
         </p>
         <div className="sr-actions">
           <button type="button" className="primary-button" disabled={ctl.pending} onClick={() => again(false)}>
