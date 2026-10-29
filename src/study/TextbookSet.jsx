@@ -6,6 +6,7 @@ import { say, canSpeak } from "../rush/audio.js";
 import { useProgress, updateProgress } from "./store";
 import { changeTextbookPractice, getTextbookPractice } from "./textbookPractice.js";
 import "./textbook-set.css";
+import { ReferenceButton } from "./QuickReference.jsx";
 
 export function TextbookSet() {
   const { setId } = useParams();
@@ -80,7 +81,7 @@ function TextbookLesson({ set }) {
               <button ref={primaryAction} type="button" className="primary-button" disabled={pending} onClick={() => change("known")}>got it <ArrowRight size={17} aria-hidden="true" /></button>
             </> : <button ref={primaryAction} type="button" className="primary-button tb-reveal" disabled={pending} onClick={() => change("reveal")}>show answer</button>}
           </div>
-          <Link className="tb-word-reference" to={`/library/characters/${word.characterId}`} aria-label={`reference and stroke order for character ${word.characterId}`}>reference &amp; stroke order</Link>
+          <ReferenceButton className="tb-word-reference" id={word.characterId}>meaning &amp; drawing</ReferenceButton>
         </> : <div className="tb-complete">
           <h3>round complete</h3>
           <p>all {set.words.length} words marked got it</p>

@@ -9,6 +9,7 @@ import { matchKana, matchMeaning, romajiFor } from "./romaji";
 import { charDataLoader, allowedMistakes } from "./strokes";
 import { sfx, say } from "./audio";
 import { WritePad } from "./WritePad";
+import { useQuickReference } from "../study/quickReferenceContext.js";
 
 export function SaveError({ error }) {
   return error ? (
@@ -134,8 +135,14 @@ export function KanjiCard({ character, note }) {
 
 /** Type the shown answer once: You Can Kana's "suggested answer" step. */
 export function CopyType({ step, onDone, voice }) {
+  const { isOpen: referenceOpen } = useQuickReference();
   const [text, setText] = useState("");
   const [done, setDone] = useState(false);
+  useEffect(() => {
+    if (!done || referenceOpen) return;
+    const timer = setTimeout(onDone,380);
+    return () => clearTimeout(timer);
+  }, [done, referenceOpen, onDone]);
   const [bad, setBad] = useState(0);
   const composing = useRef(false);
   const meaning = step.type === "meaning";
@@ -154,7 +161,6 @@ export function CopyType({ step, onDone, voice }) {
       setDone(true);
       sfx.clear(3, false);
       if (voice && !meaning) say(step.answer);
-      setTimeout(onDone, 380);
     }
   };
   return (
@@ -190,10 +196,17 @@ export function CopyType({ step, onDone, voice }) {
 
 /** Trace the character over its outline; strokes are still checked in order. */
 export function CopyWrite({ character, onDone }) {
+  const { isOpen: referenceOpen } = useQuickReference();
+  const [done, setDone] = useState(false);
+  useEffect(() => {
+    if (!done || referenceOpen) return;
+    const timer = setTimeout(onDone,200);
+    return () => clearTimeout(timer);
+  }, [done, referenceOpen, onDone]);
   return (
     <div className="rush-copy">
       <p className="eyebrow">書 write it · follow the outline in stroke order</p>
-      <WritePad kanji={character.kanji} mode="trace" size={260} onDone={() => setTimeout(onDone, 200)} />
+      <WritePad kanji={character.kanji} mode="trace" size={260} onDone={() => setDone(true)} />
     </div>
   );
 }

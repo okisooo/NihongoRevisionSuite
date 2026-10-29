@@ -19,6 +19,8 @@ import { previewKana } from "./romaji.js";
 import { sfx, say, setSound } from "./audio.js";
 import { WritePad } from "./WritePad.jsx";
 import { allowedMistakes } from "./strokes.js";
+import { referenceHints } from "./engine.js";
+import { useReferenceTarget } from "../study/quickReferenceContext.js";
 
 const ROWS = 3;
 const colsFor = (width) => (width >= 860 ? 4 : width >= 520 ? 3 : 2);
@@ -126,6 +128,24 @@ export function Arena({ mode, makeDeck, goal, palette, sound = true, voice = fal
   const finished = useRef(false);
   const handlers = useRef({});
   const single = mode === "practice";
+  const referenceActive = useRef(false);
+  const resumeAfterReference = useRef(false);
+  const pendingWrite = useRef(null);
+  useReferenceTarget(runRef.current?.targets.flatMap(t => t.prompt.track !== "kana" ? t.prompt.kanjiIds : []) || [], {
+    onOpen: () => {
+      referenceActive.current = true;
+      resumeAfterReference.current = Boolean(runRef.current && !runRef.current.paused);
+      if (runRef.current) setPaused(runRef.current, true);
+    },
+    onReveal: ids => { referenceHints(runRef.current, ids); },
+    onClose: () => {
+      referenceActive.current = false;
+      if (resumeAfterReference.current && document.visibilityState === "visible") {
+        setPaused(runRef.current, false);
+        if (pendingWrite.current) { const result = pendingWrite.current; pendingWrite.current = null; wrote(result); }
+      }
+    },
+  });
 
   useEffect(() => {
     handlers.current = { finish: onFinish, voice };
@@ -240,6 +260,7 @@ export function Arena({ mode, makeDeck, goal, palette, sound = true, voice = fal
   const togglePause = () => {
     if (!run() || !started || run().over) return;
     setPaused(run(), !run().paused);
+    if (!run().paused && pendingWrite.current) { const result = pendingWrite.current; pendingWrite.current = null; wrote(result); }
     inputRef.current?.focus({ preventScroll: true });
   };
   const feed = (value) => {
@@ -256,6 +277,7 @@ export function Arena({ mode, makeDeck, goal, palette, sound = true, voice = fal
   };
   const wrote = ({ mistakes, strokes, assisted, failed }) => {
     const current = run();
+    if (current?.paused && referenceActive.current) { pendingWrite.current = { mistakes, strokes, assisted, failed }; return; }
     if (!current || current.paused || current.over) return;
     completeWrite(current, { clean: !failed && mistakes <= allowedMistakes(strokes), hinted: Boolean(failed || assisted) });
     react(drain(current));

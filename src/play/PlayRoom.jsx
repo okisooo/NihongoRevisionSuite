@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { useQuickReference } from '../study/quickReferenceContext.js';
 import { Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Check, ChevronDown, Headphones, Lightbulb, Play, RotateCcw, Volume2, VolumeX, X, Zap } from 'lucide-react';
 import { useProgress, updateProgress, getWarning } from '../study/store';
@@ -92,6 +93,7 @@ function RoundComplete({ flow, progress, save, busy, error }) {
 }
 
 export function FlowPlay() {
+  const { isOpen: referenceOpen } = useQuickReference();
   const progress = useProgress();
   const flow = progress.flow;
   const rush = rushOf(progress);
@@ -111,12 +113,12 @@ export function FlowPlay() {
 
   useEffect(() => { setSound(rush.settings.sound); }, [rush.settings.sound]);
   useEffect(() => {
-    if (!feedback) return;
+    if (!feedback || referenceOpen) return;
     if (feedback.kind === 'clean') sfx.clear(flow.combo, false);
     else sfx.hint();
     const timer = setTimeout(advance, 560);
     return () => clearTimeout(timer);
-  }, [feedback, flow?.combo, advance]);
+  }, [feedback, flow?.combo, advance, referenceOpen]);
   useEffect(() => { input.current?.focus({ preventScroll: true }); }, [prompt?.id, current?.guide, feedback]);
 
   const submit = async value => {

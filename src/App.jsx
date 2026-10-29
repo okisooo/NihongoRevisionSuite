@@ -14,6 +14,7 @@ import { BookOpen, PenLine, Search, Settings as SettingsIcon } from "lucide-reac
 import { Grammar, GrammarTabs, GrammarRevision, Lesson, Session, Settings } from "./study/StudyViews";
 import { StudyHome, StudyRound } from "./study/StudyRound.jsx";
 import { TextbookSet } from "./study/TextbookSet.jsx";
+import { QuickReferenceProvider } from "./study/QuickReference.jsx";
 import { PlayRoom, FlowPlay } from "./play/PlayRoom";
 import { Library, CharacterPage } from "./study/Library";
 import { KanjiHub, KanjiPlay, KanjiStage } from "./rush/KanjiViews";
@@ -162,7 +163,7 @@ function Workspace() {
 }
 
 function App() {
-  return <HashRouter><Workspace /></HashRouter>;
+  return <HashRouter><QuickReferenceProvider><Workspace /></QuickReferenceProvider></HashRouter>;
 }
 
 export default App;

@@ -24,6 +24,8 @@ import {
 } from "./grammarPractice";
 import { STAGE_COUNT } from "../rush/mastery";
 import { KanjiSettings } from "../rush/KanjiViews";
+import { useReferenceTarget } from "./quickReferenceContext.js";
+import { kanjiIdsInText } from "./quickReference.js";
 
 function SaveError({ error }) {
   return error ? (
@@ -178,6 +180,7 @@ export function Lesson() {
 }
 function LessonBody({ id }) {
   const lesson = lessons.find((l) => l.lesson === id);
+  useReferenceTarget(kanjiIdsInText(lesson?.patterns.map(p => p.exampleJa).join("") || ""));
   const progress = useProgress();
   const [answers, setAnswers] = useState({});
   const [checked, setChecked] = useState(false);
@@ -420,6 +423,7 @@ function SessionComplete() {
   );
 }
 function GrammarRecall({ card }) {
+  useReferenceTarget(kanjiIdsInText(card.pattern.pattern));
   const progress = useProgress();
   const active = progress.active;
   const key = card.key;
@@ -493,7 +497,7 @@ function GrammarRecall({ card }) {
             <p>{saved.text ? `your sentence: ${saved.text}` : "your sentence was said or written, and not typed."}</p>
             <p className="rating-note">self-rated. you decide whether your sentence matches the intended use.</p>
             {helped && (
-              <p className="rating-note">the model was opened before your attempt, so a match is saved as practice.</p>
+              <p className="rating-note">practice · help used before your attempt</p>
             )}
             <div className="rating-actions">
               <button
@@ -524,6 +528,7 @@ function RecallCard() {
   const active = progress.active;
   const key = active.queue[active.index];
   const card = cards[key];
+  useReferenceTarget([card?.character?.id].filter(Boolean));
   const [revealed, setRevealed] = useState(false);
   const [save, error] = useSave();
   const record = async (recalled) => {
@@ -558,6 +563,7 @@ function RecallCard() {
       <progress className="session-progress" value={active.index} max={active.queue.length} />
       <div className="recall-paper">
         <p className="eyebrow">{isNew ? "new" : "from due items"}</p>
+        {active.hints?.includes(active.index) && <p className="rating-note">practice · reference opened</p>}
         <p className="recall-instruction">{isNew ? "recall the answer." : card.instruction}</p>
         <h1 className={`recall-prompt ${card.character ? "single-character" : ""}`}>{card.prompt}</h1>
         {!revealed ? (
