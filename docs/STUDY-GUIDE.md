@@ -6,11 +6,17 @@ open **https://nihongo.okiso.net/** on either device. the same web app works on 
 
 open **https://nihongo.okiso.net/#/study/180-190** for the 11 kanji and 39 words transcribed from these textbook pages. the same set is linked on the study home page. recall a word's reading and meaning, reveal them, then choose **again** or **got it**. missed words return in the round. the queue and revealed answer save on this device and are included in backups; this is self-rated practice, separate from measured writing and spaced-recall evidence.
 
-**study & write 180–190** selects that exact range in the existing saved study flow. it preserves any unfinished round until you choose to replace it. these characters use the first word from their photographed entry as their teaching anchor.
+**writing practice → open** selects that exact range in the saved study flow. it preserves any unfinished round until you choose to replace it. these characters use the first word from their photographed entry as their teaching anchor.
+
+## quick reference
+
+the **reference** button stays available during study. it opens the current kanji in a panel with **meaning**, **drawing**, and **words** tabs. search by character, number, reading, or english meaning to look up another kanji. drawing includes stroke-order replay, guided tracing, and a blank pad.
+
+**back to study** or **escape** returns to the same step and typed answer. timed practice pauses while the panel is open. reference practice does not advance the lesson or earn recall credit; an answer exposed during a check is recorded as help.
 
 ## begin with a small round
 
-the study page offers two characters at a time from the numbered school list. select a chapter range or enter your own start/end. if you are unsure, **not sure? start small** begins with the first characters without claiming you already know anything. all 300 character ids and the printed book order stay intact.
+the study page offers two characters at a time from the numbered school list. open **change range** to select a chapter or enter your own start/end. **start at 1** begins with the first characters without claiming you already know anything. all 300 character ids and the printed book order stay intact.
 
 meet each character through an existing word and a suitable reviewed sentence when available. then read with the word reading hidden, write the missing character from its meaning/reading cue, and check the word meaning. extra tracing is optional. a summary records what actually happened; it is not a promise of lasting memory.
 

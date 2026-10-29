@@ -5,6 +5,8 @@ import { romajiToHiragana, checkMatch } from '../utils/romajiConverter';
 import { parseRangeString } from '../utils/rangeParser';
 import { RefreshCw, CheckCircle2, Play, ArrowLeft, Eye, EyeOff, Keyboard, Search } from 'lucide-react';
 import FuriganaWord from './FuriganaWord';
+import { useQuickReference, useReferenceTarget } from '../study/quickReferenceContext.js';
+import { kanjiIdsInText } from '../study/quickReference.js';
 
 // Segment matcher function using robust checkMatch
 function matchTypedSegments(segments, typedText) {
@@ -100,6 +102,19 @@ export default function FuriganaGameView() {
   const [stats, setStats] = useState({ totalKeystrokes: 0, errors: 0, startTime: 0, endTime: 0 });
 
   const inputRef = useRef(null);
+  const { isOpen: referenceOpen } = useQuickReference();
+  const [pendingAdvance, setPendingAdvance] = useState(null);
+  const referenceIds = kanjiIdsInText(targetStates[activeTargetIdx]?.word || '');
+  useReferenceTarget(view === 'playing' ? referenceIds : [], {
+    onReveal: ids => {
+      if (view === 'playing' && referenceIds.some(id => ids.includes(id))) setStats(s => ({ ...s, errors: s.errors + 1 }));
+    },
+  });
+  useEffect(() => {
+    if (!pendingAdvance || referenceOpen) return;
+    const timer = setTimeout(() => { setPendingAdvance(null); pendingAdvance.action(); }, pendingAdvance.delay);
+    return () => clearTimeout(timer);
+  }, [pendingAdvance, referenceOpen]);
 
   // Focus input helper
   useEffect(() => {
@@ -261,10 +276,10 @@ export default function FuriganaGameView() {
       } else {
         // All targets in sentence correct!
         setIsAdvancing(true);
-        setTimeout(() => {
+        setPendingAdvance({ action: () => {
           handleNextSentence();
           setIsAdvancing(false);
-        }, 800);
+        }, delay: 800 });
       }
     }
   };
@@ -308,7 +323,7 @@ export default function FuriganaGameView() {
     setTypedInput('');
     setStats(s => ({ ...s, errors: s.errors + 1 }));
 
-    setTimeout(() => {
+    setPendingAdvance({ action: () => {
       if (activeTargetIdx + 1 < targetStates.length) {
         setActiveTargetIdx(idx => idx + 1);
         setIsAdvancing(false);
@@ -327,7 +342,7 @@ export default function FuriganaGameView() {
           setIsAdvancing(false);
         }
       }
-    }, 1500); // 1.5 seconds reveal time
+    }, delay: 1500 }); // 1.5 seconds reveal time
   };
 
   // Render the sentence with interactive inputs

@@ -388,12 +388,23 @@ export function hint(run) {
   const typing = run.buffer ? open.filter((t) => matchTarget(t.prompt, run.buffer).ok) : [];
   const target = typing[0] || open[0];
   if (!target) return null;
+  return revealTarget(run, target);
+}
+
+function revealTarget(run, target) {
   target.hinted = true;
   if (run.rules.timed) target.life += HINT_BONUS_MS;
   run.hints++;
   run.combo = 0;
   emit(run, { type: "hint", target });
   return target;
+}
+
+/** A paused reference lookup assists only the visible matching prompts. */
+export function referenceHints(run, ids) {
+  if (!run || run.over) return [];
+  return run.targets.filter(t => !t.hinted && t.prompt.track !== "kana" && t.prompt.kanjiIds.some(id => ids.includes(id)))
+    .map(t => revealTarget(run, t));
 }
 
 export function tick(run, dt) {

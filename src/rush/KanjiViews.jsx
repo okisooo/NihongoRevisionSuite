@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useReferenceTarget } from "../study/quickReferenceContext.js";
 import { Link, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { ArrowRight, Check, Dumbbell, Flame, Lock, Play, Volume2, VolumeX, Zap } from "lucide-react";
 import { useProgress } from "../study/store";
@@ -287,6 +288,7 @@ function LearnPhase({ ids, notes, voice, onDone }) {
   const [index, setIndex] = useState(0);
   const [step, setStep] = useState(0);
   const character = characterById(ids[index]);
+  useReferenceTarget([character.id]);
   const steps = teachSteps(character);
   const current = steps[step];
   const advance = () => {

@@ -35,7 +35,7 @@ export function useKeys(handlers) {
   });
   useEffect(() => {
     const onKey = (event) => {
-      if (event.target.closest?.("input, textarea, select, button, a, summary")) return;
+      if (event.target.closest?.("input, textarea, select, button, a, summary, dialog")) return;
       const action = ref.current[event.key.toLowerCase()];
       if (action) {
         event.preventDefault();
