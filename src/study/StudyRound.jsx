@@ -13,6 +13,8 @@ import {
   STUDY_CHAPTERS,
   getStudyOverview,
   startStudyRound,
+  savedStudyRound,
+  resumeStudyRound,
   getStudyTask,
   submitStudyTask,
   revealStudyHelp,
@@ -159,269 +161,120 @@ function parseRange(from, to) {
 }
 
 export function StudyHome() {
-  const progress = useProgress();
-  const [params] = useSearchParams();
-  const navigate = useNavigate();
-  const { run, pending, error, clear } = useSave();
-  const active = progress.study?.active ?? null;
-  const settings = progress.settings || {};
-  const [fromText, setFromText] = useState(String(clampId(params.get("from") || settings.from || 1)));
-  const [toText, setToText] = useState(String(clampId(params.get("to") || settings.to || MAX_ID)));
-  const [note, setNote] = useState("");
-  const [confirm, setConfirm] = useState(null);
-  const range = parseRange(fromText, toText);
-  const overview = useMemo(
-    () => (range ? getStudyOverview(progress, range) : { dueCount: 0, nextIds: [] }),
-    [progress, range?.from, range?.to], // eslint-disable-line react-hooks/exhaustive-deps
-  );
-
-  const choose = (from, to) => {
-    setFromText(String(from));
-    setToText(String(to));
-    setNote("");
-    setConfirm(null);
-  };
-
-  // Starting writes the chosen range as the default and the round in one save.
-  const begin = async (options) => {
-    const { from, to, review = false } = options;
-    let probe;
-    try {
-      probe = startStudyRound(progress, { from, to, review });
-    } catch (error) {
-      setNote(error.message);
-      return;
-    }
-    if (!probe.study?.active?.tasks?.length) {
-      setNote(
-        review
-          ? "nothing is due in this range right now."
-          : "everything in this range has already been met. choose another range, or review what is due.",
-      );
-      return;
-    }
-    setNote("");
-    const saved = await run((p) =>
-      startStudyRound({ ...p, settings: { ...p.settings, from, to } }, { from, to, review }, Date.now()),
-    );
-    if (saved) {
-      setConfirm(null);
-      navigate("/study/round");
-    }
-  };
-  // A round in progress is never replaced until the learner says so.
-  const ask = (options) => {
-    clear();
-    if (unfinished(active) && confirm?.key !== options.key) setConfirm(options);
-    else begin(options);
-  };
-
-  const hasRange = Boolean(range);
-  const startOptions = hasRange ? { ...range, key: "begin" } : null;
-  const reviewOptions = hasRange ? { ...range, review: true, key: "review" } : null;
-  const firstChapter = STUDY_CHAPTERS[0];
-  const smallOptions = firstChapter ? { from: firstChapter.from, to: firstChapter.to, key: "small" } : null;
-  const played = active ? Math.min(active.index, active.tasks.length) : 0;
-  const textbook = (
-    <section className="sr-textbook" aria-labelledby="sr-textbook-title">
-      <h2 id="sr-textbook-title">textbook</h2>
-      {textbookSets.map(set => (
-        <Link className="sr-set-link" key={set.id} to={`/study/${set.id}`}>
-          <span>
-            <strong>{set.from}–{set.to}</strong>
-            <small>{[...set.glyphs].length} kanji · {set.words.length} words</small>
-          </span>
-          <span className="sr-set-action">word practice <ArrowRight size={18} aria-hidden="true" /></span>
-        </Link>
-      ))}
-    </section>
-  );
-
+  const [mode, setMode] = useState("custom");
   return (
     <div className="page sr-home sr-study-home">
       <header className="sr-home-heading"><h1>study</h1></header>
-      {!unfinished(active) && textbook}
-
-      <section className={`sr-panel sr-now${unfinished(active) ? " sr-resume" : ""}`} aria-labelledby="sr-now-title">
-        {unfinished(active) ? (
-          <>
-            <h2 id="sr-now-title">your round</h2>
-            <p className="sr-sub">
-              step {played + 1} of {active.tasks.length}
-              {active.ids?.length > 0 && (
-                <>
-                  {" · "}
-                  <span>{`${active.ids.length} characters`}</span>
-                </>
-              )}
-            </p>
-            <div className="sr-actions">
-              <Link className="primary-button" to="/study/round">
-                continue round <ArrowRight size={18} />
-              </Link>
-            </div>
-          </>
-        ) : (
-          <>
-            <h2 id="sr-now-title">read &amp; write</h2>
-            {overview.nextIds.length > 0 && (
-              <div className="sr-next" role="group" aria-label={`${overview.nextIds.length} characters up next`}>
-                {overview.nextIds.slice(0, 8).map((id) => (
-                  <span key={id} lang={progress.study?.introduced?.[id] ? "en" : "ja"}>{progress.study?.introduced?.[id] ? `#${id}` : glyphOf(id)}</span>
-                ))}
-              </div>
-            )}
-            <p className="sr-sub">
-              {hasRange
-                ? `range ${range.from}–${range.to} · two characters per round`
-                : "choose a range below"}
-            </p>
-            <div className="sr-actions">
-              <button
-                type="button"
-                className="primary-button"
-                disabled={pending || !hasRange}
-                onClick={() => ask(startOptions)}
-              >
-                start round <ArrowRight size={18} />
-              </button>
-              {overview.dueCount > 0 && (
-                <button
-                  type="button"
-                  className="secondary-button"
-                  disabled={pending || !hasRange}
-                  onClick={() => ask(reviewOptions)}
-                >
-                  review {overview.dueCount} due
-                </button>
-              )}
-            </div>
-            {finished(active) && (
-              <p className="sr-sub">
-                <Link className="text-link" to="/study/round">
-                  last round
-                </Link>
-              </p>
-            )}
-          </>
-        )}
-        {unfinished(active) && (
-          <div className="sr-actions sr-secondary-row">
-            <button
-              type="button"
-              className="text-button"
-              disabled={pending || !hasRange}
-              onClick={() => ask(startOptions)}
-            >
-              start a different round
-            </button>
-            {overview.dueCount > 0 && (
-              <button
-                type="button"
-                className="text-button"
-                disabled={pending || !hasRange}
-                onClick={() => ask(reviewOptions)}
-              >
-                review {overview.dueCount} due
-              </button>
-            )}
-          </div>
-        )}
-        {confirm && (
-          <div className="sr-confirm" role="alertdialog" aria-labelledby="sr-confirm-title">
-            <p id="sr-confirm-title">
-              replace this round? {played} of {active.tasks.length} steps done. saved results are kept.
-            </p>
-            <div className="sr-actions">
-              <button type="button" className="primary-button" disabled={pending} onClick={() => ask(confirm)}>
-                replace it
-              </button>
-              <button type="button" className="secondary-button" disabled={pending} onClick={() => setConfirm(null)}>
-                keep my round
-              </button>
-            </div>
-          </div>
-        )}
-        {note && (
-          <p role="status" className="sr-note">
-            {note}
-          </p>
-        )}
-        <SaveNote error={error} />
+      <div className="sr-study-modes" role="group" aria-label="study mode">
+        <button type="button" aria-pressed={mode === "custom"} onClick={() => setMode("custom")}>my own study</button>
+        <button type="button" aria-pressed={mode === "daily"} onClick={() => setMode("daily")}>daily path</button>
+      </div>
+      <StudySetup key={mode} mode={mode} />
+      <section className="sr-textbook" aria-labelledby="sr-textbook-title">
+        <h2 id="sr-textbook-title">textbook word practice</h2>
+        {textbookSets.map(set => (
+          <Link className="sr-set-link" key={set.id} to={`/study/${set.id}`}>
+            <span><strong>{set.from}–{set.to}</strong><small>{[...set.glyphs].length} kanji · {set.words.length} words</small></span>
+            <span className="sr-set-action">word practice <ArrowRight size={18} aria-hidden="true" /></span>
+          </Link>
+        ))}
       </section>
-
-      {unfinished(active) && textbook}
-
-      <details className="sr-range-picker">
-        <summary>change range <span>{range ? `${range.from}–${range.to}` : "choose a valid range"}</span></summary>
-        <div className="sr-chapters" role="group" aria-label="school character ranges">
-          {STUDY_CHAPTERS.map((chapter) => {
-            const on = range && range.from === chapter.from && range.to === chapter.to;
-            return (
-              <button
-                key={chapter.id}
-                type="button"
-                className={`sr-chip ${on ? "on" : ""}`}
-                aria-pressed={Boolean(on)}
-                onClick={() => choose(chapter.from, chapter.to)}
-              >
-                {chapter.from}–{chapter.to}
-              </button>
-            );
-          })}
-        </div>
-        <div className="sr-range">
-          <label>
-            <span>from</span>
-            <input
-              type="number"
-              inputMode="numeric"
-              min="1"
-              max={MAX_ID}
-              value={fromText}
-              onChange={(e) => {
-                setFromText(e.target.value);
-                setConfirm(null);
-              }}
-            />
-          </label>
-          <label>
-            <span>to</span>
-            <input
-              type="number"
-              inputMode="numeric"
-              min="1"
-              max={MAX_ID}
-              value={toText}
-              onChange={(e) => {
-                setToText(e.target.value);
-                setConfirm(null);
-              }}
-            />
-          </label>
-        </div>
-        {!hasRange && (
-          <p role="alert" className="sr-note">
-            use whole numbers from 1 to 300, with the start no later than the end.
-          </p>
-        )}
-        {smallOptions && !unfinished(active) && (
-          <p className="sr-small">
-            <button type="button" className="text-button" disabled={pending} onClick={() => {
-              choose(smallOptions.from, smallOptions.to);
-              ask(smallOptions);
-            }}>
-              start at 1
-            </button>
-          </p>
-        )}
-      </details>
-
       <div className="sr-home-footer">
         <Link to="/play-room">practice games</Link>
         <Link to="/settings">backup &amp; settings</Link>
       </div>
     </div>
+  );
+}
+
+function StudySetup({ mode }) {
+  const progress = useProgress();
+  const [params] = useSearchParams();
+  const navigate = useNavigate();
+  const { run, pending, error, clear } = useSave();
+  const custom = mode === "custom";
+  const saved = savedStudyRound(progress, mode);
+  const daily = custom ? savedStudyRound(progress,"daily") : null;
+  const defaults = custom ? progress.study?.customRange : progress.settings;
+  const [fromText, setFromText] = useState(String((custom && params.get("from")) || defaults?.from || ""));
+  const [toText, setToText] = useState(String((custom && params.get("to")) || defaults?.to || ""));
+  const [note, setNote] = useState("");
+  const [confirm, setConfirm] = useState(null);
+  const range = parseRange(fromText, toText);
+  const overview = useMemo(() => range ? getStudyOverview(progress, range) : {dueCount:0,nextIds:[]}, [progress,range?.from,range?.to]); // eslint-disable-line react-hooks/exhaustive-deps
+  const savedRange = saved ? `${saved.from ?? Math.min(...saved.ids)}–${saved.to ?? Math.max(...saved.ids)}` : "";
+  const matching = custom && unfinished(saved) && range && saved.from === range.from && saved.to === range.to;
+  const resume = async (targetMode = mode) => {
+    if (await run(p => resumeStudyRound(p,targetMode))) navigate("/study/round");
+  };
+  const begin = async (options, replace = false) => {
+    clear();
+    try {
+      startStudyRound(progress,options);
+    } catch (error) {
+      setNote(error.message);
+      return;
+    }
+    if (unfinished(saved) && (!custom || saved.index > 0 || saved.results.length > 0) && !replace) {
+      setConfirm(options);
+      return;
+    }
+    if (await run(p => startStudyRound(p,options))) navigate("/study/round");
+  };
+  const choose = (from,to) => {
+    setFromText(String(from)); setToText(String(to)); setNote(""); setConfirm(null);
+  };
+  const options = range ? {...range,custom} : null;
+  return (
+    <section className="sr-panel sr-setup" aria-labelledby="sr-setup-title">
+      <h2 id="sr-setup-title">{custom ? "what are you studying?" : "your daily path"}</h2>
+      <p className="sr-sub">{custom ? "pick your school range. study every character, in order, whenever you want." : "two characters at a time, with reviews when they’re due. choose the range for your path below."}</p>
+      {!custom && unfinished(saved) && <div className="sr-saved-round">
+        <p>daily round · step {saved.index + 1} of {saved.tasks.length} · {saved.ids.length} characters</p>
+        <button type="button" className="secondary-button" disabled={pending} onClick={() => resume()}>continue daily round <ArrowRight size={18} /></button>
+      </div>}
+      <form onSubmit={e => {
+        e.preventDefault();
+        if (!range || pending) return;
+        if (matching) resume(); else begin(options);
+      }}>
+        <div className="sr-range">
+          <label><span>from</span><input aria-describedby="sr-range-help" type="number" inputMode="numeric" min="1" max={MAX_ID} required placeholder="191" value={fromText} onChange={e => {setFromText(e.target.value);setConfirm(null);}} /></label>
+          <label><span>to</span><input aria-describedby="sr-range-help" type="number" inputMode="numeric" min="1" max={MAX_ID} required placeholder="200" value={toText} onChange={e => {setToText(e.target.value);setConfirm(null);}} /></label>
+          <button type="submit" className="primary-button" disabled={pending || !range}>
+            {pending ? "saving…" : custom ? `${matching ? "continue" : "study"} ${range ? `${range.from}–${range.to}` : "this range"}` : "start daily round"} <ArrowRight size={18} />
+          </button>
+        </div>
+        <p id="sr-range-help" className="sr-sub" aria-live="polite">{range ? custom ? `${range.to-range.from+1} characters · meaning, reading, writing & word use · no daily limit` : `range ${range.from}–${range.to} · two characters per round` : "enter a range from 1 to 300, with the start no later than the end."}</p>
+      </form>
+      {custom && unfinished(saved) && <div className="sr-saved-round">
+        <p>saved study {savedRange} · step {saved.index+1} of {saved.tasks.length}</p>
+        {!matching && <button type="button" className="text-button" disabled={pending} onClick={() => resume()}>resume {savedRange} <ArrowRight size={16} /></button>}
+        {matching && <button type="button" className="text-button" disabled={pending} onClick={() => begin(options)}>restart {savedRange}</button>}
+      </div>}
+      {!custom && overview.dueCount > 0 && <div className="sr-actions">
+        <button type="button" className="secondary-button" disabled={pending || !range} onClick={() => begin({...range,review:true})}>review {overview.dueCount} due</button>
+      </div>}
+      {confirm && <div className="sr-confirm" role="group" aria-labelledby="sr-confirm-title">
+        <p id="sr-confirm-title">{custom ? `replace study ${savedRange} at step ${saved.index+1} with ${confirm.from}–${confirm.to}?` : "start a new daily round?"} your completed answers are kept.</p>
+        <div className="sr-actions">
+          <button type="button" className="primary-button" disabled={pending} onClick={() => begin(confirm,true)}>{custom ? `study ${confirm.from}–${confirm.to}` : "start new daily round"}</button>
+          <button type="button" className="secondary-button" disabled={pending} onClick={() => setConfirm(null)}>keep current round</button>
+        </div>
+      </div>}
+      {note && <p role="status" className="sr-note">{note}</p>}
+      <SaveNote error={error} />
+      {unfinished(daily) && <div className="sr-saved-round">
+        <p>your daily round is saved separately · step {daily.index+1} of {daily.tasks.length}</p>
+        <button type="button" className="text-button" disabled={pending} onClick={() => resume("daily")}>continue daily round <ArrowRight size={16} /></button>
+      </div>}
+      <details className="sr-range-picker">
+        <summary>choose a textbook chapter</summary>
+        <div className="sr-chapters" role="group" aria-label="school character ranges">
+          {STUDY_CHAPTERS.map(chapter => <button key={chapter.id} type="button" className={`sr-chip ${range?.from === chapter.from && range?.to === chapter.to ? "on" : ""}`} aria-pressed={range?.from === chapter.from && range?.to === chapter.to} onClick={() => choose(chapter.from,chapter.to)}>{chapter.from}–{chapter.to}</button>)}
+        </div>
+      </details>
+    </section>
   );
 }
 
@@ -459,10 +312,10 @@ function RoundStep({ active }) {
           ← study
         </Link>
         <span className="sr-count">
-          step {active.index + 1} of {total}
+          {active.mode === "custom" ? `${active.from}–${active.to} · ` : "daily · "}step {active.index + 1} of {total}
         </span>
       </header>
-      <ol className="sr-steps" aria-label="round progress">
+      {active.mode === "custom" ? <progress className="sr-progress" value={active.index} max={total} aria-label="round progress" /> : <ol className="sr-steps" aria-label="round progress">
         {active.tasks.map((item, i) => (
           <li
             key={i}
@@ -474,7 +327,7 @@ function RoundStep({ active }) {
             </span>
           </li>
         ))}
-      </ol>
+      </ol>}
       {!task ? (
         <div className="sr-panel sr-empty">
           <h1>this step can’t be loaded</h1>
@@ -1026,7 +879,8 @@ function outcomeLabel(r) {
 function RoundSummary({ progress, active }) {
   const ctl = useSave();
   const navigate = useNavigate();
-  const settings = progress.settings || {};
+  const custom = active.mode === "custom";
+  const settings = custom ? active : progress.settings || {};
   const range = {
     from: clampId(settings.from ?? 1),
     to: clampId(settings.to ?? MAX_ID),
@@ -1065,7 +919,7 @@ function RoundSummary({ progress, active }) {
     ctl.run((p) => {
       const a = p.study?.active;
       return finished(a) && a.started === active.started
-        ? startStudyRound(p, { from: range.from, to: range.to, review }, Date.now())
+        ? startStudyRound(p, { from: range.from, to: range.to, review, custom }, Date.now())
         : p;
     }).then((saved) => saved && window.scrollTo?.(0, 0));
 
@@ -1105,9 +959,9 @@ function RoundSummary({ progress, active }) {
         </p>
         <div className="sr-actions">
           <button type="button" className="primary-button" disabled={ctl.pending} onClick={() => again(false)}>
-            another round <ArrowRight size={18} />
+            {custom ? `study ${range.from}–${range.to} again` : "another round"} <ArrowRight size={18} />
           </button>
-          {overview.dueCount > 0 && (
+          {!custom && overview.dueCount > 0 && (
             <button type="button" className="secondary-button" disabled={ctl.pending} onClick={() => again(true)}>
               review {overview.dueCount} due
             </button>

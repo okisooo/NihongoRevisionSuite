@@ -6,7 +6,7 @@ open **https://nihongo.okiso.net/** on either device. the same web app works on 
 
 open **https://nihongo.okiso.net/#/study/180-190** for the 11 kanji and 39 words transcribed from these textbook pages. the same set is linked on the study home page. recall a word's reading and meaning, reveal them, then choose **again** or **got it**. missed words return in the round. the queue and revealed answer save on this device and are included in backups; this is self-rated practice, separate from measured writing and spaced-recall evidence.
 
-**writing practice → open** selects that exact range in the saved study flow. it preserves any unfinished round until you choose to replace it. these characters use the first word from their photographed entry as their teaching anchor.
+**writing practice → open** selects that exact range in the saved study flow. the custom range is ready to start; the daily round stays saved separately. these characters use the first word from their photographed entry as their teaching anchor.
 
 ## quick reference
 
@@ -14,13 +14,15 @@ the **reference** button stays available during study. it opens the current kanj
 
 **back to study** or **escape** returns to the same step and typed answer. timed practice pauses while the panel is open. reference practice does not advance the lesson or earn recall credit; an answer exposed during a check is recorded as help.
 
-## begin with a small round
+## choose your own study or the daily path
 
-the study page offers two characters at a time from the numbered school list. open **change range** to select a chapter or enter your own start/end. **start at 1** begins with the first characters without claiming you already know anything. all 300 character ids and the printed book order stay intact.
+**my own study** opens first. enter your start and end numbers, then click **study 191–200** or press enter. this includes all ten characters, in book order, with no daily limit. you can also choose a textbook chapter.
 
-meet each character through an existing word and a suitable reviewed sentence when available. then read with the word reading hidden, write the missing character from its meaning/reading cue, and check the word meaning. extra tracing is optional. a summary records what actually happened; it is not a promise of lasting memory.
+**daily path** is optional: two characters at a time, with a separate adjustable range and due reviews. switching between modes preserves both sessions. all 300 character ids and the printed book order stay intact.
 
-the round saves before it advances. close it, reopen the site, and choose **continue round**. feedback, help and committed paper/self-check stages also survive reload. starting another set asks before replacing unfinished work.
+meet each character through an existing word and a suitable reviewed sentence when available. then read with the word reading hidden, write the missing character from its meaning/reading cue, and check the word meaning. custom study does this for each character before moving to the next. extra tracing is optional. a summary records what actually happened; it is not a promise of lasting memory.
+
+the round saves before it advances. close it, reopen the site, and continue your saved range or daily round. feedback, help and committed paper/self-check stages also survive reload. starting a different custom range keeps completed answers and leaves the daily round intact.
 
 ## writing
 

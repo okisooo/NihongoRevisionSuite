@@ -82,7 +82,7 @@ function MainNav() {
 }
 
 function Workspace() {
-  const { pathname } = useLocation();
+  const { pathname, search } = useLocation();
   return (
     <>
       <RouteFocus />
@@ -111,7 +111,7 @@ function Workspace() {
         </header>
         <main id="main" tabIndex={-1}>
           <Routes>
-            <Route path="/" element={<StudyHome />} />
+            <Route path="/" element={<StudyHome key={search} />} />
             <Route path="/study" element={<Navigate replace to="/" />} />
             <Route path="/study/round" element={<StudyRound />} />
             <Route path="/study/:setId" element={<TextbookSet />} />

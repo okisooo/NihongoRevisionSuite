@@ -48,15 +48,30 @@ export function getStudyOverview(progress, options = {}, now = Date.now()) {
 }
 export function startStudyRound(progress, options = {}, now = Date.now()) {
   const {from,to} = rangeOptions(progress,options);
+  const custom = options.custom === true;
   const overview = getStudyOverview(progress,{from,to},now);
-  const ids = (options.review ? overview.dueIds : overview.nextIds).slice(0,2);
+  const ids = custom ? rangeIds(progress,{from,to}) : (options.review ? overview.dueIds : overview.nextIds).slice(0,2);
+  if (custom && ids.length !== to-from+1) throw new Error("this range has missing study content. choose another range.");
   if (!ids.length) throw new Error(options.review ? "no reviews are due in this range." : "no study items in this range.");
-  const review = Boolean(options.review);
+  const review = !custom && Boolean(options.review);
   // One skill per character in a cold review avoids showing a word and then
   // calling the immediately following shape/meaning check delayed retention.
-  const tasks = review ? ids.map(id=>({kind:dueTask(progress,id,now).kind,id})) : ["meet","read","write","use"].flatMap(kind => ids.map(id => ({kind,id})));
-  return {...progress, settings:{...progress.settings,from,to}, study:{...progress.study,
-    active:{ids,tasks,index:0,started:now,review,helped:false,feedback:null,results:[]}}};
+  const kinds = ["meet","read","write","use"];
+  const tasks = custom ? ids.flatMap(id=>kinds.map(kind=>({kind,id}))) : review ? ids.map(id=>({kind:dueTask(progress,id,now).kind,id})) : kinds.flatMap(kind => ids.map(id => ({kind,id})));
+  const mode = custom ? "custom" : "daily";
+  const current = progress.study?.active;
+  const paused = current && (current.mode || "daily") !== mode ? current : progress.study?.paused ?? null;
+  return {...progress, settings:custom ? progress.settings : {...progress.settings,from,to}, study:{...progress.study, paused,
+    ...(custom ? {customRange:{from,to}} : {}),
+    active:{ids,tasks,index:0,started:now,mode,from,to,review,helped:false,feedback:null,results:[]}}};
+}
+export function savedStudyRound(progress, mode) {
+  return [progress.study?.active, progress.study?.paused].find(active=>active && (active.mode || "daily") === mode) ?? null;
+}
+export function resumeStudyRound(progress, mode) {
+  const active = savedStudyRound(progress,mode);
+  if (!active || active === progress.study?.active) return progress;
+  return {...progress,study:{...progress.study,active,paused:progress.study?.active ?? null}};
 }
 export function getStudyTask(active) {
   const task = active?.tasks[active.index];
@@ -118,7 +133,7 @@ export function nextStudyTask(progress,now=Date.now()) {
   const task = getStudyTask(active);
   if (!task || (task.kind !== "meet" && !active.feedback)) return progress;
   const introduced = {...progress.study.introduced};
-  if (task.kind === "meet") introduced[task.id] = active.started;
+  if (task.kind === "meet") introduced[task.id] ??= active.started;
   const exposed = task.kind === "meet" ? {...progress.study.exposed,[task.id]:now} : progress.study.exposed;
   return {...progress,study:{...progress.study,introduced,exposed,
     active:{...active,index:active.index+1,helped:false,feedback:null,paperCommitted:false,selfCheck:null}}};
