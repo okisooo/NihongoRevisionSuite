@@ -45,6 +45,10 @@ export function recordReferenceExposure(progress, ids, now = Date.now()) {
     !active.paperCommitted && active.selfCheck == null;
   let next = { ...progress, study: { ...progress.study, exposed,
     ...(helped ? { active: { ...active, helped: true } } : {}) } };
+  const paused = progress.study?.paused;
+  const pausedTask = getStudyTask(paused);
+  if (pausedTask && selected.has(pausedTask.id) && pausedTask.kind !== "meet" && !paused.feedback && !paused.paperCommitted && paused.selfCheck == null)
+    next.study.paused = {...paused,helped:true};
   const session = progress.active;
   const sessionKey = session?.queue[session.index];
   const sessionId = Number(sessionKey?.match(/^(?:character|drill):(\d+):/)?.[1]);

@@ -6,9 +6,9 @@ kanji words, writing and grammar revision, on phone and pc.
 
 white and blue, no account, and offline after the first download.
 
-## a small study round
+## study your way
 
-1. **choose a range.** two characters at a time, following the verified 300-character school list and its 16 chapters. unsure where to start? begin small and change the range any time.
+1. **choose your own range.** enter the first and last school-list numbers, then click **study 191–200** (or press enter). every character in your range is included, in book order. the optional **daily path** keeps its own range and two-character rounds.
 2. **learn through words.** meet an anchor word, recall its hidden reading, write the target from a cue, and check meaning.
 3. **save and return.** partial rounds and feedback survive reload. due reviews check one skill per character without first showing its answer. assisted practice and paper self-checks are labelled honestly.
 4. **revise grammar.** choose one of 30 lessons and produce a sentence before comparing with its model. revision is scoped to that lesson; comparison is self-rated.

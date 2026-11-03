@@ -8,6 +8,7 @@ const outcome = value => record(value) && typeof value.correct === "boolean" && 
 export function validateStudy(value) {
   const invalid = () => { throw new Error("This backup contains invalid focused study records."); };
   if (!record(value)) invalid();
+  if (value.customRange !== undefined && (!record(value.customRange) || !id(value.customRange.from) || !id(value.customRange.to) || value.customRange.from > value.customRange.to)) invalid();
   if (value.textbookPractice !== undefined) validateTextbookPractice(value.textbookPractice);
   if (value.exposed!==undefined && (!record(value.exposed)||Object.keys(value.exposed).length>300||Object.entries(value.exposed).some(([key,date])=>!/^\d+$/.test(key)||!id(Number(key))||!count(date)))) invalid();
   if (value.introduced !== undefined && (!record(value.introduced) || Object.entries(value.introduced).some(([key,date])=>!/^\d+$/.test(key)||!id(Number(key))||!count(date)))) invalid();
@@ -21,13 +22,15 @@ export function validateStudy(value) {
       if (entry.review!==undefined && (!record(entry.review)||!["attempts","misses","streak","due","lastReviewed"].every(k=>count(entry.review[k]))||entry.review.misses>entry.review.attempts||entry.review.streak>entry.review.attempts||(entry.review.lastSuccess!==undefined&&!count(entry.review.lastSuccess))||(entry.review.introduced!==undefined&&!count(entry.review.introduced)))) invalid();
     }
   }
-  if (value.active != null) {
-    const active=value.active;
-    if (!record(active) || !Array.isArray(active.ids) || !active.ids.length || active.ids.length>2 || !active.ids.every(id) || new Set(active.ids).size!==active.ids.length ||
+  for (const active of [value.active,value.paused]) {
+    if (active == null) continue;
+    const custom = active.mode === "custom";
+    if (!record(active) || (active.mode !== undefined && !["custom","daily"].includes(active.mode)) || !Array.isArray(active.ids) || !active.ids.length || active.ids.length>(custom?300:2) || !active.ids.every(id) || new Set(active.ids).size!==active.ids.length ||
       !Array.isArray(active.tasks) || active.tasks.length!==active.ids.length*(active.review?1:4) || !count(active.index) || active.index>active.tasks.length || !count(active.started) ||
       typeof active.helped!=="boolean" || !Array.isArray(active.results) || active.results.length>active.tasks.length) invalid();
     if (active.review!==undefined && typeof active.review!=="boolean") invalid();
-    const expected=kinds.flatMap(kind=>active.ids.map(id=>({kind,id})));
+    if (custom && (active.review || !id(active.from) || !id(active.to) || active.ids.length !== active.to-active.from+1 || !active.ids.every((id,i)=>id===active.from+i))) invalid();
+    const expected=custom ? active.ids.flatMap(id=>kinds.map(kind=>({kind,id}))) : kinds.flatMap(kind=>active.ids.map(id=>({kind,id})));
     if (!active.tasks.every((t,i)=>record(t)&&(active.review ? t.id===active.ids[i]&&kinds.slice(1).includes(t.kind) : t.id===expected[i].id&&t.kind===expected[i].kind))) invalid();
     const seen=new Set();
     for(const result of active.results) {
@@ -45,5 +48,6 @@ export function validateStudy(value) {
       if (!["correct","assisted","method","mistakes","primed"].every(key=>current[key]===active.feedback[key])) invalid();
     } else if (seen.has(active.index)) invalid();
   }
+  if (value.active && value.paused && (value.active.mode || "daily") === (value.paused.mode || "daily")) invalid();
   return value;
 }
