@@ -3,6 +3,7 @@ import { textbookAnchorFor } from "../data/textbookSets.js";
 import { commonWords } from "../rush/deck.js";
 import { contextsFor, exampleWordsFor } from "./characterData.js";
 import { schedule } from "./progress.js";
+import { characterLesson } from "./characterLesson.js";
 
 const DAY = 86400000;
 // Prevent same-visit priming without blocking the first 24-hour review merely
@@ -28,19 +29,34 @@ function rangeOptions(progress, options = {}) {
     throw new Error("choose a range between 1 and 300.");
   return { from, to };
 }
-function dueTask(progress,id,now) {
+function dueTask(progress,id,now,wordReviews) {
   const choices=[{kind:"write",due:progress.cards[`drill:${id}:writing`]?.due},{kind:"read",due:progress.cards[`drill:${id}:reading`]?.due}];
   const meaning=progress.study?.evidence?.[`use:${id}`];
   if (meaning) choices.push({kind:"use",due:meaning.review?.due ?? meaning.lastAttempt+DAY});
+  for (const entry of wordReviews || Object.values(progress.study?.wordEvidence || {})) {
+    if (entry.id === id) choices.push({kind:entry.kind,due:entry.review.due,word:{word:entry.word,reading:entry.reading,meaning:entry.meaning}});
+  }
   return choices.filter(c=>c.due!==undefined&&c.due<=now).sort((a,b)=>a.due-b.due)[0];
 }
 function rangeIds(progress, options) {
   const {from,to} = rangeOptions(progress,options);
   return kanjiData.filter(c => c.id >= from && c.id <= to && anchorFor(c)).map(c => c.id);
 }
+function lessonTasks(ids) {
+  return ids.flatMap(id => {
+    const words = characterLesson(id).words.map(({word,reading,meaning})=>({word,reading,meaning}));
+    return [{kind:"meet",id,words}, ...words.flatMap(word=>[{kind:"read",id,word},{kind:"use",id,word}]), {kind:"write",id,word:words[0]}];
+  });
+}
 export function getStudyOverview(progress, options = {}, now = Date.now()) {
   const ids = rangeIds(progress, options);
-  const due = ids.filter(id => dueTask(progress,id,now)).sort((a,b)=>dueTask(progress,a,now).due-dueTask(progress,b,now).due);
+  const byId = new Map();
+  for (const entry of Object.values(progress.study?.wordEvidence || {})) {
+    if (!byId.has(entry.id)) byId.set(entry.id,[]);
+    byId.get(entry.id).push(entry);
+  }
+  const dueById = new Map(ids.map(id=>[id,dueTask(progress,id,now,byId.get(id) || [])]));
+  const due = ids.filter(id => dueById.get(id)).sort((a,b)=>dueById.get(a).due-dueById.get(b).due);
   const fresh = ids.filter(id => !progress.study?.introduced?.[id]);
   const rest = ids.filter(id => !fresh.includes(id)).sort((a,b) =>
     (progress.study?.evidence?.[`write:${a}`]?.lastAttempt ?? 0) - (progress.study?.evidence?.[`write:${b}`]?.lastAttempt ?? 0));
@@ -57,13 +73,17 @@ export function startStudyRound(progress, options = {}, now = Date.now()) {
   // One skill per character in a cold review avoids showing a word and then
   // calling the immediately following shape/meaning check delayed retention.
   const kinds = ["meet","read","write","use"];
-  const tasks = custom ? ids.flatMap(id=>kinds.map(kind=>({kind,id}))) : review ? ids.map(id=>({kind:dueTask(progress,id,now).kind,id})) : kinds.flatMap(kind => ids.map(id => ({kind,id})));
+  const phased = !review && options.phased === true;
+  const tasks = phased ? lessonTasks(ids) : custom ? ids.flatMap(id=>kinds.map(kind=>({kind,id}))) : review ? ids.map(id=>{
+    const {kind,word}=dueTask(progress,id,now);
+    return {kind,id,...(word ? {word} : {})};
+  }) : kinds.flatMap(kind => ids.map(id => ({kind,id})));
   const mode = custom ? "custom" : "daily";
   const current = progress.study?.active;
   const paused = current && (current.mode || "daily") !== mode ? current : progress.study?.paused ?? null;
   return {...progress, settings:custom ? progress.settings : {...progress.settings,from,to}, study:{...progress.study, paused,
     ...(custom ? {customRange:{from,to}} : {}),
-    active:{ids,tasks,index:0,started:now,mode,from,to,review,helped:false,feedback:null,results:[]}}};
+    active:{ids,tasks,index:0,started:now,mode,from,to,review,...(phased || tasks.some(t=>t.word) ? {plan:2} : {}),helped:false,feedback:null,results:[]}}};
 }
 export function savedStudyRound(progress, mode) {
   return [progress.study?.active, progress.study?.paused].find(active=>active && (active.mode || "daily") === mode) ?? null;
@@ -78,10 +98,21 @@ export function getStudyTask(active) {
   if (!task) return null;
   const character = characters.get(task.id);
   if (!character) return null;
-  const word = anchorFor(character);
+  const word = task.word || task.words?.[0] || anchorFor(character);
   if (!word) return null;
   const sentence = contextsFor(character).find(s => s.targets.some(t => t.word === word.word && t.reading === word.reading)) || null;
   return {...task,character:character.kanji,word,sentence};
+}
+export function studyFeedbackVisibility(active) {
+  const task=getStudyTask(active);
+  const pending=new Set();
+  for(let index=active.index+1;index<active.tasks.length;index++) {
+    const next=active.tasks[index];
+    if(next.id!==task.id || !["read","use"].includes(next.kind)) continue;
+    const word=getStudyTask({...active,index}).word;
+    if(word.word===task.word.word && word.reading===task.word.reading) pending.add(next.kind);
+  }
+  return {reading:!pending.has("read"),meaning:!pending.has("use")};
 }
 export function revealStudyHelp(progress, now = Date.now()) {
   const active = progress.study?.active;
@@ -105,27 +136,36 @@ export function submitStudyTask(progress, outcome = {}, now = Date.now()) {
   const assisted = Boolean(outcome.assisted || active.helped);
   const correct = Boolean(outcome.correct);
   const mistakes = Number.isSafeInteger(outcome.mistakes) && outcome.mistakes >= 0 ? Math.min(10000,outcome.mistakes) : 0;
-  const result = {index:active.index,kind:task.kind,id:task.id,correct,assisted,method,mistakes,at:now};
+  const pinnedWord = active.tasks[active.index].word;
+  const wordCheck = Boolean(pinnedWord && ["read","use"].includes(task.kind));
+  const result = {index:active.index,kind:task.kind,id:task.id,correct,assisted,method,mistakes,at:now,...(pinnedWord ? {word:task.word.word,reading:task.word.reading} : {})};
   const independent = correct && !assisted && method === "screen";
   const primed = active.tasks.slice(0,active.index).some(t=>t.id===task.id) || now-(progress.study.exposed?.[task.id] ?? 0)<RECENT_EXPOSURE;
   const key = `${task.kind}:${task.id}`;
   const evidence = {...progress.study.evidence};
-  const existing = evidence[key];
+  const wordEvidence = {...progress.study.wordEvidence};
+  const wordKey = studyWordKey(task);
+  const existing = wordCheck ? wordEvidence[wordKey] : evidence[key];
   // A new anchor word must never inherit evidence earned for a different reading.
-  const previous = existing?.word === task.word.word && existing?.reading === task.word.reading ? existing : null;
+  const previous = existing?.word === task.word.word && existing?.reading === task.word.reading && (!wordCheck || existing.meaning===task.word.meaning) ? existing : null;
   const lastSuccess = previous?.lastSuccess || 0;
   const lastAttempt = Math.max(now,previous?.lastAttempt||0,lastSuccess,previous?.laterSuccess||0);
-  evidence[key] = { word:task.word.word,reading:task.word.reading,lastAttempt,
+  const entry = { word:task.word.word,reading:task.word.reading,lastAttempt,
     lastSuccess:independent && (!primed || !lastSuccess) ? Math.max(now,lastSuccess) : lastSuccess,
     laterSuccess:independent && !primed && active.review && lastSuccess && now-lastSuccess >= DAY ? now : previous?.laterSuccess || 0,
     correct,assisted,method,mistakes,primed,
-    ...(task.kind==="use" ? {review:reviewAfterAttempt(previous?.review,{correct,assisted,method,primed},now)} : {}) };
-  const cardKey = task.kind === "write" ? `drill:${task.id}:writing` : task.kind === "read" ? `drill:${task.id}:reading` : null;
+    ...(task.kind==="use" || wordCheck ? {review:reviewAfterAttempt(previous?.review,{correct,assisted,method,primed},now)} : {}) };
+  if (wordCheck) wordEvidence[wordKey] = {...entry,id:task.id,kind:task.kind,meaning:task.word.meaning};
+  else evidence[key] = entry;
+  const cardKey = task.kind === "write" ? `drill:${task.id}:writing` : task.kind === "read" && !wordCheck ? `drill:${task.id}:reading` : null;
   const cards = {...progress.cards};
   // Paper comparison is valuable self-report, not a measured screen writing pass.
   if (cardKey) cards[cardKey] = reviewAfterAttempt(cards[cardKey],{correct,assisted,method,primed},now);
   result.primed=primed;
-  return {...progress,cards,study:{...progress.study,evidence,exposed:{...progress.study.exposed,[task.id]:now},
+  const exposed={...progress.study.exposed,[task.id]:now};
+  // A compound's answer also primes its other curriculum characters.
+  for(const character of characters.values()) if(task.word.word.includes(character.kanji)) exposed[character.id]=Math.max(now,exposed[character.id] || 0);
+  return {...progress,cards,study:{...progress.study,evidence,...(wordCheck ? {wordEvidence} : {}),exposed,
     active:{...active,feedback:{correct,assisted,method,mistakes,primed},results:[...active.results,result]}}};
 }
 export function nextStudyTask(progress,now=Date.now()) {
@@ -136,7 +176,22 @@ export function nextStudyTask(progress,now=Date.now()) {
   if (task.kind === "meet") introduced[task.id] ??= active.started;
   const exposed = task.kind === "meet" ? {...progress.study.exposed,[task.id]:now} : progress.study.exposed;
   return {...progress,study:{...progress.study,introduced,exposed,
-    active:{...active,index:active.index+1,helped:false,feedback:null,paperCommitted:false,selfCheck:null}}};
+    active:{...active,index:active.index+1,helped:false,feedback:null,paperCommitted:false,selfCheck:null,lessonPhase:"learn",relearning:false}}};
+}
+export function studyWordKey(task) {
+  return `${task.kind}:${task.id}:${task.word.word}:${task.word.reading}`;
+}
+export function changeLessonPhase(progress, phase, now=Date.now()) {
+  const active=progress.study?.active;
+  if (!active || !["learn","practise"].includes(phase) || (getStudyTask(active)?.kind !== "meet" && !active.relearning)) return progress;
+  // A round still at its first teaching screen can adopt the richer plan safely.
+  const upgrade = phase==="practise" && !active.plan && active.index===0 && !active.results.length && !active.review;
+  return {...progress,study:{...progress.study,exposed:{...progress.study.exposed,[getStudyTask(active).id]:now},active:{...active,...(upgrade ? {plan:2,tasks:lessonTasks(active.ids)} : {}),lessonPhase:phase}}};
+}
+export function revisitStudyLesson(progress) {
+  const active=progress.study?.active;
+  if (!active?.feedback) return progress;
+  return {...progress,study:{...progress.study,active:{...active,relearning:!active.relearning,lessonPhase:"practise"}}};
 }
 export function studyRoundSummary(active) {
   const results = active?.results || [];

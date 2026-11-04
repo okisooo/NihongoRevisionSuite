@@ -9,10 +9,14 @@ import { matchKana, matchMeaning, romajiFor } from "../rush/romaji";
 import { allowedMistakes } from "../rush/strokes";
 import { Strokes } from "../rush/KanjiParts";
 import { WritePad } from "../rush/WritePad";
+import { CharacterLesson, LessonPhases } from "./CharacterLesson.jsx";
 import {
   STUDY_CHAPTERS,
   getStudyOverview,
   startStudyRound,
+  revisitStudyLesson,
+  studyWordKey,
+  studyFeedbackVisibility,
   savedStudyRound,
   resumeStudyRound,
   getStudyTask,
@@ -210,7 +214,7 @@ function StudySetup({ mode }) {
   const begin = async (options, replace = false) => {
     clear();
     try {
-      startStudyRound(progress,options);
+      startStudyRound(progress,{...options,phased:true});
     } catch (error) {
       setNote(error.message);
       return;
@@ -219,7 +223,7 @@ function StudySetup({ mode }) {
       setConfirm(options);
       return;
     }
-    if (await run(p => startStudyRound(p,options))) navigate("/study/round");
+    if (await run(p => startStudyRound(p,{...options,phased:true}))) navigate("/study/round");
   };
   const choose = (from,to) => {
     setFromText(String(from)); setToText(String(to)); setNote(""); setConfirm(null);
@@ -328,6 +332,7 @@ function RoundStep({ active }) {
           </li>
         ))}
       </ol>}
+      {task && task.kind!=="meet" && !active.relearning && !active.review && <LessonPhases phase="check" />}
       {!task ? (
         <div className="sr-panel sr-empty">
           <h1>this step can’t be loaded</h1>
@@ -336,10 +341,15 @@ function RoundStep({ active }) {
             go to study <ArrowRight size={18} />
           </Link>
         </div>
+      ) : active.relearning || task.kind === "meet" ? (
+        <CharacterLesson task={task} active={active} ctl={ctl} onReady={() => ctl.run(p => {
+          const a=p.study?.active;
+          if (!a || a.started!==active.started || a.index!==active.index) return p;
+          return a.relearning ? revisitStudyLesson(p) : nextStudyTask(p);
+        })} />
       ) : active.feedback ? (
         <Feedback task={task} active={active} ctl={ctl} />
-      ) : task.kind === "meet" ? (
-        <MeetTask task={task} active={active} ctl={ctl} />
+
       ) : task.kind === "read" ? (
         <ReadTask task={task} active={active} ctl={ctl} />
       ) : task.kind === "write" ? (
@@ -359,72 +369,6 @@ const submit = (index, started, result) => (p) => {
 const reveal = (index, started) => (p) => (waiting(p, index, started) ? revealStudyHelp(p) : p);
 
 /* meet: guided exposure, no credit */
-
-function TraceBox({ glyph }) {
-  const host = useRef(null);
-  const size = usePadSize(host);
-  const [traced, setTraced] = useState(false);
-  return (
-    <div className="sr-pad-host" ref={host}>
-      {size > 0 && !traced && <WritePad kanji={glyph} mode="trace" size={size} onDone={() => setTraced(true)} />}
-      {traced && <p className="sr-sub" role="status">traced · practice only</p>}
-    </div>
-  );
-}
-
-function MeetTask({ task, active, ctl }) {
-  const [tracing, setTracing] = useState(false);
-  const { word, sentence } = task;
-  const next = () =>
-    ctl.run((p) => {
-      const a = p.study?.active;
-      return a && a.started === active.started && a.index === active.index && !a.feedback ? nextStudyTask(p) : p;
-    });
-  return (
-    <section className="sr-panel sr-task" aria-labelledby="sr-title">
-      <p className="eyebrow">meet</p>
-      <h1 id="sr-title" className="sr-visually-hidden">
-        meet a new character
-      </h1>
-      <div className="sr-meet">
-        <div className="sr-meet-glyph">
-          <span className="sr-glyph" lang="ja">
-            {task.character}
-          </span>
-          <p className="sr-meaning">{meaningOf(task.id)}</p>
-        </div>
-        <Strokes kanji={task.character} />
-      </div>
-      <div className="sr-word-card">
-        <span className="sr-word" lang="ja">
-          {word.word}
-        </span>
-        <span className="sr-reading" lang="ja">
-          {word.reading}
-        </span>
-        {word.meaning && <span className="sr-gloss">{word.meaning}</span>}
-      </div>
-      {sentence && (
-        <p className="sr-sentence">
-          <SentenceText context={sentence} word={word} readings />
-          {sentence.translation && <small>{sentence.translation}</small>}
-        </p>
-      )}
-      {tracing ? (
-        <TraceBox glyph={task.character} />
-      ) : (
-        <button type="button" className="text-button" onClick={() => setTracing(true)}>
-          trace character
-        </button>
-      )}
-      <div className="sr-actions">
-        <button type="button" className="primary-button" disabled={ctl.pending} onClick={next}>
-          continue <ArrowRight size={18} />
-        </button>
-      </div>
-    </section>
-  );
-}
 
 /* read: type the hidden reading */
 
@@ -791,6 +735,7 @@ function Feedback({ task, active, ctl }) {
   const fb = active.feedback;
   const last = active.index === active.tasks.length - 1;
   const { word, sentence } = task;
+  const visible=studyFeedbackVisibility(active);
   const next = () =>
     ctl.run((p) => {
       const a = p.study?.active;
@@ -831,10 +776,10 @@ function Feedback({ task, active, ctl }) {
             <span className="sr-word" lang="ja">
               {word.word}
             </span>
-            <span className="sr-reading" lang="ja">
+            {visible.reading && <span className="sr-reading" lang="ja">
               {word.reading}
-            </span>
-            {word.meaning && <span className="sr-gloss">{word.meaning}</span>}
+            </span>}
+            {visible.meaning && word.meaning && <span className="sr-gloss">{word.meaning}</span>}
           </div>
         </div>
       ) : (
@@ -843,16 +788,16 @@ function Feedback({ task, active, ctl }) {
             <span className="sr-word" lang="ja">
               {word.word}
             </span>
-            <span className="sr-reading" lang="ja">
+            {visible.reading && <span className="sr-reading" lang="ja">
               {word.reading}
               {task.kind === "read" && <small> {romajiFor(word.reading)}</small>}
-            </span>
-            {word.meaning && <span className="sr-gloss">{word.meaning}</span>}
+            </span>}
+            {visible.meaning && word.meaning && <span className="sr-gloss">{word.meaning}</span>}
           </div>
           {sentence && (
             <p className="sr-sentence">
-              <SentenceText context={sentence} word={word} readings />
-              {sentence.translation && <small>{sentence.translation}</small>}
+              <SentenceText context={sentence} word={word} readings={visible.reading} />
+              {visible.meaning && sentence.translation && <small>{sentence.translation}</small>}
             </p>
           )}
         </div>
@@ -861,6 +806,10 @@ function Feedback({ task, active, ctl }) {
         <button type="button" className="primary-button" disabled={ctl.pending} onClick={next} autoFocus>
           {last ? "see summary" : "next"} <ArrowRight size={18} />
         </button>
+        <button type="button" className="secondary-button" disabled={ctl.pending} onClick={() => ctl.run(p => {
+          const a=p.study?.active;
+          return a && a.started===active.started && a.index===active.index ? revisitStudyLesson(p) : p;
+        })}>{fb.correct ? "practise more" : "learn & practise again"}</button>
       </div>
     </section>
   );
@@ -899,7 +848,7 @@ function RoundSummary({ progress, active }) {
   const screen = writes.filter((r) => r.method !== "paper");
   const paper = writes.filter((r) => r.method === "paper");
   const helped = results.filter((r) => r.assisted).length;
-  const returned = results.filter(r => progress.study?.evidence?.[`${r.kind}:${r.id}`]?.laterSuccess === r.at).length;
+  const returned = results.filter(r => (active.tasks[r.index]?.word && ["read","use"].includes(r.kind) ? progress.study?.wordEvidence?.[studyWordKey({kind:r.kind,id:r.id,word:active.tasks[r.index].word})] : progress.study?.evidence?.[`${r.kind}:${r.id}`])?.laterSuccess === r.at).length;
   const met = active.tasks.filter((t) => t.kind === "meet").length;
   const lines = [
     reads.length && [`read without the reading shown`, `${solid(reads)} of ${reads.length}`],
@@ -919,7 +868,7 @@ function RoundSummary({ progress, active }) {
     ctl.run((p) => {
       const a = p.study?.active;
       return finished(a) && a.started === active.started
-        ? startStudyRound(p, { from: range.from, to: range.to, review, custom }, Date.now())
+        ? startStudyRound(p, { from: range.from, to: range.to, review, custom, phased:true }, Date.now())
         : p;
     }).then((saved) => saved && window.scrollTo?.(0, 0));
 
@@ -949,7 +898,7 @@ function RoundSummary({ progress, active }) {
               <span lang="ja" className="sr-result-glyph">
                 {glyphOf(r.id)}
               </span>
-              <span>{KIND_LABEL[r.kind] ?? r.kind}</span>
+              <span>{KIND_LABEL[r.kind] ?? r.kind}{r.word && <small className="sr-result-word" lang="ja">{r.word}</small>}</span>
               <span className="sr-result-out">{outcomeLabel(r)}</span>
             </li>
           ))}
